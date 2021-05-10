@@ -1,0 +1,790 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>5.降噪自动编码 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="6_Stacked_Denoising_Autoencoders_层叠降噪自动编码机.html" />
+    
+    
+    <link rel="prev" href="4_Convoltional_Neural_Networks_LeNet_卷积神经网络.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="1_Getting_Started_入门.html">
+            
+                <a href="1_Getting_Started_入门.html">
+            
+                    
+                    1.入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2_Classifying_MNIST_using_LR_逻辑回归进行MNIST分类.html">
+            
+                <a href="2_Classifying_MNIST_using_LR_逻辑回归进行MNIST分类.html">
+            
+                    
+                    2.逻辑回归进行MNIST分类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="3_Multilayer_Perceptron_多层感知机.html">
+            
+                <a href="3_Multilayer_Perceptron_多层感知机.html">
+            
+                    
+                    3.多层感知机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="4_Convoltional_Neural_Networks_LeNet_卷积神经网络.html">
+            
+                <a href="4_Convoltional_Neural_Networks_LeNet_卷积神经网络.html">
+            
+                    
+                    4.卷积神经网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6" data-path="5_Denoising_Autoencoders_降噪自动编码.html">
+            
+                <a href="5_Denoising_Autoencoders_降噪自动编码.html">
+            
+                    
+                    5.降噪自动编码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="6_Stacked_Denoising_Autoencoders_层叠降噪自动编码机.html">
+            
+                <a href="6_Stacked_Denoising_Autoencoders_层叠降噪自动编码机.html">
+            
+                    
+                    6.层叠降噪自动编码机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="7_Restricted_Boltzmann_Machine_受限波尔兹曼机.html">
+            
+                <a href="7_Restricted_Boltzmann_Machine_受限波尔兹曼机.html">
+            
+                    
+                    7.受限波尔兹曼机
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >5.降噪自动编码</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x964D;&#x566A;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;denoising-autoencoders">&#x964D;&#x566A;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;(Denoising Autoencoders)</h1>
+<p>&#x8FD9;&#x4E00;&#x8282;&#x5047;&#x8BBE;&#x8BFB;&#x8005;&#x4E00;&#x8282;&#x9605;&#x8BFB;&#x4E86;<a href="https://github.com/Syndrome777/DeepLearningTutorial/blob/master/2_Classifying_MNIST_using_LR_&#x903B;&#x8F91;&#x56DE;&#x5F52;&#x8FDB;&#x884C;MNIST&#x5206;&#x7C7B;.md" target="_blank">&#x4F7F;&#x7528;&#x903B;&#x8F91;&#x56DE;&#x5F52;&#x8FDB;&#x884C;MNIST&#x5206;&#x7C7B;</a>&#xFF0C;<a href="https://github.com/Syndrome777/DeepLearningTutorial/blob/master/3_Multilayer_Perceptron_&#x591A;&#x5C42;&#x611F;&#x77E5;&#x673A;.md" target="_blank">&#x591A;&#x5C42;&#x611F;&#x77E5;&#x673A;</a>&#x3002;&#x5982;&#x679C;&#x4F60;&#x9700;&#x8981;&#x5728;GPU&#x4E0A;&#x8DD1;&#x4EE3;&#x7801;&#xFF0C;&#x4F60;&#x4E5F;&#x9700;&#x8981;&#x9605;&#x8BFB;<a href="http://deeplearning.net/software/theano/tutorial/using_gpu.html" target="_blank">GPU</a>&#x3002;</p>
+<p>&#x672C;&#x8282;&#x6240;&#x6709;&#x7684;&#x4EE3;&#x7801;&#x90FD;&#x53EF;&#x7528;&#x5728;<a href="http://deeplearning.net/tutorial/code/dA.py" target="_blank">&#x8FD9;&#x91CC;</a>&#x4E0B;&#x8F7D;&#x3002;</p>
+<p>&#x964D;&#x566A;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;(denoising Autoencoders)&#x662F;&#x7ECF;&#x5178;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;&#x7684;&#x6269;&#x5C55;&#x3002;&#x5B83;&#x5728;<a href="http://deeplearning.net/tutorial/references.html#vincent08" target="_blank">Vincent08</a>&#x4E2D;&#x4F5C;&#x4E3A;&#x6DF1;&#x5EA6;&#x7F51;&#x7EDC;&#x7684;&#x4E00;&#x4E2A;&#x6784;&#x5EFA;&#x5757;&#x88AB;&#x4ECB;&#x7ECD;&#x3002;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x7B80;&#x77ED;&#x7684;<a href="http://deeplearning.net/tutorial/dA.html#autoencoders" target="_blank">&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;</a>&#x6765;&#x5F00;&#x59CB;&#x672C;&#x6559;&#x7A0B;&#x3002;</p>
+<h2 id="&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;">&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;</h2>
+<p>&#x5728;<a href="http://deeplearning.net/tutorial/references.html#bengio09" target="_blank">Bengio09</a>&#x7684;&#x7B2C;4.6&#x8282;&#x4E2D;&#xFF0C;&#x6709;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;&#x7684;&#x7B80;&#x4ECB;&#x3002;&#x4E00;&#x4E2A;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;&#xFF0C;&#x7531;d&#x7EF4;&#x7684;[0,1]&#x4E4B;&#x95F4;&#x7684;&#x8F93;&#x5165;&#x5411;&#x91CF;x&#xFF0C;&#x901A;&#x8FC7;&#x7B2C;&#x4E00;&#x5C42;&#x6620;&#x5C04;&#xFF08;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x7F16;&#x7801;&#x5668;&#xFF09;&#x6765;&#x83B7;&#x5F97;&#x9690;&#x85CF;&#x7684;d&#x2018;&#x7EF4;&#x5EA6;&#x7684;[0,1]&#x7684;&#x8F93;&#x51FA;&#x8868;&#x8FBE;y&#x3002;&#x901A;&#x8FC7;&#x5982;&#x4E0B;&#x7684;&#x51B3;&#x5B9A;&#x6027;&#x6620;&#x5C04;&#xFF1A;</p>
+<p><img src="images/5_autoencoders_1.png" alt="y_mapping"></p>
+<p>&#x8FD9;&#x91CC;s&#x662F;&#x4E00;&#x4E2A;&#x975E;&#x7EBF;&#x6027;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x4F8B;&#x5982;sigmoid&#x3002;&#x8FD9;&#x4E2A;&#x6F5C;&#x5728;&#x7684;&#x8868;&#x8FBE;y&#xFF0C;&#x6216;&#x8005;&#x7801;&#xFF0C;&#x88AB;&#x6620;&#x5C04;&#x56DE;&#x4E00;&#x4E2A;&#x91CD;&#x6784;&#x673A;z&#xFF0C;&#x6765;&#x91CD;&#x6784;x&#x3002;&#x8FD9;&#x4E2A;&#x6620;&#x5C04;&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x7684;&#x7B80;&#x5355;&#x8F6C;&#x6362;&#x6765;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<p><img src="images/5_autoencoders_2.png" alt="z_mapping"></p>
+<p>&#xFF08;&#x8FD9;&#x91CC;&#x6487;&#x53F7;&#x4E0D;&#x4EE3;&#x8868;&#x77E9;&#x9635;&#x8F6C;&#x7F6E;&#xFF09;&#x5F53;y&#x88AB;&#x7ED9;&#x5B9A;&#x65F6;&#xFF0C;z&#x88AB;&#x770B;&#x7740;&#x662F;&#x5BF9;x&#x7684;&#x9884;&#x6D4B;&#x3002;&#x53EF;&#x9009;&#x7684;&#xFF0C;&#x8FD9;&#x4E2A;&#x6743;&#x91CD;&#x77E9;&#x9635;W&#x2018;&#x7684;&#x9006;&#x6620;&#x5C04;&#x53EF;&#x7528;&#x88AB;&#x7EA6;&#x675F;&#x4E3A;&#x6B63;&#x5411;&#x6620;&#x5C04;&#x7684;&#x8F6C;&#x7F6E;&#xFF1A;<img src="images/5_autoencoders_3.png" alt="tanspose">&#xFF0C;&#x8FD9;&#x88AB;&#x79F0;&#x4E3A;&#x6346;&#x7ED1;&#x6743;&#x91CD;&#x3002;&#x8FD9;&#x4E2A;&#x6A21;&#x578B;&#x7684;&#x6240;&#x6709;&#x53C2;&#x6570;&#xFF08;W&#xFF0C;b&#xFF0C;b&#x2018;&#xFF0C;&#x6216;&#x8005;&#x4E0D;&#x4F7F;&#x7528;&#x6346;&#x7ED1;&#x6743;&#x91CD;W&#x2019;&#xFF09;&#x901A;&#x8FC7;&#x4F18;&#x5316;&#x6700;&#x5C0F;&#x5E73;&#x5747;&#x91CD;&#x6784;&#x8BEF;&#x5DEE;&#x6765;&#x5B9E;&#x73B0;&#x8BAD;&#x7EC3;&#x3002;</p>
+<p>&#x91CD;&#x5EFA;&#x8BEF;&#x5DEE;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BB8;&#x591A;&#x65B9;&#x6CD5;&#x6765;&#x5EA6;&#x91CF;&#xFF0C;&#x57FA;&#x4E8E;&#x8F93;&#x5165;&#x7684;&#x5206;&#x5E03;&#x5047;&#x8BBE;&#x3002;&#x8FD9;&#x4E2A;&#x4F20;&#x7EDF;&#x7684;&#x5E73;&#x65B9;&#x8BEF;&#x5DEE;&#x662F;L(x,z)=||x-z||^2&#xFF0C;&#x53EF;&#x4EE5;&#x88AB;&#x4F7F;&#x7528;&#x3002;&#x5047;&#x5982;&#x8FD9;&#x4E2A;&#x8F93;&#x5165;&#x662F;&#x901A;&#x8FC7;&#x6BD4;&#x7279;&#x5411;&#x91CF;&#x6216;&#x8005;&#x6BD4;&#x7279;&#x6982;&#x7387;&#x5411;&#x91CF;&#x6765;&#x8868;&#x8FF0;&#xFF0C;&#x91CD;&#x6784;<code>&#x4EA4;&#x53C9;&#x71B5;</code>([cross-entropy)&#x53EF;&#x4EE5;&#x88AB;&#x8868;&#x793A;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="images/5_autoencoders_4.png" alt="cross-entropy"></p>
+<p>&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x8FD9;&#x6837;&#xFF0C;&#x8FD9;&#x4E2A;&#x7F16;&#x7801;y&#x662F;&#x4E00;&#x4E2A;&#x5206;&#x5E03;&#x5F0F;&#x8868;&#x8FBE;&#xFF0C;&#x53EF;&#x4EE5;&#x6355;&#x6349;&#x6570;&#x636E;&#x4E2D;&#x4E3B;&#x8981;&#x56E0;&#x5B50;&#x53D8;&#x5316;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x8FD9;&#x5C31;&#x7C7B;&#x4F3C;&#x4E0E;&#x4E3B;&#x6210;&#x5206;&#x51F8;&#x51FA;&#xFF0C;&#x91D1;&#x989D;&#x4E5F;&#x6355;&#x6349;&#x6570;&#x636E;&#x4E2D;&#x4E3B;&#x8981;&#x56E0;&#x5B50;&#x7684;&#x53D8;&#x5316;&#x3002;&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x5047;&#x5982;&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x4E2A;&#x7EBF;&#x6027;&#x9690;&#x85CF;&#x5C42;&#xFF08;&#x8FD9;&#x4E2A;&#x7F16;&#x7801;&#xFF09;&#xFF0C;&#x5E76;&#x4E14;&#x5E73;&#x5747;&#x5E73;&#x65B9;&#x8BEF;&#x5DEE;&#x51C6;&#x5219;&#x88AB;&#x7528;&#x4EE5;&#x8BAD;&#x7EC3;&#x8FD9;&#x4E2A;&#x7F51;&#x7EDC;&#xFF0C;&#x7136;&#x540E;&#x8FD9;k&#x4E2A;&#x9690;&#x85CF;&#x5355;&#x5143;&#x5B66;&#x4E60;&#x53BB;&#x51F8;&#x51FA;&#x8FD9;&#x4E2A;&#x8F93;&#x5165;&#xFF0C;&#x5728;&#x8BE5;&#x6570;&#x636E;&#x7684;&#x524D;k&#x4E2A;&#x4E3B;&#x6210;&#x5206;&#x7684;&#x8303;&#x56F4;&#x4E2D;&#x3002;&#x5047;&#x5982;&#x8FD9;&#x4E2A;&#x9690;&#x85CF;&#x5C42;&#x662F;&#x975E;&#x7EBF;&#x6027;&#x7684;&#xFF0C;&#x8FD9;&#x4E2A;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;&#x8868;&#x73B0;&#x7684;&#x662F;&#x4E0E;PCA&#x4E0D;&#x540C;&#x7684;&#xFF0C;&#x5B83;&#x6709;&#x7740;&#x6355;&#x6349;&#x8F93;&#x5165;&#x5206;&#x5E03;&#x7684;&#x591A;&#x6A21;&#x6001;&#x65B9;&#x9762;&#x7684;&#x80FD;&#x529B;&#x3002;&#x4ECE;PCA&#x5F00;&#x59CB;&#x53D8;&#x5F97;&#x66F4;&#x52A0;&#x91CD;&#x8981;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x8003;&#x8651;&#x5806;&#x53E0;&#x6DF7;&#x5408;&#x7F16;&#x7801;&#x673A;(stacking multiple encoders&#xFF0C;&#x5728;<a href="http://deeplearning.net/tutorial/references.html#hinton06" target="_blank">Hinton06</a>&#x4E2D;&#x88AB;&#x7528;&#x4EE5;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x6DF1;&#x5EA6;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;)&#x3002;</p>
+<p>&#x56E0;&#x4E3A;y&#x662F;&#x89C6;&#x4E3A;x&#x7684;&#x6709;&#x635F;&#x538B;&#x7F29;(lossy compression)&#xFF0C;&#x5B83;&#x4E0D;&#x53EF;&#x80FD;&#x5BF9;&#x6240;&#x6709;&#x7684;x&#x6709;&#x597D;&#x7684;&#x538B;&#x7F29;&#x3002;&#x4F18;&#x5316;&#x53EF;&#x4EE5;&#x4F7F;&#x5F97;&#x8BAD;&#x7EC3;&#x6837;&#x672C;&#x6709;&#x597D;&#x7684;&#x538B;&#x7F29;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x5E0C;&#x671B;&#x5BF9;&#x522B;&#x7684;&#x8F93;&#x5165;&#x6709;&#x597D;&#x7684;&#x538B;&#x7F29;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x662F;&#x5BF9;&#x4E8E;&#x4EFB;&#x610F;&#x8F93;&#x5165;&#x3002;&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x4E2A;&#x5BF9;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;&#x7684;&#x6982;&#x62EC;&#x5B9A;&#x4E49;&#xFF1A;&#x5B83;&#x5BF9;&#x4E8E;&#x4E0E;&#x8BAD;&#x7EC3;&#x6837;&#x672C;&#x6709;&#x76F8;&#x4F3C;&#x5206;&#x5E03;&#x7684;&#x6D4B;&#x8BD5;&#x6837;&#x672C;&#x6709;&#x8F83;&#x4F4E;&#x7684;&#x91CD;&#x5EFA;&#x8BEF;&#x5DEE;&#xFF0C;&#x4F46;&#x5BF9;&#x4E8E;&#x968F;&#x673A;&#x7684;&#x8F93;&#x5165;&#x4F1A;&#x6709;&#x8F83;&#x9AD8;&#x7684;&#x91CD;&#x6784;&#x8BEF;&#x5DEE;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x901A;&#x8FC7;Theano&#x4E2D;&#x6765;&#x5B9E;&#x73B0;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;&#xFF0C;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x5F62;&#x5F0F;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x5728;&#x672A;&#x6765;&#x53BB;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x5C42;&#x53E0;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;&#x3002;&#x8FD9;&#x4E2A;&#x7B2C;&#x4E00;&#x6B65;&#x662F;&#x53BB;&#x521B;&#x5EFA;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;&#x7684;&#x5171;&#x4EAB;&#x53D8;&#x91CF;&#x53C2;&#x6570;&#xFF08;W&#xFF0C;b&#xFF0C;b&#x2018;&#xFF09;&#x3002;</p>
+<pre><code class="lang-Python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">dA</span><span class="hljs-params">(object)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;Denoising Auto-Encoder class (dA)
+
+    A denoising autoencoders tries to reconstruct the input from a corrupted
+    version of it by projecting it first in a latent space and reprojecting
+    it afterwards back in the input space. Please refer to Vincent et al.,2008
+    for more details. If x is the input then equation (1) computes a partially
+    destroyed version of x by means of a stochastic mapping q_D. Equation (2)
+    computes the projection of the input into the latent space. Equation (3)
+    computes the reconstruction of the input, while equation (4) computes the
+    reconstruction error.
+
+    .. math::
+
+        \tilde{x} ~ q_D(\tilde{x}|x)                                     (1)
+
+        y = s(W \tilde{x} + b)                                           (2)
+
+        x = s(W&apos; y  + b&apos;)                                                (3)
+
+        L(x,z) = -sum_{k=1}^d [x_k \log z_k + (1-x_k) \log( 1-z_k)]      (4)
+
+    &quot;&quot;&quot;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(
+        self,
+        numpy_rng,
+        theano_rng=None,
+        input=None,
+        n_visible=<span class="hljs-number">784</span>,
+        n_hidden=<span class="hljs-number">500</span>,
+        W=None,
+        bhid=None,
+        bvis=None
+    )</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        Initialize the dA class by specifying the number of visible units (the
+        dimension d of the input ), the number of hidden units ( the dimension
+        d&apos; of the latent or hidden space ) and the corruption level. The
+        constructor also receives symbolic variables for the input, weights and
+        bias. Such a symbolic variables are useful when, for example the input
+        is the result of some computations, or when weights are shared between
+        the dA and an MLP layer. When dealing with SdAs this always happens,
+        the dA on layer 2 gets as input the output of the dA on layer 1,
+        and the weights of the dA are used in the second stage of training
+        to construct an MLP.
+
+        :type numpy_rng: numpy.random.RandomState
+        :param numpy_rng: number random generator used to generate weights
+
+        :type theano_rng: theano.tensor.shared_randomstreams.RandomStreams
+        :param theano_rng: Theano random generator; if None is given one is
+                     generated based on a seed drawn from `rng`
+
+        :type input: theano.tensor.TensorType
+        :param input: a symbolic description of the input or None for
+                      standalone dA
+
+        :type n_visible: int
+        :param n_visible: number of visible units
+
+        :type n_hidden: int
+        :param n_hidden:  number of hidden units
+
+        :type W: theano.tensor.TensorType
+        :param W: Theano variable pointing to a set of weights that should be
+                  shared belong the dA and another architecture; if dA should
+                  be standalone set this to None
+
+        :type bhid: theano.tensor.TensorType
+        :param bhid: Theano variable pointing to a set of biases values (for
+                     hidden units) that should be shared belong dA and another
+                     architecture; if dA should be standalone set this to None
+
+        :type bvis: theano.tensor.TensorType
+        :param bvis: Theano variable pointing to a set of biases values (for
+                     visible units) that should be shared belong dA and another
+                     architecture; if dA should be standalone set this to None
+
+
+        &quot;&quot;&quot;</span>
+        self.n_visible = n_visible
+        self.n_hidden = n_hidden
+
+        <span class="hljs-comment"># create a Theano random generator that gives symbolic random values</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> theano_rng:
+            theano_rng = RandomStreams(numpy_rng.randint(<span class="hljs-number">2</span> ** <span class="hljs-number">30</span>))
+
+        <span class="hljs-comment"># note : W&apos; was written as `W_prime` and b&apos; as `b_prime`</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> W:
+            <span class="hljs-comment"># W is initialized with `initial_W` which is uniformely sampled</span>
+            <span class="hljs-comment"># from -4*sqrt(6./(n_visible+n_hidden)) and</span>
+            <span class="hljs-comment"># 4*sqrt(6./(n_hidden+n_visible))the output of uniform if</span>
+            <span class="hljs-comment"># converted using asarray to dtype</span>
+            <span class="hljs-comment"># theano.config.floatX so that the code is runable on GPU</span>
+            initial_W = numpy.asarray(
+                numpy_rng.uniform(
+                    low=<span class="hljs-number">-4</span> * numpy.sqrt(<span class="hljs-number">6.</span> / (n_hidden + n_visible)),
+                    high=<span class="hljs-number">4</span> * numpy.sqrt(<span class="hljs-number">6.</span> / (n_hidden + n_visible)),
+                    size=(n_visible, n_hidden)
+                ),
+                dtype=theano.config.floatX
+            )
+            W = theano.shared(value=initial_W, name=<span class="hljs-string">&apos;W&apos;</span>, borrow=<span class="hljs-keyword">True</span>)
+
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> bvis:
+            bvis = theano.shared(
+                value=numpy.zeros(
+                    n_visible,
+                    dtype=theano.config.floatX
+                ),
+                borrow=<span class="hljs-keyword">True</span>
+            )
+
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> bhid:
+            bhid = theano.shared(
+                value=numpy.zeros(
+                    n_hidden,
+                    dtype=theano.config.floatX
+                ),
+                name=<span class="hljs-string">&apos;b&apos;</span>,
+                borrow=<span class="hljs-keyword">True</span>
+            )
+
+        self.W = W
+        <span class="hljs-comment"># b corresponds to the bias of the hidden</span>
+        self.b = bhid
+        <span class="hljs-comment"># b_prime corresponds to the bias of the visible</span>
+        self.b_prime = bvis
+        <span class="hljs-comment"># tied weights, therefore W_prime is W transpose</span>
+        self.W_prime = self.W.T
+        self.theano_rng = theano_rng
+        <span class="hljs-comment"># if no input is given, generate a variable representing the input</span>
+        <span class="hljs-keyword">if</span> input <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+            <span class="hljs-comment"># we use a matrix because we expect a minibatch of several</span>
+            <span class="hljs-comment"># examples, each example being a row</span>
+            self.x = T.dmatrix(name=<span class="hljs-string">&apos;input&apos;</span>)
+        <span class="hljs-keyword">else</span>:
+            self.x = input
+
+        self.params = [self.W, self.b, self.b_prime]
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;<code>input</code>&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x6765;&#x4F20;&#x9012;&#x7ED9;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4E32;&#x8054;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;&#x6765;&#x5B9E;&#x73B0;&#x6DF1;&#x5EA6;&#x7F51;&#x7EDC;&#xFF1A;&#x7B2C;k&#x5C42;&#x7684;&#x8F93;&#x51FA;(y)&#x53EF;&#x4EE5;&#x53D8;&#x6210;&#x7B2C;k+1&#x5C42;&#x7684;&#x8F93;&#x5165;&#x3002;</p>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x9884;&#x8BA1;&#x53BB;&#x91CD;&#x6784;&#x4FE1;&#x53F7;&#x7684;&#x6F5C;&#x5728;&#x8868;&#x8FBE;&#x7684;&#x8BA1;&#x7B97;&#x91CF;&#x3002;</p>
+<pre><code class="lang-Python">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_hidden_values</span><span class="hljs-params">(self, input)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot; Computes the values of the hidden layer &quot;&quot;&quot;</span>
+        <span class="hljs-keyword">return</span> T.nnet.sigmoid(T.dot(input, self.W) + self.b)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_reconstructed_input</span><span class="hljs-params">(self, hidden)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;Computes the reconstructed input given the values of the
+        hidden layer
+
+        &quot;&quot;&quot;</span>
+        <span class="hljs-keyword">return</span> T.nnet.sigmoid(T.dot(hidden, self.W_prime) + self.b_prime)
+</code></pre>
+<p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x8FD9;&#x4E9B;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x8BA1;&#x7B97;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6B65;&#x9AA4;&#x7684;cost&#x548C;&#x66F4;&#x65B0;&#x3002;</p>
+<pre><code class="lang-Python">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_cost_updates</span><span class="hljs-params">(self, corruption_level, learning_rate)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot; This function computes the cost and the updates for one trainng
+        step of the dA &quot;&quot;&quot;</span>
+
+        tilde_x = self.get_corrupted_input(self.x, corruption_level)
+        y = self.get_hidden_values(tilde_x)
+        z = self.get_reconstructed_input(y)
+        <span class="hljs-comment"># note : we sum over the size of a datapoint; if we are using</span>
+        <span class="hljs-comment">#        minibatches, L will be a vector, with one entry per</span>
+        <span class="hljs-comment">#        example in minibatch</span>
+        L = - T.sum(self.x * T.log(z) + (<span class="hljs-number">1</span> - self.x) * T.log(<span class="hljs-number">1</span> - z), axis=<span class="hljs-number">1</span>)
+        <span class="hljs-comment"># note : L is now a vector, where each element is the</span>
+        <span class="hljs-comment">#        cross-entropy cost of the reconstruction of the</span>
+        <span class="hljs-comment">#        corresponding example of the minibatch. We need to</span>
+        <span class="hljs-comment">#        compute the average of all these to get the cost of</span>
+        <span class="hljs-comment">#        the minibatch</span>
+        cost = T.mean(L)
+
+        <span class="hljs-comment"># compute the gradients of the cost of the `dA` with respect</span>
+        <span class="hljs-comment"># to its parameters</span>
+        gparams = T.grad(cost, self.params)
+        <span class="hljs-comment"># generate the list of updates</span>
+        updates = [
+            (param, param - learning_rate * gparam)
+            <span class="hljs-keyword">for</span> param, gparam <span class="hljs-keyword">in</span> zip(self.params, gparams)
+        ]
+
+        <span class="hljs-keyword">return</span> (cost, updates)
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x6765;&#x5B9E;&#x73B0;&#x91CD;&#x590D;&#x7684;&#x66F4;&#x65B0;&#x53C2;&#x6570;W&#xFF0C;b&#xFF0C;b&#x2018;&#xFF0C;&#x76F4;&#x5230;&#x8FD9;&#x4E2A;&#x91CD;&#x6784;&#x6D88;&#x8017;&#x5927;&#x7EA6;&#x662F;&#x6700;&#x5C0F;&#x7684;&#x3002;</p>
+<pre><code class="lang-Python">    da = dA(
+        numpy_rng=rng,
+        theano_rng=theano_rng,
+        input=x,
+        n_visible=<span class="hljs-number">28</span> * <span class="hljs-number">28</span>,
+        n_hidden=<span class="hljs-number">500</span>
+    )
+
+    cost, updates = da.get_cost_updates(
+        corruption_level=<span class="hljs-number">0.</span>,
+        learning_rate=learning_rate
+    )
+
+    train_da = theano.function(
+        [index],
+        cost,
+        updates=updates,
+        givens={
+            x: train_set_x[index * batch_size: (index + <span class="hljs-number">1</span>) * batch_size]
+        }
+    )
+</code></pre>
+<p>&#x5047;&#x8BBE;&#x9664;&#x4E86;&#x6700;&#x5C0F;&#x5316;&#x91CD;&#x6784;&#x8BEF;&#x5DEE;&#x5916;&#x6CA1;&#x6709;&#x522B;&#x7684;&#x7684;&#x9650;&#x5236;&#xFF0C;&#x4E00;&#x4E2A;&#x6709;n&#x4E2A;&#x8F93;&#x5165;&#x548C;n&#xFF08;&#x6216;&#x8005;&#x66F4;&#x5927;&#xFF09;&#x7EF4;&#x7F16;&#x7801;&#x5B66;&#x4E60;&#x80FD;&#x529B;&#x7684;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#xFF0C;&#x5C06;&#x503E;&#x5411;&#x4E8E;&#x53BB;&#x6620;&#x5C04;&#x51FA;&#x5B83;&#x7684;&#x8F93;&#x5165;&#x526F;&#x672C;&#x3002;&#x8FD9;&#x79CD;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;&#x5C06;&#x65E0;&#x6CD5;&#x4ECE;&#x8BAD;&#x7EC3;&#x6837;&#x672C;&#x7684;&#x5206;&#x5E03;&#x4E2D;&#x533A;&#x5206;&#x4EFB;&#x4F55;&#x6D4B;&#x8BD5;&#x6837;&#x4F8B;&#x3002;&#xFF08;&#x65E0;&#x6548;&#x7F16;&#x7801;&#x673A;&#xFF1A;&#x8F93;&#x51FA;&#x4E0E;&#x8F93;&#x5165;&#x5B8C;&#x5168;&#x76F8;&#x540C;&#xFF09;&#x3002;</p>
+<p>&#x8BA9;&#x4EBA;&#x60CA;&#x8BB6;&#x5730;&#xFF0C;&#x5728;<a href="http://deeplearning.net/tutorial/references.html#bengio07" target="_blank">Bengio07</a>&#x7684;&#x5B9E;&#x9A8C;&#x6307;&#x51FA;&#xFF0C;&#x5728;&#x5B9E;&#x8DF5;&#x4E2D;&#xFF0C;&#x5F53;&#x901A;&#x8FC7;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x8BAD;&#x7EC3;&#x65F6;&#xFF0C;&#x6709;&#x6BD4;&#x8F93;&#x5165;&#x66F4;&#x591A;&#x7684;&#x9690;&#x85CF;&#x5355;&#x5143;&#xFF08;&#x79F0;&#x4E3A;&#x8D85;&#x5B8C;&#x5907;&#xFF09;&#x7684;&#x975E;&#x7EBF;&#x6027;&#x7684;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;&#x53EF;&#x4EE5;&#x4EA7;&#x751F;&#x6709;&#x6548;&#x7684;&#x8868;&#x8FBE;&#x3002;&#xFF08;&#x8FD9;&#x91CC;&#xFF0C;&#x6709;&#x6548;&#x6307;&#x7684;&#x662F;&#x7F16;&#x7801;&#x4F5C;&#x4E3A;&#x7F51;&#x7EDC;&#x7684;&#x8F93;&#x5165;&#x83B7;&#x5F97;&#x4E86;&#x66F4;&#x4F4E;&#x7684;&#x5206;&#x7C7B;&#x8BEF;&#x5DEE;&#xFF09;&#x3002;</p>
+<p>&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x89E3;&#x91CA;&#x662F;&#xFF0C;&#x4F7F;&#x7528;early-stopping&#x7684;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x662F;&#x4E0E;&#x53C2;&#x6570;&#x7684;L2&#x6B63;&#x5219;&#x5316;&#x76F8;&#x4F3C;&#x7684;&#x3002;&#x4E3A;&#x4E86;&#x53BB;&#x5B9E;&#x73B0;&#x5BF9;&#x8FDE;&#x7EED;&#x6027;&#x8F93;&#x5165;&#x6709;&#x66F4;&#x597D;&#x7684;&#x91CD;&#x5EFA;&#xFF0C;&#x5305;&#x542B;&#x975E;&#x7EBF;&#x6027;&#x9690;&#x85CF;&#x5355;&#x5143;&#x7684;&#x5355;&#x9690;&#x85CF;&#x5C42;&#x7684;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;&#x9700;&#x8981;&#x975E;&#x5E38;&#x5C0F;&#x7684;&#x6743;&#x503C;&#x5728;&#x7B2C;&#x4E00;&#xFF08;&#x7F16;&#x7801;&#xFF09;&#x5C42;&#xFF0C;&#x4EE5;&#x4F7F;&#x5F97;&#x5C06;&#x975E;&#x7EBF;&#x6027;&#x9690;&#x85CF;&#x5355;&#x5143;&#x8FDB;&#x5165;&#x4ED6;&#x4EEC;&#x7684;&#x7EBF;&#x6027;&#x533A;&#x57DF;&#xFF08;&#x53C2;&#x8003;sigmoid&#x51FD;&#x6570;&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x7B2C;&#x4E8C;&#xFF08;&#x89E3;&#x7801;&#xFF09;&#x5C42;&#x6709;&#x66F4;&#x5927;&#x7684;&#x6743;&#x503C;&#x3002;&#x5BF9;&#x4E8E;&#x4E8C;&#x8FDB;&#x5236;&#x8F93;&#x5165;&#xFF0C;&#x975E;&#x5E38;&#x5927;&#x7684;&#x6743;&#x503C;&#x4E5F;&#x9700;&#x8981;&#x5F7B;&#x5E95;&#x7684;&#x6700;&#x5C0F;&#x5316;&#x91CD;&#x6784;&#x8BEF;&#x5DEE;&#x3002;&#x56E0;&#x4E3A;&#x9690;&#x6027;&#x7684;&#x6216;&#x8005;&#x663E;&#x6027;&#x7684;&#x6B63;&#x5219;&#x5316;&#x5C06;&#x4F7F;&#x5F97;&#x83B7;&#x5F97;&#x5927;&#x6743;&#x503C;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x53D8;&#x5F97;&#x56F0;&#x96BE;&#xFF0C;&#x8FD9;&#x4E2A;&#x6700;&#x4F18;&#x5316;&#x7B97;&#x6CD5;&#x53D1;&#x73B0;&#x5728;&#x8BAD;&#x7EC3;&#x6837;&#x672C;&#x4E2D;&#x8868;&#x73B0;&#x597D;&#x7684;&#x7F16;&#x7801;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#xFF0C;&#x8868;&#x8FBE;&#x662F;&#x5229;&#x7528;&#x8BAD;&#x7EC3;&#x96C6;&#x7684;&#x7EDF;&#x8BA1;&#x89C4;&#x5F8B;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x800C;&#x4E0D;&#x4EC5;&#x4EC5;&#x662F;&#x590D;&#x5236;&#x8F93;&#x5165;&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x6709;&#x5176;&#x4ED6;&#x65B9;&#x6CD5;&#xFF0C;&#x4F7F;&#x5F97;&#x4E00;&#x4E2A;&#x6709;&#x6BD4;&#x8F93;&#x5165;&#x6709;&#x66F4;&#x591A;&#x9690;&#x85CF;&#x5355;&#x5143;&#x7684;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;&#xFF0C;&#x53BB;&#x907F;&#x514D;&#x53EA;&#x5B66;&#x4E60;&#x5B83;&#x672C;&#x8EAB;&#xFF0C;&#x800C;&#x662F;&#x5728;&#x8F93;&#x5165;&#x7684;&#x9690;&#x85CF;&#x8868;&#x8FBE;&#x4E2D;&#x6355;&#x6349;&#x5230;&#x6709;&#x7528;&#x7684;&#x4E1C;&#x897F;&#x3002;&#x4E00;&#x4E2A;&#x662F;&#x6DFB;&#x52A0;&#x7A00;&#x758F;&#x6027;&#xFF08;&#x8FEB;&#x4F7F;&#x8BB8;&#x591A;&#x9690;&#x5355;&#x5143;&#x662F;0&#x6216;&#x8005;&#x63A5;&#x8FD1;0&#xFF09;&#x3002;&#x7A00;&#x758F;&#x6027;&#x5DF2;&#x7ECF;&#x88AB;&#x5F88;&#x6210;&#x529F;&#x7684;&#x53D1;&#x6325;&#x4E86;<a href="http://deeplearning.net/tutorial/references.html#ranzato07" target="_blank">Ranzato07</a><a href="http://deeplearning.net/tutorial/references.html#lee08" target="_blank">Lee08</a>&#x3002;&#x53E6;&#x4E00;&#x4E2A;&#x662F;&#xFF0C;&#x5728;&#x8F93;&#x5165;&#x5230;&#x91CD;&#x5EFA;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x589E;&#x52A0;&#x4ECE;&#x8F93;&#x5165;&#x5230;&#x91CD;&#x5EFA;&#x7684;&#x8F6C;&#x6362;&#x4E2D;&#x7684;&#x968F;&#x673A;&#x6027;&#x3002;&#x8FD9;&#x4E2A;&#x6280;&#x672F;&#x5728;&#x53D7;&#x9650;&#x73BB;&#x5C14;&#x5179;&#x66FC;&#x673A;&#x4E2D;&#x88AB;&#x4F7F;&#x7528;&#xFF08;Restricted Boltzmann Machines&#xFF0C;&#x5728;&#x540E;&#x9762;&#x7684;&#x7AE0;&#x8282;&#x4E2D;&#x8BA8;&#x8BBA;&#xFF09;&#xFF0C;&#x8FD8;&#x6709;&#x964D;&#x566A;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;&#xFF0C;&#x5728;&#x540E;&#x9762;&#x8BA8;&#x8BBA;&#x3002;</p>
+<h2 id="&#x964D;&#x566A;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;">&#x964D;&#x566A;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;</h2>
+<p>&#x964D;&#x566A;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;&#x7684;&#x601D;&#x60F3;&#x662F;&#x5F88;&#x7B80;&#x5355;&#x997F;&#x3002;&#x4E3A;&#x4E86;&#x8FEB;&#x4F7F;&#x9690;&#x85CF;&#x5C42;&#x53BB;&#x53D1;&#x73B0;&#x66F4;&#x52A0;&#x9C81;&#x68D2;&#x6027;&#x7684;&#x7279;&#x5F81;&#xFF0C;&#x907F;&#x514D;&#x5B83;&#x53EA;&#x662F;&#x53BB;&#x7B80;&#x5355;&#x7684;&#x5B66;&#x4E60;&#x5B9A;&#x4E49;&#xFF0C;&#x6211;&#x4EEC;&#x8BAD;&#x7EC3;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;&#x53BB;&#x91CD;&#x5EFA;&#x88AB;&#x7834;&#x574F;&#x7684;&#x8F93;&#x5165;&#x7248;&#x672C;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x964D;&#x566A;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;&#x662F;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;&#x7684;&#x968F;&#x673A;&#x7248;&#x672C;&#x3002;&#x76F4;&#x89C2;&#x4E0A;&#x8BB2;&#xFF0C;&#x4E00;&#x4E2A;&#x964D;&#x566A;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;&#x505A;2&#x4EF6;&#x4E8B;&#x60C5;&#xFF1A;&#x5C1D;&#x8BD5;&#x5BF9;&#x8F93;&#x5165;&#x8FDB;&#x884C;&#x7F16;&#x7801;&#xFF08;&#x4FDD;&#x62A4;&#x8F93;&#x5165;&#x4FE1;&#x606F;&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x5C1D;&#x8BD5;&#x53BB;&#x6D88;&#x9664;&#x8F93;&#x5165;&#x4E2D;&#x7684;&#x968F;&#x673A;&#x5DEE;&#x9519;&#x4EA7;&#x751F;&#x7684;&#x5F71;&#x54CD;&#x3002;&#x540E;&#x8005;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6355;&#x6349;&#x8F93;&#x5165;&#x95F4;&#x7684;&#x7EDF;&#x8BA1;&#x76F8;&#x5173;&#x6027;&#x6765;&#x5B9E;&#x73B0;&#x3002;&#x964D;&#x566A;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;&#x53EF;&#x4EE5;&#x4ECE;&#x4E0D;&#x5230;&#x7684;&#x89D2;&#x5EA6;&#x6765;&#x7406;&#x89E3;&#xFF08;&#x6D41;&#x884C;&#x5B66;&#x4E60;&#x89D2;&#x5EA6;&#xFF0C;&#x968F;&#x673A;&#x64CD;&#x4F5C;&#x89D2;&#x5EA6;&#xFF0C;&#x81EA;&#x4E0B;&#x800C;&#x4E0A;&#x7684;&#x4FE1;&#x606F;&#x8BBA;&#x89D2;&#x5EA6;&#xFF0C;&#x81EA;&#x4E0A;&#x800C;&#x4E0B;&#x7684;&#x751F;&#x6210;&#x6A21;&#x578B;&#x89D2;&#x5EA6;&#xFF09;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x8FD9;&#x4E9B;&#x5728;<a href="http://deeplearning.net/tutorial/references.html#vincent08" target="_blank">Vincent08</a>&#x4E2D;&#x88AB;&#x89E3;&#x91CA;&#x3002;&#x5728;<a href="http://deeplearning.net/tutorial/references.html#bengio09" target="_blank">Bengio09</a>&#x7684;&#x7B2C;7.2&#x8282;&#x6709;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;&#x7684;&#x7EFC;&#x8FF0;&#x3002;</p>
+<p>&#x5728;<a href="http://deeplearning.net/tutorial/references.html#vincent08" target="_blank">Vincent08</a>&#x4E2D;&#xFF0C;&#x968F;&#x673A;&#x5DEE;&#x9519;&#x8FDB;&#x7A0B;&#x968F;&#x673A;&#x7684;&#x8BBE;&#x5B9A;&#x90E8;&#x5206;&#xFF08;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x534A;&#xFF09;&#x8F93;&#x5165;&#x4E3A;0&#x3002;&#x56E0;&#x6B64;&#x964D;&#x566A;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;&#x5C1D;&#x8BD5;&#x53BB;&#x4ECE;&#x672A;&#x88AB;&#x6C61;&#x67D3;&#x7684;&#x503C;&#x4E2D;&#x53BB;&#x9884;&#x6D4B;&#x88AB;&#x6C61;&#x67D3;&#x7684;&#xFF08;&#x4E22;&#x5931;&#xFF09;&#x7684;&#x503C;&#xFF0C;&#x901A;&#x8FC7;&#x968F;&#x673A;&#x7684;&#x9009;&#x62E9;&#x4E22;&#x5931;&#x6A21;&#x5F0F;&#x4E0B;&#x7684;&#x4ED4;&#x9E21;&#x3002;&#x6CE8;&#x610F;&#x5982;&#x4F55;&#x80FD;&#x9884;&#x6D4B;&#x4ECE;&#x5269;&#x4E0B;&#x7684;&#x53D8;&#x91CF;&#x7684;&#x4EFB;&#x610F;&#x5B50;&#x96C6;&#x662F;&#x4E00;&#x4E2A;&#x5145;&#x5206;&#x6761;&#x4EF6;&#xFF0C;&#x53BB;&#x5B8C;&#x5168;&#x6355;&#x83B7;&#x4E00;&#x7EC4;&#x53D8;&#x91CF;&#x4E4B;&#x95F4;&#x7684;&#x8054;&#x5408;&#x5206;&#x5E03;&#xFF08;&#x8FD9;&#x662F;Gibbs&#x91C7;&#x6837;&#x5DE5;&#x4F5C;&#xFF09;&#x3002;</p>
+<p>&#x4ECE;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;&#x7684;&#x7C7B;&#x8F6C;&#x6362;&#x4E3A;&#x964D;&#x566A;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x53BB;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x8BEF;&#x5DEE;&#x6B65;&#x9AA4;&#x53BB;&#x5E94;&#x7528;&#x5230;&#x8F93;&#x5165;&#x4E2D;&#x3002;&#x8FD9;&#x4E2A;&#x8F93;&#x5165;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BB8;&#x591A;&#x65B9;&#x6CD5;&#x6765;&#x6C61;&#x67D3;&#xFF0C;&#x4F46;&#x5728;&#x8FD9;&#x4E2A;&#x6559;&#x7A0B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x652F;&#x6301;&#x4EE5;&#x8F93;&#x5165;&#x7684;&#x968F;&#x673A;&#x6027;&#x6765;&#x8150;&#x5316;&#x539F;&#x59CB;&#x6570;&#x636E;&#xFF0C;&#x4F7F;&#x5B83;&#x8D8B;&#x5411;&#x4E8E;0&#x3002;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-Python"><span class="hljs-keyword">from</span> theano.tensor.shared_randomstreams <span class="hljs-keyword">import</span> RandomStreams
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_corrupted_input</span><span class="hljs-params">(self, input, corruption_level)</span>:</span>
+      <span class="hljs-string">&quot;&quot;&quot; This function keeps ``1-corruption_level`` entries of the inputs the same
+      and zero-out randomly selected subset of size ``coruption_level``
+      Note : first argument of theano.rng.binomial is the shape(size) of
+             random numbers that it should produce
+             second argument is the number of trials
+             third argument is the probability of success of any trial
+
+              this will produce an array of 0s and 1s where 1 has a probability of
+              1 - ``corruption_level`` and 0 with ``corruption_level``
+      &quot;&quot;&quot;</span>
+      <span class="hljs-keyword">return</span>  self.theano_rng.binomial(size=input.shape, n=<span class="hljs-number">1</span>, p=<span class="hljs-number">1</span> - corruption_level) * input
+</code></pre>
+<p>&#x5728;&#x5C42;&#x53E0;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;&#x7C7B;(<a href="http://deeplearning.net/tutorial/SdA.html#stacked-autoencoders" target="_blank">&#x5C42;&#x53E0;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;</a>)&#x4E2D;&#xFF0C;<code>dA</code>&#x7C7B;&#x4E2D;&#x7684;&#x6743;&#x503C;&#x4E0D;&#x5F97;&#x4E0D;&#x548C;&#x76F8;&#x5E94;&#x7684;sigmoid&#x5C42;&#x5171;&#x4EAB;&#x3002;&#x56E0;&#x4E3A;&#x8FD9;&#x4E2A;&#x539F;&#x56E0;&#xFF0C;dA&#x7684;&#x6784;&#x5EFA;&#x4E5F;&#x5C06;Theano&#x53D8;&#x91CF;&#x6307;&#x5411;&#x4E86;&#x5171;&#x4EAB;&#x53C2;&#x6570;&#x3002;&#x5047;&#x5982;&#x8FD9;&#x4E9B;&#x53C2;&#x6570;&#x88AB;&#x8BBE;&#x7F6E;&#x4E3A;<code>None</code>&#xFF0C;&#x65B0;&#x7684;&#x53C2;&#x6570;&#x4F1A;&#x88AB;&#x6784;&#x5EFA;&#x3002;</p>
+<p>&#x6700;&#x540E;&#x7684;&#x964D;&#x566A;&#x81EA;&#x52A8;&#x7F16;&#x7801;&#x673A;&#x7C7B;&#x5C31;&#x53D8;&#x6210;&#x4E86;&#x8FD9;&#x6837;&#xFF1A;</p>
+<pre><code class="lang-Python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">dA</span><span class="hljs-params">(object)</span>:</span>
+   <span class="hljs-string">&quot;&quot;&quot;Denoising Auto-Encoder class (dA)
+
+   A denoising autoencoders tries to reconstruct the input from a corrupted
+   version of it by projecting it first in a latent space and reprojecting
+   it afterwards back in the input space. Please refer to Vincent et al.,2008
+   for more details. If x is the input then equation (1) computes a partially
+   destroyed version of x by means of a stochastic mapping q_D. Equation (2)
+   computes the projection of the input into the latent space. Equation (3)
+   computes the reconstruction of the input, while equation (4) computes the
+   reconstruction error.
+
+   .. math::
+
+       \tilde{x} ~ q_D(\tilde{x}|x)                                     (1)
+
+       y = s(W \tilde{x} + b)                                           (2)
+
+       x = s(W&apos; y  + b&apos;)                                                (3)
+
+       L(x,z) = -sum_{k=1}^d [x_k \log z_k + (1-x_k) \log( 1-z_k)]      (4)
+
+   &quot;&quot;&quot;</span>
+
+   <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, numpy_rng, theano_rng=None, input=None, n_visible=<span class="hljs-number">784</span>, n_hidden=<span class="hljs-number">500</span>,
+              W=None, bhid=None, bvis=None)</span>:</span>
+       <span class="hljs-string">&quot;&quot;&quot;
+       Initialize the dA class by specifying the number of visible units (the
+       dimension d of the input ), the number of hidden units ( the dimension
+       d&apos; of the latent or hidden space ) and the corruption level. The
+       constructor also receives symbolic variables for the input, weights and
+       bias. Such a symbolic variables are useful when, for example the input is
+       the result of some computations, or when weights are shared between the
+       dA and an MLP layer. When dealing with SdAs this always happens,
+       the dA on layer 2 gets as input the output of the dA on layer 1,
+       and the weights of the dA are used in the second stage of training
+       to construct an MLP.
+
+       :type numpy_rng: numpy.random.RandomState
+       :param numpy_rng: number random generator used to generate weights
+
+       :type theano_rng: theano.tensor.shared_randomstreams.RandomStreams
+       :param theano_rng: Theano random generator; if None is given one is generated
+                    based on a seed drawn from `rng`
+
+       :type input: theano.tensor.TensorType
+       :paran input: a symbolic description of the input or None for standalone
+                     dA
+
+       :type n_visible: int
+       :param n_visible: number of visible units
+
+       :type n_hidden: int
+       :param n_hidden:  number of hidden units
+
+       :type W: theano.tensor.TensorType
+       :param W: Theano variable pointing to a set of weights that should be
+                 shared belong the dA and another architecture; if dA should
+                 be standalone set this to None
+
+       :type bhid: theano.tensor.TensorType
+       :param bhid: Theano variable pointing to a set of biases values (for
+                    hidden units) that should be shared belong dA and another
+                    architecture; if dA should be standalone set this to None
+
+       :type bvis: theano.tensor.TensorType
+       :param bvis: Theano variable pointing to a set of biases values (for
+                    visible units) that should be shared belong dA and another
+                    architecture; if dA should be standalone set this to None
+
+
+       &quot;&quot;&quot;</span>
+       self.n_visible = n_visible
+       self.n_hidden = n_hidden
+
+       <span class="hljs-comment"># create a Theano random generator that gives symbolic random values</span>
+       <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> theano_rng :
+           theano_rng = RandomStreams(rng.randint(<span class="hljs-number">2</span> ** <span class="hljs-number">30</span>))
+
+       <span class="hljs-comment"># note : W&apos; was written as `W_prime` and b&apos; as `b_prime`</span>
+       <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> W:
+           <span class="hljs-comment"># W is initialized with `initial_W` which is uniformely sampled</span>
+           <span class="hljs-comment"># from -4.*sqrt(6./(n_visible+n_hidden)) and 4.*sqrt(6./(n_hidden+n_visible))</span>
+           <span class="hljs-comment"># the output of uniform if converted using asarray to dtype</span>
+           <span class="hljs-comment"># theano.config.floatX so that the code is runable on GPU</span>
+           initial_W = numpy.asarray(numpy_rng.uniform(
+                     low=<span class="hljs-number">-4</span> * numpy.sqrt(<span class="hljs-number">6.</span> / (n_hidden + n_visible)),
+                     high=<span class="hljs-number">4</span> * numpy.sqrt(<span class="hljs-number">6.</span> / (n_hidden + n_visible)),
+                     size=(n_visible, n_hidden)), dtype=theano.config.floatX)
+           W = theano.shared(value=initial_W, name=<span class="hljs-string">&apos;W&apos;</span>)
+
+       <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> bvis:
+           bvis = theano.shared(value = numpy.zeros(n_visible,
+                                        dtype=theano.config.floatX), name=<span class="hljs-string">&apos;bvis&apos;</span>)
+
+       <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> bhid:
+           bhid = theano.shared(value=numpy.zeros(n_hidden,
+                                             dtype=theano.config.floatX), name=<span class="hljs-string">&apos;bhid&apos;</span>)
+
+       self.W = W
+       <span class="hljs-comment"># b corresponds to the bias of the hidden</span>
+       self.b = bhid
+       <span class="hljs-comment"># b_prime corresponds to the bias of the visible</span>
+       self.b_prime = bvis
+       <span class="hljs-comment"># tied weights, therefore W_prime is W transpose</span>
+       self.W_prime = self.W.T
+       self.theano_rng = theano_rng
+       <span class="hljs-comment"># if no input is given, generate a variable representing the input</span>
+       <span class="hljs-keyword">if</span> input == <span class="hljs-keyword">None</span>:
+           <span class="hljs-comment"># we use a matrix because we expect a minibatch of several examples,</span>
+           <span class="hljs-comment"># each example being a row</span>
+           self.x = T.dmatrix(name=<span class="hljs-string">&apos;input&apos;</span>)
+       <span class="hljs-keyword">else</span>:
+           self.x = input
+
+       self.params = [self.W, self.b, self.b_prime]
+
+   <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_corrupted_input</span><span class="hljs-params">(self, input, corruption_level)</span>:</span>
+       <span class="hljs-string">&quot;&quot;&quot; This function keeps ``1-corruption_level`` entries of the inputs the same
+       and zero-out randomly selected subset of size ``coruption_level``
+       Note : first argument of theano.rng.binomial is the shape(size) of
+              random numbers that it should produce
+              second argument is the number of trials
+              third argument is the probability of success of any trial
+
+               this will produce an array of 0s and 1s where 1 has a probability of
+               1 - ``corruption_level`` and 0 with ``corruption_level``
+       &quot;&quot;&quot;</span>
+       <span class="hljs-keyword">return</span>  self.theano_rng.binomial(size=input.shape, n=<span class="hljs-number">1</span>, p=<span class="hljs-number">1</span> - corruption_level) * input
+
+
+   <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_hidden_values</span><span class="hljs-params">(self, input)</span>:</span>
+       <span class="hljs-string">&quot;&quot;&quot; Computes the values of the hidden layer &quot;&quot;&quot;</span>
+       <span class="hljs-keyword">return</span> T.nnet.sigmoid(T.dot(input, self.W) + self.b)
+
+   <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_reconstructed_input</span><span class="hljs-params">(self, hidden )</span>:</span>
+       <span class="hljs-string">&quot;&quot;&quot; Computes the reconstructed input given the values of the hidden layer &quot;&quot;&quot;</span>
+       <span class="hljs-keyword">return</span>  T.nnet.sigmoid(T.dot(hidden, self.W_prime) + self.b_prime)
+
+   <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_cost_updates</span><span class="hljs-params">(self, corruption_level, learning_rate)</span>:</span>
+       <span class="hljs-string">&quot;&quot;&quot; This function computes the cost and the updates for one trainng
+       step of the dA &quot;&quot;&quot;</span>
+
+       tilde_x = self.get_corrupted_input(self.x, corruption_level)
+       y = self.get_hidden_values( tilde_x)
+       z = self.get_reconstructed_input(y)
+       <span class="hljs-comment"># note : we sum over the size of a datapoint; if we are using minibatches,</span>
+       <span class="hljs-comment">#        L will  be a vector, with one entry per example in minibatch</span>
+       L = -T.sum(self.x * T.log(z) + (<span class="hljs-number">1</span> - self.x) * T.log(<span class="hljs-number">1</span> - z), axis=<span class="hljs-number">1</span> )
+       <span class="hljs-comment"># note : L is now a vector, where each element is the cross-entropy cost</span>
+       <span class="hljs-comment">#        of the reconstruction of the corresponding example of the</span>
+       <span class="hljs-comment">#        minibatch. We need to compute the average of all these to get</span>
+       <span class="hljs-comment">#        the cost of the minibatch</span>
+       cost = T.mean(L)
+
+       <span class="hljs-comment"># compute the gradients of the cost of the `dA` with respect</span>
+       <span class="hljs-comment"># to its parameters</span>
+       gparams = T.grad(cost, self.params)
+       <span class="hljs-comment"># generate the list of updates</span>
+       updates = []
+       <span class="hljs-keyword">for</span> param, gparam <span class="hljs-keyword">in</span> zip(self.params, gparams):
+           updates.append((param, param - learning_rate * gparam))
+
+       <span class="hljs-keyword">return</span> (cost, updates)
+</code></pre>
+<h2 id="&#x5C06;&#x5B83;&#x7EC4;&#x5408;&#x8D77;&#x6765;">&#x5C06;&#x5B83;&#x7EC4;&#x5408;&#x8D77;&#x6765;</h2>
+<p>&#x73B0;&#x5728;&#x53BB;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;<code>dA</code>&#x7C7B;&#x548C;&#x8BAD;&#x7EC3;&#x5B83;&#x53D8;&#x5F97;&#x5F88;&#x7B80;&#x5355;&#x4E86;&#x3002;</p>
+<pre><code class="lang-Python"><span class="hljs-comment"># allocate symbolic variables for the data</span>
+index = T.lscalar()  <span class="hljs-comment"># index to a [mini]batch</span>
+x = T.matrix(<span class="hljs-string">&apos;x&apos;</span>)  <span class="hljs-comment"># the data is presented as rasterized images</span>
+
+<span class="hljs-comment">######################</span>
+<span class="hljs-comment"># BUILDING THE MODEL #</span>
+<span class="hljs-comment">######################</span>
+
+rng = numpy.random.RandomState(<span class="hljs-number">123</span>)
+theano_rng = RandomStreams(rng.randint(<span class="hljs-number">2</span> ** <span class="hljs-number">30</span>))
+
+da = dA(numpy_rng=rng, theano_rng=theano_rng, input=x,
+        n_visible=<span class="hljs-number">28</span> * <span class="hljs-number">28</span>, n_hidden=<span class="hljs-number">500</span>)
+
+cost, updates = da.get_cost_updates(corruption_level=<span class="hljs-number">0.2</span>,
+                            learning_rate=learning_rate)
+
+
+train_da = theano.function([index], cost, updates=updates,
+     givens = {x: train_set_x[index * batch_size: (index + <span class="hljs-number">1</span>) * batch_size]})
+
+start_time = time.clock()
+
+<span class="hljs-comment">############</span>
+<span class="hljs-comment"># TRAINING #</span>
+<span class="hljs-comment">############</span>
+
+<span class="hljs-comment"># go through training epochs</span>
+<span class="hljs-keyword">for</span> epoch <span class="hljs-keyword">in</span> xrange(training_epochs):
+    <span class="hljs-comment"># go through trainng set</span>
+    c = []
+    <span class="hljs-keyword">for</span> batch_index <span class="hljs-keyword">in</span> xrange(n_train_batches):
+        c.append(train_da(batch_index))
+
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;Training epoch %d, cost &apos;</span> % epoch, numpy.mean(c)
+
+end_time = time.clock
+
+training_time = (end_time - start_time)
+
+<span class="hljs-keyword">print</span> (<span class="hljs-string">&apos;Training took %f minutes&apos;</span> % (pretraining_time / <span class="hljs-number">60.</span>))
+</code></pre>
+<p>&#x4E3A;&#x4E86;&#x4E86;&#x89E3;&#x7F51;&#x7EDC;&#x5B66;&#x4E60;&#x4E86;&#x4EC0;&#x4E48;&#x4E1C;&#x897F;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4F1A;&#x63CF;&#x8FF0;&#x51FA;&#x6EE4;&#x6CE2;&#x5668;&#xFF08;&#x901A;&#x8FC7;&#x6743;&#x503C;&#x77E9;&#x9635;&#x6765;&#x5B9A;&#x4E49;&#xFF09;&#x3002;&#x8BB0;&#x4F4F;&#xFF0C;&#x4E8B;&#x5B9E;&#x4E0A;&#x5B83;&#x6CA1;&#x6709;&#x63D0;&#x4F9B;&#x5B8C;&#x6574;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x5FFD;&#x7565;&#x4E86;&#x504F;&#x7F6E;&#xFF0C;&#x5E76;&#x4E14;&#x753B;&#x51FA;&#x7684;&#x6743;&#x503C;&#x88AB;&#x4E58;&#x4EE5;&#x4E86;&#x5E38;&#x6570;&#xFF08;&#x6743;&#x503C;&#x88AB;&#x8F6C;&#x6362;&#x5230;&#x4E86;0-1&#x4E4B;&#x95F4;&#xFF09;&#x3002;</p>
+<p>&#x53BB;&#x753B;&#x51FA;&#x6211;&#x4EEC;&#x7684;&#x6EE4;&#x6CE2;&#x5668;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;<code>title_raster_images</code>(&#x770B;<a href="http://deeplearning.net/tutorial/utilities.html#how-to-plot" target="_blank">Plotting Samples and Filters</a>)&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5F3A;&#x70C8;&#x5EFA;&#x8BAE;&#x8BFB;&#x8005;&#x53BB;&#x4E86;&#x89E3;&#x5B83;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x4E5F;&#x5728;PIL(python image library)&#x7684;&#x5E2E;&#x52A9;&#x4E0B;&#xFF0C;&#x4E0B;&#x9762;&#x884C;&#x7684;&#x4EE3;&#x7801;&#x5C06;&#x628A;&#x6EE4;&#x6CE2;&#x5668;&#x4FDD;&#x5B58;&#x4E3A;&#x56FE;&#x50CF;&#xFF1A;</p>
+<pre><code class="lang-Python">image = Image.fromarray(tile_raster_images(X=da.W.get_value(borrow=<span class="hljs-keyword">True</span>).T,
+             img_shape=(<span class="hljs-number">28</span>, <span class="hljs-number">28</span>), tile_shape=(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>),
+             tile_spacing=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>)))
+image.save(<span class="hljs-string">&apos;filters_corruption_30.png&apos;</span>)
+</code></pre>
+<h2 id="&#x8FD0;&#x884C;&#x8FD9;&#x4E2A;&#x4EE3;&#x7801;">&#x8FD0;&#x884C;&#x8FD9;&#x4E2A;&#x4EE3;&#x7801;</h2>
+<p>&#x5F53;&#x6211;&#x4EEC;&#x4E0D;&#x4F7F;&#x7528;&#x4EFB;&#x4F55;&#x566A;&#x58F0;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x83B7;&#x5F97;&#x7684;&#x6EE4;&#x6CE2;&#x5668;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="images/5_running_code_1.png" alt="filter_not_nosie"></p>
+<p>&#x6709;30%&#x566A;&#x58F0;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6EE4;&#x6CE2;&#x5668;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="images/5_running_code_2.png" alt="filter_with_nosie"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="4_Convoltional_Neural_Networks_LeNet_卷积神经网络.html" class="navigation navigation-prev " aria-label="Previous page: 4.卷积神经网络">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="6_Stacked_Denoising_Autoencoders_层叠降噪自动编码机.html" class="navigation navigation-next " aria-label="Next page: 6.层叠降噪自动编码机">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"5.降噪自动编码","level":"1.6","depth":1,"next":{"title":"6.层叠降噪自动编码机","level":"1.7","depth":1,"path":"6_Stacked_Denoising_Autoencoders_层叠降噪自动编码机.md","ref":"6_Stacked_Denoising_Autoencoders_层叠降噪自动编码机.md","articles":[]},"previous":{"title":"4.卷积神经网络","level":"1.5","depth":1,"path":"4_Convoltional_Neural_Networks_LeNet_卷积神经网络.md","ref":"4_Convoltional_Neural_Networks_LeNet_卷积神经网络.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"5_Denoising_Autoencoders_降噪自动编码.md","mtime":"2017-07-12T16:21:46.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-10T15:44:26.709Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

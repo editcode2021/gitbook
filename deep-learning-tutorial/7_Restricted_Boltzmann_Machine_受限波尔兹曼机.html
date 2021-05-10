@@ -1,0 +1,666 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>7.受限波尔兹曼机 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="6_Stacked_Denoising_Autoencoders_层叠降噪自动编码机.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="1_Getting_Started_入门.html">
+            
+                <a href="1_Getting_Started_入门.html">
+            
+                    
+                    1.入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2_Classifying_MNIST_using_LR_逻辑回归进行MNIST分类.html">
+            
+                <a href="2_Classifying_MNIST_using_LR_逻辑回归进行MNIST分类.html">
+            
+                    
+                    2.逻辑回归进行MNIST分类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="3_Multilayer_Perceptron_多层感知机.html">
+            
+                <a href="3_Multilayer_Perceptron_多层感知机.html">
+            
+                    
+                    3.多层感知机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="4_Convoltional_Neural_Networks_LeNet_卷积神经网络.html">
+            
+                <a href="4_Convoltional_Neural_Networks_LeNet_卷积神经网络.html">
+            
+                    
+                    4.卷积神经网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="5_Denoising_Autoencoders_降噪自动编码.html">
+            
+                <a href="5_Denoising_Autoencoders_降噪自动编码.html">
+            
+                    
+                    5.降噪自动编码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="6_Stacked_Denoising_Autoencoders_层叠降噪自动编码机.html">
+            
+                <a href="6_Stacked_Denoising_Autoencoders_层叠降噪自动编码机.html">
+            
+                    
+                    6.层叠降噪自动编码机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8" data-path="7_Restricted_Boltzmann_Machine_受限波尔兹曼机.html">
+            
+                <a href="7_Restricted_Boltzmann_Machine_受限波尔兹曼机.html">
+            
+                    
+                    7.受限波尔兹曼机
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >7.受限波尔兹曼机</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x53D7;&#x9650;&#x6CE2;&#x5C14;&#x5179;&#x66FC;&#x673A;&#xFF08;restricted-boltzmann-machines&#xFF09;">&#x53D7;&#x9650;&#x6CE2;&#x5C14;&#x5179;&#x66FC;&#x673A;&#xFF08;Restricted Boltzmann Machines&#xFF09;</h1>
+<p>&#x5728;&#x8FD9;&#x4E00;&#x7AE0;&#x8282;&#xFF0C;&#x6211;&#x4EEC;&#x5047;&#x8BBE;&#x8BFB;&#x8005;&#x5DF2;&#x7ECF;&#x9605;&#x8BFB;&#x4E86;<a href="https://github.com/Syndrome777/DeepLearningTutorial/blob/master/2_Classifying_MNIST_using_LR_&#x903B;&#x8F91;&#x56DE;&#x5F52;&#x8FDB;&#x884C;MNIST&#x5206;&#x7C7B;.md" target="_blank">&#x4F7F;&#x7528;&#x903B;&#x8F91;&#x56DE;&#x5F52;&#x8FDB;&#x884C;MNIST&#x5206;&#x7C7B;</a>&#x548C;<a href="https://github.com/Syndrome777/DeepLearningTutorial/blob/master/3_Multilayer_Perceptron_&#x591A;&#x5C42;&#x611F;&#x77E5;&#x673A;.md" target="_blank">&#x591A;&#x5C42;&#x611F;&#x77E5;&#x673A;</a>&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x5047;&#x5982;&#x4F60;&#x8981;&#x4F7F;&#x7528;GPU&#x6765;&#x8FD0;&#x884C;&#x4EE3;&#x7801;&#xFF0C;&#x4F60;&#x8FD8;&#x9700;&#x8981;&#x9605;&#x8BFB;<a href="http://deeplearning.net/software/theano/tutorial/using_gpu.html" target="_blank">GPU</a>&#x3002;</p>
+<p>&#x672C;&#x8282;&#x7684;&#x6240;&#x6709;&#x4EE3;&#x7801;&#x90FD;&#x53EF;&#x4EE5;&#x5728;<a href="http://deeplearning.net/tutorial/code/rbm.py" target="_blank">&#x8FD9;&#x91CC;</a>&#x4E0B;&#x8F7D;&#x3002;</p>
+<h2 id="&#x57FA;&#x4E8E;&#x80FD;&#x91CF;&#x6A21;&#x578B;&#xFF08;energy-based-models&#xFF09;">&#x57FA;&#x4E8E;&#x80FD;&#x91CF;&#x6A21;&#x578B;&#xFF08;Energy-Based Models&#xFF09;</h2>
+<p>&#x57FA;&#x4E8E;&#x80FD;&#x91CF;&#x7684;&#x6A21;&#x578B;&#xFF08;EBM&#xFF09;&#x628A;&#x6211;&#x4EEC;&#x6240;&#x5173;&#x5FC3;&#x53D8;&#x91CF;&#x7684;&#x5404;&#x79CD;&#x7EC4;&#x5408;&#x548C;&#x4E00;&#x4E2A;&#x6807;&#x91CF;&#x80FD;&#x91CF;&#x8054;&#x7CFB;&#x5728;&#x4E00;&#x8D77;&#x3002;&#x8BAD;&#x7EC3;&#x6A21;&#x578B;&#x7684;&#x8FC7;&#x7A0B;&#x5C31;&#x662F;&#x4E0D;&#x65AD;&#x6539;&#x53D8;&#x6807;&#x91CF;&#x80FD;&#x91CF;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x4F7F;&#x5176;&#x80FD;&#x91CF;&#x51FD;&#x6570;&#x7684;&#x5F62;&#x72B6;&#x6EE1;&#x8DB3;&#x671F;&#x671B;&#x7684;&#x5F62;&#x72B6;&#x3002;&#x6BD4;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x7EC4;&#x5408;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x5408;&#x7406;&#x7684;&#xFF0C;&#x5B83;&#x540C;&#x65F6;&#x4E5F;&#x5177;&#x6709;&#x8F83;&#x5C0F;&#x7684;&#x80FD;&#x91CF;&#x3002;&#x57FA;&#x4E8E;&#x80FD;&#x91CF;&#x7684;&#x6982;&#x7387;&#x6A21;&#x578B;&#x901A;&#x8FC7;&#x80FD;&#x91CF;&#x51FD;&#x6570;&#x6765;&#x5B9A;&#x4E49;&#x6982;&#x7387;&#x5206;&#x5E03;&#xFF1A;</p>
+<p><img src="images/7_ebm_1.png" alt="energy_fun"></p>
+<p>&#x5176;&#x4E2D;&#x5F52;&#x4E00;&#x5316;&#x56E0;&#x5B50;Z&#x88AB;&#x79F0;&#x4E3A;&#x5206;&#x5272;&#x51FD;&#x6570;&#xFF1A;</p>
+<p><img src="images/7_ebm_2.png" alt="Z_fun"></p>
+<p>&#x57FA;&#x4E8E;&#x80FD;&#x91CF;&#x7684;&#x6A21;&#x578B;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x4F7F;&#x7528;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6216;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x5B66;&#x4E60;&#xFF0C;&#x5177;&#x4F53;&#x800C;&#x8A00;&#xFF0C;&#x5C31;&#x662F;&#x4EE5;&#x5148;&#x9A8C;&#xFF08;&#x8BAD;&#x7EC3;&#x96C6;&#xFF09;&#x7684;&#x8D1F;&#x5BF9;&#x6570;&#x4F3C;&#x7136;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x635F;&#x5931;&#x51FD;&#x6570;&#xFF0C;&#x5C31;&#x50CF;&#x5728;&#x903B;&#x8F91;&#x56DE;&#x5F52;&#x4E2D;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x7684;&#x90A3;&#x6837;&#xFF0C;</p>
+<p><img src="images/7_ebm_3.png" alt="loss_fun"></p>
+<p>&#x5176;&#x4E2D;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E3A;<img src="images/7_ebm_4.png" alt="gradient">&#xFF0C;&#x5176;&#x4E2D;theta&#x4E3A;&#x6A21;&#x578B;&#x7684;&#x53C2;&#x6570;&#x3002;</p>
+<h3 id="&#x5305;&#x542B;&#x9690;&#x85CF;&#x5355;&#x5143;&#x7684;ebms">&#x5305;&#x542B;&#x9690;&#x85CF;&#x5355;&#x5143;&#x7684;EBMs</h3>
+<p>&#x5728;&#x5F88;&#x591A;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x65E0;&#x6CD5;&#x89C2;&#x5BDF;&#x5230;x&#x6837;&#x672C;&#x7684;&#x5168;&#x90E8;&#x5206;&#x5E03;&#xFF0C;&#x6216;&#x8005;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5F15;&#x8FDB;&#x4E00;&#x4E9B;&#x6CA1;&#x6709;&#x89C2;&#x5BDF;&#x5230;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x4EE5;&#x589E;&#x52A0;&#x6A21;&#x578B;&#x7684;&#x8868;&#x8FBE;&#x80FD;&#x529B;&#x3002;&#x56E0;&#x800C;&#x6211;&#x4EEC;&#x8003;&#x8651;&#x5C06;&#x6A21;&#x578B;&#x5206;&#x4E3A;2&#x90E8;&#x5206;&#xFF0C;&#x4E00;&#x4E2A;&#x53EF;&#x89C1;&#x90E8;&#x5206;&#xFF08;x&#x7684;&#x89C2;&#x5BDF;&#x5206;&#x5E03;&#xFF09;&#x548C;&#x4E00;&#x4E2A;&#x9690;&#x85CF;&#x90E8;&#x5206;h&#xFF0C;&#x8FD9;&#x6837;&#x5F97;&#x5230;&#x7684;&#x5C31;&#x662F;&#x5305;&#x542B;&#x9690;&#x542B;&#x53D8;&#x91CF;&#x7684;EBM&#xFF1A;</p>
+<p><img src="images/7_ebm_hidden_units_1.png" alt="ebm_with_hidden_unit"></p>
+<p>&#x540C;&#x65F6;&#x6211;&#x4EEC;&#x53D7;&#x7269;&#x7406;&#x542F;&#x53D1;&#x5B9A;&#x4E49;&#x4E86;&#x81EA;&#x7531;&#x80FD;&#x91CF;&#xFF08;free energy&#xFF09;&#xFF1A;</p>
+<p><img src="images/7_ebm_hidden_units_2.png" alt="free_energy"></p>
+<p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5199;&#x6210;&#x5982;&#x4E0B;&#x516C;&#x5F0F;&#xFF1A;</p>
+<p><img src="images/7_ebm_hidden_units_3.png" alt="ebm_with_hidden_units_2"></p>
+<p>&#x6570;&#x636E;&#x7684;&#x670D;&#x5BF9;&#x6570;&#x4F3C;&#x7136;&#x51FD;&#x6570;&#x68AF;&#x5EA6;&#x5C31;&#x6709;&#x5982;&#x4E0B;&#x6709;&#x8DA3;&#x7684;&#x5F62;&#x5F0F;&#xFF1A;</p>
+<p><img src="images/7_ebm_hidden_units_4.png" alt="gradient_rbm_h"></p>
+<p>&#x63A8;&#x5012;&#x516C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="images/7_ebm_hidden_units_5.png" alt="gradient_rbm_h_2"></p>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#x4E0A;&#x8FF0;&#x7684;&#x68AF;&#x5EA6;&#x5305;&#x542B;2&#x4E2A;&#x9879;&#xFF0C;&#x5305;&#x62EC;&#x6B63;&#x76F8;&#x4F4D;&#x548C;&#x8D1F;&#x76F8;&#x4F4D;&#x3002;&#x6B63;&#x548C;&#x8D1F;&#x7684;&#x672F;&#x8BED;&#x4E0D;&#x6307;&#x516C;&#x5F0F;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x9879;&#x7684;&#x7B26;&#x53F7;&#xFF0C;&#x800C;&#x662F;&#x53CD;&#x6620;&#x5176;&#x5BF9;&#x6A21;&#x578B;&#x6240;&#x5B9A;&#x4E49;&#x7684;&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x7684;&#x5F71;&#x54CD;&#x3002;&#x7B2C;&#x4E00;&#x9879;&#x589E;&#x52A0;&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x7684;&#x6982;&#x7387;&#xFF08;&#x901A;&#x8FC7;&#x51CF;&#x5C11;&#x76F8;&#x5173;&#x7684;&#x81EA;&#x7531;&#x80FD;&#x91CF;&#xFF09;&#xFF0C;&#x800C;&#x7B2C;&#x4E8C;&#x9879;&#x51CF;&#x5C0F;&#x6A21;&#x578B;&#x4EA7;&#x751F;&#x7684;&#x6837;&#x672C;&#x7684;&#x6982;&#x7387;&#x3002;</p>
+<p>&#x901A;&#x5E38;&#x6211;&#x4EEC;&#x5F88;&#x96BE;&#x7CBE;&#x786E;&#x8BA1;&#x7B97;&#x8FD9;&#x4E2A;&#x68AF;&#x5EA6;&#xFF0C;&#x56E0;&#x4E3A;&#x5F0F;&#x4E2D;&#x7B2C;&#x4E00;&#x9879;&#x6D89;&#x53CA;&#x5230;&#x53EF;&#x89C1;&#x5355;&#x5143;&#x4E0E;&#x9690;&#x542B;&#x5355;&#x5143;&#x7684;&#x8054;&#x5408;&#x5206;&#x5E03;&#xFF0C;&#x7531;&#x4E8E;&#x5F52;&#x4E00;&#x5316;&#x56E0;&#x5B50;Z(&#x3B8;)&#x7684;&#x5B58;&#x5728;&#xFF0C;&#x8BE5;&#x5206;&#x5E03;&#x5F88;&#x96BE;&#x83B7;&#x53D6;&#x3002; &#x6211;&#x4EEC;&#x53EA;&#x80FD;&#x901A;&#x8FC7;&#x4E00;&#x4E9B;&#x91C7;&#x6837;&#x65B9;&#x6CD5;&#xFF08;&#x5982;Gibbs&#x91C7;&#x6837;&#xFF09;&#x83B7;&#x53D6;&#x5176;&#x8FD1;&#x4F3C;&#x503C;&#xFF0C;&#x5176;&#x5177;&#x4F53;&#x65B9;&#x6CD5;&#x5C06;&#x5728;&#x540E;&#x6587;&#x4E2D;&#x8BE6;&#x8FF0;&#x3002;</p>
+<h2 id="&#x53D7;&#x9650;&#x6CE2;&#x5C14;&#x5179;&#x66FC;&#x673A;&#xFF08;rbm&#xFF09;">&#x53D7;&#x9650;&#x6CE2;&#x5C14;&#x5179;&#x66FC;&#x673A;&#xFF08;RBM&#xFF09;</h2>
+<p>&#x6CE2;&#x5C14;&#x5179;&#x66FC;&#x673A;&#x662F;&#x5BF9;&#x6570;&#x7EBF;&#x6027;&#x9A6C;&#x5C14;&#x53EF;&#x592B;&#x968F;&#x673A;&#x573A;&#xFF08;MRF&#xFF09;&#x7684;&#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x5F62;&#x5F0F;&#xFF0C;&#x4F8B;&#x5982;&#x8FD9;&#x4E2A;&#x80FD;&#x91CF;&#x51FD;&#x6570;&#x5728;&#x5B83;&#x7684;&#x81EA;&#x7531;&#x53C2;&#x6570;&#x4E0B;&#x662F;&#x7EBF;&#x6027;&#x7684;&#x3002;&#x4E3A;&#x4E86;&#x4F7F;&#x5F97;&#x5B83;&#x4EEC;&#x80FD;&#x66F4;&#x5F3A;&#x529B;&#x7684;&#x8868;&#x8FBE;&#x590D;&#x6742;&#x5206;&#x5E03;&#xFF08;&#x4ECE;&#x53D7;&#x9650;&#x7684;&#x53C2;&#x6570;&#x8BBE;&#x5B9A;&#x5230;&#x4E00;&#x4E2A;&#x975E;&#x53C2;&#x6570;&#x8BBE;&#x5B9A;&#xFF09;&#xFF0C;&#x6211;&#x4EEC;&#x8BA4;&#x4E3A;&#x4E00;&#x4E9B;&#x53D8;&#x91CF;&#x662F;&#x4E0D;&#x53EF;&#x89C1;&#x7684;&#xFF08;&#x88AB;&#x79F0;&#x4E3A;&#x9690;&#x85CF;&#xFF09;&#x3002;&#x901A;&#x8FC7;&#x62E5;&#x6709;&#x66F4;&#x591A;&#x9690;&#x85CF;&#x53D8;&#x91CF;&#xFF08;&#x4E5F;&#x79F0;&#x4E4B;&#x4E3A;&#x9690;&#x85CF;&#x5355;&#x5143;&#xFF09;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x589E;&#x52A0;&#x6CE2;&#x5C14;&#x5179;&#x66FC;&#x673A;&#x7684;&#x6A21;&#x578B;&#x5BB9;&#x91CF;&#x3002;&#x53D7;&#x9650;&#x6CE2;&#x5C14;&#x5179;&#x66FC;&#x673A;&#x9650;&#x5236;&#x6CE2;&#x5C14;&#x5179;&#x66FC;&#x673A;&#x53EF;&#x89C6;&#x5C42;&#x548C;&#x9690;&#x85CF;&#x5C42;&#x7684;&#x5C42;&#x5185;&#x8FDE;&#x63A5;&#x3002;RBM&#x6A21;&#x578B;&#x53EF;&#x4EE5;&#x7531;&#x4E0B;&#x56FE;&#x63CF;&#x8FF0;&#xFF1A;</p>
+<p><img src="images/7_rbm_1.png" alt="rbm_graph"></p>
+<p>RBM&#x7684;&#x80FD;&#x91CF;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x88AB;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="images/7_rbm_2.png" alt="rbm_energy_fun"></p>
+<p>&#x5176;&#x4E2D;&#x2019;&#x8868;&#x793A;&#x8F6C;&#x7F6E;&#xFF0C;b,c,W&#x4E3A;&#x6A21;&#x578B;&#x7684;&#x53C2;&#x6570;&#xFF0C;b,c&#x5206;&#x522B;&#x4E3A;&#x53EF;&#x89C1;&#x5C42;&#x548C;&#x9690;&#x542B;&#x5C42;&#x7684;&#x504F;&#x7F6E;&#xFF0C;W&#x4E3A;&#x53EF;&#x89C1;&#x5C42;&#x4E0E;&#x9690;&#x542B;&#x5C42;&#x7684;&#x94FE;&#x63A5;&#x6743;&#x91CD;&#x3002;</p>
+<p>&#x81EA;&#x7531;&#x80FD;&#x91CF;&#x4E3A;&#x5982;&#x4E0B;&#x5F62;&#x5F0F;&#xFF1A;</p>
+<p><img src="images/7_rbm_3.png" alt="free_energy_rbm"></p>
+<p>&#x7531;&#x4E8E;RBM&#x7684;&#x7279;&#x6B8A;&#x7ED3;&#x6784;&#xFF0C;&#x53EF;&#x89C6;&#x5C42;&#x548C;&#x9690;&#x85CF;&#x5C42;&#x5C42;&#x95F4;&#x5355;&#x5143;&#x662F;&#x76F8;&#x4E92;&#x72EC;&#x7ACB;&#x7684;&#x3002;&#x5229;&#x7528;&#x8FD9;&#x4E2A;&#x7279;&#x6027;&#xFF0C;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="images/7_rbm_4.png" alt="prob_rbm"></p>
+<h3 id="&#x4E8C;&#x8FDB;&#x5236;&#x5355;&#x5143;&#x7684;rbms">&#x4E8C;&#x8FDB;&#x5236;&#x5355;&#x5143;&#x7684;RBMs</h3>
+<p>&#x5728;&#x4F7F;&#x7528;&#x4E8C;&#x8FDB;&#x5236;&#x5355;&#x5143;&#xFF08;v&#x548C;h&#x90FD;&#x5C5E;&#x4E8E;{0,1}&#xFF09;&#x7684;&#x666E;&#x901A;&#x7814;&#x7A76;&#x60C5;&#x51B5;&#x65F6;&#xFF0C;&#x6982;&#x7387;&#x7248;&#x7684;&#x666E;&#x901A;&#x795E;&#x7ECF;&#x6FC0;&#x6D3B;&#x51FD;&#x6570;&#x8868;&#x793A;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="images/7_rbm_binary_units_1.png" alt="activation_fun"></p>
+<p><img src="images/7_rbm_binary_units_2.png" alt="activation_fun2"></p>
+<p>&#x4E8C;&#x8FDB;&#x5236;&#x5355;&#x5143;RBMs&#x7684;&#x81EA;&#x7531;&#x80FD;&#x529B;&#x4E3A;&#xFF1A;</p>
+<p><img src="images/7_rbm_binary_units_1.png" alt="free_energy_binary"></p>
+<h3 id="&#x4E8C;&#x8FDB;&#x5236;&#x5355;&#x5143;&#x7684;&#x66F4;&#x65B0;&#x516C;&#x5F0F;">&#x4E8C;&#x8FDB;&#x5236;&#x5355;&#x5143;&#x7684;&#x66F4;&#x65B0;&#x516C;&#x5F0F;</h3>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x83B7;&#x5F97;&#x5982;&#x4E0B;&#x7684;&#x4E00;&#x4E2A;&#x4E8C;&#x8FDB;&#x5236;&#x5355;&#x5143;RBM&#x7684;&#x5BF9;&#x6570;&#x4F3C;&#x7136;&#x68AF;&#x5EA6;&#xFF1A;</p>
+<p><img src="images/7_update_e_b_u_1.png" alt="equations"></p>
+<p>&#x8FD9;&#x4E2A;&#x516C;&#x5F0F;&#x7684;&#x66F4;&#x591A;&#x7EC6;&#x8282;&#x63A8;&#x5012;&#xFF0C;&#x8BFB;&#x8005;&#x53EF;&#x4EE5;&#x9605;&#x8BFB;<a href="http://www.iro.umontreal.ca/~lisa/twiki/bin/view.cgi/Public/DBNEquations" target="_blank">&#x8FD9;&#x4E00;&#x9875;</a>&#xFF0C;&#x6216;&#x8005;<a href="http://www.iro.umontreal.ca/%7Elisa/publications2/index.php/publications/show/239" target="_blank">Learning Deep Architectures for AI</a>&#x7684;&#x7B2C;&#x4E94;&#x8282;&#x3002;&#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4E0D;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x7B49;&#x5F0F;&#xFF0C;&#x800C;&#x662F;&#x901A;&#x8FC7;Theano&#x7684;<code>T.grad</code>&#x6765;&#x83B7;&#x53D6;&#x68AF;&#x5EA6;&#x3002;</p>
+<h2 id="&#x5728;rbm&#x4E2D;&#x8FDB;&#x884C;&#x91C7;&#x6837;">&#x5728;RBM&#x4E2D;&#x8FDB;&#x884C;&#x91C7;&#x6837;</h2>
+<p>p(x)&#x7684;&#x6837;&#x672C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD0;&#x884C;&#x9A6C;&#x5C14;&#x53EF;&#x592B;&#x94FE;&#x7684;&#x6C47;&#x805A;&#x3001;Gibbs&#x91C7;&#x6837;&#x7684;&#x8FC7;&#x6E21;&#x6765;&#x5F97;&#x5230;&#x3002;</p>
+<p>&#x7531;N&#x4E2A;&#x968F;&#x673A;&#x53D8;&#x91CF;&#xFF08;S=(S1,S2,...Sn)&#xFF09;&#x7684;&#x8054;&#x5408;&#x5206;&#x5E03;&#x7684;Gibbs&#x91C7;&#x6837;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;N&#x4E2A;&#x91C7;&#x6837;&#x5B50;&#x6B65;&#x9AA4;&#x6765;&#x5B9E;&#x73B0;,&#x5F62;&#x5F0F;&#x5982;Si&#xFF5E;p(Si|S-i)&#xFF0C;&#x5176;&#x4E2D;S-i&#x8868;&#x793A;&#x96C6;&#x5408;S&#x4E2D;&#x9664;Si&#x7684;N-1&#x4E2A;&#x968F;&#x673A;&#x53D8;&#x91CF;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4ECE;X&#x7684;&#x4E00;&#x4E2A;&#x4EFB;&#x610F;&#x72B6;&#x6001;(&#x6BD4;&#x5982;[x1(0),x2(0),&#x2026;,xK(0)])&#x5F00;&#x59CB;&#xFF0C;&#x5229;&#x7528;&#x4E0A;&#x8FF0;&#x6761;&#x4EF6; &#x5206;&#x5E03;&#xFF0C;&#x8FED;&#x4EE3;&#x7684;&#x5BF9;&#x5176;&#x5206;&#x91CF;&#x4F9D;&#x6B21;&#x91C7;&#x6837;&#xFF0C;&#x968F;&#x7740;&#x91C7;&#x6837;&#x6B21;&#x6570;&#x7684;&#x589E;&#x52A0;&#xFF0C;&#x968F;&#x673A;&#x53D8;&#x91CF;[x1(n),x2(n),&#x2026;,xK(n)]&#x7684;&#x6982;&#x7387;&#x5206;&#x5E03;&#x5C06;&#x4EE5;n&#x7684;&#x51E0;&#x4F55;&#x7EA7;&#x6570;&#x7684;&#x901F;&#x5EA6;&#x6536;&#x655B;&#x4E8E;X&#x7684;&#x8054;&#x5408; &#x6982;&#x7387;&#x5206;&#x5E03;P(X)&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x672A;&#x77E5;&#x8054;&#x5408;&#x6982;&#x7387;&#x5206;&#x5E03;&#x7684;&#x6761;&#x4EF6;&#x4E0B;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x91C7;&#x6837;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;RBMs&#x6765;&#x8BF4;&#xFF0C;S&#x5305;&#x542B;&#x4E86;&#x53EF;&#x89C6;&#x548C;&#x9690;&#x85CF;&#x5355;&#x5143;&#x7684;&#x96C6;&#x5408;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x7531;&#x4E8E;&#x5B83;&#x4EEC;&#x7684;&#x6761;&#x4EF6;&#x72EC;&#x7ACB;&#x6027;&#xFF0C;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x5757;Gibbs&#x62BD;&#x6837;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x8BBE;&#x5B9A;&#x4E2D;&#xFF0C;&#x53EF;&#x89C6;&#x5355;&#x5143;&#x88AB;&#x91C7;&#x6837;&#xFF0C;&#x540C;&#x65F6;&#x7ED9;&#x51FA;&#x9690;&#x85CF;&#x5355;&#x5143;&#x7684;&#x56FA;&#x5B9A;&#x503C;&#xFF0C;&#x540C;&#x6837;&#x7684;&#xFF0C;&#x9690;&#x85CF;&#x5355;&#x5143;&#x4E5F;&#x662F;&#x5982;&#x6B64;&#xFF1A;</p>
+<p><img src="images/7_sampling_1.png" alt="h_v"></p>
+<p>&#x8FD9;&#x91CC;&#xFF0C;h(n)&#x8868;&#x793A;&#x9A6C;&#x5C14;&#x53EF;&#x592B;&#x94FE;&#x4E2D;&#x7B2C;n&#x5E03;&#x7684;&#x9690;&#x85CF;&#x5355;&#x5143;&#x7684;&#x96C6;&#x5408;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#xFF0C;h(n+1)&#x6839;&#x636E;&#x6982;&#x7387;<code>simg(W&#x2018;v(n)+ci)</code>&#x6765;&#x968F;&#x673A;&#x5730;&#x88AB;&#x9009;&#x4E3A;0/1&#x3002;&#x7C7B;&#x4F3C;&#x5730;v(n+1)&#x4E5F;&#x662F;&#x5982;&#x6B64;&#x3002;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x5730;&#x56FE;&#x6765;&#x5C55;&#x73B0;&#xFF1A;</p>
+<p><img src="images/7_sampling_2.png" alt="gibbs_sampling"></p>
+<p>&#x5F53;t&#x8D8B;&#x5411;&#x4E8E;&#x65E0;&#x7A77;&#x65F6;&#xFF0C;(v(t),h(t))&#x5C06;&#x8D8A;&#x52A0;&#x903C;&#x8FD1;&#x6B63;&#x786E;&#x6837;&#x672C;&#x7684;&#x6982;&#x7387;&#x5206;&#x5E03;p(v,h)&#x3002;</p>
+<p>&#x5728;&#x8FD9;&#x4E2A;&#x7406;&#x8BBA;&#x91CC;&#x9762;&#xFF0C;&#x6BCF;&#x4E2A;&#x53C2;&#x6570;&#x5728;&#x5B66;&#x4E60;&#x8FDB;&#x7A0B;&#x4E2D;&#x7684;&#x66F4;&#x65B0;&#x90FD;&#x9700;&#x8981;&#x8FD0;&#x884C;&#x8FD9;&#x6837;&#x51E0;&#x4E2A;&#x94FE;&#x6765;&#x8D8B;&#x8FD1;&#x3002;&#x6BEB;&#x65E0;&#x7591;&#x95EE;&#x8FD9;&#x5C06;&#x8017;&#x8D39;&#x5F88;&#x5927;&#x7684;&#x8BA1;&#x7B97;&#x91CF;&#x3002;&#x4E00;&#x4E9B;&#x65B0;&#x7684;&#x7B97;&#x6CD5;&#x5DF2;&#x7ECF;&#x88AB;&#x63D0;&#x51FA;&#x6765;&#xFF0C;&#x4EE5;&#x6709;&#x6548;&#x7684;&#x5B66;&#x4E60;p(v,h)&#x4E2D;&#x7684;&#x6837;&#x672C;&#x60C5;&#x51B5;&#x3002;</p>
+<h2 id="&#x5BF9;&#x6BD4;&#x6563;&#x5EA6;&#x7B97;&#x6CD5;&#xFF08;cd-k&#xFF09;">&#x5BF9;&#x6BD4;&#x6563;&#x5EA6;&#x7B97;&#x6CD5;&#xFF08;CD-k&#xFF09;</h2>
+<p>&#x5BF9;&#x6BD4;&#x6563;&#x5EA6;&#x7B97;&#x6CD5;&#xFF0C;&#x662F;&#x4E00;&#x79CD;&#x6210;&#x529F;&#x7684;&#x7528;&#x4E8E;&#x6C42;&#x89E3;&#x5BF9;&#x6570;&#x4F3C;&#x7136;&#x51FD;&#x6570;&#x5173;&#x4E8E;&#x672A;&#x77E5;&#x53C2;&#x6570;&#x68AF;&#x5EA6;&#x7684;&#x8FD1;&#x4F3C;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x5B83;&#x4F7F;&#x7528;&#x4E24;&#x4E2A;&#x6280;&#x5DE7;&#x6765;&#x6280;&#x672F;&#x91C7;&#x6837;&#x8FC7;&#x7A0B;&#xFF1A;</p>
+<ul>
+<li>&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x5E0C;&#x671B;p(v)=p_train(v)&#xFF08;&#x6570;&#x636E;&#x7684;&#x771F;&#x5B9E;&#x3001;&#x5E95;&#x5C42;&#x5206;&#x5E03;&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x8BAD;&#x7EC3;&#x6837;&#x672C;&#x6765;&#x521D;&#x59CB;&#x5316;&#x9A6C;&#x5C14;&#x53EF;&#x592B;&#x94FE;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x4ECE;&#x4E00;&#x4E2A;&#x88AB;&#x9884;&#x8BA1;&#x63A5;&#x8FD1;&#x4E8E;p&#x7684;&#x5206;&#x5E03;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x4E2A;&#x94FE;&#x5DF2;&#x7ECF;&#x5F00;&#x59CB;&#x53BB;&#x6536;&#x655B;&#x8FD9;&#x4E2A;&#x6700;&#x7EC8;&#x7684;&#x5206;&#x5E03;p&#xFF09;&#x3002;</li>
+<li>&#x5BF9;&#x6BD4;&#x68AF;&#x5EA6;&#x4E0D;&#x9700;&#x8981;&#x7B49;&#x5F85;&#x94FE;&#x7684;&#x6536;&#x655B;&#x3002;&#x6837;&#x672C;&#x5728;k&#x6B65;Gibbs&#x91C7;&#x6837;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x83B7;&#x5F97;&#x3002;&#x5728;&#x5B9E;&#x9645;&#x4E2D;&#xFF0C;k=1&#x65F6;&#x5C31;&#x53EF;&#x4EE5;&#x83B7;&#x5F97;&#x60CA;&#x4EBA;&#x7684;&#x597D;&#x7684;&#x6548;&#x679C;&#x3002;</li>
+</ul>
+<h3 id="&#x6301;&#x7EED;&#x7684;&#x5BF9;&#x6BD4;&#x6563;&#x5EA6;">&#x6301;&#x7EED;&#x7684;&#x5BF9;&#x6BD4;&#x6563;&#x5EA6;</h3>
+<p>&#x6301;&#x7EED;&#x7684;&#x5BF9;&#x6BD4;&#x6563;&#x5EA6;<a href="http://deeplearning.net/tutorial/references.html#tieleman08" target="_blank">Tieleman08</a>&#x4F7F;&#x7528;&#x4E86;&#x53E6;&#x5916;&#x4E00;&#x79CD;&#x8FD1;&#x4F3C;&#x65B9;&#x6CD5;&#x6765;&#x4ECE;p(v,h)&#x4E2D;&#x91C7;&#x6837;&#x3002;&#x5B83;&#x5EFA;&#x7ACB;&#x5728;&#x4E00;&#x4E2A;&#x62E5;&#x6709;&#x6301;&#x7EED;&#x72B6;&#x6001;&#x7684;&#x5355;&#x9A6C;&#x5C14;&#x53EF;&#x592B;&#x94FE;&#x4E0A;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x4E0D;&#x662F;&#x5BF9;&#x6BCF;&#x4E2A;&#x53EF;&#x89C6;&#x6837;&#x4F8B;&#x90FD;&#x91CD;&#x542F;&#x94FE;&#xFF09;&#x3002;&#x5BF9;&#x6BCF;&#x4E00;&#x6B21;&#x53C2;&#x6570;&#x66F4;&#x65B0;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x7B80;&#x5355;&#x7684;&#x8FD0;&#x884C;&#x8FD9;&#x4E2A;&#x94FE;k&#x6B65;&#x6765;&#x83B7;&#x5F97;&#x65B0;&#x7684;&#x6837;&#x672C;&#x3002;&#x7136;&#x540E;&#x4FDD;&#x5B58;&#x94FE;&#x7684;&#x72B6;&#x6001;&#x4EE5;&#x4FBF;&#x540E;&#x7EED;&#x7684;&#x66F4;&#x65B0;&#x3002;</p>
+<p>&#x4E00;&#x822C;&#x76F4;&#x89C9;&#x7684;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x53C2;&#x6570;&#x7684;&#x66F4;&#x65B0;&#x662F;&#x8DB3;&#x591F;&#x5C0F;&#x76F8;&#x6BD4;&#x94FE;&#x7684;&#x6DF7;&#x5408;&#x7387;&#xFF0C;&#x90A3;&#x4E48;&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x94FE;&#x5E94;&#x8BE5;&#x80FD;&#x591F;&#x201C;&#x8D76;&#x4E0A;&#x201D;&#x6A21;&#x578B;&#x7684;&#x53D8;&#x5316;&#x3002;</p>
+<h2 id="&#x5B9E;&#x73B0;">&#x5B9E;&#x73B0;</h2>
+<p><img src="images/7_implementation_1.png" alt="RBM_impl"></p>
+<p>&#x6211;&#x4EEC;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;RBM&#x7C7B;&#x3002;&#x8FD9;&#x4E2A;&#x7F51;&#x7EDC;&#x7684;&#x53C2;&#x6570;&#x65E2;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6784;&#x9020;&#x51FD;&#x6570;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x4F20;&#x5165;&#x3002;&#x5F53;RBM&#x88AB;&#x7528;&#x4E8E;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x6DF1;&#x5EA6;&#x7F51;&#x7EDC;&#x65F6;&#xFF0C;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x2014;&#x2014;&#x6743;&#x91CD;&#x77E9;&#x9635;&#x548C;&#x9690;&#x85CF;&#x5C42;&#x504F;&#x7F6E;&#x4E0E;&#x4E00;&#x4E2A;MLP&#x7F51;&#x7EDC;&#x7684;&#x76F8;&#x5E94;&#x7684;S&#x5F62;&#x5C42;&#x5171;&#x4EAB;&#xFF0C;&#x5C31;&#x662F;&#x975E;&#x5E38;&#x6709;&#x7528;&#x7684;&#x3002;</p>
+<pre><code class="lang-Python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RBM</span><span class="hljs-params">(object)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;Restricted Boltzmann Machine (RBM)  &quot;&quot;&quot;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(
+        self,
+        input=None,
+        n_visible=<span class="hljs-number">784</span>,
+        n_hidden=<span class="hljs-number">500</span>,
+        W=None,
+        hbias=None,
+        vbias=None,
+        numpy_rng=None,
+        theano_rng=None
+    )</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        RBM constructor. Defines the parameters of the model along with
+        basic operations for inferring hidden from visible (and vice-versa),
+        as well as for performing CD updates.
+
+        :param input: None for standalone RBMs or symbolic variable if RBM is
+        part of a larger graph.
+
+        :param n_visible: number of visible units
+
+        :param n_hidden: number of hidden units
+
+        :param W: None for standalone RBMs or symbolic variable pointing to a
+        shared weight matrix in case RBM is part of a DBN network; in a DBN,
+        the weights are shared between RBMs and layers of a MLP
+
+        :param hbias: None for standalone RBMs or symbolic variable pointing
+        to a shared hidden units bias vector in case RBM is part of a
+        different network
+
+        :param vbias: None for standalone RBMs or a symbolic variable
+        pointing to a shared visible units bias
+        &quot;&quot;&quot;</span>
+
+        self.n_visible = n_visible
+        self.n_hidden = n_hidden
+
+        <span class="hljs-keyword">if</span> numpy_rng <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+            <span class="hljs-comment"># create a number generator</span>
+            numpy_rng = numpy.random.RandomState(<span class="hljs-number">1234</span>)
+
+        <span class="hljs-keyword">if</span> theano_rng <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+            theano_rng = RandomStreams(numpy_rng.randint(<span class="hljs-number">2</span> ** <span class="hljs-number">30</span>))
+
+        <span class="hljs-keyword">if</span> W <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+            <span class="hljs-comment"># W is initialized with `initial_W` which is uniformely</span>
+            <span class="hljs-comment"># sampled from -4*sqrt(6./(n_visible+n_hidden)) and</span>
+            <span class="hljs-comment"># 4*sqrt(6./(n_hidden+n_visible)) the output of uniform if</span>
+            <span class="hljs-comment"># converted using asarray to dtype theano.config.floatX so</span>
+            <span class="hljs-comment"># that the code is runable on GPU</span>
+            initial_W = numpy.asarray(
+                numpy_rng.uniform(
+                    low=<span class="hljs-number">-4</span> * numpy.sqrt(<span class="hljs-number">6.</span> / (n_hidden + n_visible)),
+                    high=<span class="hljs-number">4</span> * numpy.sqrt(<span class="hljs-number">6.</span> / (n_hidden + n_visible)),
+                    size=(n_visible, n_hidden)
+                ),
+                dtype=theano.config.floatX
+            )
+            <span class="hljs-comment"># theano shared variables for weights and biases</span>
+            W = theano.shared(value=initial_W, name=<span class="hljs-string">&apos;W&apos;</span>, borrow=<span class="hljs-keyword">True</span>)
+
+        <span class="hljs-keyword">if</span> hbias <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+            <span class="hljs-comment"># create shared variable for hidden units bias</span>
+            hbias = theano.shared(
+                value=numpy.zeros(
+                    n_hidden,
+                    dtype=theano.config.floatX
+                ),
+                name=<span class="hljs-string">&apos;hbias&apos;</span>,
+                borrow=<span class="hljs-keyword">True</span>
+            )
+
+        <span class="hljs-keyword">if</span> vbias <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+            <span class="hljs-comment"># create shared variable for visible units bias</span>
+            vbias = theano.shared(
+                value=numpy.zeros(
+                    n_visible,
+                    dtype=theano.config.floatX
+                ),
+                name=<span class="hljs-string">&apos;vbias&apos;</span>,
+                borrow=<span class="hljs-keyword">True</span>
+            )
+
+        <span class="hljs-comment"># initialize input layer for standalone RBM or layer0 of DBN</span>
+        self.input = input
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> input:
+            self.input = T.matrix(<span class="hljs-string">&apos;input&apos;</span>)
+
+        self.W = W
+        self.hbias = hbias
+        self.vbias = vbias
+        self.theano_rng = theano_rng
+        <span class="hljs-comment"># **** WARNING: It is not a good idea to put things in this list</span>
+        <span class="hljs-comment"># other than shared variables created in this function.</span>
+        self.params = [self.W, self.hbias, self.vbias]
+</code></pre>
+<p>&#x4E0B;&#x4E00;&#x6B65;&#x5C31;&#x662F;&#x53BB;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x6765;&#x6784;&#x5EFA;S&#x56FE;&#x3002;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-Python">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">propup</span><span class="hljs-params">(self, vis)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;This function propagates the visible units activation upwards to
+        the hidden units
+
+        Note that we return also the pre-sigmoid activation of the
+        layer. As it will turn out later, due to how Theano deals with
+        optimizations, this symbolic variable will be needed to write
+        down a more stable computational graph (see details in the
+        reconstruction cost function)
+
+        &apos;&apos;&apos;</span>
+        pre_sigmoid_activation = T.dot(vis, self.W) + self.hbias
+        <span class="hljs-keyword">return</span> [pre_sigmoid_activation, T.nnet.sigmoid(pre_sigmoid_activation)]
+</code></pre>
+<pre><code class="lang-Python">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sample_h_given_v</span><span class="hljs-params">(self, v0_sample)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos; This function infers state of hidden units given visible units &apos;&apos;&apos;</span>
+        <span class="hljs-comment"># compute the activation of the hidden units given a sample of</span>
+        <span class="hljs-comment"># the visibles</span>
+        pre_sigmoid_h1, h1_mean = self.propup(v0_sample)
+        <span class="hljs-comment"># get a sample of the hiddens given their activation</span>
+        <span class="hljs-comment"># Note that theano_rng.binomial returns a symbolic sample of dtype</span>
+        <span class="hljs-comment"># int64 by default. If we want to keep our computations in floatX</span>
+        <span class="hljs-comment"># for the GPU we need to specify to return the dtype floatX</span>
+        h1_sample = self.theano_rng.binomial(size=h1_mean.shape,
+                                             n=<span class="hljs-number">1</span>, p=h1_mean,
+                                             dtype=theano.config.floatX)
+        <span class="hljs-keyword">return</span> [pre_sigmoid_h1, h1_mean, h1_sample]
+</code></pre>
+<pre><code class="lang-Python">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">propdown</span><span class="hljs-params">(self, hid)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;This function propagates the hidden units activation downwards to
+        the visible units
+
+        Note that we return also the pre_sigmoid_activation of the
+        layer. As it will turn out later, due to how Theano deals with
+        optimizations, this symbolic variable will be needed to write
+        down a more stable computational graph (see details in the
+        reconstruction cost function)
+
+        &apos;&apos;&apos;</span>
+        pre_sigmoid_activation = T.dot(hid, self.W.T) + self.vbias
+        <span class="hljs-keyword">return</span> [pre_sigmoid_activation, T.nnet.sigmoid(pre_sigmoid_activation)]
+</code></pre>
+<pre><code class="lang-Python">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sample_v_given_h</span><span class="hljs-params">(self, h0_sample)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos; This function infers state of visible units given hidden units &apos;&apos;&apos;</span>
+        <span class="hljs-comment"># compute the activation of the visible given the hidden sample</span>
+        pre_sigmoid_v1, v1_mean = self.propdown(h0_sample)
+        <span class="hljs-comment"># get a sample of the visible given their activation</span>
+        <span class="hljs-comment"># Note that theano_rng.binomial returns a symbolic sample of dtype</span>
+        <span class="hljs-comment"># int64 by default. If we want to keep our computations in floatX</span>
+        <span class="hljs-comment"># for the GPU we need to specify to return the dtype floatX</span>
+        v1_sample = self.theano_rng.binomial(size=v1_mean.shape,
+                                             n=<span class="hljs-number">1</span>, p=v1_mean,
+                                             dtype=theano.config.floatX)
+        <span class="hljs-keyword">return</span> [pre_sigmoid_v1, v1_mean, v1_sample]
+</code></pre>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x51FD;&#x6570;&#x6765;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;Gibbs&#x91C7;&#x6837;&#x6B65;&#x9AA4;&#x7684;&#x7B26;&#x53F7;&#x56FE;&#x3002;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#x4E24;&#x4E2A;&#x51FD;&#x6570;&#xFF1A;</p>
+<ul>
+<li><code>gibbs_vhv</code>&#x8868;&#x793A;&#x4ECE;&#x53EF;&#x89C6;&#x5355;&#x5143;&#x4E2D;&#x5F00;&#x59CB;&#x7684;Gibbs&#x91C7;&#x6837;&#x7684;&#x6B65;&#x9AA4;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x8FD9;&#x5BF9;&#x4E8E;&#x4ECE;RBM&#x4E2D;&#x91C7;&#x6837;&#x662F;&#x975E;&#x5E38;&#x6709;&#x7528;&#x7684;&#x3002;</li>
+<li><code>gibbs_hvh</code>&#x8868;&#x793A;&#x4ECE;&#x9690;&#x85CF;&#x5355;&#x5143;&#x4E2D;&#x5F00;&#x59CB;Gibbs&#x91C7;&#x6837;&#x7684;&#x6B65;&#x9AA4;&#x3002;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x518D;&#x5B9E;&#x73B0;CD&#x548C;PCD&#x66F4;&#x65B0;&#x4E2D;&#x662F;&#x975E;&#x5E38;&#x6709;&#x7528;&#x7684;&#x3002;
+&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-Python">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">gibbs_hvh</span><span class="hljs-params">(self, h0_sample)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos; This function implements one step of Gibbs sampling,
+            starting from the hidden state&apos;&apos;&apos;</span>
+        pre_sigmoid_v1, v1_mean, v1_sample = self.sample_v_given_h(h0_sample)
+        pre_sigmoid_h1, h1_mean, h1_sample = self.sample_h_given_v(v1_sample)
+        <span class="hljs-keyword">return</span> [pre_sigmoid_v1, v1_mean, v1_sample,
+                pre_sigmoid_h1, h1_mean, h1_sample]
+</code></pre>
+<pre><code class="lang-Python">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">gibbs_vhv</span><span class="hljs-params">(self, v0_sample)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos; This function implements one step of Gibbs sampling,
+            starting from the visible state&apos;&apos;&apos;</span>
+        pre_sigmoid_h1, h1_mean, h1_sample = self.sample_h_given_v(v0_sample)
+        pre_sigmoid_v1, v1_mean, v1_sample = self.sample_v_given_h(h1_sample)
+        <span class="hljs-keyword">return</span> [pre_sigmoid_h1, h1_mean, h1_sample,
+                pre_sigmoid_v1, v1_mean, v1_sample]
+
+    <span class="hljs-comment"># start-snippet-2</span>
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x7C7B;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x53BB;&#x8BA1;&#x7B97;&#x6A21;&#x578B;&#x7684;&#x81EA;&#x7531;&#x80FD;&#x91CF;&#xFF0C;&#x4EE5;&#x4FBF;&#x53BB;&#x8BA1;&#x7B97;&#x53C2;&#x6570;&#x7684;&#x68AF;&#x5EA6;&#x3002;&#x6CE8;&#x610F;&#x6211;&#x4EEC;&#x4E5F;&#x4F1A;&#x8FD4;&#x56DE;pre-sigmoid&#x3002;</p>
+<pre><code class="lang-Python">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">free_energy</span><span class="hljs-params">(self, v_sample)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos; Function to compute the free energy &apos;&apos;&apos;</span>
+        wx_b = T.dot(v_sample, self.W) + self.hbias
+        vbias_term = T.dot(v_sample, self.vbias)
+        hidden_term = T.sum(T.log(<span class="hljs-number">1</span> + T.exp(wx_b)), axis=<span class="hljs-number">1</span>)
+        <span class="hljs-keyword">return</span> -hidden_term - vbias_term
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x968F;&#x540E;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;<code>get_cost_update</code>&#x65B9;&#x6CD5;&#xFF0C;&#x76EE;&#x7684;&#x662F;&#x4EA7;&#x751F;CD-k&#x548C;PCD-k&#x7684;&#x66F4;&#x65B0;&#x7684;&#x8C61;&#x5F81;&#x6027;&#x68AF;&#x5EA6;&#x3002;</p>
+<pre><code class="lang-Python">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_cost_updates</span><span class="hljs-params">(self, lr=<span class="hljs-number">0.1</span>, persistent=None, k=<span class="hljs-number">1</span>)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;This functions implements one step of CD-k or PCD-k
+
+        :param lr: learning rate used to train the RBM
+
+        :param persistent: None for CD. For PCD, shared variable
+            containing old state of Gibbs chain. This must be a shared
+            variable of size (batch size, number of hidden units).
+
+        :param k: number of Gibbs steps to do in CD-k/PCD-k
+
+        Returns a proxy for the cost and the updates dictionary. The
+        dictionary contains the update rules for weights and biases but
+        also an update of the shared variable used to store the persistent
+        chain, if one is used.
+
+        &quot;&quot;&quot;</span>
+
+        <span class="hljs-comment"># compute positive phase</span>
+        pre_sigmoid_ph, ph_mean, ph_sample = self.sample_h_given_v(self.input)
+
+        <span class="hljs-comment"># decide how to initialize persistent chain:</span>
+        <span class="hljs-comment"># for CD, we use the newly generate hidden sample</span>
+        <span class="hljs-comment"># for PCD, we initialize from the old state of the chain</span>
+        <span class="hljs-keyword">if</span> persistent <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+            chain_start = ph_sample
+        <span class="hljs-keyword">else</span>:
+            chain_start = persistent
+</code></pre>
+<p>&#x6CE8;&#x610F;<code>get_cost_update</code>&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x88AB;&#x53D8;&#x91CF;&#x5316;&#x4E3A;<code>persistent</code>&#x3002;&#x8FD9;&#x5141;&#x8BB8;&#x6211;&#x4EEC;&#x53BB;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7684;&#x4EE3;&#x7801;&#x6765;&#x5B9E;&#x73B0;CD&#x548C;PCD&#x3002;&#x4E3A;&#x4E86;&#x4F7F;&#x7528;PCD&#xFF0C;<code>persistent</code>&#x9700;&#x8981;&#x88AB;&#x5173;&#x8054;&#x5230;&#x4E00;&#x4E2A;&#x5171;&#x4EAB;&#x53D8;&#x91CF;&#xFF0C;&#x5B83;&#x5305;&#x542B;&#x524D;&#x4E00;&#x6B21;&#x8FED;&#x4EE3;&#x7684;Gibbs&#x94FE;&#x7684;&#x72B6;&#x6001;&#x3002;</p>
+<p>&#x5047;&#x5982;<code>persistent</code>&#x4E3A;<code>None</code>&#xFF0C;&#x5219;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x6B63;&#x76F8;&#x4F4D;&#x65F6;&#x4EA7;&#x751F;&#x7684;&#x9690;&#x85CF;&#x6837;&#x672C;&#x6765;&#x521D;&#x59CB;&#x5316;Gibbs&#x94FE;&#xFF0C;&#x4EE5;&#x6B64;&#x5B9E;&#x73B0;CD&#x3002;&#x5F53;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x5EFA;&#x7ACB;&#x4E86;&#x8FD9;&#x4E2A;&#x94FE;&#x7684;&#x5F00;&#x59CB;&#x70B9;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x8BA1;&#x7B97;&#x8FD9;&#x4E2A;Gibbs&#x94FE;&#x7684;&#x7EC8;&#x70B9;&#x7684;&#x6837;&#x672C;&#xFF0C;&#x4EE5;&#x53CA;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7684;&#x53BB;&#x83B7;&#x5F97;&#x68AF;&#x5EA6;&#x7684;&#x6837;&#x672C;&#x3002;&#x4E3A;&#x4E86;&#x83B7;&#x5F97;&#x8FD9;&#x4E9B;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;Theano&#x63D0;&#x4F9B;&#x7684;<code>sacn</code>&#x64CD;&#x4F5C;&#xFF0C;&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x8BFB;&#x8005;&#x53BB;&#x9605;&#x8BFB;&#x8FD9;&#x4E2A;<a href="http://deeplearning.net/software/theano/library/scan.html" target="_blank">&#x94FE;&#x63A5;</a>&#x3002;</p>
+<pre><code class="lang-Python">        <span class="hljs-comment"># perform actual negative phase</span>
+        <span class="hljs-comment"># in order to implement CD-k/PCD-k we need to scan over the</span>
+        <span class="hljs-comment"># function that implements one gibbs step k times.</span>
+        <span class="hljs-comment"># Read Theano tutorial on scan for more information :</span>
+        <span class="hljs-comment"># http://deeplearning.net/software/theano/library/scan.html</span>
+        <span class="hljs-comment"># the scan will return the entire Gibbs chain</span>
+        (
+            [
+                pre_sigmoid_nvs,
+                nv_means,
+                nv_samples,
+                pre_sigmoid_nhs,
+                nh_means,
+                nh_samples
+            ],
+            updates
+        ) = theano.scan(
+            self.gibbs_hvh,
+            <span class="hljs-comment"># the None are place holders, saying that</span>
+            <span class="hljs-comment"># chain_start is the initial state corresponding to the</span>
+            <span class="hljs-comment"># 6th output</span>
+            outputs_info=[<span class="hljs-keyword">None</span>, <span class="hljs-keyword">None</span>, <span class="hljs-keyword">None</span>, <span class="hljs-keyword">None</span>, <span class="hljs-keyword">None</span>, chain_start],
+            n_steps=k
+        )
+</code></pre>
+<p>&#x5F53;&#x4F60;&#x5DF2;&#x7ECF;&#x4EA7;&#x751F;&#x4E86;&#x8FD9;&#x4E2A;&#x94FE;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x94FE;&#x7684;&#x672B;&#x5C3E;&#x7684;&#x6837;&#x4F8B;&#x83B7;&#x5F97;&#x8D1F;&#x76F8;&#x4F4D;&#x7684;&#x81EA;&#x7531;&#x80FD;&#x91CF;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x8FD9;&#x4E2A;<code>chain_end</code>&#x662F;&#x6A21;&#x578B;&#x53C2;&#x6570;&#x9879;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x7684;&#x8C61;&#x5F81;&#x6027;&#x7684;Theano&#x53D8;&#x91CF;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x7B80;&#x5355;&#x7684;&#x6C42;&#x89E3;<code>T.grad</code>&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x5C06;&#x901A;&#x8FC7;Gibbs&#x94FE;&#x6765;&#x5F97;&#x5230;&#x8FD9;&#x4E2A;&#x68AF;&#x5EA6;&#x3002;&#x8FD9;&#x4E0D;&#x662F;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x7684;&#xFF08;&#x5B83;&#x4F1A;&#x641E;&#x4E71;&#x6211;&#x4EEC;&#x7684;&#x68AF;&#x5EA6;&#xFF09;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x6307;&#x793A;<code>T.grad</code>&#xFF0C;<code>chain_end</code>&#x662F;&#x4E00;&#x4E2A;&#x5E38;&#x91CF;&#x3002;&#x6211;&#x4EEC;&#x901A;&#x8FC7;<code>T.grad</code>&#x7684;<code>consider_constant</code>&#x6765;&#x505A;&#x8FD9;&#x4E2A;&#x4E8B;&#x60C5;&#x3002;</p>
+<pre><code class="lang-Python">        <span class="hljs-comment"># determine gradients on RBM parameters</span>
+        <span class="hljs-comment"># note that we only need the sample at the end of the chain</span>
+        chain_end = nv_samples[<span class="hljs-number">-1</span>]
+
+        cost = T.mean(self.free_energy(self.input)) - T.mean(
+            self.free_energy(chain_end))
+        <span class="hljs-comment"># We must not compute the gradient through the gibbs sampling</span>
+        gparams = T.grad(cost, self.params, consider_constant=[chain_end])
+</code></pre>
+<p>&#x6700;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x589E;&#x52A0;&#x7531;<code>scan</code>&#x8FD4;&#x56DE;&#x7684;&#x66F4;&#x65B0;&#x5B57;&#x5178;&#xFF08;&#x5305;&#x542B;&#x4E86;&#x968F;&#x673A;&#x72B6;&#x6001;&#x7684;<code>theano_rng</code>&#x66F4;&#x65B0;&#x89C4;&#x5219;&#xFF09;&#x6765;&#x83B7;&#x53D6;&#x53C2;&#x6570;&#x66F4;&#x65B0;&#x3002;&#x5728;PCD&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x4E5F;&#x9700;&#x8981;&#x66F4;&#x65B0;&#x5305;&#x542B;Gibbs&#x94FE;&#x72B6;&#x6001;&#x7684;&#x5171;&#x4EAB;&#x53D8;&#x91CF;&#x3002;</p>
+<pre><code class="lang-Python">        <span class="hljs-comment"># constructs the update dictionary</span>
+        <span class="hljs-keyword">for</span> gparam, param <span class="hljs-keyword">in</span> zip(gparams, self.params):
+            <span class="hljs-comment"># make sure that the learning rate is of the right dtype</span>
+            updates[param] = param - gparam * T.cast(
+                lr,
+                dtype=theano.config.floatX
+            )
+        <span class="hljs-keyword">if</span> persistent:
+            <span class="hljs-comment"># Note that this works only if persistent is a shared variable</span>
+            updates[persistent] = nh_samples[<span class="hljs-number">-1</span>]
+            <span class="hljs-comment"># pseudo-likelihood is a better proxy for PCD</span>
+            monitoring_cost = self.get_pseudo_likelihood_cost(updates)
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-comment"># reconstruction cross-entropy is a better proxy for CD</span>
+            monitoring_cost = self.get_reconstruction_cost(updates,
+                                                           pre_sigmoid_nvs[<span class="hljs-number">-1</span>])
+
+        <span class="hljs-keyword">return</span> monitoring_cost, updates
+</code></pre>
+<h2 id="&#x8FDB;&#x5C55;&#x8DDF;&#x8E2A;">&#x8FDB;&#x5C55;&#x8DDF;&#x8E2A;</h2>
+<p>RBMs&#x7684;&#x8BAD;&#x7EC3;&#x662F;&#x7279;&#x522B;&#x56F0;&#x96BE;&#x7684;&#x3002;&#x7531;&#x4E8E;&#x5F52;&#x4E00;&#x5316;&#x51FD;&#x6570;Z&#xFF0C;&#x6211;&#x4EEC;&#x65E0;&#x6CD5;&#x5728;&#x8BAD;&#x7EC3;&#x7684;&#x65F6;&#x5019;&#x4F30;&#x8BA1;&#x5BF9;&#x6570;&#x4F3C;&#x7136;&#x51FD;&#x6570;log(P(x))&#x3002;&#x56E0;&#x800C;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x76F4;&#x63A5;&#x53EF;&#x4EE5;&#x5EA6;&#x91CF;&#x8D85;&#x53C2;&#x6570;&#x4F18;&#x5316;&#x4E0E;&#x5426;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x800C;&#x4E0B;&#x9762;&#x7684;&#x51E0;&#x4E2A;&#x9009;&#x9879;&#x5BF9;&#x7528;&#x6237;&#x662F;&#x6709;&#x7528;&#x7684;&#x3002;</p>
+<h3 id="&#x8D1F;&#x6837;&#x672C;&#x7684;&#x68C0;&#x67E5;">&#x8D1F;&#x6837;&#x672C;&#x7684;&#x68C0;&#x67E5;</h3>
+<p>&#x5728;&#x8BAD;&#x7EC3;&#x4E2D;&#x83B7;&#x5F97;&#x7684;&#x8D1F;&#x6837;&#x672C;&#x662F;&#x53EF;&#x4EE5;&#x53EF;&#x89C6;&#x5316;&#x7684;&#x3002;&#x5728;&#x8BAD;&#x7EC3;&#x8FDB;&#x7A0B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x7531;RBM&#x5B9A;&#x4E49;&#x7684;&#x6A21;&#x578B;&#x4E0D;&#x65AD;&#x903C;&#x8FD1;&#x771F;&#x5B9E;&#x5206;&#x5E03;&#xFF0C;p_train(x)&#x3002;&#x8D1F;&#x6837;&#x4F8B;&#x5C31;&#x53EF;&#x4EE5;&#x89C6;&#x4E3A;&#x8BAD;&#x7EC3;&#x96C6;&#x4E2D;&#x7684;&#x6837;&#x672C;&#x3002;&#x663E;&#x800C;&#x6613;&#x89C1;&#x7684;&#xFF0C;&#x574F;&#x7684;&#x8D85;&#x53C2;&#x6570;&#x5C06;&#x5728;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x4E0B;&#x88AB;&#x4E22;&#x5F03;&#x3002;</p>
+<h3 id="&#x6EE4;&#x6CE2;&#x5668;&#x7684;&#x53EF;&#x89C6;&#x5316;&#x8DDF;&#x8E2A;">&#x6EE4;&#x6CE2;&#x5668;&#x7684;&#x53EF;&#x89C6;&#x5316;&#x8DDF;&#x8E2A;</h3>
+<p>&#x7531;&#x6A21;&#x578B;&#x8BAD;&#x7EC3;&#x7684;&#x6EE4;&#x6CE2;&#x5668;&#x662F;&#x53EF;&#x4EE5;&#x53EF;&#x89C6;&#x5316;&#x7684;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x6BCF;&#x4E2A;&#x5355;&#x5143;&#x7684;&#x6743;&#x503C;&#x4EE5;&#x7070;&#x5EA6;&#x56FE;&#x7684;&#x65B9;&#x5F0F;&#x5C55;&#x793A;&#x3002;&#x6EE4;&#x6CE2;&#x5668;&#x5E94;&#x8BE5;&#x9009;&#x51FA;&#x6570;&#x636E;&#x4E2D;&#x5F3A;&#x7684;&#x7279;&#x5F81;&#x3002;&#x5BF9;&#x4E8E;&#x4EFB;&#x610F;&#x7684;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x8FD9;&#x4E2A;&#x6EE4;&#x6CE2;&#x5668;&#x90FD;&#x662F;&#x4E0D;&#x786E;&#x5B9A;&#x7684;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x8BAD;&#x7EC3;MNIST&#xFF0C;&#x6EE4;&#x6CE2;&#x5668;&#x5C31;&#x8868;&#x73B0;&#x7684;&#x50CF;&#x201C;stroke&#x201D;&#x68C0;&#x6D4B;&#x5668;&#xFF0C;&#x800C;&#x8BAD;&#x7EC3;&#x81EA;&#x7136;&#x56FE;&#x50CF;&#x7684;&#x7A00;&#x758F;&#x7F16;&#x7801;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5219;&#x50CF;Gabor&#x6EE4;&#x6CE2;&#x5668;&#x3002;</p>
+<h3 id="&#x4F3C;&#x7136;&#x4F30;&#x8BA1;&#x7684;&#x66FF;&#x4EE3;">&#x4F3C;&#x7136;&#x4F30;&#x8BA1;&#x7684;&#x66FF;&#x4EE3;</h3>
+<p>&#x6B64;&#x5916;&#xFF0C;&#x66F4;&#x52A0;&#x5BB9;&#x6613;&#x5904;&#x7406;&#x7684;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x88AB;&#x7528;&#x4E8E;&#x505A;&#x4F3C;&#x7136;&#x4F30;&#x8BA1;&#x7684;&#x66FF;&#x4EE3;&#x3002;&#x5F53;&#x6211;&#x4EEC;&#x4F7F;&#x7528;PCD&#x6765;&#x8BAD;&#x7EC3;RBM&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4F2A;&#x4F3C;&#x7136;&#x4F30;&#x8BA1;&#x6765;&#x66FF;&#x4EE3;&#x3002;&#x4F2A;&#x4F3C;&#x7136;&#x4F30;&#x8BA1;&#xFF08;Pseudo-likeihood,PL&#xFF09;&#x66F4;&#x52A0;&#x7B80;&#x4E8E;&#x8BA1;&#x7B97;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x5047;&#x8BBE;&#x6240;&#x6709;&#x7684;&#x6BD4;&#x7279;&#x90FD;&#x662F;&#x76F8;&#x4E92;&#x72EC;&#x7ACB;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x6709;&#xFF1A;</p>
+<p><img src="images/7_proxies_likelihood_1.png" alt="PL"></p>
+<h2 id="&#x4E3B;&#x5FAA;&#x73AF;">&#x4E3B;&#x5FAA;&#x73AF;</h2>
+<h2 id="&#x7ED3;&#x679C;">&#x7ED3;&#x679C;</h2>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="6_Stacked_Denoising_Autoencoders_层叠降噪自动编码机.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 6.层叠降噪自动编码机">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"7.受限波尔兹曼机","level":"1.8","depth":1,"previous":{"title":"6.层叠降噪自动编码机","level":"1.7","depth":1,"path":"6_Stacked_Denoising_Autoencoders_层叠降噪自动编码机.md","ref":"6_Stacked_Denoising_Autoencoders_层叠降噪自动编码机.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"7_Restricted_Boltzmann_Machine_受限波尔兹曼机.md","mtime":"2017-07-12T16:21:46.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-10T15:44:26.709Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
