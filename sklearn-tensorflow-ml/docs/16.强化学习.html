@@ -1,0 +1,1082 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>十六、强化学习 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="B.机器学习项目清单.html" />
+    
+    
+    <link rel="prev" href="15.自编码器.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Sklearn 与 TensorFlow 机器学习实用指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="0.前言.html">
+            
+                <a href="0.前言.html">
+            
+                    
+                    零、前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="1.机器学习概览.html">
+            
+                <a href="1.机器学习概览.html">
+            
+                    
+                    一、机器学习概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="2.一个完整的机器学习项目.html">
+            
+                <a href="2.一个完整的机器学习项目.html">
+            
+                    
+                    二、一个完整的机器学习项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="3.分类.html">
+            
+                <a href="3.分类.html">
+            
+                    
+                    三、分类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="4.训练模型.html">
+            
+                <a href="4.训练模型.html">
+            
+                    
+                    四、训练模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="5.支持向量机.html">
+            
+                <a href="5.支持向量机.html">
+            
+                    
+                    五、支持向量机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="6.决策树.html">
+            
+                <a href="6.决策树.html">
+            
+                    
+                    六、决策树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="7.集成学习和随机森林.html">
+            
+                <a href="7.集成学习和随机森林.html">
+            
+                    
+                    七、集成学习和随机森林
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="8.降维.html">
+            
+                <a href="8.降维.html">
+            
+                    
+                    八、降维
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="9.启动并运行_TensorFlow.html">
+            
+                <a href="9.启动并运行_TensorFlow.html">
+            
+                    
+                    九、启动并运行 TensorFlow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="10.人工神经网络介绍.html">
+            
+                <a href="10.人工神经网络介绍.html">
+            
+                    
+                    十、人工神经网络介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="11.训练深层神经网络.html">
+            
+                <a href="11.训练深层神经网络.html">
+            
+                    
+                    十一、训练深层神经网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="12.设备和服务器上的分布式_TensorFlow.html">
+            
+                <a href="12.设备和服务器上的分布式_TensorFlow.html">
+            
+                    
+                    十二、设备和服务器上的分布式 TensorFlow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="13.卷积神经网络.html">
+            
+                <a href="13.卷积神经网络.html">
+            
+                    
+                    十三、卷积神经网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="14.循环神经网络.html">
+            
+                <a href="14.循环神经网络.html">
+            
+                    
+                    十四、循环神经网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="15.自编码器.html">
+            
+                <a href="15.自编码器.html">
+            
+                    
+                    十五、自编码器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.18" data-path="16.强化学习.html">
+            
+                <a href="16.强化学习.html">
+            
+                    
+                    十六、强化学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="B.机器学习项目清单.html">
+            
+                <a href="B.机器学习项目清单.html">
+            
+                    
+                    附录 B、机器学习项目清单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="C.SVM_对偶问题.html">
+            
+                <a href="C.SVM_对偶问题.html">
+            
+                    
+                    附录 C、SVM 对偶问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="D.自动微分.html">
+            
+                <a href="D.自动微分.html">
+            
+                    
+                    附录 D、自动微分
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >十六、强化学习</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5341;&#x516D;&#x3001;&#x5F3A;&#x5316;&#x5B66;&#x4E60;">&#x5341;&#x516D;&#x3001;&#x5F3A;&#x5316;&#x5B66;&#x4E60;</h1>
+<blockquote>
+<p>&#x8BD1;&#x8005;&#xFF1A;<a href="https://github.com/friedhelm739" target="_blank">@friedhelm739</a></p>
+<p>&#x6821;&#x5BF9;&#x8005;&#xFF1A;<a href="https://github.com/wizardforcel" target="_blank">@&#x98DE;&#x9F99;</a>&#x3001;<a href="https://github.com/rickllyxu" target="_blank">@rickllyxu</a></p>
+</blockquote>
+<p>&#x5F3A;&#x5316;&#x5B66;&#x4E60;&#xFF08;RL&#xFF09;&#x5982;&#x4ECA;&#x662F;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x7684;&#x4E00;&#x5927;&#x4EE4;&#x4EBA;&#x6FC0;&#x52A8;&#x7684;&#x9886;&#x57DF;&#xFF0C;&#x5F53;&#x7136;&#x4E4B;&#x524D;&#x4E5F;&#x662F;&#x3002;&#x81EA;&#x4ECE; 1950 &#x5E74;&#x88AB;&#x53D1;&#x660E;&#x51FA;&#x6765;&#x540E;&#xFF0C;&#x5B83;&#x5728;&#x8FD9;&#x4E9B;&#x5E74;&#x4EA7;&#x751F;&#x4E86;&#x4E00;&#x4E9B;&#x6709;&#x8DA3;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x5728;&#x6E38;&#x620F;&#xFF08;&#x4F8B;&#x5982; TD-Gammon&#xFF0C;&#x4E00;&#x4E2A;&#x897F;&#x6D0B;&#x53CC;&#x9646;&#x68CB;&#x7A0B;&#x5E8F;&#xFF09;&#x548C;&#x53CA;&#x5176;&#x63A7;&#x5236;&#x9886;&#x57DF;&#xFF0C;&#x4F46;&#x662F;&#x4ECE;&#x672A;&#x5F04;&#x51FA;&#x4EC0;&#x4E48;&#x5927;&#x65B0;&#x95FB;&#x3002;&#x76F4;&#x5230; 2013 &#x5E74;&#x4E00;&#x4E2A;&#x9769;&#x547D;&#x6027;&#x7684;&#x53D1;&#x5C55;&#xFF1A;&#x6765;&#x81EA;&#x82F1;&#x56FD;&#x7684;&#x7814;&#x7A76;&#x8005;&#x53D1;&#x8D77;&#x4E86;&#x4E00;&#x9879; Deepmind &#x9879;&#x76EE;&#xFF0C;&#x8FD9;&#x4E2A;&#x9879;&#x76EE;&#x53EF;&#x4EE5;&#x5B66;&#x4E60;&#x53BB;&#x73A9;&#x4EFB;&#x4F55;&#x4ECE;&#x5934;&#x5F00;&#x59CB;&#x7684; Atari &#x6E38;&#x620F;&#xFF0C;&#x751A;&#x81F3;&#x591A;&#x6570;&#x6BD4;&#x4EBA;&#x7C7B;&#x73A9;&#x7684;&#x8FD8;&#x8981;&#x597D;&#xFF0C;&#x5B83;&#x4EC5;&#x4F7F;&#x7528;&#x50CF;&#x7D20;&#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#x800C;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x6E38;&#x620F;&#x89C4;&#x5219;&#x7684;&#x4EFB;&#x4F55;&#x5148;&#x9A8C;&#x77E5;&#x8BC6;&#x3002;&#x8FD9;&#x662F;&#x4E00;&#x7CFB;&#x5217;&#x4EE4;&#x4EBA;&#x60CA;&#x53F9;&#x7684;&#x58EE;&#x4E3E;&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#xFF0C;&#x5E76;&#x5728; 2016 &#x5E74; 3 &#x6708;&#x4EE5;&#x4ED6;&#x4EEC;&#x7684;&#x7CFB;&#x7EDF;&#x963F;&#x5C14;&#x6CD5;&#x72D7;&#x6218;&#x80DC;&#x4E86;&#x4E16;&#x754C;&#x56F4;&#x68CB;&#x51A0;&#x519B;&#x674E;&#x4E16;&#x77F3;&#x800C;&#x544A;&#x7EC8;&#x3002;&#x4ECE;&#x672A;&#x6709;&#x7A0B;&#x5E8F;&#x80FD;&#x52C9;&#x5F3A;&#x6253;&#x8D25;&#x8FD9;&#x4E2A;&#x6E38;&#x620F;&#x7684;&#x5927;&#x5E08;&#xFF0C;&#x66F4;&#x4E0D;&#x7528;&#x8BF4;&#x4E16;&#x754C;&#x51A0;&#x519B;&#x4E86;&#x3002;&#x4ECA;&#x5929;&#xFF0C;RL &#x7684;&#x6574;&#x4E2A;&#x9886;&#x57DF;&#x6B63;&#x5728;&#x6CB8;&#x817E;&#x7740;&#x65B0;&#x7684;&#x60F3;&#x6CD5;&#xFF0C;&#x5176;&#x90FD;&#x5177;&#x6709;&#x5E7F;&#x6CDB;&#x7684;&#x5E94;&#x7528;&#x8303;&#x56F4;&#x3002;DeepMind &#x5728; 2014 &#x88AB;&#x8C37;&#x6B4C;&#x4EE5;&#x8D85;&#x8FC7; 5 &#x4EBF;&#x7F8E;&#x5143;&#x6536;&#x8D2D;&#x3002;</p>
+<p>&#x90A3;&#x4E48;&#x4ED6;&#x4EEC;&#x662F;&#x600E;&#x4E48;&#x505A;&#x5230;&#x7684;&#x5462;&#xFF1F;&#x4E8B;&#x540E;&#x770B;&#x6765;&#xFF0C;&#x539F;&#x7406;&#x4F3C;&#x4E4E;&#x76F8;&#x5F53;&#x7B80;&#x5355;&#xFF1A;&#x4ED6;&#x4EEC;&#x5C06;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x8FD0;&#x7528;&#x5230;&#x5F3A;&#x5316;&#x5B66;&#x4E60;&#x9886;&#x57DF;&#xFF0C;&#x7ED3;&#x679C;&#x5374;&#x8D85;&#x8D8A;&#x4E86;&#x4ED6;&#x4EEC;&#x6700;&#x75AF;&#x72C2;&#x7684;&#x8BBE;&#x60F3;&#x3002;&#x5728;&#x672C;&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x9996;&#x5148;&#x89E3;&#x91CA;&#x5F3A;&#x5316;&#x5B66;&#x4E60;&#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x4EE5;&#x53CA;&#x5B83;&#x64C5;&#x957F;&#x4E8E;&#x4EC0;&#x4E48;&#xFF0C;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x5C06;&#x4ECB;&#x7ECD;&#x4E24;&#x4E2A;&#x5728;&#x6DF1;&#x5EA6;&#x5F3A;&#x5316;&#x5B66;&#x4E60;&#x9886;&#x57DF;&#x6700;&#x91CD;&#x8981;&#x7684;&#x6280;&#x672F;&#xFF1A;&#x7B56;&#x7565;&#x68AF;&#x5EA6;&#x548C;&#x6DF1;&#x5EA6; Q &#x7F51;&#x7EDC;&#xFF08;DQN&#xFF09;&#xFF0C;&#x5305;&#x62EC;&#x8BA8;&#x8BBA;&#x9A6C;&#x5C14;&#x53EF;&#x592B;&#x51B3;&#x7B56;&#x8FC7;&#x7A0B;&#xFF08;MDP&#xFF09;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x6280;&#x672F;&#x6765;&#x8BAD;&#x7EC3;&#x4E00;&#x4E2A;&#x6A21;&#x578B;&#x6765;&#x5E73;&#x8861;&#x79FB;&#x52A8;&#x8F66;&#x4E0A;&#x7684;&#x6746;&#x5B50;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x73A9; Atari &#x6E38;&#x620F;&#x3002;&#x540C;&#x6837;&#x7684;&#x6280;&#x672F;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5404;&#x79CD;&#x5404;&#x6837;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x4ECE;&#x6B65;&#x884C;&#x673A;&#x5668;&#x4EBA;&#x5230;&#x81EA;&#x52A8;&#x9A7E;&#x9A76;&#x6C7D;&#x8F66;&#x3002;</p>
+<h2 id="&#x5B66;&#x4E60;&#x4F18;&#x5316;&#x5956;&#x52B1;">&#x5B66;&#x4E60;&#x4F18;&#x5316;&#x5956;&#x52B1;</h2>
+<p>&#x5728;&#x5F3A;&#x5316;&#x5B66;&#x4E60;&#x4E2D;&#xFF0C;&#x667A;&#x80FD;&#x4F53;&#x5728;&#x73AF;&#x5883;&#xFF08;environment&#xFF09;&#x4E2D;&#x89C2;&#x5BDF;&#xFF08;observation&#xFF09;&#x5E76;&#x4E14;&#x505A;&#x51FA;&#x51B3;&#x7B56;&#xFF08;action&#xFF09;&#xFF0C;&#x968F;&#x540E;&#x5B83;&#x4F1A;&#x5F97;&#x5230;&#x5956;&#x52B1;&#xFF08;reward&#xFF09;&#x3002;&#x5B83;&#x7684;&#x76EE;&#x6807;&#x662F;&#x53BB;&#x5B66;&#x4E60;&#x5982;&#x4F55;&#x884C;&#x52A8;&#x80FD;&#x6700;&#x5927;&#x5316;<strong>&#x671F;&#x671B;&#x5956;&#x52B1;</strong>&#x3002;&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x5728;&#x610F;&#x53BB;&#x62DF;&#x4EBA;&#x5316;&#x7684;&#x8BDD;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x6B63;&#x5956;&#x52B1;&#x662F;&#x6109;&#x5FEB;&#xFF0C;&#x8D1F;&#x5956;&#x52B1;&#x662F;&#x75DB;&#x82E6;&#xFF08;&#x8FD9;&#x6837;&#x7684;&#x8BDD;&#x5956;&#x52B1;&#x4E00;&#x8BCD;&#x5C31;&#x6709;&#x70B9;&#x8BEF;&#x5BFC;&#x4E86;&#xFF09;&#x3002;&#x7B80;&#x5355;&#x6765;&#x8BF4;&#xFF0C;&#x667A;&#x80FD;&#x4F53;&#x5728;&#x73AF;&#x5883;&#x4E2D;&#x884C;&#x52A8;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x5B9E;&#x9A8C;&#x548C;&#x9519;&#x8BEF;&#x4E2D;&#x53BB;&#x5B66;&#x4E60;&#x6700;&#x5927;&#x5316;&#x5B83;&#x7684;&#x6109;&#x5FEB;&#xFF0C;&#x6700;&#x5C0F;&#x5316;&#x5B83;&#x7684;&#x75DB;&#x82E6;&#x3002;</p>
+<p>&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x76F8;&#x5F53;&#x5E7F;&#x6CDB;&#x7684;&#x8BBE;&#x7F6E;&#xFF0C;&#x53EF;&#x4EE5;&#x9002;&#x7528;&#x4E8E;&#x5404;&#x79CD;&#x5404;&#x6837;&#x7684;&#x4EFB;&#x52A1;&#x3002;&#x4EE5;&#x4E0B;&#x662F;&#x51E0;&#x4E2A;&#x4F8B;&#x5B50;&#xFF08;&#x8BE6;&#x89C1;&#x56FE; 16-1&#xFF09;&#xFF1A;</p>
+<ol>
+<li>&#x667A;&#x80FD;&#x4F53;&#x53EF;&#x4EE5;&#x662F;&#x63A7;&#x5236;&#x4E00;&#x4E2A;&#x673A;&#x68B0;&#x72D7;&#x7684;&#x7A0B;&#x5E8F;&#x3002;&#x5728;&#x6B64;&#x4F8B;&#x4E2D;&#xFF0C;&#x73AF;&#x5883;&#x5C31;&#x662F;&#x771F;&#x5B9E;&#x7684;&#x4E16;&#x754C;&#xFF0C;&#x667A;&#x80FD;&#x4F53;&#x901A;&#x8FC7;&#x8BB8;&#x591A;&#x7684;&#x4F20;&#x611F;&#x5668;&#x4F8B;&#x5982;&#x6444;&#x50CF;&#x673A;&#x6216;&#x8005;&#x4F20;&#x611F;&#x5668;&#x6765;&#x89C2;&#x5BDF;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7ED9;&#x7535;&#x673A;&#x53D1;&#x9001;&#x4FE1;&#x53F7;&#x6765;&#x884C;&#x52A8;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x88AB;&#x7F16;&#x7A0B;&#x8BBE;&#x7F6E;&#x4E3A;&#x5982;&#x679C;&#x5230;&#x8FBE;&#x4E86;&#x76EE;&#x7684;&#x5730;&#x5C31;&#x5F97;&#x5230;&#x6B63;&#x5956;&#x52B1;&#xFF0C;&#x5982;&#x679C;&#x6D6A;&#x8D39;&#x65F6;&#x95F4;&#xFF0C;&#x6216;&#x8005;&#x8D70;&#x9519;&#x65B9;&#x5411;&#xFF0C;&#x6216;&#x6454;&#x5012;&#x4E86;&#x5C31;&#x5F97;&#x5230;&#x8D1F;&#x5956;&#x52B1;&#x3002;</li>
+<li>&#x667A;&#x80FD;&#x4F53;&#x53EF;&#x4EE5;&#x662F;&#x63A7;&#x5236; MS.Pac-Man &#x7684;&#x7A0B;&#x5E8F;&#x3002;&#x5728;&#x6B64;&#x4F8B;&#x4E2D;&#xFF0C;&#x73AF;&#x5883;&#x662F; Atari &#x6E38;&#x620F;&#x7684;&#x4EFF;&#x771F;&#xFF0C;&#x884C;&#x4E3A;&#x662F; 9 &#x4E2A;&#x64CD;&#x7EB5;&#x6746;&#x4F4D;&#xFF08;&#x4E0A;&#x4E0B;&#x5DE6;&#x53F3;&#x4E2D;&#x95F4;&#x7B49;&#x7B49;&#xFF09;&#xFF0C;&#x89C2;&#x5BDF;&#x662F;&#x5C4F;&#x5E55;&#xFF0C;&#x56DE;&#x62A5;&#x5C31;&#x662F;&#x6E38;&#x620F;&#x70B9;&#x6570;&#x3002;</li>
+<li>&#x76F8;&#x4F3C;&#x5730;&#xFF0C;&#x667A;&#x80FD;&#x4F53;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x68CB;&#x76D8;&#x6E38;&#x620F;&#x7684;&#x7A0B;&#x5E8F;&#x4F8B;&#x5982;&#xFF1A;&#x56F4;&#x68CB;&#x3002;</li>
+<li>&#x667A;&#x80FD;&#x4F53;&#x4E5F;&#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x53BB;&#x63A7;&#x5236;&#x4E00;&#x4E2A;&#x5B9E;&#x4F53;&#xFF08;&#x6216;&#x865A;&#x62DF;&#x7684;&#xFF09;&#x53BB;&#x79FB;&#x52A8;&#x3002;&#x4F8B;&#x5982;&#x5B83;&#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;&#x667A;&#x80FD;&#x7A0B;&#x5E8F;&#xFF0C;&#x5F53;&#x5B83;&#x8C03;&#x6574;&#x5230;&#x76EE;&#x6807;&#x6E29;&#x5EA6;&#x4EE5;&#x8282;&#x80FD;&#x65F6;&#x4F1A;&#x5F97;&#x5230;&#x6B63;&#x5956;&#x52B1;&#xFF0C;&#x5F53;&#x4EBA;&#x4EEC;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x53BB;&#x8C03;&#x8282;&#x6E29;&#x5EA6;&#x65F6;&#x5B83;&#x4F1A;&#x5F97;&#x5230;&#x8D1F;&#x5956;&#x52B1;&#xFF0C;&#x6240;&#x4EE5;&#x667A;&#x80FD;&#x4F53;&#x5FC5;&#x987B;&#x5B66;&#x4F1A;&#x9884;&#x89C1;&#x4EBA;&#x4EEC;&#x7684;&#x9700;&#x8981;&#x3002;</li>
+<li>&#x667A;&#x80FD;&#x4F53;&#x4E5F;&#x53EF;&#x4EE5;&#x53BB;&#x89C2;&#x6D4B;&#x80A1;&#x7968;&#x5E02;&#x573A;&#x4EF7;&#x683C;&#x4EE5;&#x5B9E;&#x65F6;&#x51B3;&#x5B9A;&#x4E70;&#x5356;&#x3002;&#x5956;&#x52B1;&#x7684;&#x4F9D;&#x636E;&#x663E;&#x7136;&#x4E3A;&#x6323;&#x94B1;&#x6216;&#x8005;&#x8D54;&#x94B1;&#x3002;</li>
+</ol>
+<p><img src="../images/chapter_16/16-1.png" alt="&#x56FE;16-1"></p>
+<p>&#x5176;&#x5B9E;&#x6CA1;&#x6709;&#x6B63;&#x5956;&#x52B1;&#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x7684;&#xFF0C;&#x4F8B;&#x5982;&#x667A;&#x80FD;&#x4F53;&#x5728;&#x8FF7;&#x5BAB;&#x5185;&#x79FB;&#x52A8;&#xFF0C;&#x5B83;&#x6BCF;&#x5206;&#x6BCF;&#x79D2;&#x90FD;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x8D1F;&#x5956;&#x52B1;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x8981;&#x5C3D;&#x53EF;&#x80FD;&#x5FEB;&#x7684;&#x627E;&#x5230;&#x51FA;&#x53E3;&#xFF01;&#x8FD8;&#x6709;&#x5F88;&#x591A;&#x9002;&#x5408;&#x5F3A;&#x5316;&#x5B66;&#x4E60;&#x7684;&#x9886;&#x57DF;&#xFF0C;&#x4F8B;&#x5982;&#x81EA;&#x52A8;&#x9A7E;&#x9A76;&#x6C7D;&#x8F66;&#xFF0C;&#x5728;&#x7F51;&#x9875;&#x4E0A;&#x653E;&#x5E7F;&#x544A;&#xFF0C;&#x6216;&#x8005;&#x63A7;&#x5236;&#x4E00;&#x4E2A;&#x56FE;&#x50CF;&#x5206;&#x7C7B;&#x7CFB;&#x7EDF;&#x8BA9;&#x5B83;&#x660E;&#x767D;&#x5B83;&#x5E94;&#x8BE5;&#x5173;&#x6CE8;&#x4E8E;&#x4EC0;&#x4E48;&#x3002;</p>
+<h2 id="&#x7B56;&#x7565;&#x641C;&#x7D22;">&#x7B56;&#x7565;&#x641C;&#x7D22;</h2>
+<p>&#x88AB;&#x667A;&#x80FD;&#x4F53;&#x4F7F;&#x7528;&#x53BB;&#x6539;&#x53D8;&#x5B83;&#x884C;&#x4E3A;&#x7684;&#x7B97;&#x6CD5;&#x53EB;&#x505A;&#x7B56;&#x7565;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x7B56;&#x7565;&#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;&#x628A;&#x89C2;&#x6D4B;&#x5F53;&#x8F93;&#x5165;&#xFF0C;&#x884C;&#x4E3A;&#x5F53;&#x505A;&#x8F93;&#x51FA;&#x7684;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#xFF08;&#x89C1;&#x56FE;16-2&#xFF09;&#x3002;</p>
+<p><img src="../images/chapter_16/16-2.png" alt="&#x56FE;16-2"></p>
+<p>&#x8FD9;&#x4E2A;&#x7B56;&#x7565;&#x53EF;&#x4EE5;&#x662F;&#x4F60;&#x80FD;&#x60F3;&#x5230;&#x7684;&#x4EFB;&#x4F55;&#x7B97;&#x6CD5;&#xFF0C;&#x5B83;&#x751A;&#x81F3;&#x53EF;&#x4EE5;&#x4E0D;&#x88AB;&#x786E;&#x5B9A;&#x3002;&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;&#x8003;&#x8651;&#x4E00;&#x4E2A;&#x771F;&#x7A7A;&#x5438;&#x5C18;&#x5668;&#xFF0C;&#x5B83;&#x7684;&#x5956;&#x52B1;&#x662F;&#x5728; 30 &#x5206;&#x949F;&#x5185;&#x6361;&#x8D77;&#x7684;&#x7070;&#x5C18;&#x6570;&#x91CF;&#x3002;&#x5B83;&#x7684;&#x7B56;&#x7565;&#x53EF;&#x4EE5;&#x662F;&#x6BCF;&#x79D2;&#x4EE5;&#x6982;&#x7387;<code>P</code>&#x5411;&#x524D;&#x79FB;&#x52A8;&#xFF0C;&#x6216;&#x8005;&#x4EE5;&#x6982;&#x7387;<code>1-P</code>&#x968F;&#x673A;&#x5730;&#x5411;&#x5DE6;&#x6216;&#x5411;&#x53F3;&#x65CB;&#x8F6C;&#x3002;&#x65CB;&#x8F6C;&#x89D2;&#x5EA6;&#x5C06;&#x662F;<code>-R</code>&#x548C;<code>+R</code>&#x4E4B;&#x95F4;&#x7684;&#x968F;&#x673A;&#x89D2;&#x5EA6;&#xFF0C;&#x56E0;&#x4E3A;&#x8BE5;&#x7B56;&#x7565;&#x6D89;&#x53CA;&#x4E00;&#x4E9B;&#x968F;&#x673A;&#x6027;&#xFF0C;&#x6240;&#x4EE5;&#x79F0;&#x4E3A;&#x968F;&#x673A;&#x7B56;&#x7565;&#x3002;&#x673A;&#x5668;&#x4EBA;&#x5C06;&#x6709;&#x4E00;&#x4E2A;&#x4E0D;&#x786E;&#x5B9A;&#x7684;&#x8F68;&#x8FF9;&#xFF0C;&#x5B83;&#x4FDD;&#x8BC1;&#x5B83;&#x6700;&#x7EC8;&#x4F1A;&#x5230;&#x8FBE;&#x4EFB;&#x4F55;&#x53EF;&#x4EE5;&#x5230;&#x8FBE;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x5E76;&#x6361;&#x8D77;&#x6240;&#x6709;&#x7684;&#x7070;&#x5C18;&#x3002;&#x95EE;&#x9898;&#x662F;&#xFF1A;30&#x5206;&#x949F;&#x540E;&#x5B83;&#x4F1A;&#x6361;&#x8D77;&#x591A;&#x5C11;&#x7070;&#x5C18;&#xFF1F;</p>
+<p>&#x4F60;&#x600E;&#x4E48;&#x8BAD;&#x7EC3;&#x8FD9;&#x6837;&#x7684;&#x673A;&#x5668;&#x4EBA;&#xFF1F;&#x4F60;&#x53EF;&#x4EE5;&#x8C03;&#x6574;&#x4E24;&#x4E2A;&#x7B56;&#x7565;&#x53C2;&#x6570;&#xFF1A;&#x6982;&#x7387;<code>P</code>&#x548C;&#x89D2;&#x5EA6;&#x8303;&#x56F4;<code>R</code>&#x3002;&#x4E00;&#x4E2A;&#x60F3;&#x6CD5;&#x662F;&#x8FD9;&#x4E9B;&#x53C2;&#x6570;&#x5C1D;&#x8BD5;&#x8BB8;&#x591A;&#x4E0D;&#x540C;&#x7684;&#x503C;&#xFF0C;&#x5E76;&#x9009;&#x62E9;&#x6267;&#x884C;&#x6700;&#x4F73;&#x7684;&#x7EC4;&#x5408;&#xFF08;&#x89C1;&#x56FE; 16-3&#xFF09;&#x3002;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x7B56;&#x7565;&#x641C;&#x7D22;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x4F7F;&#x7528;&#x91CE;&#x86EE;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x5F53;&#x7B56;&#x7565;&#x7A7A;&#x95F4;&#x592A;&#x5927;&#xFF08;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#xFF09;&#xFF0C;&#x4EE5;&#x8FD9;&#x6837;&#x7684;&#x65B9;&#x5F0F;&#x627E;&#x5230;&#x4E00;&#x7EC4;&#x597D;&#x7684;&#x53C2;&#x6570;&#x5C31;&#x50CF;&#x662F;&#x5927;&#x6D77;&#x635E;&#x9488;&#x3002;</p>
+<p><img src="../images/chapter_16/16-3.png" alt="&#x56FE;16-3"></p>
+<p>&#x53E6;&#x4E00;&#x79CD;&#x641C;&#x5BFB;&#x7B56;&#x7565;&#x7A7A;&#x95F4;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x9057;&#x4F20;&#x7B97;&#x6CD5;&#x3002;&#x4F8B;&#x5982;&#x4F60;&#x53EF;&#x4EE5;&#x968F;&#x673A;&#x521B;&#x9020;&#x4E00;&#x4E2A;&#x5305;&#x542B; 100 &#x4E2A;&#x7B56;&#x7565;&#x7684;&#x7B2C;&#x4E00;&#x4EE3;&#x57FA;&#x56E0;&#xFF0C;&#x968F;&#x540E;&#x6740;&#x6B7B; 80 &#x4E2A;&#x7CDF;&#x7CD5;&#x7684;&#x7B56;&#x7565;&#xFF0C;&#x968F;&#x540E;&#x8BA9; 20 &#x4E2A;&#x5E78;&#x5B58;&#x7B56;&#x7565;&#x7E41;&#x884D; 4 &#x4EE3;&#x3002;&#x4E00;&#x4E2A;&#x540E;&#x4EE3;&#x53EA;&#x662F;&#x5B83;&#x7236;&#x8F88;&#x57FA;&#x56E0;&#x7684;&#x590D;&#x5236;&#x54C1;&#x52A0;&#x4E0A;&#x4E00;&#x4E9B;&#x968F;&#x673A;&#x53D8;&#x5F02;&#x3002;&#x5E78;&#x5B58;&#x7684;&#x7B56;&#x7565;&#x52A0;&#x4E0A;&#x4ED6;&#x4EEC;&#x7684;&#x540E;&#x4EE3;&#x5171;&#x540C;&#x6784;&#x6210;&#x4E86;&#x7B2C;&#x4E8C;&#x4EE3;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x7EE7;&#x7EED;&#x4EE5;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x8FED;&#x4EE3;&#x4EE3;&#xFF0C;&#x76F4;&#x5230;&#x627E;&#x5230;&#x4E00;&#x4E2A;&#x597D;&#x7684;&#x7B56;&#x7565;&#x3002;</p>
+<p>&#x53E6;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x662F;&#x4F7F;&#x7528;&#x4F18;&#x5316;&#x6280;&#x672F;&#xFF0C;&#x901A;&#x8FC7;&#x8BC4;&#x4F30;&#x5956;&#x52B1;&#x5173;&#x4E8E;&#x7B56;&#x7565;&#x53C2;&#x6570;&#x7684;&#x68AF;&#x5EA6;&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7;&#x8DDF;&#x968F;&#x68AF;&#x5EA6;&#x5411;&#x66F4;&#x9AD8;&#x7684;&#x5956;&#x52B1;&#xFF08;&#x68AF;&#x5EA6;&#x4E0A;&#x5347;&#xFF09;&#x8C03;&#x6574;&#x8FD9;&#x4E9B;&#x53C2;&#x6570;&#x3002;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x88AB;&#x79F0;&#x4E3A;&#x7B56;&#x7565;&#x68AF;&#x5EA6;&#xFF08;policy gradient, PG&#xFF09;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x672C;&#x7AE0;&#x540E;&#x9762;&#x8BE6;&#x7EC6;&#x8BA8;&#x8BBA;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x56DE;&#x5230;&#x771F;&#x7A7A;&#x5438;&#x5C18;&#x5668;&#x673A;&#x5668;&#x4EBA;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x7A0D;&#x5FAE;&#x589E;&#x52A0;&#x6982;&#x7387;P&#x5E76;&#x8BC4;&#x4F30;&#x8FD9;&#x662F;&#x5426;&#x589E;&#x52A0;&#x4E86;&#x673A;&#x5668;&#x4EBA;&#x5728; 30 &#x5206;&#x949F;&#x5185;&#x62FE;&#x8D77;&#x7684;&#x7070;&#x5C18;&#x7684;&#x91CF;&#xFF1B;&#x5982;&#x679C;&#x786E;&#x5B9E;&#x589E;&#x52A0;&#x4E86;&#xFF0C;&#x5C31;&#x76F8;&#x5BF9;&#x5E94;&#x589E;&#x52A0;<code>P</code>&#xFF0C;&#x5426;&#x5219;&#x51CF;&#x5C11;<code>P</code>&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528; Tensorflow &#x6765;&#x5B9E;&#x73B0; PG &#x7B97;&#x6CD5;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x8FD9;&#x4E4B;&#x524D;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4E3A;&#x667A;&#x80FD;&#x4F53;&#x521B;&#x9020;&#x4E00;&#x4E2A;&#x751F;&#x5B58;&#x7684;&#x73AF;&#x5883;&#xFF0C;&#x6240;&#x4EE5;&#x73B0;&#x5728;&#x662F;&#x4ECB;&#x7ECD; OpenAI &#x7684;&#x65F6;&#x5019;&#x4E86;&#x3002;</p>
+<h2 id="openai-&#x7684;&#x4ECB;&#x7ECD;">OpenAI &#x7684;&#x4ECB;&#x7ECD;</h2>
+<p>&#x5F3A;&#x5316;&#x5B66;&#x4E60;&#x7684;&#x4E00;&#x4E2A;&#x6311;&#x6218;&#x662F;&#xFF0C;&#x4E3A;&#x4E86;&#x8BAD;&#x7EC3;&#x667A;&#x80FD;&#x4F53;&#xFF0C;&#x9996;&#x5148;&#x9700;&#x8981;&#x6709;&#x4E00;&#x4E2A;&#x5DE5;&#x4F5C;&#x73AF;&#x5883;&#x3002;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x5B66;&#x4E60; Atari &#x6E38;&#x620F;&#x7684;&#x7A0B;&#x5E8F;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x4E00;&#x4E2A; Atari &#x6E38;&#x620F;&#x6A21;&#x62DF;&#x5668;&#x3002;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x6B65;&#x884C;&#x673A;&#x5668;&#x4EBA;&#xFF0C;&#x90A3;&#x4E48;&#x73AF;&#x5883;&#x5C31;&#x662F;&#x771F;&#x5B9E;&#x7684;&#x4E16;&#x754C;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5728;&#x8FD9;&#x4E2A;&#x73AF;&#x5883;&#x4E2D;&#x8BAD;&#x7EC3;&#x4F60;&#x7684;&#x673A;&#x5668;&#x4EBA;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x6709;&#x5176;&#x5C40;&#x9650;&#x6027;&#xFF1A;&#x5982;&#x679C;&#x673A;&#x5668;&#x4EBA;&#x4ECE;&#x60AC;&#x5D16;&#x4E0A;&#x6389;&#x4E0B;&#x6765;&#xFF0C;&#x4F60;&#x4E0D;&#x80FD;&#x4EC5;&#x4EC5;&#x70B9;&#x51FB;&#x201C;&#x64A4;&#x6D88;&#x201D;&#x3002;&#x4F60;&#x4E5F;&#x4E0D;&#x80FD;&#x52A0;&#x5FEB;&#x65F6;&#x95F4;&#xFF1B;&#x589E;&#x52A0;&#x66F4;&#x591A;&#x7684;&#x8BA1;&#x7B97;&#x80FD;&#x529B;&#x4E0D;&#x4F1A;&#x8BA9;&#x673A;&#x5668;&#x4EBA;&#x79FB;&#x52A8;&#x5F97;&#x66F4;&#x5FEB;&#x3002;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x540C;&#x65F6;&#x8BAD;&#x7EC3; 1000 &#x4E2A;&#x673A;&#x5668;&#x4EBA;&#x662F;&#x975E;&#x5E38;&#x6602;&#x8D35;&#x7684;&#x3002;&#x7B80;&#x800C;&#x8A00;&#x4E4B;&#xFF0C;&#x8BAD;&#x7EC3;&#x5728;&#x73B0;&#x5B9E;&#x4E16;&#x754C;&#x4E2D;&#x662F;&#x56F0;&#x96BE;&#x548C;&#x7F13;&#x6162;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x901A;&#x5E38;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x6A21;&#x62DF;&#x73AF;&#x5883;&#xFF0C;&#x81F3;&#x5C11;&#x9700;&#x8981;&#x5F15;&#x5BFC;&#x8BAD;&#x7EC3;&#x3002;</p>
+<p>OpenAI gym &#x662F;&#x4E00;&#x4E2A;&#x5DE5;&#x5177;&#x5305;&#xFF0C;&#x5B83;&#x63D0;&#x4F9B;&#x5404;&#x79CD;&#x5404;&#x6837;&#x7684;&#x6A21;&#x62DF;&#x73AF;&#x5883;&#xFF08;Atari &#x6E38;&#x620F;&#xFF0C;&#x68CB;&#x76D8;&#x6E38;&#x620F;&#xFF0C;2D &#x548C; 3D &#x7269;&#x7406;&#x6A21;&#x62DF;&#x7B49;&#x7B49;&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x53EF;&#x4EE5;&#x8BAD;&#x7EC3;&#xFF0C;&#x6BD4;&#x8F83;&#xFF0C;&#x6216;&#x5F00;&#x53D1;&#x65B0;&#x7684; RL &#x7B97;&#x6CD5;&#x3002;</p>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x5B89;&#x88C5; OpenAI gym&#x3002;&#x53EF;&#x901A;&#x8FC7;<code>pip</code>&#x5B89;&#x88C5;&#xFF1A;</p>
+<pre><code class="lang-bash">$ pip install --upgrade gym
+</code></pre>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x6253;&#x5F00; Python shell &#x6216; Jupyter &#x7B14;&#x8BB0;&#x672C;&#x521B;&#x5EFA;&#x60A8;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x73AF;&#x5883;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> gym 
+<span class="hljs-meta">&gt;&gt;&gt; </span>env = gym.make(<span class="hljs-string">&quot;CartPole-v0&quot;</span>) 
+[<span class="hljs-number">2016</span><span class="hljs-number">-10</span><span class="hljs-number">-14</span> <span class="hljs-number">16</span>:<span class="hljs-number">03</span>:<span class="hljs-number">23</span>,<span class="hljs-number">199</span>] Making new env: MsPacman-v0 
+<span class="hljs-meta">&gt;&gt;&gt; </span>obs = env.reset() 
+<span class="hljs-meta">&gt;&gt;&gt; </span>obs 
+array([<span class="hljs-number">-0.03799846</span>,<span class="hljs-number">-0.03288115</span>,<span class="hljs-number">0.02337094</span>,<span class="hljs-number">0.00720711</span>]) 
+<span class="hljs-meta">&gt;&gt;&gt; </span>env.render()
+</code></pre>
+<p>&#x4F7F;&#x7528;<code>make()</code>&#x51FD;&#x6570;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x73AF;&#x5883;&#xFF0C;&#x5728;&#x6B64;&#x4F8B;&#x4E2D;&#x662F; CartPole &#x73AF;&#x5883;&#x3002;&#x8FD9;&#x662F;&#x4E00;&#x4E2A; 2D &#x6A21;&#x62DF;&#xFF0C;&#x5176;&#x4E2D;&#x63A8;&#x8F66;&#x53EF;&#x4EE5;&#x88AB;&#x5DE6;&#x53F3;&#x52A0;&#x901F;&#xFF0C;&#x4EE5;&#x5E73;&#x8861;&#x653E;&#x7F6E;&#x5728;&#x5B83;&#x4E0A;&#x9762;&#x7684;&#x5E73;&#x8861;&#x6746;&#xFF08;&#x89C1;&#x56FE; 16-4&#xFF09;&#x3002;&#x5728;&#x521B;&#x5EFA;&#x73AF;&#x5883;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4F7F;&#x7528;<code>reset()</code>&#x521D;&#x59CB;&#x5316;&#x3002;&#x8FD9;&#x4F1A;&#x8FD4;&#x56DE;&#x7B2C;&#x4E00;&#x4E2A;&#x89C2;&#x5BDF;&#x7ED3;&#x679C;&#x3002;&#x89C2;&#x5BDF;&#x53D6;&#x51B3;&#x4E8E;&#x73AF;&#x5883;&#x7684;&#x7C7B;&#x578B;&#x3002;&#x5BF9;&#x4E8E; CartPole &#x73AF;&#x5883;&#xFF0C;&#x6BCF;&#x4E2A;&#x89C2;&#x6D4B;&#x662F;&#x5305;&#x542B;&#x56DB;&#x4E2A;&#x6D6E;&#x70B9;&#x7684; 1D Numpy &#x5411;&#x91CF;&#xFF1A;&#x8FD9;&#x4E9B;&#x6D6E;&#x70B9;&#x6570;&#x4EE3;&#x8868;&#x63A8;&#x8F66;&#x7684;&#x6C34;&#x5E73;&#x4F4D;&#x7F6E;&#xFF08;0 &#x4E3A;&#x4E2D;&#x5FC3;&#xFF09;&#x3001;&#x5176;&#x901F;&#x5EA6;&#x3001;&#x6746;&#x7684;&#x89D2;&#x5EA6;&#xFF08;0 &#x7EF4;&#x5782;&#x76F4;&#xFF09;&#x53CA;&#x5176;&#x89D2;&#x901F;&#x5EA6;&#x3002;&#x6700;&#x540E;&#xFF0C;<code>render()</code>&#x65B9;&#x6CD5;&#x663E;&#x793A;&#x5982;&#x56FE; 16-4 &#x6240;&#x793A;&#x7684;&#x73AF;&#x5883;&#x3002;</p>
+<p><img src="../images/chapter_16/16-4.png" alt="&#x56FE;16-4"></p>
+<p>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x8BA9;<code>render()</code>&#x8BA9;&#x56FE;&#x50CF;&#x4EE5;&#x4E00;&#x4E2A; NUMPY &#x6570;&#x7EC4;&#x683C;&#x5F0F;&#x8FD4;&#x56DE;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;<code>mode</code>&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x4E3A;<code>rgb_array</code>&#xFF08;&#x6CE8;&#x610F;&#x5176;&#x4ED6;&#x73AF;&#x5883;&#x53EF;&#x80FD;&#x652F;&#x6301;&#x4E0D;&#x540C;&#x7684;&#x6A21;&#x5F0F;&#xFF09;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>img = env.render(mode=<span class="hljs-string">&quot;rgb_array&quot;</span>) 
+<span class="hljs-meta">&gt;&gt;&gt; </span>img.shape  <span class="hljs-comment"># height, width, channels (3=RGB) </span>
+(<span class="hljs-number">400</span>, <span class="hljs-number">600</span>, <span class="hljs-number">3</span>)
+</code></pre>
+<p>&#x4E0D;&#x5E78;&#x7684;&#x662F;&#xFF0C;&#x5373;&#x4F7F;&#x5C06;<code>mode</code>&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x4E3A;<code>rgb_array</code>&#xFF0C;CartPole&#xFF08;&#x548C;&#x5176;&#x4ED6;&#x4E00;&#x4E9B;&#x73AF;&#x5883;&#xFF09;&#x8FD8;&#x662F;&#x4F1A;&#x5C06;&#x5C06;&#x56FE;&#x50CF;&#x5448;&#x73B0;&#x5230;&#x5C4F;&#x5E55;&#x4E0A;&#x3002;&#x907F;&#x514D;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x7684;&#x552F;&#x4E00;&#x65B9;&#x5F0F;&#x662F;&#x4F7F;&#x7528;&#x4E00;&#x4E2A; fake X &#x670D;&#x52A1;&#x5668;&#xFF0C;&#x5982; XVFB &#x6216; XDimMy&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x5B89;&#x88C5; XVFB &#x548C;&#x542F;&#x52A8; Python&#xFF1A;<code>xvfb-run -s &quot;screen 0 1400x900x24&quot; python</code>&#x3002;&#x6216;&#x8005;&#x4F7F;&#x7528;<code>xvfbwrapper</code>&#x5305;&#x3002;</p>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x6765;&#x8BE2;&#x95EE;&#x73AF;&#x5883;&#x4EC0;&#x4E48;&#x52A8;&#x4F5C;&#x662F;&#x53EF;&#x80FD;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>env.action_space 
+Discrete(<span class="hljs-number">2</span>)
+</code></pre>
+<p><code>Discrete(2)</code>&#x8868;&#x793A;&#x53EF;&#x80FD;&#x7684;&#x52A8;&#x4F5C;&#x662F;&#x6574;&#x6570; 0 &#x548C; 1&#xFF0C;&#x8868;&#x793A;&#x5411;&#x5DE6;&#xFF08;0&#xFF09;&#x6216;&#x53F3;&#xFF08;1&#xFF09;&#x7684;&#x52A0;&#x901F;&#x3002;&#x5176;&#x4ED6;&#x73AF;&#x5883;&#x53EF;&#x80FD;&#x6709;&#x66F4;&#x591A;&#x7684;&#x52A8;&#x4F5C;&#xFF0C;&#x6216;&#x8005;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x7684;&#x52A8;&#x4F5C;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x8FDE;&#x7EED;&#x7684;&#xFF09;&#x3002;&#x56E0;&#x4E3A;&#x6746;&#x5B50;&#x5411;&#x53F3;&#x503E;&#x659C;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x5411;&#x53F3;&#x52A0;&#x901F;&#x63A8;&#x8F66;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>action = <span class="hljs-number">1</span>  <span class="hljs-comment"># accelerate right </span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>obs, reward, done, info = env.step(action) 
+<span class="hljs-meta">&gt;&gt;&gt; </span>obs 
+array([<span class="hljs-number">-0.03865608</span>,  <span class="hljs-number">0.16189797</span>,  <span class="hljs-number">0.02351508</span>, <span class="hljs-number">-0.27801135</span>]) 
+<span class="hljs-meta">&gt;&gt;&gt; </span>reward 
+<span class="hljs-number">1.0</span> 
+<span class="hljs-meta">&gt;&gt;&gt; </span>done 
+<span class="hljs-keyword">False</span> 
+<span class="hljs-meta">&gt;&gt;&gt; </span>info 
+{}
+</code></pre>
+<p><code>step()</code>&#x8868;&#x793A;&#x6267;&#x884C;&#x7ED9;&#x5B9A;&#x7684;&#x52A8;&#x4F5C;&#x5E76;&#x8FD4;&#x56DE;&#x56DB;&#x4E2A;&#x503C;&#xFF1A;</p>
+<p><code>obs</code>:</p>
+<p>&#x8FD9;&#x662F;&#x65B0;&#x7684;&#x89C2;&#x6D4B;&#xFF0C;&#x5C0F;&#x8F66;&#x73B0;&#x5728;&#x6B63;&#x5728;&#x5411;&#x53F3;&#x8D70;&#xFF08;<code>obs[1]&gt;0</code>&#xFF0C;&#x6CE8;&#xFF1A;&#x5F53;&#x524D;&#x901F;&#x5EA6;&#x4E3A;&#x6B63;&#xFF0C;&#x5411;&#x53F3;&#x4E3A;&#x6B63;&#xFF09;&#x3002;&#x5E73;&#x8861;&#x6746;&#x4ECD;&#x7136;&#x5411;&#x53F3;&#x503E;&#x659C;&#xFF08;<code>obs[2]&gt;0</code>&#xFF09;&#xFF0C;&#x4F46;&#x662F;&#x4ED6;&#x7684;&#x89D2;&#x901F;&#x5EA6;&#x73B0;&#x5728;&#x4E3A;&#x8D1F;&#xFF08;<code>obs[3]&lt;0</code>&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x5728;&#x4E0B;&#x4E00;&#x6B65;&#x540E;&#x53EF;&#x80FD;&#x4F1A;&#x5411;&#x5DE6;&#x503E;&#x659C;&#x3002;</p>
+<p><code>reward</code>&#xFF1A;</p>
+<p>&#x5728;&#x8FD9;&#x4E2A;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x65E0;&#x8BBA;&#x4F60;&#x505A;&#x4EC0;&#x4E48;&#xFF0C;&#x6BCF;&#x4E00;&#x6B65;&#x90FD;&#x4F1A;&#x5F97;&#x5230; 1.0 &#x5956;&#x52B1;&#xFF0C;&#x6240;&#x4EE5;&#x6E38;&#x620F;&#x7684;&#x76EE;&#x6807;&#x5C31;&#x662F;&#x5C3D;&#x53EF;&#x80FD;&#x957F;&#x7684;&#x8FD0;&#x884C;&#x3002;</p>
+<p><code>done</code>&#xFF1A;</p>
+<p>&#x5F53;&#x6E38;&#x620F;&#x7ED3;&#x675F;&#x65F6;&#x8FD9;&#x4E2A;&#x503C;&#x4F1A;&#x4E3A;<code>True</code>&#x3002;&#x5F53;&#x5E73;&#x8861;&#x6746;&#x503E;&#x659C;&#x592A;&#x591A;&#x65F6;&#x4F1A;&#x53D1;&#x751F;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x3002;&#x4E4B;&#x540E;&#xFF0C;&#x5FC5;&#x987B;&#x91CD;&#x65B0;&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x624D;&#x80FD;&#x91CD;&#x65B0;&#x4F7F;&#x7528;&#x3002;</p>
+<p><code>info</code>&#xFF1A;</p>
+<p>&#x8BE5;&#x5B57;&#x5178;&#x53EF;&#x4EE5;&#x5728;&#x5176;&#x4ED6;&#x73AF;&#x5883;&#x4E2D;&#x63D0;&#x4F9B;&#x989D;&#x5916;&#x7684;&#x8C03;&#x8BD5;&#x4FE1;&#x606F;&#x3002;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x4E0D;&#x5E94;&#x8BE5;&#x7528;&#x4E8E;&#x8BAD;&#x7EC3;&#xFF08;&#x8FD9;&#x662F;&#x4F5C;&#x5F0A;&#xFF09;&#x3002;</p>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x786C;&#x7F16;&#x7801;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x7B56;&#x7565;&#xFF0C;&#x5F53;&#x6746;&#x5411;&#x5DE6;&#x503E;&#x659C;&#x65F6;&#x52A0;&#x901F;&#x5DE6;&#x8FB9;&#xFF0C;&#x5F53;&#x6746;&#x5411;&#x53F3;&#x503E;&#x659C;&#x65F6;&#x52A0;&#x901F;&#x3002;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x7B56;&#x7565;&#x6765;&#x83B7;&#x5F97;&#x8D85;&#x8FC7; 500 &#x6B65;&#x7684;&#x5E73;&#x5747;&#x56DE;&#x62A5;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">basic_policy</span><span class="hljs-params">(obs)</span>:</span>    
+    angle = obs[<span class="hljs-number">2</span>]    
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span> <span class="hljs-keyword">if</span> angle &lt; <span class="hljs-number">0</span> <span class="hljs-keyword">else</span> <span class="hljs-number">1</span>
+
+totals = [] 
+<span class="hljs-keyword">for</span> episode <span class="hljs-keyword">in</span> range(<span class="hljs-number">500</span>):    
+    episode_rewards = <span class="hljs-number">0</span>    
+    obs = env.reset()    
+    <span class="hljs-keyword">for</span> step <span class="hljs-keyword">in</span> range(<span class="hljs-number">1000</span>): <span class="hljs-comment"># &#x6700;&#x591A;1000 &#x6B65;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x60F3;&#x8BA9;&#x5B83;&#x6C38;&#x8FDC;&#x8FD0;&#x884C;&#x4E0B;&#x53BB;        </span>
+        action = basic_policy(obs)        
+        obs, reward, done, info = env.step(action)        
+        episode_rewards += reward        
+        <span class="hljs-keyword">if</span> done:            
+            <span class="hljs-keyword">break</span>    
+    totals.append(episode_rewards)
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x4EE3;&#x7801;&#x5E0C;&#x671B;&#x80FD;&#x81EA;&#x6211;&#x89E3;&#x91CA;&#x3002;&#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x770B;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np 
+<span class="hljs-meta">&gt;&gt;&gt; </span>np.mean(totals), np.std(totals), np.min(totals), np.max(totals) 
+(<span class="hljs-number">42.125999999999998</span>, <span class="hljs-number">9.1237121830974033</span>, <span class="hljs-number">24.0</span>, <span class="hljs-number">68.0</span>)
+</code></pre>
+<p>&#x5373;&#x4F7F;&#x6709; 500 &#x6B21;&#x5C1D;&#x8BD5;&#xFF0C;&#x8FD9;&#x4E00;&#x7B56;&#x7565;&#x4ECE;&#x672A;&#x4F7F;&#x5E73;&#x8861;&#x6746;&#x5728;&#x8D85;&#x8FC7; 68 &#x4E2A;&#x8FDE;&#x7EED;&#x7684;&#x6B65;&#x9AA4;&#x91CC;&#x4FDD;&#x6301;&#x76F4;&#x7ACB;&#x3002;&#x8FD9;&#x4E0D;&#x592A;&#x597D;&#x3002;&#x5982;&#x679C;&#x4F60;&#x770B;&#x4E00;&#x4E0B; Juyter Notebook &#x4E2D;&#x7684;&#x6A21;&#x62DF;&#xFF0C;&#x4F60;&#x4F1A;&#x53D1;&#x73B0;&#xFF0C;&#x63A8;&#x8F66;&#x8D8A;&#x6765;&#x8D8A;&#x5F3A;&#x70C8;&#x5730;&#x5DE6;&#x53F3;&#x6446;&#x52A8;&#xFF0C;&#x76F4;&#x5230;&#x5E73;&#x8861;&#x6746;&#x503E;&#x659C;&#x592A;&#x591A;&#x3002;&#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x770B;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x662F;&#x5426;&#x80FD;&#x63D0;&#x51FA;&#x66F4;&#x597D;&#x7684;&#x7B56;&#x7565;&#x3002;</p>
+<h2 id="&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7B56;&#x7565;">&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7B56;&#x7565;</h2>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7B56;&#x7565;&#x3002;&#x5C31;&#x50CF;&#x4E4B;&#x524D;&#x6211;&#x4EEC;&#x7F16;&#x7801;&#x7684;&#x7B56;&#x7565;&#x4E00;&#x6837;&#xFF0C;&#x8FD9;&#x4E2A;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x5C06;&#x628A;&#x89C2;&#x5BDF;&#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#xFF0C;&#x8F93;&#x51FA;&#x8981;&#x6267;&#x884C;&#x7684;&#x52A8;&#x4F5C;&#x3002;&#x66F4;&#x786E;&#x5207;&#x5730;&#x8BF4;&#xFF0C;&#x5B83;&#x5C06;&#x4F30;&#x8BA1;&#x6BCF;&#x4E2A;&#x52A8;&#x4F5C;&#x7684;&#x6982;&#x7387;&#xFF0C;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x5C06;&#x6839;&#x636E;&#x4F30;&#x8BA1;&#x7684;&#x6982;&#x7387;&#x968F;&#x673A;&#x5730;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x52A8;&#x4F5C;&#xFF08;&#x89C1;&#x56FE; 16-5&#xFF09;&#x3002;&#x5728; CartPole &#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x53EA;&#x6709;&#x4E24;&#x79CD;&#x53EF;&#x80FD;&#x7684;&#x52A8;&#x4F5C;&#xFF08;&#x5DE6;&#x6216;&#x53F3;&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x8F93;&#x51FA;&#x795E;&#x7ECF;&#x5143;&#x3002;&#x5B83;&#x5C06;&#x8F93;&#x51FA;&#x52A8;&#x4F5C; 0&#xFF08;&#x5DE6;&#xFF09;&#x7684;&#x6982;&#x7387;<code>p</code>&#xFF0C;&#x52A8;&#x4F5C; 1&#xFF08;&#x53F3;&#xFF09;&#x7684;&#x6982;&#x7387;&#x663E;&#x7136;&#x5C06;&#x662F;<code>1 - p</code>&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x5B83;&#x8F93;&#x51FA; 0.7&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x5C06;&#x4EE5; 70% &#x7684;&#x6982;&#x7387;&#x9009;&#x62E9;&#x52A8;&#x4F5C; 0&#xFF0C;&#x4EE5; 30% &#x7684;&#x6982;&#x7387;&#x9009;&#x62E9;&#x52A8;&#x4F5C; 1&#x3002;</p>
+<p><img src="../images/chapter_16/16-5.png" alt="&#x56FE;16-5"></p>
+<p>&#x4F60;&#x53EF;&#x80FD;&#x5947;&#x602A;&#x4E3A;&#x4EC0;&#x4E48;&#x6211;&#x4EEC;&#x6839;&#x636E;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7ED9;&#x51FA;&#x7684;&#x6982;&#x7387;&#x6765;&#x9009;&#x62E9;&#x968F;&#x673A;&#x7684;&#x52A8;&#x4F5C;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x9009;&#x62E9;&#x6700;&#x9AD8;&#x5206;&#x6570;&#x7684;&#x52A8;&#x4F5C;&#x3002;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x4F7F;&#x667A;&#x80FD;&#x4F53;&#x5728;<strong>&#x63A2;&#x7D22;&#x65B0;&#x7684;&#x884C;&#x4E3A;</strong>&#x548C;<strong>&#x5229;&#x7528;&#x90A3;&#x4E9B;&#x5DF2;&#x77E5;&#x53EF;&#x884C;&#x7684;&#x884C;&#x52A8;</strong>&#x4E4B;&#x95F4;&#x627E;&#x5230;&#x6B63;&#x786E;&#x7684;&#x5E73;&#x8861;&#x3002;&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;&#x5047;&#x8BBE;&#x4F60;&#x7B2C;&#x4E00;&#x6B21;&#x53BB;&#x9910;&#x9986;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x83DC;&#x770B;&#x8D77;&#x6765;&#x540C;&#x6837;&#x5438;&#x5F15;&#x4EBA;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x968F;&#x673A;&#x6311;&#x9009;&#x4E00;&#x4E2A;&#x3002;&#x5982;&#x679C;&#x83DC;&#x597D;&#x5403;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x589E;&#x52A0;&#x4E0B;&#x4E00;&#x6B21;&#x70B9;&#x5B83;&#x7684;&#x6982;&#x7387;&#xFF0C;&#x4F46;&#x662F;&#x4F60;&#x4E0D;&#x5E94;&#x8BE5;&#x628A;&#x8FD9;&#x4E2A;&#x6982;&#x7387;&#x63D0;&#x9AD8;&#x5230; 100%&#xFF0C;&#x5426;&#x5219;&#x4F60;&#x5C06;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x5C1D;&#x8BD5;&#x5176;&#x4ED6;&#x83DC;&#x80B4;&#xFF0C;&#x5176;&#x4E2D;&#x4E00;&#x4E9B;&#x751A;&#x81F3;&#x6BD4;&#x4F60;&#x5C1D;&#x8BD5;&#x7684;&#x66F4;&#x597D;&#x3002;</p>
+<p>&#x8FD8;&#x8981;&#x6CE8;&#x610F;&#xFF0C;&#x5728;&#x8FD9;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x8FC7;&#x53BB;&#x7684;&#x52A8;&#x4F5C;&#x548C;&#x89C2;&#x5BDF;&#x53EF;&#x4EE5;&#x88AB;&#x5B89;&#x5168;&#x5730;&#x5FFD;&#x7565;&#xFF0C;&#x56E0;&#x4E3A;&#x6BCF;&#x4E2A;&#x89C2;&#x5BDF;&#x90FD;&#x5305;&#x542B;&#x73AF;&#x5883;&#x7684;&#x5B8C;&#x6574;&#x72B6;&#x6001;&#x3002;&#x5982;&#x679C;&#x6709;&#x4E00;&#x4E9B;&#x9690;&#x85CF;&#x72B6;&#x6001;&#xFF0C;&#x90A3;&#x4E48;&#x4F60;&#x4E5F;&#x9700;&#x8981;&#x8003;&#x8651;&#x8FC7;&#x53BB;&#x7684;&#x884C;&#x4E3A;&#x548C;&#x89C2;&#x5BDF;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x73AF;&#x5883;&#x4EC5;&#x4EC5;&#x63ED;&#x793A;&#x4E86;&#x63A8;&#x8F66;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5B83;&#x7684;&#x901F;&#x5EA6;&#xFF0C;&#x90A3;&#x4E48;&#x4F60;&#x4E0D;&#x4EC5;&#x8981;&#x8003;&#x8651;&#x5F53;&#x524D;&#x7684;&#x89C2;&#x6D4B;&#xFF0C;&#x8FD8;&#x8981;&#x8003;&#x8651;&#x5148;&#x524D;&#x7684;&#x89C2;&#x6D4B;&#xFF0C;&#x4EE5;&#x4FBF;&#x4F30;&#x8BA1;&#x5F53;&#x524D;&#x7684;&#x901F;&#x5EA6;&#x3002;&#x53E6;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x662F;&#x5F53;&#x89C2;&#x6D4B;&#x662F;&#x6709;&#x566A;&#x58F0;&#x7684;&#x7684;&#xFF0C;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x901A;&#x5E38;&#x4F60;&#x60F3;&#x7528;&#x8FC7;&#x53BB;&#x7684;&#x89C2;&#x5BDF;&#x6765;&#x4F30;&#x8BA1;&#x6700;&#x53EF;&#x80FD;&#x7684;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x3002;&#x56E0;&#x6B64;&#xFF0C;CartPole &#x95EE;&#x9898;&#x662F;&#x7B80;&#x5355;&#x7684;&#xFF1B;&#x89C2;&#x6D4B;&#x662F;&#x65E0;&#x566A;&#x58F0;&#x7684;&#xFF0C;&#x800C;&#x4E14;&#x5B83;&#x4EEC;&#x5305;&#x542B;&#x73AF;&#x5883;&#x7684;&#x5168;&#x72B6;&#x6001;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf 
+<span class="hljs-keyword">from</span> tensorflow.contrib.layers <span class="hljs-keyword">import</span> fully_connected
+<span class="hljs-comment"># 1. &#x58F0;&#x660E;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7ED3;&#x6784; </span>
+n_inputs = <span class="hljs-number">4</span>  <span class="hljs-comment"># == env.observation_space.shape[0] </span>
+n_hidden = <span class="hljs-number">4</span>  <span class="hljs-comment"># &#x8FD9;&#x53EA;&#x662F;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x6D4B;&#x8BD5;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x8FC7;&#x591A;&#x7684;&#x9690;&#x85CF;&#x5C42;</span>
+n_outputs = <span class="hljs-number">1</span> <span class="hljs-comment"># &#x53EA;&#x8F93;&#x51FA;&#x5411;&#x5DE6;&#x52A0;&#x901F;&#x7684;&#x6982;&#x7387;</span>
+initializer = tf.contrib.layers.variance_scaling_initializer()
+<span class="hljs-comment"># 2. &#x5EFA;&#x7ACB;&#x795E;&#x7ECF;&#x7F51;&#x7EDC; </span>
+X = tf.placeholder(tf.float32, shape=[<span class="hljs-keyword">None</span>, n_inputs])
+hidden = fully_connected(X, n_hidden, activation_fn=tf.nn.elu,weights_initializer=initializer) <span class="hljs-comment"># &#x9690;&#x5C42;&#x6FC0;&#x6D3B;&#x51FD;&#x6570;&#x4F7F;&#x7528;&#x6307;&#x6570;&#x7EBF;&#x6027;&#x51FD;&#x6570;             </span>
+logits = fully_connected(hidden, n_outputs, activation_fn=<span class="hljs-keyword">None</span>,weights_initializer=initializer)                   
+outputs = tf.nn.sigmoid(logits)
+<span class="hljs-comment"># 3. &#x5728;&#x6982;&#x7387;&#x57FA;&#x7840;&#x4E0A;&#x968F;&#x673A;&#x9009;&#x62E9;&#x52A8;&#x4F5C;</span>
+p_left_and_right = tf.concat(axis=<span class="hljs-number">1</span>, values=[outputs, <span class="hljs-number">1</span> - outputs]) 
+action = tf.multinomial(tf.log(p_left_and_right), num_samples=<span class="hljs-number">1</span>)
+init = tf.global_variables_initializer()
+</code></pre>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x901A;&#x8BFB;&#x4EE3;&#x7801;&#xFF1A;</p>
+<ol>
+<li><p>&#x5728;&#x5BFC;&#x5165;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E86;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x3002;&#x8F93;&#x5165;&#x7684;&#x6570;&#x91CF;&#x662F;&#x89C2;&#x6D4B;&#x7A7A;&#x95F4;&#x7684;&#x5927;&#x5C0F;&#xFF08;&#x5728; CartPole &#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x662F; 4 &#x4E2A;&#xFF09;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x6709; 4 &#x4E2A;&#x9690;&#x85CF;&#x5355;&#x5143;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x9700;&#x8981;&#x66F4;&#x591A;&#xFF0C;&#x5E76;&#x4E14;&#x6211;&#x4EEC;&#x53EA;&#x6709; 1 &#x4E2A;&#x8F93;&#x51FA;&#x6982;&#x7387;&#xFF08;&#x5411;&#x5DE6;&#x7684;&#x6982;&#x7387;&#xFF09;&#x3002;</p>
+</li>
+<li><p>&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x6784;&#x5EFA;&#x4E86;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x4E2A; vanilla &#x591A;&#x5C42;&#x611F;&#x77E5;&#x5668;&#xFF0C;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x8F93;&#x51FA;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x8F93;&#x51FA;&#x5C42;&#x4F7F;&#x7528; Logistic&#xFF08;Sigmoid&#xFF09;&#x6FC0;&#x6D3B;&#x51FD;&#x6570;&#xFF0C;&#x4EE5;&#x4FBF;&#x8F93;&#x51FA;&#x4ECE; 0 &#x5230; 1 &#x7684;&#x6982;&#x7387;&#x3002;&#x5982;&#x679C;&#x6709;&#x4E24;&#x4E2A;&#x4EE5;&#x4E0A;&#x7684;&#x53EF;&#x80FD;&#x52A8;&#x4F5C;&#xFF0C;&#x6BCF;&#x4E2A;&#x52A8;&#x4F5C;&#x90FD;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;&#x8F93;&#x51FA;&#x795E;&#x7ECF;&#x5143;&#xFF0C;&#x76F8;&#x5E94;&#x7684;&#x4F60;&#x5C06;&#x4F7F;&#x7528; Softmax &#x6FC0;&#x6D3B;&#x51FD;&#x6570;&#x3002;</p>
+</li>
+<li><p>&#x6700;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x8C03;&#x7528;<code>multinomial()</code>&#x51FD;&#x6570;&#x6765;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x52A8;&#x4F5C;&#x3002;&#x8BE5;&#x51FD;&#x6570;&#x72EC;&#x7ACB;&#x5730;&#x91C7;&#x6837;&#x4E00;&#x4E2A;&#xFF08;&#x6216;&#x591A;&#x4E2A;&#xFF09;&#x6574;&#x6570;&#xFF0C;&#x7ED9;&#x5B9A;&#x6BCF;&#x4E2A;&#x6574;&#x6570;&#x7684;&#x5BF9;&#x6570;&#x6982;&#x7387;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x901A;&#x8FC7;&#x8BBE;&#x7F6E;<code>num_samples=5</code>&#xFF0C;&#x4EE4;&#x6570;&#x7EC4;&#x4E3A;<code>[np.log(0.5), np.log(0.2), np.log(0.3)]</code>&#x6765;&#x8C03;&#x7528;&#x5B83;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x5C06;&#x8F93;&#x51FA;&#x4E94;&#x4E2A;&#x6574;&#x6570;&#xFF0C;&#x6BCF;&#x4E2A;&#x6574;&#x6570;&#x90FD;&#x6709; 50% &#x7684;&#x6982;&#x7387;&#x662F; 0&#xFF0C;20% &#x4E3A; 1&#xFF0C;30% &#x4E3A; 2&#x3002;&#x5728;&#x6211;&#x4EEC;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#x6765;&#x8868;&#x793A;&#x8981;&#x91C7;&#x53D6;&#x7684;&#x884C;&#x52A8;&#x3002;&#x7531;&#x4E8E;&#x8F93;&#x51FA;&#x5F20;&#x91CF;&#xFF08;output&#xFF09;&#x4EC5;&#x5305;&#x542B;&#x5411;&#x5DE6;&#x7684;&#x6982;&#x7387;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x9996;&#x5148;&#x5C06; 1 - output &#x8FDE;&#x63A5;&#x5B83;&#xFF0C;&#x4EE5;&#x5F97;&#x5230;&#x5305;&#x542B;&#x5DE6;&#x548C;&#x53F3;&#x52A8;&#x4F5C;&#x7684;&#x6982;&#x7387;&#x7684;&#x5F20;&#x91CF;&#x3002;&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x4E24;&#x4E2A;&#x4EE5;&#x4E0A;&#x7684;&#x53EF;&#x80FD;&#x52A8;&#x4F5C;&#xFF0C;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x5C06;&#x4E0D;&#x5F97;&#x4E0D;&#x8F93;&#x51FA;&#x6BCF;&#x4E2A;&#x52A8;&#x4F5C;&#x7684;&#x6982;&#x7387;&#xFF0C;&#x8FD9;&#x65F6;&#x4F60;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x8FDE;&#x63A5;&#x6B65;&#x9AA4;&#x4E86;&#x3002;</p>
+</li>
+</ol>
+<p>&#x597D;&#x4E86;&#xFF0C;&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x6709;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x89C2;&#x5BDF;&#x548C;&#x8F93;&#x51FA;&#x52A8;&#x4F5C;&#x7684;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x4E86;&#xFF0C;&#x90A3;&#x6211;&#x4EEC;&#x600E;&#x4E48;&#x8BAD;&#x7EC3;&#x5B83;&#x5462;&#xFF1F;</p>
+<h2 id="&#x8BC4;&#x4EF7;&#x884C;&#x4E3A;&#xFF1A;&#x4FE1;&#x7528;&#x5206;&#x914D;&#x95EE;&#x9898;">&#x8BC4;&#x4EF7;&#x884C;&#x4E3A;&#xFF1A;&#x4FE1;&#x7528;&#x5206;&#x914D;&#x95EE;&#x9898;</h2>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x6BCF;&#x4E00;&#x6B65;&#x7684;&#x6700;&#x4F73;&#x52A8;&#x4F5C;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x50CF;&#x901A;&#x5E38;&#x4E00;&#x6837;&#x8BAD;&#x7EC3;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#xFF0C;&#x901A;&#x8FC7;&#x6700;&#x5C0F;&#x5316;&#x4F30;&#x8BA1;&#x6982;&#x7387;&#x548C;&#x76EE;&#x6807;&#x6982;&#x7387;&#x4E4B;&#x95F4;&#x7684;&#x4EA4;&#x53C9;&#x71B5;&#x3002;&#x8FD9;&#x53EA;&#x662F;&#x901A;&#x5E38;&#x7684;&#x76D1;&#x7763;&#x5B66;&#x4E60;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x5728;&#x5F3A;&#x5316;&#x5B66;&#x4E60;&#x4E2D;&#xFF0C;&#x667A;&#x80FD;&#x4F53;&#x83B7;&#x5F97;&#x7684;&#x6307;&#x5BFC;&#x7684;&#x552F;&#x4E00;&#x9014;&#x5F84;&#x662F;&#x901A;&#x8FC7;&#x5956;&#x52B1;&#xFF0C;&#x5956;&#x52B1;&#x901A;&#x5E38;&#x662F;&#x7A00;&#x758F;&#x7684;&#x548C;&#x5EF6;&#x8FDF;&#x7684;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x667A;&#x80FD;&#x4F53;&#x5728; 100 &#x4E2A;&#x6B65;&#x9AA4;&#x5185;&#x8BBE;&#x6CD5;&#x5E73;&#x8861;&#x6746;&#xFF0C;&#x5B83;&#x600E;&#x4E48;&#x77E5;&#x9053;&#x5B83;&#x91C7;&#x53D6;&#x7684; 100 &#x4E2A;&#x884C;&#x52A8;&#x4E2D;&#x7684;&#x54EA;&#x4E00;&#x4E2A;&#x662F;&#x597D;&#x7684;&#xFF0C;&#x54EA;&#x4E9B;&#x662F;&#x574F;&#x7684;&#xFF1F;&#x5B83;&#x6240;&#x77E5;&#x9053;&#x7684;&#x662F;&#xFF0C;&#x5728;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x884C;&#x52A8;&#x4E4B;&#x540E;&#xFF0C;&#x6746;&#x5B50;&#x5760;&#x843D;&#x4E86;&#xFF0C;&#x4F46;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x884C;&#x52A8;&#x80AF;&#x5B9A;&#x4E0D;&#x662F;&#x5B8C;&#x5168;&#x8D1F;&#x8D23;&#x7684;&#x3002;&#x8FD9;&#x88AB;&#x79F0;&#x4E3A;&#x4FE1;&#x7528;&#x5206;&#x914D;&#x95EE;&#x9898;&#xFF1A;&#x5F53;&#x667A;&#x80FD;&#x4F53;&#x5F97;&#x5230;&#x5956;&#x52B1;&#x65F6;&#xFF0C;&#x5F88;&#x96BE;&#x77E5;&#x9053;&#x54EA;&#x4E9B;&#x884C;&#x4E3A;&#x5E94;&#x8BE5;&#x88AB;&#x4FE1;&#x4EFB;&#xFF08;&#x6216;&#x8D23;&#x5907;&#xFF09;&#x3002;&#x60F3;&#x60F3;&#x4E00;&#x53EA;&#x72D7;&#x5728;&#x884C;&#x4E3A;&#x826F;&#x597D;&#x540E;&#x51E0;&#x5C0F;&#x65F6;&#x5C31;&#x4F1A;&#x5F97;&#x5230;&#x5956;&#x52B1;&#xFF0C;&#x5B83;&#x4F1A;&#x660E;&#x767D;&#x5B83;&#x5F97;&#x5230;&#x4E86;&#x4EC0;&#x4E48;&#x56DE;&#x62A5;&#x5417;&#xFF1F;</p>
+<p>&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x4E00;&#x4E2A;&#x901A;&#x5E38;&#x7684;&#x7B56;&#x7565;&#x662F;&#x57FA;&#x4E8E;&#x8FD9;&#x4E2A;&#x52A8;&#x4F5C;&#x540E;&#x5F97;&#x5206;&#x7684;&#x603B;&#x548C;&#x6765;&#x8BC4;&#x4F30;&#x8FD9;&#x4E2A;&#x4E2A;&#x52A8;&#x4F5C;&#xFF0C;&#x901A;&#x5E38;&#x5728;&#x6BCF;&#x4E2A;&#x6B65;&#x9AA4;&#x4E2D;&#x5E94;&#x7528;&#x8870;&#x51CF;&#x7387;<code>r</code>&#x3002;&#x4F8B;&#x5982;&#xFF08;&#x89C1;&#x56FE; 16-6&#xFF09;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x667A;&#x80FD;&#x4F53;&#x51B3;&#x5B9A;&#x8FDE;&#x7EED;&#x4E09;&#x6B21;&#x5411;&#x53F3;&#xFF0C;&#x5728;&#x7B2C;&#x4E00;&#x6B65;&#x4E4B;&#x540E;&#x5F97;&#x5230; +10 &#x5956;&#x52B1;&#xFF0C;&#x7B2C;&#x4E8C;&#x6B65;&#x540E;&#x5F97;&#x5230; 0&#xFF0C;&#x6700;&#x540E;&#x5728;&#x7B2C;&#x4E09;&#x6B65;&#x4E4B;&#x540E;&#x5F97;&#x5230; -50&#xFF0C;&#x7136;&#x540E;&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x8870;&#x51CF;&#x7387;<code>r=0.8</code>&#xFF0C;&#x90A3;&#x4E48;&#x7B2C;&#x4E00;&#x4E2A;&#x52A8;&#x4F5C;&#x5C06;&#x5F97;&#x5230;<code>10 +r&#xD7;0 + r2&#xD7;(-50)=-22</code>&#x7684;&#x5206;&#x8FF0;&#x3002;&#x5982;&#x679C;&#x8870;&#x51CF;&#x7387;&#x63A5;&#x8FD1; 0&#xFF0C;&#x90A3;&#x4E48;&#x4E0E;&#x5373;&#x65F6;&#x5956;&#x52B1;&#x76F8;&#x6BD4;&#xFF0C;&#x672A;&#x6765;&#x7684;&#x5956;&#x52B1;&#x4E0D;&#x4F1A;&#x6709;&#x591A;&#x5927;&#x610F;&#x4E49;&#x3002;&#x76F8;&#x53CD;&#xFF0C;&#x5982;&#x679C;&#x8870;&#x51CF;&#x7387;&#x63A5;&#x8FD1; 1&#xFF0C;&#x90A3;&#x4E48;&#x5BF9;&#x672A;&#x6765;&#x7684;&#x5956;&#x52B1;&#x51E0;&#x4E4E;&#x7B49;&#x4E8E;&#x5373;&#x65F6;&#x56DE;&#x62A5;&#x3002;&#x5178;&#x578B;&#x7684;&#x8870;&#x51CF;&#x7387;&#x901A;&#x5E38;&#x4E3A;&#x662F; 0.95 &#x6216; 0.99&#x3002;&#x5982;&#x679C;&#x8870;&#x51CF;&#x7387;&#x4E3A; 0.95&#xFF0C;&#x90A3;&#x4E48;&#x672A;&#x6765; 13 &#x6B65;&#x7684;&#x5956;&#x52B1;&#x5927;&#x7EA6;&#x662F;&#x5373;&#x65F6;&#x5956;&#x52B1;&#x7684;&#x4E00;&#x534A;&#xFF08;<code>0.9513&#xD7;0.5</code>&#xFF09;&#xFF0C;&#x800C;&#x5F53;&#x8870;&#x51CF;&#x7387;&#x4E3A; 0.99&#xFF0C;&#x672A;&#x6765; 69 &#x6B65;&#x7684;&#x5956;&#x52B1;&#x662F;&#x5373;&#x65F6;&#x5956;&#x52B1;&#x7684;&#x4E00;&#x534A;&#x3002;&#x5728; CartPole &#x73AF;&#x5883;&#x4E0B;&#xFF0C;&#x884C;&#x4E3A;&#x5177;&#x6709;&#x76F8;&#x5F53;&#x77ED;&#x671F;&#x7684;&#x5F71;&#x54CD;&#xFF0C;&#x56E0;&#x6B64;&#x9009;&#x62E9; 0.95 &#x7684;&#x6298;&#x6263;&#x7387;&#x662F;&#x5408;&#x7406;&#x7684;&#x3002;</p>
+<p><img src="../images/chapter_16/16-6.png" alt="&#x56FE;16-6"></p>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x4E00;&#x4E2A;&#x597D;&#x7684;&#x52A8;&#x4F5C;&#x53EF;&#x80FD;&#x4F1A;&#x4F34;&#x968F;&#x7740;&#x4E00;&#x4E9B;&#x574F;&#x7684;&#x52A8;&#x4F5C;&#xFF0C;&#x8FD9;&#x4E9B;&#x52A8;&#x4F5C;&#x4F1A;&#x5BFC;&#x81F4;&#x5E73;&#x8861;&#x6746;&#x8FC5;&#x901F;&#x4E0B;&#x964D;&#xFF0C;&#x4ECE;&#x800C;&#x5BFC;&#x81F4;&#x4E00;&#x4E2A;&#x597D;&#x7684;&#x52A8;&#x4F5C;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x4F4E;&#x5206;&#x6570;&#xFF08;&#x7C7B;&#x4F3C;&#x7684;&#xFF0C;&#x4E00;&#x4E2A;&#x597D;&#x884C;&#x52A8;&#x8005;&#x6709;&#x65F6;&#x4F1A;&#x5728;&#x4E00;&#x90E8;&#x70C2;&#x7247;&#x4E2D;&#x626E;&#x6F14;&#x4E3B;&#x89D2;&#xFF09;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x82B1;&#x8DB3;&#x591F;&#x591A;&#x7684;&#x65F6;&#x95F4;&#x6765;&#x8BAD;&#x7EC3;&#x6E38;&#x620F;&#xFF0C;&#x5E73;&#x5747;&#x4E0B;&#x6765;&#x597D;&#x7684;&#x884C;&#x4E3A;&#x4F1A;&#x5F97;&#x5230;&#x6BD4;&#x574F;&#x7684;&#x66F4;&#x597D;&#x7684;&#x5206;&#x6570;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x4E3A;&#x4E86;&#x83B7;&#x5F97;&#x76F8;&#x5F53;&#x53EF;&#x9760;&#x7684;&#x52A8;&#x4F5C;&#x5206;&#x6570;&#xFF0C;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x8FD0;&#x884C;&#x5F88;&#x591A;&#x6B21;&#x5E76;&#x5C06;&#x6240;&#x6709;&#x52A8;&#x4F5C;&#x5206;&#x6570;&#x5F52;&#x4E00;&#x5316;&#xFF08;&#x901A;&#x8FC7;&#x51CF;&#x53BB;&#x5E73;&#x5747;&#x503C;&#x5E76;&#x9664;&#x4EE5;&#x6807;&#x51C6;&#x504F;&#x5DEE;&#xFF09;&#x3002;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5408;&#x7406;&#x5730;&#x5047;&#x8BBE;&#x6D88;&#x6781;&#x5F97;&#x5206;&#x7684;&#x884C;&#x4E3A;&#x662F;&#x574F;&#x7684;&#xFF0C;&#x800C;&#x79EF;&#x6781;&#x5F97;&#x5206;&#x7684;&#x884C;&#x4E3A;&#x662F;&#x597D;&#x7684;&#x3002;&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x6709;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x6765;&#x8BC4;&#x4F30;&#x6BCF;&#x4E00;&#x4E2A;&#x52A8;&#x4F5C;&#xFF0C;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x51C6;&#x5907;&#x597D;&#x4F7F;&#x7528;&#x7B56;&#x7565;&#x68AF;&#x5EA6;&#x6765;&#x8BAD;&#x7EC3;&#x6211;&#x4EEC;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x667A;&#x80FD;&#x4F53;&#x3002;&#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x770B;&#x5982;&#x4F55;&#x3002;</p>
+<h2 id="&#x7B56;&#x7565;&#x68AF;&#x5EA6;">&#x7B56;&#x7565;&#x68AF;&#x5EA6;</h2>
+<p>&#x6B63;&#x5982;&#x524D;&#x9762;&#x6240;&#x8BA8;&#x8BBA;&#x7684;&#xFF0C;PG &#x7B97;&#x6CD5;&#x901A;&#x8FC7;&#x9075;&#x5FAA;&#x66F4;&#x9AD8;&#x56DE;&#x62A5;&#x7684;&#x68AF;&#x5EA6;&#x6765;&#x4F18;&#x5316;&#x7B56;&#x7565;&#x53C2;&#x6570;&#x3002;&#x4E00;&#x79CD;&#x6D41;&#x884C;&#x7684; PG &#x7B97;&#x6CD5;&#xFF0C;&#x79F0;&#x4E3A;&#x589E;&#x5F3A;&#x7B97;&#x6CD5;&#xFF0C;&#x5728; 1929 &#x7531; Ronald Williams &#x63D0;&#x51FA;&#x3002;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x5E38;&#x89C1;&#x7684;&#x53D8;&#x4F53;&#xFF1A;</p>
+<ol>
+<li><p>&#x9996;&#x5148;&#xFF0C;&#x8BA9;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7B56;&#x7565;&#x73A9;&#x51E0;&#x6B21;&#x6E38;&#x620F;&#xFF0C;&#x5E76;&#x5728;&#x6BCF;&#x4E00;&#x6B65;&#x8BA1;&#x7B97;&#x68AF;&#x5EA6;&#xFF0C;&#x8FD9;&#x4F7F;&#x5F97;&#x667A;&#x80FD;&#x4F53;&#x66F4;&#x53EF;&#x80FD;&#x9009;&#x62E9;&#x884C;&#x4E3A;&#xFF0C;&#x4F46;&#x4E0D;&#x5E94;&#x7528;&#x8FD9;&#x4E9B;&#x68AF;&#x5EA6;&#x3002;</p>
+</li>
+<li><p>&#x8FD0;&#x884C;&#x51E0;&#x6B21;&#x540E;&#xFF0C;&#x8BA1;&#x7B97;&#x6BCF;&#x4E2A;&#x52A8;&#x4F5C;&#x7684;&#x5F97;&#x5206;&#xFF08;&#x4F7F;&#x7528;&#x524D;&#x9762;&#x6BB5;&#x843D;&#x4E2D;&#x63CF;&#x8FF0;&#x7684;&#x65B9;&#x6CD5;&#xFF09;&#x3002;</p>
+</li>
+<li><p>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x52A8;&#x4F5C;&#x7684;&#x5206;&#x6570;&#x662F;&#x6B63;&#x7684;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x52A8;&#x4F5C;&#x662F;&#x597D;&#x7684;&#xFF0C;&#x53EF;&#x5E94;&#x7528;&#x8F83;&#x65E9;&#x8BA1;&#x7B97;&#x7684;&#x68AF;&#x5EA6;&#xFF0C;&#x4EE5;&#x4FBF;&#x5C06;&#x6765;&#x6709;&#x66F4;&#x5927;&#x7684;&#x7684;&#x6982;&#x7387;&#x9009;&#x62E9;&#x8FD9;&#x4E2A;&#x52A8;&#x4F5C;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x5206;&#x6570;&#x662F;&#x8D1F;&#x7684;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x52A8;&#x4F5C;&#x662F;&#x574F;&#x7684;&#xFF0C;&#x8981;&#x5E94;&#x7528;&#x8D1F;&#x68AF;&#x5EA6;&#x6765;&#x4F7F;&#x5F97;&#x8FD9;&#x4E2A;&#x52A8;&#x4F5C;&#x5728;&#x5C06;&#x6765;&#x91C7;&#x53D6;&#x7684;&#x53EF;&#x80FD;&#x6027;&#x66F4;&#x4F4E;&#x3002;&#x6211;&#x4EEC;&#x7684;&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#x7B80;&#x5355;&#x5730;&#x5C06;&#x6BCF;&#x4E2A;&#x68AF;&#x5EA6;&#x5411;&#x91CF;&#x4E58;&#x4EE5;&#x76F8;&#x5E94;&#x7684;&#x52A8;&#x4F5C;&#x5F97;&#x5206;&#x3002;</p>
+</li>
+<li><p>&#x6700;&#x540E;&#xFF0C;&#x8BA1;&#x7B97;&#x6240;&#x6709;&#x5F97;&#x5230;&#x7684;&#x68AF;&#x5EA6;&#x5411;&#x91CF;&#x7684;&#x5E73;&#x5747;&#x503C;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;&#x5B83;&#x6765;&#x6267;&#x884C;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6B65;&#x9AA4;&#x3002;</p>
+</li>
+</ol>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x4F7F;&#x7528; TensorFlow &#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x7B97;&#x6CD5;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x8BAD;&#x7EC3;&#x6211;&#x4EEC;&#x65E9;&#x5148;&#x5EFA;&#x7ACB;&#x7684;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7B56;&#x7565;&#xFF0C;&#x8BA9;&#x5B83;&#x5B66;&#x4F1A;&#x5E73;&#x8861;&#x8F66;&#x4E0A;&#x7684;&#x5E73;&#x8861;&#x6746;&#x3002;&#x8BA9;&#x6211;&#x4EEC;&#x4ECE;&#x5B8C;&#x6210;&#x4E4B;&#x524D;&#x7F16;&#x7801;&#x7684;&#x6784;&#x9020;&#x9636;&#x6BB5;&#x5F00;&#x59CB;&#xFF0C;&#x6DFB;&#x52A0;&#x76EE;&#x6807;&#x6982;&#x7387;&#x3001;&#x4EE3;&#x4EF7;&#x51FD;&#x6570;&#x548C;&#x8BAD;&#x7EC3;&#x64CD;&#x4F5C;&#x3002;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x7684;&#x610F;&#x613F;&#x662F;&#x9009;&#x62E9;&#x7684;&#x52A8;&#x4F5C;&#x662F;&#x6700;&#x597D;&#x7684;&#x52A8;&#x4F5C;&#xFF0C;&#x5982;&#x679C;&#x9009;&#x62E9;&#x7684;&#x52A8;&#x4F5C;&#x662F;&#x52A8;&#x4F5C; 0&#xFF08;&#x5DE6;&#xFF09;&#xFF0C;&#x5219;&#x76EE;&#x6807;&#x6982;&#x7387;&#x5FC5;&#x987B;&#x4E3A; 1&#xFF0C;&#x5982;&#x679C;&#x9009;&#x62E9;&#x52A8;&#x4F5C; 1&#xFF08;&#x53F3;&#xFF09;&#x5219;&#x76EE;&#x6807;&#x6982;&#x7387;&#x4E3A; 0&#xFF1A;</p>
+<pre><code class="lang-python">y = <span class="hljs-number">1.</span> - tf.to_float(action)
+</code></pre>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x6709;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x6982;&#x7387;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x635F;&#x5931;&#x51FD;&#x6570;&#xFF08;&#x4EA4;&#x53C9;&#x71B5;&#xFF09;&#x5E76;&#x8BA1;&#x7B97;&#x68AF;&#x5EA6;&#xFF1A;</p>
+<pre><code class="lang-python">learning_rate = <span class="hljs-number">0.01</span>
+cross_entropy = tf.nn.sigmoid_cross_entropy_with_logits(                    labels=y, logits=logits) 
+optimizer = tf.train.AdamOptimizer(learning_rate) 
+grads_and_vars = optimizer.compute_gradients(cross_entropy)
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x6211;&#x4EEC;&#x6B63;&#x5728;&#x8C03;&#x7528;&#x4F18;&#x5316;&#x5668;&#x7684;<code>compute_gradients()</code>&#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x4E0D;&#x662F;<code>minimize()</code>&#x65B9;&#x6CD5;&#x3002;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x5728;&#x4F7F;&#x7528;&#x5B83;&#x4EEC;&#x4E4B;&#x524D;&#x8C03;&#x6574;&#x68AF;&#x5EA6;&#x3002;<code>compute_gradients()</code>&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x68AF;&#x5EA6;&#x5411;&#x91CF;/&#x53D8;&#x91CF;&#x5BF9;&#x7684;&#x5217;&#x8868;&#xFF08;&#x6BCF;&#x4E2A;&#x53EF;&#x8BAD;&#x7EC3;&#x53D8;&#x91CF;&#x4E00;&#x5BF9;&#xFF09;&#x3002;&#x8BA9;&#x6211;&#x4EEC;&#x628A;&#x6240;&#x6709;&#x7684;&#x68AF;&#x5EA6;&#x653E;&#x5728;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x4E2D;&#xFF0C;&#x4EE5;&#x4FBF;&#x65B9;&#x4FBF;&#x5730;&#x83B7;&#x5F97;&#x5B83;&#x4EEC;&#x7684;&#x503C;&#xFF1A;</p>
+<pre><code class="lang-python">gradients = [grad <span class="hljs-keyword">for</span> grad, variable <span class="hljs-keyword">in</span> grads_and_vars]
+</code></pre>
+<p>&#x597D;&#xFF0C;&#x73B0;&#x5728;&#x662F;&#x68D8;&#x624B;&#x7684;&#x90E8;&#x5206;&#x3002;&#x5728;&#x6267;&#x884C;&#x9636;&#x6BB5;&#xFF0C;&#x7B97;&#x6CD5;&#x5C06;&#x8FD0;&#x884C;&#x7B56;&#x7565;&#xFF0C;&#x5E76;&#x5728;&#x6BCF;&#x4E2A;&#x6B65;&#x9AA4;&#x4E2D;&#x8BC4;&#x4F30;&#x8FD9;&#x4E9B;&#x68AF;&#x5EA6;&#x5F20;&#x91CF;&#x5E76;&#x5B58;&#x50A8;&#x5B83;&#x4EEC;&#x7684;&#x503C;&#x3002;&#x5728;&#x591A;&#x6B21;&#x8FD0;&#x884C;&#x4E4B;&#x540E;&#xFF0C;&#x5B83;&#x5982;&#x5148;&#x524D;&#x6240;&#x89E3;&#x91CA;&#x7684;&#x8C03;&#x6574;&#x8FD9;&#x4E9B;&#x68AF;&#x5EA6;&#xFF08;&#x5373;&#xFF0C;&#x901A;&#x8FC7;&#x52A8;&#x4F5C;&#x5206;&#x6570;&#x4E58;&#x4EE5;&#x5B83;&#x4EEC;&#x5E76;&#x4F7F;&#x5B83;&#x4EEC;&#x5F52;&#x4E00;&#x5316;&#xFF09;&#xFF0C;&#x5E76;&#x8BA1;&#x7B97;&#x8C03;&#x6574;&#x540E;&#x7684;&#x68AF;&#x5EA6;&#x7684;&#x5E73;&#x5747;&#x503C;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x9700;&#x8981;&#x5C06;&#x7ED3;&#x679C;&#x68AF;&#x5EA6;&#x53CD;&#x9988;&#x5230;&#x4F18;&#x5316;&#x5668;&#xFF0C;&#x4EE5;&#x4FBF;&#x5B83;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x4F18;&#x5316;&#x6B65;&#x9AA4;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x5BF9;&#x4E8E;&#x6BCF;&#x4E00;&#x4E2A;&#x68AF;&#x5EA6;&#x5411;&#x91CF;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x5360;&#x4F4D;&#x7B26;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x521B;&#x5EFA;&#x64CD;&#x4F5C;&#x53BB;&#x5E94;&#x7528;&#x66F4;&#x65B0;&#x7684;&#x68AF;&#x5EA6;&#x3002;&#x4E3A;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x8C03;&#x7528;&#x4F18;&#x5316;&#x5668;&#x7684;<code>apply_gradients()</code>&#x51FD;&#x6570;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x63A5;&#x53D7;&#x68AF;&#x5EA6;&#x5411;&#x91CF;/&#x53D8;&#x91CF;&#x5BF9;&#x7684;&#x5217;&#x8868;&#x3002;&#x6211;&#x4EEC;&#x4E0D;&#x7ED9;&#x5B83;&#x539F;&#x59CB;&#x7684;&#x68AF;&#x5EA6;&#x5411;&#x91CF;&#xFF0C;&#x800C;&#x662F;&#x7ED9;&#x5B83;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x66F4;&#x65B0;&#x68AF;&#x5EA6;&#x7684;&#x5217;&#x8868;&#xFF08;&#x5373;&#xFF0C;&#x901A;&#x8FC7;&#x5360;&#x4F4D;&#x7B26;&#x9012;&#x9001;&#x7684;&#x68AF;&#x5EA6;&#xFF09;&#xFF1A;</p>
+<pre><code class="lang-python">gradient_placeholders = [] 
+grads_and_vars_feed = [] 
+<span class="hljs-keyword">for</span> grad, variable <span class="hljs-keyword">in</span> grads_and_vars:       
+    gradient_placeholder = tf.placeholder(tf.float32, shape=grad.get_shape())    
+    gradient_placeholders.append(gradient_placeholder)  
+    grads_and_vars_feed.append((gradient_placeholder, variable))
+training_op = optimizer.apply_gradients(grads_and_vars_feed)
+</code></pre>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x540E;&#x9000;&#x4E00;&#x6B65;&#xFF0C;&#x770B;&#x770B;&#x6574;&#x4E2A;&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#xFF1A;</p>
+<pre><code class="lang-python">n_inputs = <span class="hljs-number">4</span> 
+n_hidden = <span class="hljs-number">4</span> 
+n_outputs = <span class="hljs-number">1</span> 
+initializer = tf.contrib.layers.variance_scaling_initializer()
+
+learning_rate = <span class="hljs-number">0.01</span>
+X = tf.placeholder(tf.float32, shape=[<span class="hljs-keyword">None</span>, n_inputs]) 
+hidden = fully_connected(X, n_hidden, activation_fn=tf.nn.elu,weights_initializer=initializer)                          
+logits = fully_connected(hidden, n_outputs, activation_fn=<span class="hljs-keyword">None</span>,                    weights_initializer=initializer) 
+outputs = tf.nn.sigmoid(logits) 
+p_left_and_right = tf.concat(axis=<span class="hljs-number">1</span>, values=[outputs, <span class="hljs-number">1</span> - outputs]) 
+action = tf.multinomial(tf.log(p_left_and_right), num_samples=<span class="hljs-number">1</span>)
+
+y = <span class="hljs-number">1.</span> - tf.to_float(action) 
+cross_entropy = tf.nn.sigmoid_cross_entropy_with_logits(labels=y, logits=logits) 
+optimizer = tf.train.AdamOptimizer(learning_rate) 
+grads_and_vars = optimizer.compute_gradients(cross_entropy) 
+gradients = [grad <span class="hljs-keyword">for</span> grad, variable <span class="hljs-keyword">in</span> grads_and_vars] 
+gradient_placeholders = [] 
+grads_and_vars_feed = [] 
+<span class="hljs-keyword">for</span> grad, variable <span class="hljs-keyword">in</span> grads_and_vars:    
+gradient_placeholder = tf.placeholder(tf.float32, shape=grad.get_shape())    gradient_placeholders.append(gradient_placeholder)    
+grads_and_vars_feed.append((gradient_placeholder, variable)) 
+training_op = optimizer.apply_gradients(grads_and_vars_feed)
+
+init = tf.global_variables_initializer() 
+saver = tf.train.Saver()
+</code></pre>
+<p>&#x5230;&#x6267;&#x884C;&#x9636;&#x6BB5;&#x4E86;&#xFF01;&#x6211;&#x4EEC;&#x5C06;&#x9700;&#x8981;&#x4E24;&#x4E2A;&#x51FD;&#x6570;&#x6765;&#x8BA1;&#x7B97;&#x603B;&#x6298;&#x6263;&#x5956;&#x52B1;&#xFF0C;&#x7ED9;&#x4E88;&#x539F;&#x59CB;&#x5956;&#x52B1;&#xFF0C;&#x4EE5;&#x53CA;&#x5F52;&#x4E00;&#x5316;&#x591A;&#x6B21;&#x5FAA;&#x73AF;&#x7684;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">discount_rewards</span><span class="hljs-params">(rewards, discount_rate)</span>:</span>    
+    discounted_rewards = np.empty(len(rewards))    
+    cumulative_rewards = <span class="hljs-number">0</span>    
+    <span class="hljs-keyword">for</span> step <span class="hljs-keyword">in</span> reversed(range(len(rewards))):        
+        cumulative_rewards = rewards[step] + cumulative_rewards * discount_rate       discounted_rewards[step] = cumulative_rewards    
+    <span class="hljs-keyword">return</span> discounted_rewards
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">discount_and_normalize_rewards</span><span class="hljs-params">(all_rewards, discount_rate)</span>:</span>       
+    all_discounted_rewards = [discount_rewards(rewards) <span class="hljs-keyword">for</span> rewards <span class="hljs-keyword">in</span> all_rewards]       
+    flat_rewards = np.concatenate(all_discounted_rewards)    
+    reward_mean = flat_rewards.mean()    
+    reward_std = flat_rewards.std()    
+    <span class="hljs-keyword">return</span> [(discounted_rewards - reward_mean)/reward_std  <span class="hljs-keyword">for</span> discounted_rewards <span class="hljs-keyword">in</span> all_discounted_rewards]
+</code></pre>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x68C0;&#x67E5;&#x4E00;&#x4E0B;&#x8FD0;&#x884C;&#x7684;&#x5982;&#x4F55;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>discount_rewards([<span class="hljs-number">10</span>, <span class="hljs-number">0</span>, <span class="hljs-number">-50</span>], discount_rate=<span class="hljs-number">0.8</span>) 
+array([<span class="hljs-number">-22.</span>, <span class="hljs-number">-40.</span>, <span class="hljs-number">-50.</span>]) 
+<span class="hljs-meta">&gt;&gt;&gt; </span>discount_and_normalize_rewards([[<span class="hljs-number">10</span>, <span class="hljs-number">0</span>, <span class="hljs-number">-50</span>], [<span class="hljs-number">10</span>, <span class="hljs-number">20</span>]], discount_rate=<span class="hljs-number">0.8</span>) 
+[array([<span class="hljs-number">-0.28435071</span>, <span class="hljs-number">-0.86597718</span>, <span class="hljs-number">-1.18910299</span>]), array([ <span class="hljs-number">1.26665318</span>,  <span class="hljs-number">1.0727777</span> ])]
+</code></pre>
+<p>&#x5BF9;<code>discount_rewards()</code>&#x7684;&#x8C03;&#x7528;&#x6B63;&#x597D;&#x8FD4;&#x56DE;&#x6211;&#x4EEC;&#x6240;&#x671F;&#x671B;&#x7684;&#xFF08;&#x89C1;&#x56FE; 16-6&#xFF09;&#x3002;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x9A8C;&#x8BC1;&#x51FD;&#x6570;<code>iscount_and_normalize_rewards()</code>&#x786E;&#x5B9E;&#x8FD4;&#x56DE;&#x4E86;&#x4E24;&#x4E2A;&#x6B65;&#x9AA4;&#x4E2D;&#x6BCF;&#x4E2A;&#x52A8;&#x4F5C;&#x7684;&#x6807;&#x51C6;&#x5316;&#x5206;&#x6570;&#x3002;&#x6CE8;&#x610F;&#x7B2C;&#x4E00;&#x6B65;&#x6BD4;&#x7B2C;&#x4E8C;&#x6B65;&#x5DEE;&#x5F88;&#x591A;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x7684;&#x5F52;&#x4E00;&#x5316;&#x5206;&#x6570;&#x90FD;&#x662F;&#x8D1F;&#x7684;&#xFF1B;&#x4ECE;&#x7B2C;&#x4E00;&#x6B65;&#x5F00;&#x59CB;&#x7684;&#x6240;&#x6709;&#x52A8;&#x4F5C;&#x90FD;&#x4F1A;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x574F;&#x7684;&#xFF0C;&#x53CD;&#x4E4B;&#xFF0C;&#x7B2C;&#x4E8C;&#x6B65;&#x7684;&#x6240;&#x6709;&#x52A8;&#x4F5C;&#x90FD;&#x4F1A;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x597D;&#x7684;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x6709;&#x4E86;&#x8BAD;&#x7EC3;&#x7B56;&#x7565;&#x6240;&#x9700;&#x7684;&#x4E00;&#x5207;&#xFF1A;</p>
+<pre><code class="lang-python">n_iterations = <span class="hljs-number">250</span>      <span class="hljs-comment"># &#x8BAD;&#x7EC3;&#x8FED;&#x4EE3;&#x6B21;&#x6570; </span>
+n_max_steps = <span class="hljs-number">1000</span>      <span class="hljs-comment"># &#x6BCF;&#x4E00;&#x6B21;&#x7684;&#x6700;&#x5927;&#x6B65;&#x957F; </span>
+n_games_per_update = <span class="hljs-number">10</span> <span class="hljs-comment"># &#x6BCF;&#x8FED;&#x4EE3;&#x5341;&#x6B21;&#x8BAD;&#x7EC3;&#x4E00;&#x6B21;&#x7B56;&#x7565;&#x7F51;&#x7EDC; </span>
+save_iterations = <span class="hljs-number">10</span>    <span class="hljs-comment"># &#x6BCF;&#x5341;&#x6B21;&#x8FED;&#x4EE3;&#x4FDD;&#x5B58;&#x6A21;&#x578B;</span>
+discount_rate = <span class="hljs-number">0.95</span>
+<span class="hljs-keyword">with</span> tf.Session() <span class="hljs-keyword">as</span> sess:    
+    init.run()    
+    <span class="hljs-keyword">for</span> iteration <span class="hljs-keyword">in</span> range(n_iterations):        
+        all_rewards = []    <span class="hljs-comment">#&#x6BCF;&#x4E00;&#x6B21;&#x7684;&#x6240;&#x6709;&#x5956;&#x52B1;        </span>
+        all_gradients = []  <span class="hljs-comment">#&#x6BCF;&#x4E00;&#x6B21;&#x7684;&#x6240;&#x6709;&#x68AF;&#x5EA6;        </span>
+        <span class="hljs-keyword">for</span> game <span class="hljs-keyword">in</span> range(n_games_per_update):            
+            current_rewards = []   <span class="hljs-comment">#&#x5F53;&#x524D;&#x6B65;&#x7684;&#x6240;&#x6709;&#x5956;&#x52B1;        </span>
+            current_gradients = [] <span class="hljs-comment">#&#x5F53;&#x524D;&#x6B65;&#x7684;&#x6240;&#x6709;&#x68AF;&#x5EA6; </span>
+            obs = env.reset()            
+            <span class="hljs-keyword">for</span> step <span class="hljs-keyword">in</span> range(n_max_steps):                
+                action_val, gradients_val = sess.run([action, gradients],
+                feed_dict={X: obs.reshape(<span class="hljs-number">1</span>, n_inputs)}) <span class="hljs-comment"># &#x4E00;&#x4E2A;obs                </span>
+                obs, reward, done, info = env.step(action_val[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>])                current_rewards.append(reward)                
+                current_gradients.append(gradients_val)                
+                <span class="hljs-keyword">if</span> done:                    
+                    <span class="hljs-keyword">break</span>            
+                all_rewards.append(current_rewards)            
+                all_gradients.append(current_gradients)
+        <span class="hljs-comment"># &#x6B64;&#x65F6;&#x6211;&#x4EEC;&#x6BCF;10&#x6B21;&#x8FD0;&#x884C;&#x4E00;&#x6B21;&#x7B56;&#x7565;&#xFF0C;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x51C6;&#x5907;&#x597D;&#x4F7F;&#x7528;&#x4E4B;&#x524D;&#x63CF;&#x8FF0;&#x7684;&#x7B97;&#x6CD5;&#x53BB;&#x66F4;&#x65B0;&#x7B56;&#x7565;&#xFF0C;&#x6CE8;&#xFF1A;&#x5373;&#x4F7F;&#x7528;&#x8FED;&#x4EE3;10&#x6B21;&#x7684;&#x7ED3;&#x679C;&#x6765;&#x4F18;&#x5316;&#x5F53;&#x524D;&#x7684;&#x7B56;&#x7565;&#x3002;      </span>
+        all_rewards = discount_and_normalize_rewards(all_rewards)        
+        feed_dict = {}        
+        <span class="hljs-keyword">for</span> var_index, grad_placeholder <span class="hljs-keyword">in</span> enumerate(gradient_placeholders):
+            <span class="hljs-comment"># &#x5C06;&#x68AF;&#x5EA6;&#x4E0E;&#x884C;&#x4E3A;&#x5206;&#x6570;&#x76F8;&#x4E58;&#xFF0C;&#x5E76;&#x8BA1;&#x7B97;&#x5E73;&#x5747;&#x503C;</span>
+            mean_gradients = np.mean([reward * all_gradients[game_index][step][var_index] <span class="hljs-keyword">for</span> game_index, rewards <span class="hljs-keyword">in</span> enumerate(all_rewards)  <span class="hljs-keyword">for</span> step, reward <span class="hljs-keyword">in</span> enumerate(rewards)],axis=<span class="hljs-number">0</span>)            
+            feed_dict[grad_placeholder] = mean_gradients        
+        sess.run(training_op, feed_dict=feed_dict)  
+        <span class="hljs-keyword">if</span> iteration % save_iterations == <span class="hljs-number">0</span>:           
+            saver.save(sess, <span class="hljs-string">&quot;./my_policy_net_pg.ckpt&quot;</span>)
+</code></pre>
+<p>&#x6BCF;&#x4E00;&#x6B21;&#x8BAD;&#x7EC3;&#x8FED;&#x4EE3;&#x90FD;&#x662F;&#x901A;&#x8FC7;&#x8FD0;&#x884C;10&#x6B21;&#x7684;&#x7B56;&#x7565;&#x5F00;&#x59CB;&#x7684;&#xFF08;&#x6BCF;&#x6B21;&#x6700;&#x591A; 1000 &#x6B65;&#xFF0C;&#x4EE5;&#x907F;&#x514D;&#x6C38;&#x8FDC;&#x8FD0;&#x884C;&#xFF09;&#x3002;&#x5728;&#x6BCF;&#x4E00;&#x6B65;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x8BA1;&#x7B97;&#x68AF;&#x5EA6;&#xFF0C;&#x5047;&#x8BBE;&#x9009;&#x62E9;&#x7684;&#x884C;&#x52A8;&#x662F;&#x6700;&#x597D;&#x7684;&#x3002;&#x5728;&#x8FD0;&#x884C;&#x4E86;&#x8FD9; 10 &#x6B21;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;<code>discount_and_normalize_rewards()</code>&#x51FD;&#x6570;&#x8BA1;&#x7B97;&#x52A8;&#x4F5C;&#x5F97;&#x5206;&#xFF1B;&#x6211;&#x4EEC;&#x904D;&#x5386;&#x6BCF;&#x4E2A;&#x53EF;&#x8BAD;&#x7EC3;&#x53D8;&#x91CF;&#xFF0C;&#x5728;&#x6240;&#x6709;&#x6B21;&#x6570;&#x548C;&#x6240;&#x6709;&#x6B65;&#x9AA4;&#x4E2D;&#xFF0C;&#x901A;&#x8FC7;&#x5176;&#x76F8;&#x5E94;&#x7684;&#x52A8;&#x4F5C;&#x5206;&#x6570;&#x6765;&#x4E58;&#x4EE5;&#x6BCF;&#x4E2A;&#x68AF;&#x5EA6;&#x5411;&#x91CF;&#xFF1B;&#x5E76;&#x4E14;&#x6211;&#x4EEC;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x7684;&#x5E73;&#x5747;&#x503C;&#x3002;&#x6700;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x8FD0;&#x884C;&#x8BAD;&#x7EC3;&#x64CD;&#x4F5C;&#xFF0C;&#x7ED9;&#x5B83;&#x63D0;&#x4F9B;&#x5E73;&#x5747;&#x68AF;&#x5EA6;&#xFF08;&#x5BF9;&#x6BCF;&#x4E2A;&#x53EF;&#x8BAD;&#x7EC3;&#x53D8;&#x91CF;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#xFF09;&#x3002;&#x6211;&#x4EEC;&#x7EE7;&#x7EED;&#x6BCF; 10 &#x4E2A;&#x8BAD;&#x7EC3;&#x6B21;&#x6570;&#x4FDD;&#x5B58;&#x4E00;&#x6B21;&#x6A21;&#x578B;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x505A;&#x5B8C;&#x4E86;&#xFF01;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x5C06;&#x8BAD;&#x7EC3;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7B56;&#x7565;&#xFF0C;&#x5B83;&#x5C06;&#x6210;&#x529F;&#x5730;&#x5B66;&#x4F1A;&#x5E73;&#x8861;&#x8F66;&#x4E0A;&#x7684;&#x5E73;&#x8861;&#x6746;&#xFF08;&#x4F60;&#x53EF;&#x4EE5;&#x5728; Juyter notebook &#x4E0A;&#x8BD5;&#x7528;&#xFF09;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x8BA9;&#x73A9;&#x5BB6;&#x6E38;&#x620F;&#x7ED3;&#x675F;&#xFF1A;&#x8981;&#x4E48;&#x5E73;&#x8861;&#x53EF;&#x4EE5;&#x503E;&#x659C;&#x592A;&#x5927;&#xFF0C;&#x8981;&#x4E48;&#x8F66;&#x5B8C;&#x5168;&#x8131;&#x79BB;&#x5C4F;&#x5E55;&#x3002;&#x5728; 250 &#x6B21;&#x8BAD;&#x7EC3;&#x8FED;&#x4EE3;&#x4E2D;&#xFF0C;&#x7B56;&#x7565;&#x5B66;&#x4F1A;&#x5E73;&#x8861;&#x6781;&#x70B9;&#xFF0C;&#x4F46;&#x5728;&#x907F;&#x514D;&#x8131;&#x79BB;&#x5C4F;&#x5E55;&#x65B9;&#x9762;&#x8FD8;&#x4E0D;&#x591F;&#x597D;&#x3002;&#x989D;&#x5916;&#x6570;&#x767E;&#x6B21;&#x7684;&#x8BAD;&#x7EC3;&#x8FED;&#x4EE3;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x8FD9;&#x4E00;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x7814;&#x7A76;&#x4EBA;&#x5458;&#x8BD5;&#x56FE;&#x627E;&#x5230;&#x4E00;&#x79CD;&#x5373;&#x4F7F;&#x5F53;&#x667A;&#x80FD;&#x4F53;&#x6700;&#x521D;&#x5BF9;&#x73AF;&#x5883;&#x4E00;&#x65E0;&#x6240;&#x77E5;&#x65F6;&#x4E5F;&#x80FD;&#x5F88;&#x597D;&#x5730;&#x5DE5;&#x4F5C;&#x7684;&#x7B97;&#x6CD5;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x9664;&#x975E;&#x4F60;&#x6B63;&#x5728;&#x5199;&#x8BBA;&#x6587;&#xFF0C;&#x5426;&#x5219;&#x4F60;&#x5E94;&#x8BE5;&#x5C3D;&#x53EF;&#x80FD;&#x591A;&#x5730;&#x5C06;&#x5148;&#x524D;&#x7684;&#x77E5;&#x8BC6;&#x6CE8;&#x5165;&#x5230;&#x667A;&#x80FD;&#x4F53;&#x4E2D;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4F1A;&#x6781;&#x5927;&#x5730;&#x52A0;&#x901F;&#x8BAD;&#x7EC3;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x4E0E;&#x5C4F;&#x5E55;&#x4E2D;&#x5FC3;&#x8DDD;&#x79BB;&#x548C;&#x6781;&#x70B9;&#x89D2;&#x5EA6;&#x6210;&#x6B63;&#x6BD4;&#x7684;&#x8D1F;&#x5956;&#x52B1;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x5DF2;&#x7ECF;&#x6709;&#x4E00;&#x4E2A;&#x76F8;&#x5F53;&#x597D;&#x7684;&#x7B56;&#x7565;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8BAD;&#x7EC3;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x6A21;&#x4EFF;&#x5B83;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;&#x7B56;&#x7565;&#x68AF;&#x5EA6;&#x6765;&#x6539;&#x8FDB;&#x5B83;&#x3002;</p>
+<p>&#x5C3D;&#x7BA1;&#x5B83;&#x76F8;&#x5BF9;&#x7B80;&#x5355;&#xFF0C;&#x4F46;&#x662F;&#x8BE5;&#x7B97;&#x6CD5;&#x662F;&#x975E;&#x5E38;&#x5F3A;&#x5927;&#x7684;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x7528;&#x5B83;&#x6765;&#x89E3;&#x51B3;&#x66F4;&#x96BE;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x800C;&#x4E0D;&#x4EC5;&#x4EC5;&#x662F;&#x5E73;&#x8861;&#x4E00;&#x8F86;&#x624B;&#x63A8;&#x8F66;&#x4E0A;&#x7684;&#x5E73;&#x8861;&#x6746;&#x3002;&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;AlgPaGo &#x662F;&#x57FA;&#x4E8E;&#x7C7B;&#x4F3C;&#x7684; PG &#x7B97;&#x6CD5;&#xFF08;&#x52A0;&#x4E0A;&#x8499;&#x7279;&#x5361;&#x7F57;&#x6811;&#x641C;&#x7D22;&#xFF0C;&#x8FD9;&#x8D85;&#x51FA;&#x4E86;&#x672C;&#x4E66;&#x7684;&#x8303;&#x56F4;&#xFF09;&#x3002;</p>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x770B;&#x53E6;&#x4E00;&#x4E2A;&#x6D41;&#x884C;&#x7684;&#x7B97;&#x6CD5;&#x3002;&#x4E0E; PG &#x7B97;&#x6CD5;&#x76F4;&#x63A5;&#x5C1D;&#x8BD5;&#x4F18;&#x5316;&#x7B56;&#x7565;&#x4EE5;&#x589E;&#x52A0;&#x5956;&#x52B1;&#x76F8;&#x53CD;&#xFF0C;&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x770B;&#x7684;&#x7B97;&#x6CD5;&#x662F;&#x95F4;&#x63A5;&#x7684;&#xFF1A;&#x667A;&#x80FD;&#x4F53;&#x5B66;&#x4E60;&#x53BB;&#x4F30;&#x8BA1;&#x6BCF;&#x4E2A;&#x72B6;&#x6001;&#x7684;&#x672A;&#x6765;&#x8870;&#x51CF;&#x5956;&#x52B1;&#x7684;&#x671F;&#x671B;&#x603B;&#x548C;&#xFF0C;&#x6216;&#x8005;&#x5728;&#x6BCF;&#x4E2A;&#x72B6;&#x6001;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x884C;&#x4E3A;&#x672A;&#x6765;&#x8870;&#x51CF;&#x5956;&#x52B1;&#x7684;&#x671F;&#x671B;&#x548C;&#x3002;&#x7136;&#x540E;&#xFF0C;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x77E5;&#x8BC6;&#x6765;&#x51B3;&#x5B9A;&#x5982;&#x4F55;&#x884C;&#x52A8;&#x3002;&#x4E3A;&#x4E86;&#x7406;&#x89E3;&#x8FD9;&#x4E9B;&#x7B97;&#x6CD5;&#xFF0C;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x9996;&#x5148;&#x4ECB;&#x7ECD;&#x9A6C;&#x5C14;&#x53EF;&#x592B;&#x51B3;&#x7B56;&#x8FC7;&#x7A0B;&#xFF08;MDP&#xFF09;&#x3002;</p>
+<h2 id="&#x9A6C;&#x5C14;&#x53EF;&#x592B;&#x51B3;&#x7B56;&#x8FC7;&#x7A0B;">&#x9A6C;&#x5C14;&#x53EF;&#x592B;&#x51B3;&#x7B56;&#x8FC7;&#x7A0B;</h2>
+<p>&#x5728;&#x4E8C;&#x5341;&#x4E16;&#x7EAA;&#x521D;&#xFF0C;&#x6570;&#x5B66;&#x5BB6; Andrey Markov &#x7814;&#x7A76;&#x4E86;&#x6CA1;&#x6709;&#x8BB0;&#x5FC6;&#x7684;&#x968F;&#x673A;&#x8FC7;&#x7A0B;&#xFF0C;&#x79F0;&#x4E3A;&#x9A6C;&#x5C14;&#x53EF;&#x592B;&#x94FE;&#x3002;&#x8FD9;&#x6837;&#x7684;&#x8FC7;&#x7A0B;&#x5177;&#x6709;&#x56FA;&#x5B9A;&#x6570;&#x91CF;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x6BCF;&#x4E2A;&#x6B65;&#x9AA4;&#x4E2D;&#x968F;&#x673A;&#x5730;&#x4ECE;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x6F14;&#x5316;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x3002;&#x5B83;&#x4ECE;&#x72B6;&#x6001;<code>S</code>&#x6F14;&#x53D8;&#x4E3A;&#x72B6;&#x6001;<code>S&apos;</code>&#x7684;&#x6982;&#x7387;&#x662F;&#x56FA;&#x5B9A;&#x7684;&#xFF0C;&#x5B83;&#x53EA;&#x4F9D;&#x8D56;&#x4E8E;<code>(S, S&apos;)</code>&#x5BF9;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4F9D;&#x8D56;&#x4E8E;&#x8FC7;&#x53BB;&#x7684;&#x72B6;&#x6001;&#xFF08;&#x7CFB;&#x7EDF;&#x6CA1;&#x6709;&#x8BB0;&#x5FC6;&#xFF09;&#x3002;</p>
+<p>&#x56FE; 16-7 &#x5C55;&#x793A;&#x4E86;&#x4E00;&#x4E2A;&#x5177;&#x6709;&#x56DB;&#x4E2A;&#x72B6;&#x6001;&#x7684;&#x9A6C;&#x5C14;&#x53EF;&#x592B;&#x94FE;&#x7684;&#x4F8B;&#x5B50;&#x3002;&#x5047;&#x8BBE;&#x8BE5;&#x8FC7;&#x7A0B;&#x4ECE;&#x72B6;&#x6001;<code>S0</code>&#x5F00;&#x59CB;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x4E0B;&#x4E00;&#x6B65;&#x9AA4;&#x4E2D;&#x6709; 70% &#x7684;&#x6982;&#x7387;&#x4FDD;&#x6301;&#x5728;&#x8BE5;&#x72B6;&#x6001;&#x4E0D;&#x53D8;&#x4E2D;&#x3002;&#x6700;&#x7EC8;&#xFF0C;&#x5B83;&#x5FC5;&#x7136;&#x79BB;&#x5F00;&#x90A3;&#x4E2A;&#x72B6;&#x6001;&#xFF0C;&#x5E76;&#x4E14;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x56DE;&#x6765;&#xFF0C;&#x56E0;&#x4E3A;&#x6CA1;&#x6709;&#x5176;&#x4ED6;&#x72B6;&#x6001;&#x56DE;&#x5230;<code>S0</code>&#x3002;&#x5982;&#x679C;&#x5B83;&#x8FDB;&#x5165;&#x72B6;&#x6001;<code>S1</code>&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x5F88;&#x53EF;&#x80FD;&#x4F1A;&#x8FDB;&#x5165;&#x72B6;&#x6001;<code>S2</code>&#xFF08;90% &#x7684;&#x6982;&#x7387;&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x7ACB;&#x5373;&#x56DE;&#x5230;&#x72B6;&#x6001;<code>S1</code>&#xFF08;&#x4EE5; 100% &#x7684;&#x6982;&#x7387;&#xFF09;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x5728;&#x8FD9;&#x4E24;&#x4E2A;&#x72B6;&#x6001;&#x4E4B;&#x95F4;&#x4EA4;&#x66FF;&#x591A;&#x6B21;&#xFF0C;&#x4F46;&#x6700;&#x7EC8;&#x5B83;&#x4F1A;&#x843D;&#x5165;&#x72B6;&#x6001;<code>S3</code>&#x5E76;&#x6C38;&#x8FDC;&#x7559;&#x5728;&#x90A3;&#x91CC;&#xFF08;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x7EC8;&#x7AEF;&#x72B6;&#x6001;&#xFF09;&#x3002;&#x9A6C;&#x5C14;&#x53EF;&#x592B;&#x94FE;&#x53EF;&#x4EE5;&#x6709;&#x975E;&#x5E38;&#x4E0D;&#x540C;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x5B83;&#x4EEC;&#x5728;&#x70ED;&#x529B;&#x5B66;&#x3001;&#x5316;&#x5B66;&#x3001;&#x7EDF;&#x8BA1;&#x5B66;&#x7B49;&#x65B9;&#x9762;&#x6709;&#x7740;&#x5E7F;&#x6CDB;&#x7684;&#x5E94;&#x7528;&#x3002;</p>
+<p><img src="../images/chapter_16/16-7.png" alt="&#x56FE;16-7"></p>
+<p>&#x9A6C;&#x5C14;&#x53EF;&#x592B;&#x51B3;&#x7B56;&#x8FC7;&#x7A0B;&#x6700;&#x521D;&#x662F;&#x5728; 20 &#x4E16;&#x7EAA; 50 &#x5E74;&#x4EE3;&#x7531; Richard Bellman &#x63CF;&#x8FF0;&#x7684;&#x3002;&#x5B83;&#x4EEC;&#x7C7B;&#x4F3C;&#x4E8E;&#x9A6C;&#x5C14;&#x53EF;&#x592B;&#x94FE;&#xFF0C;&#x4F46;&#x6709;&#x4E00;&#x4E2A;&#x8FDE;&#x7ED3;&#xFF1A;<strong>&#x5728;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x7684;&#x6BCF;&#x4E00;&#x6B65;&#x4E2D;&#xFF0C;&#x4E00;&#x4E2A;&#x667A;&#x80FD;&#x4F53;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x51E0;&#x79CD;&#x53EF;&#x80FD;&#x7684;&#x52A8;&#x4F5C;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#xFF0C;&#x5E76;&#x4E14;&#x8F6C;&#x79FB;&#x6982;&#x7387;&#x53D6;&#x51B3;&#x4E8E;&#x6240;&#x9009;&#x62E9;&#x7684;&#x52A8;&#x4F5C;&#x3002;</strong>&#x6B64;&#x5916;&#xFF0C;&#x4E00;&#x4E9B;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x8FD4;&#x56DE;&#x4E00;&#x4E9B;&#x5956;&#x52B1;&#xFF08;&#x6B63;&#x6216;&#x8D1F;&#xFF09;&#xFF0C;&#x667A;&#x80FD;&#x4F53;&#x7684;&#x76EE;&#x6807;&#x662F;&#x627E;&#x5230;&#x4E00;&#x4E2A;&#x7B56;&#x7565;&#xFF0C;&#x968F;&#x7740;&#x65F6;&#x95F4;&#x7684;&#x63A8;&#x79FB;&#x5C06;&#x6700;&#x5927;&#x9650;&#x5EA6;&#x5730;&#x63D0;&#x9AD8;&#x5956;&#x52B1;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x56FE; 16-8 &#x4E2D;&#x6240;&#x793A;&#x7684; MDP &#x5728;&#x6BCF;&#x4E2A;&#x6B65;&#x9AA4;&#x4E2D;&#x5177;&#x6709;&#x4E09;&#x4E2A;&#x72B6;&#x6001;&#x548C;&#x4E09;&#x4E2A;&#x53EF;&#x80FD;&#x7684;&#x79BB;&#x6563;&#x52A8;&#x4F5C;&#x3002;&#x5982;&#x679C;&#x4ECE;&#x72B6;&#x6001;<code>S0</code>&#x5F00;&#x59CB;&#xFF0C;&#x968F;&#x7740;&#x65F6;&#x95F4;&#x7684;&#x63A8;&#x79FB;&#x53EF;&#x4EE5;&#x5728;&#x52A8;&#x4F5C;<code>A0</code>&#x3001;<code>A1</code>&#x6216;<code>A2</code>&#x4E4B;&#x95F4;&#x8FDB;&#x884C;&#x9009;&#x62E9;&#x3002;&#x5982;&#x679C;&#x5B83;&#x9009;&#x62E9;&#x52A8;&#x4F5C;<code>A1</code>&#xFF0C;&#x5B83;&#x5C31;&#x4FDD;&#x6301;&#x5728;&#x72B6;&#x6001;<code>S0</code>&#x4E2D;&#xFF0C;&#x5E76;&#x4E14;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x5956;&#x52B1;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C;&#x613F;&#x610F;&#x7684;&#x8BDD;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x51B3;&#x5B9A;&#x6C38;&#x8FDC;&#x5446;&#x5728;&#x90A3;&#x91CC;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x5B83;&#x9009;&#x62E9;&#x52A8;&#x4F5C;<code>A0</code>&#xFF0C;&#x5B83;&#x6709; 70% &#x7684;&#x6982;&#x7387;&#x83B7;&#x5F97; 10 &#x5956;&#x52B1;&#xFF0C;&#x5E76;&#x4FDD;&#x6301;&#x5728;&#x72B6;&#x6001;<code>S0</code>&#x3002;&#x7136;&#x540E;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x4E00;&#x6B21;&#x53C8;&#x4E00;&#x6B21;&#x5730;&#x5C1D;&#x8BD5;&#x83B7;&#x5F97;&#x5C3D;&#x53EF;&#x80FD;&#x591A;&#x7684;&#x5956;&#x52B1;&#x3002;&#x4F46;&#x5B83;&#x5C06;&#x5728;&#x72B6;&#x6001;<code>S1</code>&#x4E2D;&#x7ED3;&#x675F;&#x8FD9;&#x6837;&#x7684;&#x884C;&#x4E3A;&#x3002;&#x5728;&#x72B6;&#x6001;<code>S1</code>&#x4E2D;&#xFF0C;&#x5B83;&#x53EA;&#x6709;&#x4E24;&#x79CD;&#x53EF;&#x80FD;&#x7684;&#x52A8;&#x4F5C;&#xFF1A;<code>A0</code>&#x6216;<code>A1</code>&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x53CD;&#x590D;&#x9009;&#x62E9;&#x52A8;&#x4F5C;<code>A1</code>&#x6765;&#x9009;&#x62E9;&#x505C;&#x7559;&#xFF0C;&#x6216;&#x8005;&#x5B83;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x52A8;&#x4F5C;<code>A2</code>&#x79FB;&#x52A8;&#x5230;&#x72B6;&#x6001;<code>S2</code>&#x5E76;&#x5F97;&#x5230; -50 &#x5956;&#x52B1;&#x3002;&#x5728;&#x72B6;&#x6001;<code>S3</code>&#x4E2D;&#xFF0C;&#x9664;&#x4E86;&#x91C7;&#x53D6;&#x884C;&#x52A8;<code>A1</code>&#x4E4B;&#x5916;&#xFF0C;&#x522B;&#x65E0;&#x9009;&#x62E9;&#xFF0C;&#x8FD9;&#x5C06;&#x6700;&#x6709;&#x53EF;&#x80FD;&#x5F15;&#x5BFC;&#x5B83;&#x56DE;&#x5230;&#x72B6;&#x6001;<code>S0</code>&#xFF0C;&#x5728;&#x9014;&#x4E2D;&#x83B7;&#x5F97; 40 &#x7684;&#x5956;&#x52B1;&#x3002;&#x901A;&#x8FC7;&#x89C2;&#x5BDF;&#x8FD9;&#x4E2A; MDP&#xFF0C;&#x4F60;&#x80FD;&#x731C;&#x51FA;&#x54EA;&#x4E00;&#x4E2A;&#x7B56;&#x7565;&#x4F1A;&#x968F;&#x7740;&#x65F6;&#x95F4;&#x7684;&#x63A8;&#x79FB;&#x800C;&#x83B7;&#x5F97;&#x6700;&#x5927;&#x7684;&#x56DE;&#x62A5;&#x5417;&#xFF1F;&#x5728;&#x72B6;&#x6001;<code>S0</code>&#x4E2D;&#xFF0C;&#x6E05;&#x695A;&#x5730;&#x77E5;&#x9053;<code>A0</code>&#x662F;&#x6700;&#x597D;&#x7684;&#x9009;&#x62E9;&#xFF0C;&#x5728;&#x72B6;&#x6001;<code>S3</code>&#x4E2D;&#xFF0C;&#x667A;&#x80FD;&#x4F53;&#x522B;&#x65E0;&#x9009;&#x62E9;&#xFF0C;&#x53EA;&#x80FD;&#x91C7;&#x53D6;&#x884C;&#x52A8;<code>A1</code>&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x72B6;&#x6001;<code>S1</code>&#x4E2D;&#xFF0C;&#x667A;&#x80FD;&#x4F53;&#x5426;&#x5E94;&#x8BE5;&#x4FDD;&#x6301;&#x4E0D;&#x52A8;&#xFF08;<code>A0</code>&#xFF09;&#x6216;&#x901A;&#x8FC7;&#x706B;&#xFF08;<code>A2</code>&#xFF09;&#xFF0C;&#x8FD9;&#x662F;&#x4E0D;&#x660E;&#x786E;&#x7684;&#x3002;</p>
+<p><img src="../images/chapter_16/16-8.png" alt="&#x56FE;16-8"></p>
+<p>Bellman &#x627E;&#x5230;&#x4E86;&#x4E00;&#x79CD;&#x4F30;&#x8BA1;&#x4EFB;&#x4F55;&#x72B6;&#x6001;<code>S</code>&#x7684;&#x6700;&#x4F73;&#x72B6;&#x6001;&#x503C;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4ED6;&#x63D0;&#x51FA;&#x4E86;<code>V(s)</code>&#xFF0C;&#x5B83;&#x662F;&#x667A;&#x80FD;&#x4F53;&#x5728;&#x5176;&#x91C7;&#x53D6;&#x6700;&#x4F73;&#x884C;&#x4E3A;&#x8FBE;&#x5230;&#x72B6;&#x6001;<code>s</code>&#x540E;&#x6240;&#x6709;&#x8870;&#x51CF;&#x672A;&#x6765;&#x5956;&#x52B1;&#x7684;&#x603B;&#x548C;&#x7684;&#x5E73;&#x5747;&#x671F;&#x671B;&#x3002;&#x4ED6;&#x8868;&#x660E;&#xFF0C;&#x5982;&#x679C;&#x667A;&#x80FD;&#x4F53;&#x7684;&#x884C;&#x4E3A;&#x6700;&#x4F73;&#xFF0C;&#x90A3;&#x4E48;&#x8D1D;&#x5C14;&#x66FC;&#x6700;&#x4F18;&#x6027;&#x516C;&#x5F0F;&#x9002;&#x7528;&#xFF08;&#x89C1;&#x516C;&#x5F0F; 16-1&#xFF09;&#x3002;&#x8FD9;&#x4E2A;&#x9012;&#x5F52;&#x516C;&#x5F0F;&#x8868;&#x793A;&#xFF0C;&#x5982;&#x679C;&#x667A;&#x80FD;&#x4F53;&#x6700;&#x4F18;&#x5730;&#x8FD0;&#x884C;&#xFF0C;&#x90A3;&#x4E48;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x7684;&#x6700;&#x4F18;&#x503C;&#x7B49;&#x4E8E;&#x5728;&#x91C7;&#x53D6;&#x4E00;&#x4E2A;&#x6700;&#x4F18;&#x52A8;&#x4F5C;&#x4E4B;&#x540E;&#x5E73;&#x5747;&#x5F97;&#x5230;&#x7684;&#x5956;&#x52B1;&#xFF0C;&#x52A0;&#x4E0A;&#x8BE5;&#x52A8;&#x4F5C;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x7684;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x7684;&#x671F;&#x671B;&#x6700;&#x4F18;&#x503C;&#x3002;</p>
+<p><img src="../images/chapter_16/E16-1.png" alt="&#x56FE;E16-1"></p>
+<p>&#x5176;&#x4E2D;&#xFF1A;</p>
+<ul>
+<li><p><code>T</code>&#x4E3A;&#x667A;&#x80FD;&#x4F53;&#x9009;&#x62E9;&#x52A8;&#x4F5C;<code>a</code>&#x65F6;&#x4ECE;&#x72B6;&#x6001;<code>s</code>&#x5230;&#x72B6;&#x6001;<code>s&apos;</code>&#x7684;&#x6982;&#x7387;</p>
+</li>
+<li><p><code>R</code>&#x4E3A;&#x667A;&#x80FD;&#x4F53;&#x9009;&#x62E9;&#x4EE5;&#x52A8;&#x4F5C;<code>a</code>&#x4ECE;&#x72B6;&#x6001;<code>s</code>&#x5230;&#x72B6;&#x6001;<code>s&apos;</code>&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x5F97;&#x5230;&#x7684;&#x5956;&#x52B1;</p>
+</li>
+<li><p><img src="../images/tex-ae539dfcc999c28e25a0f3ae65c1de79.gif" alt="\gamma">&#x4E3A;&#x8870;&#x51CF;&#x7387;</p>
+</li>
+</ul>
+<p>&#x8FD9;&#x4E2A;&#x7B49;&#x5F0F;&#x76F4;&#x63A5;&#x5F15;&#x51FA;&#x4E86;&#x4E00;&#x79CD;&#x7B97;&#x6CD5;&#xFF0C;&#x8BE5;&#x7B97;&#x6CD5;&#x53EF;&#x4EE5;&#x7CBE;&#x786E;&#x4F30;&#x8BA1;&#x6BCF;&#x4E2A;&#x53EF;&#x80FD;&#x72B6;&#x6001;&#x7684;&#x6700;&#x4F18;&#x72B6;&#x6001;&#x503C;&#xFF1A;&#x9996;&#x5148;&#x5C06;&#x6240;&#x6709;&#x72B6;&#x6001;&#x503C;&#x4F30;&#x8BA1;&#x521D;&#x59CB;&#x5316;&#x4E3A;&#x96F6;&#xFF0C;&#x7136;&#x540E;&#x7528;&#x6570;&#x503C;&#x8FED;&#x4EE3;&#x7B97;&#x6CD5;&#x8FED;&#x4EE3;&#x66F4;&#x65B0;&#x5B83;&#x4EEC;&#xFF08;&#x89C1;&#x516C;&#x5F0F; 16-2&#xFF09;&#x3002;&#x4E00;&#x4E2A;&#x663E;&#x8457;&#x7684;&#x7ED3;&#x679C;&#x662F;&#xFF0C;&#x7ED9;&#x5B9A;&#x8DB3;&#x591F;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x8FD9;&#x4E9B;&#x4F30;&#x8BA1;&#x4FDD;&#x8BC1;&#x6536;&#x655B;&#x5230;&#x6700;&#x4F18;&#x72B6;&#x6001;&#x503C;&#xFF0C;&#x5BF9;&#x5E94;&#x4E8E;&#x6700;&#x4F18;&#x7B56;&#x7565;&#x3002;</p>
+<p><img src="../images/chapter_16/E16-2.png" alt="&#x56FE;E16-2"></p>
+<p>&#x5176;&#x4E2D;&#xFF1A;</p>
+<ul>
+<li><img src="../images/tex-12561b9e1cad1ffa385140c6c5cf9c12.gif" alt="V_k (s)">&#x662F;&#x5728;<code>k</code>&#x6B21;&#x7B97;&#x6CD5;&#x8FED;&#x4EE3;&#x5BF9;&#x72B6;&#x6001;<code>s</code>&#x7684;&#x4F30;&#x8BA1;</li>
+</ul>
+<p>&#x8BE5;&#x7B97;&#x6CD5;&#x662F;&#x52A8;&#x6001;&#x89C4;&#x5212;&#x7684;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x5B83;&#x5C06;&#x4E86;&#x4E00;&#x4E2A;&#x590D;&#x6742;&#x7684;&#x95EE;&#x9898;&#xFF08;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F30;&#x8BA1;&#x6F5C;&#x5728;&#x7684;&#x672A;&#x6765;&#x8870;&#x51CF;&#x5956;&#x52B1;&#x7684;&#x603B;&#x548C;&#xFF09;&#x53D8;&#x4E3A;&#x53EF;&#x5904;&#x7406;&#x7684;&#x5B50;&#x95EE;&#x9898;&#xFF0C;&#x53EF;&#x4EE5;&#x8FED;&#x4EE3;&#x5730;&#x5904;&#x7406;&#xFF08;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x627E;&#x5230;&#x6700;&#x5927;&#x5316;&#x5E73;&#x5747;&#x62A5;&#x916C;&#x4E0E;&#x4E0B;&#x4E00;&#x4E2A;&#x8870;&#x51CF;&#x72B6;&#x6001;&#x503C;&#x7684;&#x548C;&#x7684;&#x52A8;&#x4F5C;&#xFF09;</p>
+<p>&#x4E86;&#x89E3;&#x6700;&#x4F73;&#x72B6;&#x6001;&#x503C;&#x53EF;&#x80FD;&#x662F;&#x6709;&#x7528;&#x7684;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x8BC4;&#x4F30;&#x7B56;&#x7565;&#xFF0C;&#x4F46;&#x5B83;&#x6CA1;&#x6709;&#x660E;&#x786E;&#x5730;&#x544A;&#x8BC9;&#x667A;&#x80FD;&#x4F53;&#x8981;&#x505A;&#x4EC0;&#x4E48;&#x3002;&#x5E78;&#x8FD0;&#x7684;&#x662F;&#xFF0C;Bellman &#x53D1;&#x73B0;&#x4E86;&#x4E00;&#x79CD;&#x975E;&#x5E38;&#x7C7B;&#x4F3C;&#x7684;&#x7B97;&#x6CD5;&#x6765;&#x4F30;&#x8BA1;&#x6700;&#x4F18;&#x72B6;&#x6001;-&#x52A8;&#x4F5C;&#x503C;&#xFF08;<em>state-action values</em>&#xFF09;&#xFF0C;&#x901A;&#x5E38;&#x79F0;&#x4E3A; Q &#x503C;&#x3002;&#x72B6;&#x6001;&#x884C;&#x52A8;<code>(S, A)</code>&#x5BF9;&#x7684;&#x6700;&#x4F18; Q &#x503C;&#xFF0C;&#x8BB0;&#x4E3A;<code>Q(s, a)</code>&#xFF0C;&#x662F;&#x667A;&#x80FD;&#x4F53;&#x5728;&#x5230;&#x8FBE;&#x72B6;&#x6001;<code>S</code>&#xFF0C;&#x7136;&#x540E;&#x9009;&#x62E9;&#x52A8;&#x4F5C;<code>A</code>&#x4E4B;&#x540E;&#x5E73;&#x5747;&#x8870;&#x51CF;&#x672A;&#x6765;&#x5956;&#x52B1;&#x7684;&#x671F;&#x671B;&#x7684;&#x603B;&#x548C;&#x3002;&#x4F46;&#x662F;&#x5728;&#x5B83;&#x770B;&#x5230;&#x8FD9;&#x4E2A;&#x52A8;&#x4F5C;&#x7684;&#x7ED3;&#x679C;&#x4E4B;&#x524D;&#xFF0C;&#x5047;&#x8BBE;&#x5B83;&#x5728;&#x8BE5;&#x52A8;&#x4F5C;&#x4E4B;&#x540E;&#x7684;&#x52A8;&#x4F5C;&#x662F;&#x6700;&#x4F18;&#x7684;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x5B83;&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#xFF1A;&#x518D;&#x6B21;&#xFF0C;&#x901A;&#x8FC7;&#x521D;&#x59CB;&#x5316;&#x6240;&#x6709;&#x7684; Q &#x503C;&#x4F30;&#x8BA1;&#x4E3A;&#x96F6;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528; Q &#x503C;&#x8FED;&#x4EE3;&#x7B97;&#x6CD5;&#x66F4;&#x65B0;&#x5B83;&#x4EEC;&#xFF08;&#x53C2;&#x89C1;&#x516C;&#x5F0F; 16-3&#xFF09;&#x3002;</p>
+<p><img src="../images/chapter_16/E16-3.png" alt="&#x56FE;E16-3"></p>
+<p>&#x4E00;&#x65E6;&#x4F60;&#x6709;&#x4E86;&#x6700;&#x4F73;&#x7684; Q &#x503C;&#xFF0C;&#x5B9A;&#x4E49;&#x6700;&#x4F18;&#x7684;&#x7B56;&#x7565;<code>&#x3C0;*(s)</code>&#xFF0C;&#x5B83;&#x662F;&#x5E73;&#x51E1;&#x7684;&#xFF1A;&#x5F53;&#x667A;&#x80FD;&#x4F53;&#x5904;&#x4E8E;&#x72B6;&#x6001;<code>S</code>&#x65F6;&#xFF0C;&#x5B83;&#x5E94;&#x8BE5;&#x9009;&#x62E9;&#x5177;&#x6709;&#x6700;&#x9AD8; Q &#x503C;&#x7684;&#x52A8;&#x4F5C;&#xFF0C;&#x7528;&#x4E8E;&#x8BE5;&#x72B6;&#x6001;&#xFF1A;<img src="../images/tex-11b3b872c168f182e8efc0bec2e6a0c5.gif" alt="\pi ^ * (s) =\arg \max_a Q^*(s, a)">&#x3002;</p>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x628A;&#x8FD9;&#x4E2A;&#x7B97;&#x6CD5;&#x5E94;&#x7528;&#x5230;&#x56FE; 16-8 &#x6240;&#x793A;&#x7684; MDP &#x4E2D;&#x3002;&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5B9A;&#x4E49; MDP&#xFF1A;</p>
+<pre><code class="lang-python">nan=np.nan  <span class="hljs-comment"># &#x4EE3;&#x8868;&#x4E0D;&#x53EF;&#x80FD;&#x7684;&#x52A8;&#x4F5C; </span>
+T = np.array([  <span class="hljs-comment"># shape=[s, a, s&apos;]        </span>
+    [[<span class="hljs-number">0.7</span>, <span class="hljs-number">0.3</span>, <span class="hljs-number">0.0</span>], [<span class="hljs-number">1.0</span>, <span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>], [<span class="hljs-number">0.8</span>, <span class="hljs-number">0.2</span>, <span class="hljs-number">0.0</span>]],
+    [[<span class="hljs-number">0.0</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">0.0</span>], [nan, nan, nan], [<span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>, <span class="hljs-number">1.0</span>]],       
+    [[nan, nan, nan], [<span class="hljs-number">0.8</span>, <span class="hljs-number">0.1</span>, <span class="hljs-number">0.1</span>], [nan, nan, nan]],    ]) 
+R = np.array([  <span class="hljs-comment"># shape=[s, a, s&apos;]        </span>
+    [[<span class="hljs-number">10.</span>, <span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>], [<span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>], [<span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>]],        
+    [[<span class="hljs-number">10.</span>, <span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>], [nan, nan, nan], [<span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>, <span class="hljs-number">-50.</span>]],        
+    [[nan, nan, nan], [<span class="hljs-number">40.</span>, <span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>], [nan, nan, nan]],    ]) 
+possible_actions = [[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>], [<span class="hljs-number">0</span>, <span class="hljs-number">2</span>], [<span class="hljs-number">1</span>]]
+</code></pre>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x8FD0;&#x884C; Q &#x503C;&#x8FED;&#x4EE3;&#x7B97;&#x6CD5;</p>
+<pre><code class="lang-python">Q = np.full((<span class="hljs-number">3</span>, <span class="hljs-number">3</span>), -np.inf)  <span class="hljs-comment"># -inf &#x5BF9;&#x5E94;&#x7740;&#x4E0D;&#x53EF;&#x80FD;&#x7684;&#x52A8;&#x4F5C; </span>
+<span class="hljs-keyword">for</span> state, actions <span class="hljs-keyword">in</span> enumerate(possible_actions):    
+    Q[state, actions] = <span class="hljs-number">0.0</span>  <span class="hljs-comment"># &#x5BF9;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x7684;&#x52A8;&#x4F5C;&#x521D;&#x59CB;&#x5316;&#x4E3A;0.0</span>
+learning_rate = <span class="hljs-number">0.01</span> 
+discount_rate = <span class="hljs-number">0.95</span> 
+n_iterations = <span class="hljs-number">100</span>
+<span class="hljs-keyword">for</span> iteration <span class="hljs-keyword">in</span> range(n_iterations):   
+    Q_prev = Q.copy()    
+    <span class="hljs-keyword">for</span> s <span class="hljs-keyword">in</span> range(<span class="hljs-number">3</span>):        
+        <span class="hljs-keyword">for</span> a <span class="hljs-keyword">in</span> possible_actions[s]:            
+            Q[s, a] = np.sum([T[s, a, sp] * (R[s, a, sp] + discount_rate * np.max(Q_prev[sp]))  
+            <span class="hljs-keyword">for</span> sp <span class="hljs-keyword">in</span> range(<span class="hljs-number">3</span>)])
+</code></pre>
+<p>&#x7ED3;&#x679C;&#x7684; Q &#x503C;&#x7C7B;&#x4F3C;&#x4E8E;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>Q 
+array([[ <span class="hljs-number">21.89498982</span>,  <span class="hljs-number">20.80024033</span>,  <span class="hljs-number">16.86353093</span>],       
+        [  <span class="hljs-number">1.11669335</span>,         -inf,   <span class="hljs-number">1.17573546</span>],       
+        [        -inf,  <span class="hljs-number">53.86946068</span>,         -inf]]) 
+<span class="hljs-meta">&gt;&gt;&gt; </span>np.argmax(Q, axis=<span class="hljs-number">1</span>)  <span class="hljs-comment"># &#x6BCF;&#x4E00;&#x72B6;&#x6001;&#x7684;&#x6700;&#x4F18;&#x52A8;&#x4F5C;</span>
+array([<span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>])
+</code></pre>
+<p>&#x8FD9;&#x7ED9;&#x6211;&#x4EEC;&#x8FD9;&#x4E2A; MDP &#x7684;&#x6700;&#x4F73;&#x7B56;&#x7565;&#xFF0C;&#x5F53;&#x4F7F;&#x7528; 0.95 &#x7684;&#x8870;&#x51CF;&#x7387;&#x65F6;&#xFF1A;&#x5728;&#x72B6;&#x6001;<code>S0</code>&#x9009;&#x62E9;&#x52A8;&#x4F5C;<code>A0</code>&#xFF0C;&#x5728;&#x72B6;&#x6001;<code>S1</code>&#x9009;&#x62E9;&#x52A8;&#x4F5C;<code>A2</code>&#xFF08;&#x901A;&#x8FC7;&#x706B;&#x7130;&#xFF01;&#xFF09;&#x5728;&#x72B6;&#x6001;<code>S2</code>&#x4E2D;&#x9009;&#x62E9;&#x52A8;&#x4F5C;<code>A1</code>&#xFF08;&#x552F;&#x4E00;&#x53EF;&#x80FD;&#x7684;&#x52A8;&#x4F5C;&#xFF09;&#x3002;&#x6709;&#x8DA3;&#x7684;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x628A;&#x8870;&#x51CF;&#x7387;&#x964D;&#x4F4E;&#x5230; 0.9&#xFF0C;&#x6700;&#x4F18;&#x7684;&#x7B56;&#x7565;&#x6539;&#x53D8;&#xFF1A;&#x5728;&#x72B6;&#x6001;<code>S1</code>&#x4E2D;&#xFF0C;&#x6700;&#x597D;&#x7684;&#x52A8;&#x4F5C;&#x53D8;&#x6210;<code>A0</code>&#xFF08;&#x4FDD;&#x6301;&#x4E0D;&#x53D8;&#xFF1B;&#x4E0D;&#x901A;&#x8FC7;&#x706B;&#xFF09;&#x3002;&#x8FD9;&#x662F;&#x6709;&#x9053;&#x7406;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x5982;&#x679C;&#x4F60;&#x8BA4;&#x4E3A;&#x73B0;&#x5728;&#x6BD4;&#x672A;&#x6765;&#x66F4;&#x91CD;&#x8981;&#xFF0C;&#x90A3;&#x4E48;&#x672A;&#x6765;&#x5956;&#x52B1;&#x7684;&#x524D;&#x666F;&#x662F;&#x4E0D;&#x503C;&#x5F97;&#x7ACB;&#x523B;&#x7ECF;&#x5386;&#x75DB;&#x82E6;&#x7684;&#x3002;</p>
+<h2 id="&#x65F6;&#x95F4;&#x5DEE;&#x5206;&#x5B66;&#x4E60;&#x4E0E;-q-&#x5B66;&#x4E60;">&#x65F6;&#x95F4;&#x5DEE;&#x5206;&#x5B66;&#x4E60;&#x4E0E; Q &#x5B66;&#x4E60;</h2>
+<p>&#x5177;&#x6709;&#x79BB;&#x6563;&#x52A8;&#x4F5C;&#x7684;&#x5F3A;&#x5316;&#x5B66;&#x4E60;&#x95EE;&#x9898;&#x901A;&#x5E38;&#x53EF;&#x4EE5;&#x88AB;&#x5EFA;&#x6A21;&#x4E3A;&#x9A6C;&#x5C14;&#x53EF;&#x592B;&#x51B3;&#x7B56;&#x8FC7;&#x7A0B;&#xFF0C;&#x4F46;&#x662F;&#x667A;&#x80FD;&#x4F53;&#x6700;&#x521D;&#x4E0D;&#x77E5;&#x9053;&#x8F6C;&#x79FB;&#x6982;&#x7387;&#x662F;&#x4EC0;&#x4E48;&#xFF08;&#x5B83;&#x4E0D;&#x77E5;&#x9053;<code>T</code>&#xFF09;&#xFF0C;&#x5E76;&#x4E14;&#x5B83;&#x4E0D;&#x77E5;&#x9053;&#x5956;&#x52B1;&#x4F1A;&#x662F;&#x4EC0;&#x4E48;&#xFF08;&#x5B83;&#x4E0D;&#x77E5;&#x9053;<code>R</code>&#xFF09;&#x3002;&#x5B83;&#x5FC5;&#x987B;&#x7ECF;&#x5386;&#x6BCF;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x548C;&#x6BCF;&#x4E00;&#x6B21;&#x8F6C;&#x53D8;&#x5E76;&#x4E14;&#x81F3;&#x5C11;&#x77E5;&#x9053;&#x4E00;&#x6B21;&#x5956;&#x52B1;&#xFF0C;&#x5E76;&#x4E14;&#x5982;&#x679C;&#x8981;&#x5BF9;&#x8F6C;&#x79FB;&#x6982;&#x7387;&#x8FDB;&#x884C;&#x5408;&#x7406;&#x7684;&#x4F30;&#x8BA1;&#xFF0C;&#x5C31;&#x5FC5;&#x987B;&#x7ECF;&#x5386;&#x591A;&#x6B21;&#x3002;</p>
+<p>&#x65F6;&#x95F4;&#x5DEE;&#x5206;&#x5B66;&#x4E60;&#xFF08;TD &#x5B66;&#x4E60;&#xFF09;&#x7B97;&#x6CD5;&#x4E0E;&#x6570;&#x503C;&#x8FED;&#x4EE3;&#x7B97;&#x6CD5;&#x975E;&#x5E38;&#x7C7B;&#x4F3C;&#xFF0C;&#x4F46;&#x8003;&#x8651;&#x5230;&#x667A;&#x80FD;&#x4F53;&#x4EC5;&#x5177;&#x6709; MDP &#x7684;&#x90E8;&#x5206;&#x77E5;&#x8BC6;&#x3002;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x6211;&#x4EEC;&#x5047;&#x8BBE;&#x667A;&#x80FD;&#x4F53;&#x6700;&#x521D;&#x53EA;&#x77E5;&#x9053;&#x53EF;&#x80FD;&#x7684;&#x72B6;&#x6001;&#x548C;&#x52A8;&#x4F5C;&#xFF0C;&#x6CA1;&#x6709;&#x66F4;&#x591A;&#x4E86;&#x3002;&#x667A;&#x80FD;&#x4F53;&#x4F7F;&#x7528;&#x63A2;&#x7D22;&#x7B56;&#x7565;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;&#x7EAF;&#x7CB9;&#x7684;&#x968F;&#x673A;&#x7B56;&#x7565;&#x6765;&#x63A2;&#x7D22; MDP&#xFF0C;&#x5E76;&#x4E14;&#x968F;&#x7740;&#x5B83;&#x7684;&#x53D1;&#x5C55;&#xFF0C;TD &#x5B66;&#x4E60;&#x7B97;&#x6CD5;&#x57FA;&#x4E8E;&#x5B9E;&#x9645;&#x89C2;&#x5BDF;&#x5230;&#x7684;&#x8F6C;&#x6362;&#x548C;&#x5956;&#x52B1;&#x6765;&#x66F4;&#x65B0;&#x72B6;&#x6001;&#x503C;&#x7684;&#x4F30;&#x8BA1;&#xFF08;&#x89C1;&#x516C;&#x5F0F; 16-4&#xFF09;&#x3002;</p>
+<p><img src="../images/chapter_16/E16-4.png" alt="&#x56FE;E16-4"></p>
+<p>&#x5176;&#x4E2D;&#xFF1A;</p>
+<p><code>a</code>&#x662F;&#x5B66;&#x4E60;&#x7387;&#xFF08;&#x4F8B;&#x5982; 0.01&#xFF09;</p>
+<p>TD &#x5B66;&#x4E60;&#x4E0E;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6709;&#x8BB8;&#x591A;&#x76F8;&#x4F3C;&#x4E4B;&#x5904;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x5B83;&#x4E00;&#x6B21;&#x5904;&#x7406;&#x4E00;&#x4E2A;&#x6837;&#x672C;&#x7684;&#x884C;&#x4E3A;&#x3002;&#x5C31;&#x50CF; SGD &#x4E00;&#x6837;&#xFF0C;&#x53EA;&#x6709;&#x5F53;&#x4F60;&#x9010;&#x6E10;&#x964D;&#x4F4E;&#x5B66;&#x4E60;&#x901F;&#x7387;&#x65F6;&#xFF0C;&#x5B83;&#x624D;&#x80FD;&#x771F;&#x6B63;&#x6536;&#x655B;&#xFF08;&#x5426;&#x5219;&#x5B83;&#x5C06;&#x5728;&#x6781;&#x503C;&#x70B9;&#x9707;&#x8361;&#xFF09;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x6BCF;&#x4E2A;&#x72B6;&#x6001;<code>S</code>&#xFF0C;&#x8BE5;&#x7B97;&#x6CD5;&#x53EA;&#x8DDF;&#x8E2A;&#x667A;&#x80FD;&#x4F53;&#x79BB;&#x5F00;&#x8BE5;&#x72B6;&#x6001;&#x65F6;&#x7ACB;&#x5373;&#x83B7;&#x5F97;&#x7684;&#x5956;&#x52B1;&#x7684;&#x5E73;&#x5747;&#x503C;&#xFF0C;&#x518D;&#x52A0;&#x4E0A;&#x5B83;&#x671F;&#x671B;&#x7A0D;&#x540E;&#x5F97;&#x5230;&#x7684;&#x5956;&#x52B1;&#xFF08;&#x5047;&#x8BBE;&#x5B83;&#x7684;&#x884C;&#x4E3A;&#x6700;&#x4F73;&#xFF09;&#x3002;</p>
+<p>&#x7C7B;&#x4F3C;&#x5730;&#xFF0C;&#x6B64;&#x65F6;&#x7684;Q &#x5B66;&#x4E60;&#x7B97;&#x6CD5;&#x662F; Q &#x503C;&#x8FED;&#x4EE3;&#x7B97;&#x6CD5;&#x7684;&#x6539;&#x7F16;&#x7248;&#x672C;&#xFF0C;&#x5176;&#x9002;&#x5E94;&#x8F6C;&#x79FB;&#x6982;&#x7387;&#x548C;&#x56DE;&#x62A5;&#x5728;&#x521D;&#x59CB;&#x672A;&#x77E5;&#x7684;&#x60C5;&#x51B5;&#xFF08;&#x89C1;&#x516C;&#x5F0F;16-5&#xFF09;&#x3002;</p>
+<p><img src="../images/chapter_16/E16-5.png" alt="&#x56FE;E16-5"></p>
+<p>&#x5BF9;&#x4E8E;&#x6BCF;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x52A8;&#x4F5C;&#x5BF9;<code>(s,a)</code>&#xFF0C;&#x8BE5;&#x7B97;&#x6CD5;&#x8DDF;&#x8E2A;&#x667A;&#x80FD;&#x4F53;&#x5728;&#x4EE5;&#x52A8;&#x4F5C;<code>A</code>&#x79BB;&#x5F00;&#x72B6;&#x6001;<code>S</code>&#x65F6;&#x83B7;&#x5F97;&#x7684;&#x5373;&#x65F6;&#x5956;&#x52B1;&#x5E73;&#x5747;&#x503C;<code>R</code>&#xFF0C;&#x52A0;&#x4E0A;&#x5B83;&#x671F;&#x671B;&#x7A0D;&#x540E;&#x5F97;&#x5230;&#x7684;&#x5956;&#x52B1;&#x3002;&#x7531;&#x4E8E;&#x76EE;&#x6807;&#x7B56;&#x7565;&#x5C06;&#x6700;&#x4F18;&#x5730;&#x8FD0;&#x884C;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53D6;&#x4E0B;&#x4E00;&#x72B6;&#x6001;&#x7684; Q &#x503C;&#x4F30;&#x8BA1;&#x7684;&#x6700;&#x5927;&#x503C;&#x3002;</p>
+<p>&#x4EE5;&#x4E0B;&#x662F;&#x5982;&#x4F55;&#x5B9E;&#x73B0; Q &#x5B66;&#x4E60;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> numpy.random <span class="hljs-keyword">as</span> rnd
+learning_rate0 = <span class="hljs-number">0.05</span> 
+learning_rate_decay = <span class="hljs-number">0.1</span> 
+n_iterations = <span class="hljs-number">20000</span>
+s = <span class="hljs-number">0</span> <span class="hljs-comment"># &#x5728;&#x72B6;&#x6001; 0&#x5F00;&#x59CB;</span>
+Q = np.full((<span class="hljs-number">3</span>, <span class="hljs-number">3</span>), -np.inf)  <span class="hljs-comment"># -inf &#x5BF9;&#x5E94;&#x7740;&#x4E0D;&#x53EF;&#x80FD;&#x7684;&#x52A8;&#x4F5C; </span>
+<span class="hljs-keyword">for</span> state, actions <span class="hljs-keyword">in</span> enumerate(possible_actions):    
+    Q[state, actions] = <span class="hljs-number">0.0</span>  <span class="hljs-comment"># &#x5BF9;&#x4E8E;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x7684;&#x52A8;&#x4F5C;&#x521D;&#x59CB;&#x5316;&#x4E3A; 0.0</span>
+<span class="hljs-keyword">for</span> iteration <span class="hljs-keyword">in</span> range(n_iterations):    
+    a = rnd.choice(possible_actions[s])  <span class="hljs-comment"># &#x968F;&#x673A;&#x9009;&#x62E9;&#x52A8;&#x4F5C;   </span>
+    sp = rnd.choice(range(<span class="hljs-number">3</span>), p=T[s, a]) <span class="hljs-comment"># &#x4F7F;&#x7528; T[s, a] &#x6311;&#x9009;&#x4E0B;&#x4E00;&#x72B6;&#x6001;   </span>
+    reward = R[s, a, sp]    
+    learning_rate = learning_rate0 / (<span class="hljs-number">1</span> + iteration * learning_rate_decay)    
+    Q[s, a] = learning_rate * Q[s, a] + (<span class="hljs-number">1</span> - learning_rate) * (reward + discount_rate * np.max(Q[sp]))    
+    s = sp <span class="hljs-comment"># &#x79FB;&#x52A8;&#x81F3;&#x4E0B;&#x4E00;&#x72B6;&#x6001;</span>
+</code></pre>
+<p>&#x7ED9;&#x5B9A;&#x8DB3;&#x591F;&#x7684;&#x8FED;&#x4EE3;&#xFF0C;&#x8BE5;&#x7B97;&#x6CD5;&#x5C06;&#x6536;&#x655B;&#x5230;&#x6700;&#x4F18; Q &#x503C;&#x3002;&#x8FD9;&#x88AB;&#x79F0;&#x4E3A;&#x79BB;&#x7EBF;&#x7B56;&#x7565;&#x7B97;&#x6CD5;&#xFF0C;&#x56E0;&#x4E3A;&#x6B63;&#x5728;&#x8BAD;&#x7EC3;&#x7684;&#x7B56;&#x7565;&#x4E0D;&#x662F;&#x6B63;&#x5728;&#x6267;&#x884C;&#x7684;&#x7B56;&#x7565;&#x3002;&#x4EE4;&#x4EBA;&#x60CA;&#x8BB6;&#x7684;&#x662F;&#xFF0C;&#x8BE5;&#x7B97;&#x6CD5;&#x80FD;&#x591F;&#x901A;&#x8FC7;&#x89C2;&#x5BDF;&#x667A;&#x80FD;&#x4F53;&#x884C;&#x4E3A;&#x968F;&#x673A;&#x5B66;&#x4E60;&#xFF08;&#x4F8B;&#x5982;&#x5B66;&#x4E60;&#x5F53;&#x4F60;&#x7684;&#x8001;&#x5E08;&#x662F;&#x4E00;&#x4E2A;&#x9189;&#x7334;&#x5B50;&#x65F6;&#x6253;&#x9AD8;&#x5C14;&#x592B;&#x7403;&#xFF09;&#x6700;&#x4F73;&#x7B56;&#x7565;&#x3002;&#x6211;&#x4EEC;&#x80FD;&#x505A;&#x5F97;&#x66F4;&#x597D;&#x5417;&#xFF1F;</p>
+<h2 id="&#x63A2;&#x7D22;&#x7B56;&#x7565;">&#x63A2;&#x7D22;&#x7B56;&#x7565;</h2>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x53EA;&#x6709;&#x5728;&#x63A2;&#x7D22;&#x7B56;&#x7565;&#x5145;&#x5206;&#x63A2;&#x7D22; MDP &#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;Q &#x5B66;&#x4E60;&#x624D;&#x80FD;&#x8D77;&#x4F5C;&#x7528;&#x3002;&#x5C3D;&#x7BA1;&#x4E00;&#x4E2A;&#x7EAF;&#x7CB9;&#x7684;&#x968F;&#x673A;&#x7B56;&#x7565;&#x4FDD;&#x8BC1;&#x6700;&#x7EC8;&#x8BBF;&#x95EE;&#x6BCF;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x548C;&#x6BCF;&#x4E2A;&#x8F6C;&#x6362;&#x591A;&#x6B21;&#xFF0C;&#x4F46;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x5F88;&#x957F;&#x7684;&#x65F6;&#x95F4;&#x8FD9;&#x6837;&#x505A;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x4E00;&#x4E2A;&#x66F4;&#x597D;&#x7684;&#x9009;&#x62E9;&#x662F;&#x4F7F;&#x7528; &#x3B5; &#x8D2A;&#x5A6A;&#x7B56;&#x7565;&#xFF1A;&#x5728;&#x6BCF;&#x4E2A;&#x6B65;&#x9AA4;&#x4E2D;&#xFF0C;&#x5B83;&#x4EE5;&#x6982;&#x7387;<code>&#x3B5;</code>&#x968F;&#x673A;&#x5730;&#x6216;&#x4EE5;&#x6982;&#x7387;&#x4E3A;<code>1-&#x3B5;</code>&#x8D2A;&#x5A6A;&#x5730;&#xFF08;&#x9009;&#x62E9;&#x5177;&#x6709;&#x6700;&#x9AD8; Q &#x503C;&#x7684;&#x52A8;&#x4F5C;&#xFF09;&#x3002;&#x3B5; &#x8D2A;&#x5A6A;&#x7B56;&#x7565;&#x7684;&#x4F18;&#x70B9;&#xFF08;&#x4E0E;&#x5B8C;&#x5168;&#x968F;&#x673A;&#x7B56;&#x7565;&#x76F8;&#x6BD4;&#xFF09;&#x662F;&#xFF0C;&#x5B83;&#x5C06;&#x82B1;&#x8D39;&#x8D8A;&#x6765;&#x8D8A;&#x591A;&#x7684;&#x65F6;&#x95F4;&#x6765;&#x63A2;&#x7D22;&#x73AF;&#x5883;&#x4E2D;&#x6709;&#x8DA3;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x56E0;&#x4E3A; Q &#x503C;&#x4F30;&#x8BA1;&#x8D8A;&#x6765;&#x8D8A;&#x597D;&#xFF0C;&#x540C;&#x65F6;&#x4ECD;&#x82B1;&#x8D39;&#x4E00;&#x4E9B;&#x65F6;&#x95F4;&#x8BBF;&#x95EE; MDP &#x7684;&#x672A;&#x77E5;&#x533A;&#x57DF;&#x3002;&#x4EE5;<code>&#x3B5;</code>&#x4E3A;&#x5F88;&#x9AD8;&#x7684;&#x503C;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;1&#xFF09;&#x5F00;&#x59CB;&#xFF0C;&#x7136;&#x540E;&#x9010;&#x6E10;&#x51CF;&#x5C0F;&#x5B83;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x4E0B;&#x964D;&#x5230; 0.05&#xFF09;&#x662F;&#x5F88;&#x5E38;&#x89C1;&#x7684;&#x3002;</p>
+<p>&#x53EF;&#x9009;&#x62E9;&#x7684;&#xFF0C;&#x76F8;&#x6BD4;&#x4E8E;&#x4F9D;&#x8D56;&#x4E8E;&#x63A2;&#x7D22;&#x7684;&#x53EF;&#x80FD;&#x6027;&#xFF0C;&#x53E6;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x662F;&#x9F13;&#x52B1;&#x63A2;&#x7D22;&#x7B56;&#x7565;&#x6765;&#x5C1D;&#x8BD5;&#x5B83;&#x4EE5;&#x524D;&#x6CA1;&#x6709;&#x5C1D;&#x8BD5;&#x8FC7;&#x7684;&#x884C;&#x52A8;&#x3002;&#x8FD9;&#x53EF;&#x4EE5;&#x88AB;&#x5B9E;&#x73B0;&#x4E3A;&#x9644;&#x52A0;&#x4E8E; Q &#x503C;&#x4F30;&#x8BA1;&#x7684;&#x5956;&#x91D1;&#xFF0C;&#x5982;&#x516C;&#x5F0F; 16-6 &#x6240;&#x793A;&#x3002;</p>
+<p><img src="../images/chapter_16/E16-6.png" alt="&#x56FE;E16-6"></p>
+<p>&#x5176;&#x4E2D;&#xFF1A;</p>
+<ul>
+<li><p><code>N</code>&#x8BA1;&#x7B97;&#x4E86;&#x5728;&#x72B6;&#x6001;<code>s</code>&#x65F6;&#x9009;&#x62E9;&#x52A8;&#x4F5C;<code>a</code>&#x7684;&#x6B21;&#x6570;</p>
+</li>
+<li><p><code>f</code>&#x662F;&#x4E00;&#x4E2A;&#x63A2;&#x7D22;&#x51FD;&#x6570;&#xFF0C;&#x4F8B;&#x5982;<code>f=q+K/(1+n)</code>&#xFF0C;&#x5176;&#x4E2D;<code>K</code>&#x662F;&#x4E00;&#x4E2A;&#x597D;&#x5947;&#x8D85;&#x53C2;&#x6570;&#xFF0C;&#x5B83;&#x6D4B;&#x91CF;&#x667A;&#x80FD;&#x4F53;&#x88AB;&#x5438;&#x5F15;&#x5230;&#x672A;&#x77E5;&#x72B6;&#x6001;&#x7684;&#x7A0B;&#x5EA6;&#x3002;</p>
+</li>
+</ul>
+<h2 id="&#x8FD1;&#x4F3C;-q-&#x5B66;&#x4E60;">&#x8FD1;&#x4F3C; Q &#x5B66;&#x4E60;</h2>
+<p>Q &#x5B66;&#x4E60;&#x7684;&#x4E3B;&#x8981;&#x95EE;&#x9898;&#x662F;&#xFF0C;&#x5B83;&#x4E0D;&#x80FD;&#x5F88;&#x597D;&#x5730;&#x6269;&#x5C55;&#x5230;&#x5177;&#x6709;&#x8BB8;&#x591A;&#x72B6;&#x6001;&#x548C;&#x52A8;&#x4F5C;&#x7684;&#x5927;&#xFF08;&#x751A;&#x81F3;&#x4E2D;&#x7B49;&#xFF09;&#x7684; MDP&#x3002;&#x8BD5;&#x7740;&#x7528; Q &#x5B66;&#x4E60;&#x6765;&#x8BAD;&#x7EC3;&#x4E00;&#x4E2A;&#x667A;&#x80FD;&#x4F53;&#x53BB;&#x73A9; Ms. Pac-Man&#x3002;Ms. Pac-Man &#x53EF;&#x4EE5;&#x5403;&#x8D85;&#x8FC7; 250 &#x7C92;&#x7C92;&#x5B50;&#xFF0C;&#x6BCF;&#x4E00;&#x7C92;&#x90FD;&#x53EF;&#x4EE5;&#x5B58;&#x5728;&#x6216;&#x4E0D;&#x5B58;&#x5728;&#xFF08;&#x5373;&#x5DF2;&#x7ECF;&#x5403;&#x8FC7;&#xFF09;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x53EF;&#x80FD;&#x72B6;&#x6001;&#x7684;&#x6570;&#x76EE;&#x5927;&#x4E8E; 2 &#x7684; 250 &#x6B21;&#x5E42;&#xFF0C;&#x7EA6;&#x7B49;&#x4E8E; 10 &#x7684; 75 &#x6B21;&#x5E42;&#xFF08;&#x5E76;&#x4E14;&#x8FD9;&#x662F;&#x8003;&#x8651;&#x9897;&#x7C92;&#x7684;&#x53EF;&#x80FD;&#x72B6;&#x6001;&#xFF09;&#x3002;&#x8FD9;&#x6BD4;&#x5728;&#x53EF;&#x89C2;&#x6D4B;&#x7684;&#x5B87;&#x5B99;&#x4E2D;&#x7684;&#x539F;&#x5B50;&#x8981;&#x591A;&#x5F97;&#x591A;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x7EDD;&#x5BF9;&#x65E0;&#x6CD5;&#x8FFD;&#x8E2A;&#x6BCF;&#x4E00;&#x4E2A; Q &#x503C;&#x7684;&#x4F30;&#x8BA1;&#x503C;&#x3002;</p>
+<p>&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x662F;&#x627E;&#x5230;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x4F7F;&#x7528;&#x53EF;&#x7BA1;&#x7406;&#x6570;&#x91CF;&#x7684;&#x53C2;&#x6570;&#x6765;&#x8FD1;&#x4F3C; Q &#x503C;&#x3002;&#x8FD9;&#x88AB;&#x79F0;&#x4E3A;&#x8FD1;&#x4F3C; Q &#x5B66;&#x4E60;&#x3002;&#x591A;&#x5E74;&#x6765;&#xFF0C;&#x4EBA;&#x4EEC;&#x90FD;&#x662F;&#x624B;&#x5DE5;&#x5728;&#x72B6;&#x6001;&#x4E2D;&#x63D0;&#x53D6;&#x5E76;&#x7EBF;&#x6027;&#x7EC4;&#x5408;&#x7279;&#x5F81;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x6700;&#x8FD1;&#x7684;&#x9B3C;&#x7684;&#x8DDD;&#x79BB;&#xFF0C;&#x5B83;&#x4EEC;&#x7684;&#x65B9;&#x5411;&#x7B49;&#xFF09;&#x6765;&#x4F30;&#x8BA1; Q &#x503C;&#xFF0C;&#x4F46;&#x662F; DeepMind &#x8868;&#x660E;&#x4F7F;&#x7528;&#x6DF1;&#x5EA6;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x53EF;&#x4EE5;&#x5DE5;&#x4F5C;&#x5F97;&#x66F4;&#x597D;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x5BF9;&#x4E8E;&#x590D;&#x6742;&#x7684;&#x95EE;&#x9898;&#x3002;&#x5B83;&#x4E0D;&#x9700;&#x8981;&#x4EFB;&#x4F55;&#x7279;&#x5F81;&#x5DE5;&#x7A0B;&#x3002;&#x7528;&#x4E8E;&#x4F30;&#x8BA1; Q &#x503C;&#x7684; DNN &#x88AB;&#x79F0;&#x4E3A;&#x6DF1;&#x5EA6; Q &#x7F51;&#x7EDC;&#xFF08;DQN&#xFF09;&#xFF0C;&#x5E76;&#x4E14;&#x4F7F;&#x7528;&#x8FD1;&#x4F3C; Q &#x5B66;&#x4E60;&#x7684; DQN &#x88AB;&#x79F0;&#x4E3A;&#x6DF1;&#x5EA6; Q &#x5B66;&#x4E60;&#x3002;</p>
+<p>&#x5728;&#x672C;&#x7AE0;&#x7684;&#x5269;&#x4F59;&#x90E8;&#x5206;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;&#x6DF1;&#x5EA6; Q &#x5B66;&#x4E60;&#x6765;&#x8BAD;&#x7EC3;&#x4E00;&#x4E2A;&#x667A;&#x80FD;&#x4F53;&#x53BB;&#x73A9; Ms. Pac-Man&#xFF0C;&#x5C31;&#x50CF; DeepMind &#x5728; 2013 &#x6240;&#x505A;&#x7684;&#x90A3;&#x6837;&#x3002;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x5F88;&#x5BB9;&#x6613;&#x5730;&#x8C03;&#x6574;&#xFF0C;&#x8C03;&#x6574;&#x540E;&#x5B66;&#x4E60;&#x53BB;&#x73A9;&#x5927;&#x591A;&#x6570; Atari &#x6E38;&#x620F;&#x7684;&#x6548;&#x679C;&#x90FD;&#x76F8;&#x5F53;&#x597D;&#x3002;&#x5728;&#x5927;&#x591A;&#x6570;&#x52A8;&#x4F5C;&#x6E38;&#x620F;&#x4E2D;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x8FBE;&#x5230;&#x8D85;&#x4EBA;&#x7684;&#x6280;&#x80FD;&#xFF0C;&#x4F46;&#x5B83;&#x5728;&#x957F;&#x65F6;&#x8FD0;&#x884C;&#x7684;&#x6E38;&#x620F;&#x4E2D;&#x5374;&#x4E0D;&#x592A;&#x597D;&#x3002;</p>
+<h2 id="&#x5B66;&#x4E60;&#x53BB;&#x4F7F;&#x7528;&#x6DF1;&#x5EA6;-q-&#x5B66;&#x4E60;&#x6765;&#x73A9;-mspac-man">&#x5B66;&#x4E60;&#x53BB;&#x4F7F;&#x7528;&#x6DF1;&#x5EA6; Q &#x5B66;&#x4E60;&#x6765;&#x73A9; Ms.Pac-Man</h2>
+<p>&#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528; Atari &#x73AF;&#x5883;&#xFF0C;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x9996;&#x5148;&#x5B89;&#x88C5; OpenAI gym &#x7684; Atari &#x73AF;&#x5883;&#x4F9D;&#x8D56;&#x9879;&#x3002;&#x5F53;&#x9700;&#x8981;&#x73A9;&#x5176;&#x4ED6;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x4F1A;&#x4E3A;&#x4F60;&#x60F3;&#x73A9;&#x7684;&#x5176;&#x4ED6; OpenAI gym &#x73AF;&#x5883;&#x5B89;&#x88C5;&#x4F9D;&#x8D56;&#x9879;&#x3002;&#x5728; macOS &#x4E0A;&#xFF0C;&#x5047;&#x8BBE;&#x4F60;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#x4E86; Homebrew &#x7A0B;&#x5E8F;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x8FD0;&#x884C;&#xFF1A;</p>
+<pre><code>$ brew install cmake boost boost-python sdl2 swig wget
+</code></pre><p>&#x5728; Ubuntu &#x4E0A;&#xFF0C;&#x8F93;&#x5165;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#xFF08;&#x5982;&#x679C;&#x4F7F;&#x7528; Python 2&#xFF0C;&#x7528; Python &#x66FF;&#x6362; Python 3&#xFF09;&#xFF1A;</p>
+<pre><code>$ apt-get install -y python3-numpy python3-dev cmake zlib1g-dev libjpeg-dev\    xvfb libav-tools xorg-dev python3-opengl libboost-all-dev libsdl2-dev swig
+</code></pre><p>&#x968F;&#x540E;&#x5B89;&#x88C5;&#x989D;&#x5916;&#x7684; python &#x5305;&#xFF1A;</p>
+<pre><code>$ pip3 install --upgrade &apos;gym[all]&apos;
+</code></pre><p>&#x5982;&#x679C;&#x4E00;&#x5207;&#x987A;&#x5229;&#xFF0C;&#x4F60;&#x5E94;&#x8BE5;&#x80FD;&#x591F;&#x521B;&#x9020;&#x4E00;&#x4E2A; Ms.Pac-Man &#x73AF;&#x5883;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>env = gym.make(<span class="hljs-string">&quot;MsPacman-v0&quot;</span>) 
+<span class="hljs-meta">&gt;&gt;&gt; </span>obs = env.reset() 
+<span class="hljs-meta">&gt;&gt;&gt; </span>obs.shape  <span class="hljs-comment"># [&#x957F;&#xFF0C;&#x5BBD;&#xFF0C;&#x901A;&#x9053;] </span>
+(<span class="hljs-number">210</span>, <span class="hljs-number">160</span>, <span class="hljs-number">3</span>) 
+<span class="hljs-meta">&gt;&gt;&gt; </span>env.action_space 
+Discrete(<span class="hljs-number">9</span>)
+</code></pre>
+<p>&#x6B63;&#x5982;&#x4F60;&#x6240;&#x770B;&#x5230;&#x7684;&#xFF0C;&#x6709;&#x4E5D;&#x4E2A;&#x79BB;&#x6563;&#x52A8;&#x4F5C;&#x53EF;&#x7528;&#xFF0C;&#x5B83;&#x5BF9;&#x5E94;&#x4E8E;&#x64CD;&#x7EB5;&#x6746;&#x7684;&#x4E5D;&#x4E2A;&#x53EF;&#x80FD;&#x4F4D;&#x7F6E;&#xFF08;&#x5DE6;&#x3001;&#x53F3;&#x3001;&#x4E0A;&#x3001;&#x4E0B;&#x3001;&#x4E2D;&#x3001;&#x5DE6;&#x4E0A;&#x7B49;&#xFF09;&#xFF0C;&#x89C2;&#x5BDF;&#x7ED3;&#x679C;&#x662F; Atari &#x5C4F;&#x5E55;&#x7684;&#x622A;&#x56FE;&#xFF08;&#x89C1;&#x56FE; 16-9&#xFF0C;&#x5DE6;&#xFF09;&#xFF0C;&#x8868;&#x793A;&#x4E3A; 3D Numpy &#x77E9;&#x9635;&#x3002;&#x8FD9;&#x4E9B;&#x56FE;&#x50CF;&#x6709;&#x70B9;&#x5927;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5C06;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5C0F;&#x7684;&#x9884;&#x5904;&#x7406;&#x51FD;&#x6570;&#xFF0C;&#x5C06;&#x56FE;&#x50CF;&#x88C1;&#x526A;&#x5E76;&#x7F29;&#x5C0F;&#x5230;<code>88&#xD7;80</code>&#x50CF;&#x7D20;&#xFF0C;&#x5C06;&#x5176;&#x8F6C;&#x6362;&#x6210;&#x7070;&#x5EA6;&#xFF0C;&#x5E76;&#x63D0;&#x9AD8; Ms.Pac-Man &#x7684;&#x5BF9;&#x6BD4;&#x5EA6;&#x3002;&#x8FD9;&#x5C06;&#x51CF;&#x5C11; DQN &#x6240;&#x9700;&#x7684;&#x8BA1;&#x7B97;&#x91CF;&#xFF0C;&#x5E76;&#x52A0;&#x5FEB;&#x57F9;&#x8BAD;&#x7EC3;&#x3002;</p>
+<pre><code class="lang-python">mspacman_color = np.array([<span class="hljs-number">210</span>, <span class="hljs-number">164</span>, <span class="hljs-number">74</span>]).mean()
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">preprocess_observation</span><span class="hljs-params">(obs)</span>:</span>    
+    img = obs[<span class="hljs-number">1</span>:<span class="hljs-number">176</span>:<span class="hljs-number">2</span>, ::<span class="hljs-number">2</span>] <span class="hljs-comment"># &#x88C1;&#x526A;    </span>
+    img = img.mean(axis=<span class="hljs-number">2</span>) <span class="hljs-comment"># &#x7070;&#x5EA6;&#x5316;    </span>
+    img[img==mspacman_color] = <span class="hljs-number">0</span> <span class="hljs-comment"># &#x63D0;&#x5347;&#x5BF9;&#x6BD4;&#x5EA6;    </span>
+    img = (img - <span class="hljs-number">128</span>) / <span class="hljs-number">128</span> - <span class="hljs-number">1</span> <span class="hljs-comment"># &#x6B63;&#x5219;&#x5316;&#x4E3A;-1&#x5230;1.   </span>
+    <span class="hljs-keyword">return</span> img.reshape(<span class="hljs-number">88</span>, <span class="hljs-number">80</span>, <span class="hljs-number">1</span>)
+</code></pre>
+<p>&#x8FC7;&#x7A0B;&#x7684;&#x7ED3;&#x679C;&#x5982;&#x56FE; 16-9 &#x6240;&#x793A;&#xFF08;&#x53F3;&#xFF09;&#x3002;</p>
+<p><img src="../images/chapter_16/16-9.png" alt="&#x56FE;16-9"></p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x521B;&#x5EFA; DQN&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x53EA;&#x53D6;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x52A8;&#x4F5C;&#x5BF9;<code>(S,A)</code>&#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#xFF0C;&#x5E76;&#x8F93;&#x51FA;&#x76F8;&#x5E94;&#x7684; Q &#x503C;<code>Q(s,a)</code>&#x7684;&#x4F30;&#x8BA1;&#x503C;&#xFF0C;&#x4F46;&#x662F;&#x7531;&#x4E8E;&#x52A8;&#x4F5C;&#x662F;&#x79BB;&#x6563;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x4F7F;&#x7528;&#x53EA;&#x4F7F;&#x7528;&#x72B6;&#x6001;<code>S</code>&#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#x5E76;&#x8F93;&#x51FA;&#x6BCF;&#x4E2A;&#x52A8;&#x4F5C;&#x7684;&#x4E00;&#x4E2A; Q &#x503C;&#x4F30;&#x8BA1;&#x7684;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x662F;&#x66F4;&#x65B9;&#x4FBF;&#x7684;&#x3002;DQN &#x5C06;&#x7531;&#x4E09;&#x4E2A;&#x5377;&#x79EF;&#x5C42;&#x7EC4;&#x6210;&#xFF0C;&#x63A5;&#x7740;&#x662F;&#x4E24;&#x4E2A;&#x5168;&#x8FDE;&#x63A5;&#x5C42;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x62EC;&#x8F93;&#x51FA;&#x5C42;&#xFF08;&#x5982;&#x56FE; 16-10&#xFF09;&#x3002;</p>
+<p><img src="../images/chapter_16/16-10.png" alt="&#x56FE;16-10"></p>
+<p>&#x6B63;&#x5982;&#x6211;&#x4EEC;&#x5C06;&#x770B;&#x5230;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;&#x7684;&#x8BAD;&#x7EC3;&#x7B97;&#x6CD5;&#x9700;&#x8981;&#x4E24;&#x4E2A;&#x5177;&#x6709;&#x76F8;&#x540C;&#x67B6;&#x6784;&#xFF08;&#x4F46;&#x4E0D;&#x540C;&#x53C2;&#x6570;&#xFF09;&#x7684; DQN&#xFF1A;&#x4E00;&#x4E2A;&#x5C06;&#x5728;&#x8BAD;&#x7EC3;&#x671F;&#x95F4;&#x7528;&#x4E8E;&#x9A71;&#x52A8; Ms.Pac-Man&#xFF08;the <em>actor</em>&#xFF0C;&#x884C;&#x52A8;&#x8005;&#xFF09;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x5C06;&#x89C2;&#x770B;&#x884C;&#x52A8;&#x8005;&#x5E76;&#x4ECE;&#x5176;&#x8BD5;&#x9A8C;&#x548C;&#x9519;&#x8BEF;&#x4E2D;&#x5B66;&#x4E60;&#xFF08;the <em>critic</em>&#xFF0C;&#x8BC4;&#x5224;&#x8005;&#xFF09;&#x3002;&#x6BCF;&#x9694;&#x4E00;&#x5B9A;&#x65F6;&#x95F4;&#xFF0C;&#x6211;&#x4EEC;&#x628A;&#x8BC4;&#x5224;&#x8005;&#x7F51;&#x7EDC;&#x590D;&#x5236;&#x7ED9;&#x884C;&#x52A8;&#x8005;&#x7F51;&#x7EDC;&#x3002;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4E24;&#x4E2A;&#x76F8;&#x540C;&#x7684; DQN&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5C06;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;<code>q_network()</code>&#x51FD;&#x6570;&#x6765;&#x6784;&#x5EFA;&#x5B83;&#x4EEC;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> tensorflow.contrib.layers <span class="hljs-keyword">import</span> convolution2d, fully_connected
+input_height = <span class="hljs-number">88</span> 
+input_width = <span class="hljs-number">80</span> 
+input_channels = <span class="hljs-number">1</span> 
+conv_n_maps = [<span class="hljs-number">32</span>, <span class="hljs-number">64</span>, <span class="hljs-number">64</span>] 
+conv_kernel_sizes = [(<span class="hljs-number">8</span>,<span class="hljs-number">8</span>), (<span class="hljs-number">4</span>,<span class="hljs-number">4</span>), (<span class="hljs-number">3</span>,<span class="hljs-number">3</span>)] 
+conv_strides = [<span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>] 
+conv_paddings = [<span class="hljs-string">&quot;SAME&quot;</span>]*<span class="hljs-number">3</span> 
+conv_activation = [tf.nn.relu]*<span class="hljs-number">3</span> 
+n_hidden_in = <span class="hljs-number">64</span> * <span class="hljs-number">11</span> * <span class="hljs-number">10</span>  <span class="hljs-comment"># conv3 &#x6709; 64 &#x4E2A; 11x10 &#x6620;&#x5C04;</span>
+each n_hidden = <span class="hljs-number">512</span> 
+hidden_activation = tf.nn.relu 
+n_outputs = env.action_space.n  <span class="hljs-comment"># 9&#x4E2A;&#x79BB;&#x6563;&#x52A8;&#x4F5C;</span>
+initializer = tf.contrib.layers.variance_scaling_initializer()
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">q_network</span><span class="hljs-params">(X_state, scope)</span>:</span>    
+    prev_layer = X_state    
+    conv_layers = []    
+    <span class="hljs-keyword">with</span> tf.variable_scope(scope) <span class="hljs-keyword">as</span> scope:        
+        <span class="hljs-keyword">for</span> n_maps, kernel_size, stride, padding, activation <span class="hljs-keyword">in</span> zip(conv_n_maps,                                                                  conv_kernel_sizes, 
+                                                                    conv_strides,
+                                                                    conv_paddings,                                                                  conv_activation):           
+            prev_layer = convolution2d(prev_layer, 
+                                       num_outputs=n_maps, 
+                                       kernel_size=kernel_size,
+                                       stride=stride, padding=padding, 
+                                       activation_fn=activation,
+                                       weights_initializer=initializer)           
+            conv_layers.append(prev_layer)       
+        last_conv_layer_flat = tf.reshape(prev_layer, shape=[<span class="hljs-number">-1</span>, n_hidden_in])     
+        hidden = fully_connected(last_conv_layer_flat, n_hidden,
+                                 activation_fn=hidden_activation,                                                  weights_initializer=initializer) 
+        outputs = fully_connected(hidden, n_outputs, 
+                                  activation_fn=<span class="hljs-keyword">None</span>,
+                                  weights_initializer=initializer)  
+
+    trainable_vars = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES,
+                                       scope=scope.name)                
+    trainable_vars_by_name = {var.name[len(scope.name):]: var 
+                              <span class="hljs-keyword">for</span> var <span class="hljs-keyword">in</span> trainable_vars}    
+    <span class="hljs-keyword">return</span> outputs, trainable_vars_by_name
+</code></pre>
+<p>&#x8BE5;&#x4EE3;&#x7801;&#x7684;&#x7B2C;&#x4E00;&#x90E8;&#x5206;&#x5B9A;&#x4E49;&#x4E86;DQN&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x7684;&#x8D85;&#x53C2;&#x6570;&#x3002;&#x7136;&#x540E;<code>q_network()</code>&#x51FD;&#x6570;&#x521B;&#x5EFA; DQN&#xFF0C;&#x5C06;&#x73AF;&#x5883;&#x7684;&#x72B6;&#x6001;<code>X_state</code>&#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#xFF0C;&#x4EE5;&#x53CA;&#x53D8;&#x91CF;&#x8303;&#x56F4;&#x7684;&#x540D;&#x79F0;&#x3002;&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x53EA;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x89C2;&#x5BDF;&#x6765;&#x8868;&#x793A;&#x73AF;&#x5883;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x56E0;&#x4E3A;&#x51E0;&#x4E4E;&#x6CA1;&#x6709;&#x9690;&#x85CF;&#x7684;&#x72B6;&#x6001;&#xFF08;&#x9664;&#x4E86;&#x95EA;&#x70C1;&#x7684;&#x7269;&#x4F53;&#x548C;&#x9B3C;&#x9B42;&#x7684;&#x65B9;&#x5411;&#xFF09;&#x3002;</p>
+<p><code>trainable_vars_by_name</code>&#x5B57;&#x5178;&#x6536;&#x96C6;&#x4E86;&#x6240;&#x6709; DQN &#x7684;&#x53EF;&#x8BAD;&#x7EC3;&#x53D8;&#x91CF;&#x3002;&#x5F53;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x64CD;&#x4F5C;&#x4EE5;&#x5C06;&#x8BC4;&#x8BBA;&#x5BB6; DQN &#x590D;&#x5236;&#x5230;&#x884C;&#x52A8;&#x8005; DQN &#x65F6;&#xFF0C;&#x8FD9;&#x5C06;&#x662F;&#x6709;&#x7528;&#x7684;&#x3002;&#x5B57;&#x5178;&#x7684;&#x952E;&#x662F;&#x53D8;&#x91CF;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x53BB;&#x6389;&#x4E0E;&#x8303;&#x56F4;&#x540D;&#x79F0;&#x76F8;&#x5BF9;&#x5E94;&#x7684;&#x524D;&#x7F00;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002;&#x770B;&#x8D77;&#x6765;&#x50CF;&#x8FD9;&#x6837;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>trainable_vars_by_name 
+{<span class="hljs-string">&apos;/Conv/biases:0&apos;</span>: &lt;tensorflow.python.ops.variables.Variable at <span class="hljs-number">0x121cf7b50</span>&gt;, <span class="hljs-string">&apos;/Conv/weights:0&apos;</span>: &lt;tensorflow.python.ops.variables.Variable...&gt;, 
+<span class="hljs-string">&apos;/Conv_1/biases:0&apos;</span>: &lt;tensorflow.python.ops.variables.Variable...&gt;, <span class="hljs-string">&apos;/Conv_1/weights:0&apos;</span>: &lt;tensorflow.python.ops.variables.Variable...&gt;, <span class="hljs-string">&apos;/Conv_2/biases:0&apos;</span>: &lt;tensorflow.python.ops.variables.Variable...&gt;, <span class="hljs-string">&apos;/Conv_2/weights:0&apos;</span>: &lt;tensorflow.python.ops.variables.Variable...&gt;, <span class="hljs-string">&apos;/fully_connected/biases:0&apos;</span>: &lt;tensorflow.python.ops.variables.Variable...&gt;, <span class="hljs-string">&apos;/fully_connected/weights:0&apos;</span>: &lt;tensorflow.python.ops.variables.Variable...&gt;, <span class="hljs-string">&apos;/fully_connected_1/biases:0&apos;</span>: &lt;tensorflow.python.ops.variables.Variable...&gt;, <span class="hljs-string">&apos;/fully_connected_1/weights:0&apos;</span>: &lt;tensorflow.python.ops.variables.Variable...&gt;}
+</code></pre>
+<p>&#x73B0;&#x5728;&#x8BA9;&#x6211;&#x4EEC;&#x4E3A;&#x4E24;&#x4E2A; DQN &#x521B;&#x5EFA;&#x8F93;&#x5165;&#x5360;&#x4F4D;&#x7B26;&#xFF0C;&#x4EE5;&#x53CA;&#x590D;&#x5236;&#x8BC4;&#x8BBA;&#x5BB6; DQN &#x7ED9;&#x884C;&#x52A8;&#x8005; DQN &#x7684;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<pre><code class="lang-python">X_state = tf.placeholder(tf.float32, 
+                         shape=[<span class="hljs-keyword">None</span>, input_height, input_width,input_channels])          
+actor_q_values, actor_vars = q_network(X_state, scope=<span class="hljs-string">&quot;q_networks/actor&quot;</span>) 
+critic_q_values, critic_vars = q_network(X_state, scope=<span class="hljs-string">&quot;q_networks/critic&quot;</span>)
+copy_ops = [actor_var.assign(critic_vars[var_name])  
+            <span class="hljs-keyword">for</span> var_name, actor_var <span class="hljs-keyword">in</span> actor_vars.items()] 
+copy_critic_to_actor = tf.group(*copy_ops)
+</code></pre>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x540E;&#x9000;&#x4E00;&#x6B65;&#xFF1A;&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x6709;&#x4E24;&#x4E2A; DQN&#xFF0C;&#x5B83;&#x4EEC;&#x90FD;&#x80FD;&#x591F;&#x5C06;&#x73AF;&#x5883;&#x72B6;&#x6001;&#xFF08;&#x5373;&#x9884;&#x5904;&#x7406;&#x89C2;&#x5BDF;&#xFF09;&#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#xFF0C;&#x5E76;&#x8F93;&#x51FA;&#x5728;&#x8BE5;&#x72B6;&#x6001;&#x4E0B;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x53EF;&#x80FD;&#x7684;&#x52A8;&#x4F5C;&#x7684;&#x4F30;&#x8BA1; Q &#x503C;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x6211;&#x4EEC;&#x6709;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;<code>copy_critic_to_actor</code>&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x5C06;&#x8BC4;&#x8BBA;&#x5BB6; DQN &#x7684;&#x6240;&#x6709;&#x53EF;&#x8BAD;&#x7EC3;&#x53D8;&#x91CF;&#x590D;&#x5236;&#x5230;&#x884C;&#x52A8;&#x8005; DQN&#x3002;&#x6211;&#x4EEC;&#x4F7F;&#x7528; TensorFlow &#x7684;<code>tf.group()</code>&#x51FD;&#x6570;&#x5C06;&#x6240;&#x6709;&#x8D4B;&#x503C;&#x64CD;&#x4F5C;&#x5206;&#x7EC4;&#x5230;&#x4E00;&#x4E2A;&#x65B9;&#x4FBF;&#x7684;&#x64CD;&#x4F5C;&#x4E2D;&#x3002;</p>
+<p>&#x884C;&#x52A8;&#x8005; DQN &#x53EF;&#x4EE5;&#x7528;&#x6765;&#x626E;&#x6F14; Ms.Pac-Man&#xFF08;&#x6700;&#x521D;&#x975E;&#x5E38;&#x7CDF;&#x7CD5;&#xFF09;&#x3002;&#x6B63;&#x5982;&#x524D;&#x9762;&#x6240;&#x8BA8;&#x8BBA;&#x7684;&#xFF0C;&#x4F60;&#x5E0C;&#x671B;&#x5B83;&#x8DB3;&#x591F;&#x6DF1;&#x5165;&#x5730;&#x63A2;&#x7A76;&#x6E38;&#x620F;&#xFF0C;&#x6240;&#x4EE5;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x4F60;&#x60F3;&#x5C06;&#x5B83;&#x7528; &#x3B5; &#x8D2A;&#x5A6A;&#x7B56;&#x7565;&#x6216;&#x53E6;&#x4E00;&#x79CD;&#x63A2;&#x7D22;&#x7B56;&#x7565;&#x76F8;&#x7ED3;&#x5408;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x8BC4;&#x8BBA;&#x5BB6; DQN &#x5462;&#xFF1F;&#x5B83;&#x5982;&#x4F55;&#x53BB;&#x5B66;&#x4E60;&#x73A9;&#x6E38;&#x620F;&#xFF1F;&#x7B80;&#x800C;&#x8A00;&#x4E4B;&#xFF0C;&#x5B83;&#x5C06;&#x8BD5;&#x56FE;&#x4F7F;&#x5176;&#x9884;&#x6D4B;&#x7684; Q &#x503C;&#x53BB;&#x5339;&#x914D;&#x884C;&#x52A8;&#x8005;&#x901A;&#x8FC7;&#x5176;&#x7ECF;&#x9A8C;&#x7684;&#x6E38;&#x620F;&#x4F30;&#x8BA1;&#x7684; Q &#x503C;&#x3002;&#x5177;&#x4F53;&#x6765;&#x8BF4;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x8BA9;&#x884C;&#x52A8;&#x8005;&#x73A9;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#xFF0C;&#x628A;&#x6240;&#x6709;&#x7684;&#x7ECF;&#x9A8C;&#x4FDD;&#x5B58;&#x5728;&#x56DE;&#x653E;&#x8BB0;&#x5FC6;&#x5B58;&#x50A8;&#x5668;&#x4E2D;&#x3002;&#x6BCF;&#x4E2A;&#x8BB0;&#x5FC6;&#x5C06;&#x662F;&#x4E00;&#x4E2A; 5 &#x5143;&#x7EC4;&#xFF08;&#x72B6;&#x6001;&#x3001;&#x52A8;&#x4F5C;&#x3001;&#x4E0B;&#x4E00;&#x72B6;&#x6001;&#x3001;&#x5956;&#x52B1;&#x3001;&#x7EE7;&#x7EED;&#xFF09;&#xFF0C;&#x5176;&#x4E2D;&#x201C;&#x7EE7;&#x7EED;&#x201D;&#x9879;&#x5728;&#x6E38;&#x620F;&#x7ED3;&#x675F;&#x65F6;&#x7B49;&#x4E8E; 0&#xFF0C;&#x5426;&#x5219;&#x4E3A; 1&#x3002;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x5B9A;&#x671F;&#x5730;&#x4ECE;&#x56DE;&#x653E;&#x5B58;&#x50A8;&#x5668;&#x4E2D;&#x91C7;&#x6837;&#x4E00;&#x6279;&#x8BB0;&#x5FC6;&#xFF0C;&#x5E76;&#x4E14;&#x6211;&#x4EEC;&#x5C06;&#x4F30;&#x8BA1;&#x8FD9;&#x4E9B;&#x5B58;&#x50A8;&#x5668;&#x4E2D;&#x7684; Q &#x503C;&#x3002;&#x6700;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;&#x76D1;&#x7763;&#x5B66;&#x4E60;&#x6280;&#x672F;&#x8BAD;&#x7EC3;&#x8BC4;&#x8BBA;&#x5BB6; DQN &#x53BB;&#x9884;&#x6D4B;&#x8FD9;&#x4E9B; Q &#x503C;&#x3002;&#x6BCF;&#x9694;&#x51E0;&#x4E2A;&#x8BAD;&#x7EC3;&#x5468;&#x671F;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x628A;&#x8BC4;&#x8BBA;&#x5BB6; DQN &#x590D;&#x5236;&#x5230;&#x884C;&#x52A8;&#x8005; DQN&#x3002;&#x5C31;&#x8FD9;&#x6837;&#xFF01;&#x516C;&#x5F0F; 16-7 &#x793A;&#x51FA;&#x4E86;&#x7528;&#x4E8E;&#x8BAD;&#x7EC3;&#x8BC4;&#x8BBA;&#x5BB6; DQN &#x7684;&#x635F;&#x5931;&#x51FD;&#x6570;&#xFF1A;</p>
+<p><img src="../images/chapter_16/E16-7.png" alt="&#x56FE;E16-7"></p>
+<p>&#x5176;&#x4E2D;&#xFF1A;</p>
+<ul>
+<li><img src="../images/tex-a9a5a2bca55c71f2968500d1961e8b9b.gif" alt="s^{(i)}, a^{(i)}, r^{(i)}">&#x548C;<img src="../images/tex-49432ed302ad60b5818085cb01e642f1.gif" alt="s{&apos;(i)}">&#x5206;&#x522B;&#x4E3A;&#x72B6;&#x6001;&#xFF0C;&#x884C;&#x4E3A;&#xFF0C;&#x56DE;&#x62A5;&#xFF0C;&#x548C;&#x4E0B;&#x4E00;&#x72B6;&#x6001;&#xFF0C;&#x5747;&#x4ECE;&#x5B58;&#x50A8;&#x5668;&#x4E2D;&#x7B2C;<code>i</code>&#x6B21;&#x91C7;&#x6837;&#x5F97;&#x5230;</li>
+<li><code>m</code>&#x662F;&#x8BB0;&#x5FC6;&#x6279;&#x5904;&#x7406;&#x7684;&#x957F;&#x5EA6;</li>
+<li>&#x3B8; critic&#x548C;<code>&#x3B8;actor</code>&#x4E3A;&#x8BC4;&#x8BBA;&#x8005;&#x548C;&#x884C;&#x52A8;&#x8005;&#x7684;&#x53C2;&#x6570;</li>
+<li><img src="../images/tex-9ec72967f11b037e1e8ad34f647b04c1.gif" alt="Q(s^{(i)}, a^{(i)}, \theta_{critic})">&#x662F;&#x8BC4;&#x8BBA;&#x5BB6; DQN &#x5BF9;&#x7B2C;<code>i</code>&#x8BB0;&#x5FC6;&#x72B6;&#x6001;&#x884C;&#x4E3A; Q &#x503C;&#x7684;&#x9884;&#x6D4B;</li>
+<li><img src="../images/tex-7049aba70c46d7b934955ebdd0424749.gif" alt="Q(s^{&apos;(i)}, a^{&apos;}, \theta_{actor})">&#x662F;&#x6F14;&#x5458; DQN &#x5728;&#x9009;&#x62E9;&#x52A8;&#x4F5C;<code>A&apos;</code>&#x65F6;&#x7684;&#x4E0B;&#x4E00;&#x72B6;&#x6001;<code>S&apos;</code>&#x7684;&#x671F;&#x671B; Q &#x503C;&#x7684;&#x9884;&#x6D4B;</li>
+<li><code>y</code>&#x662F;&#x7B2C;<code>i</code>&#x8BB0;&#x5FC6;&#x7684;&#x76EE;&#x6807; Q &#x503C;&#xFF0C;&#x6CE8;&#x610F;&#xFF0C;&#x5B83;&#x7B49;&#x540C;&#x4E8E;&#x884C;&#x52A8;&#x8005;&#x5B9E;&#x9645;&#x89C2;&#x5BDF;&#x5230;&#x7684;&#x5956;&#x52B1;&#xFF0C;&#x518D;&#x52A0;&#x4E0A;&#x884C;&#x52A8;&#x8005;&#x5BF9;&#x5982;&#x679C;&#x5B83;&#x80FD;&#x53D1;&#x6325;&#x6700;&#x4F73;&#x6548;&#x679C;&#xFF08;&#x636E;&#x5B83;&#x6240;&#x77E5;&#xFF09;&#xFF0C;&#x672A;&#x6765;&#x7684;&#x56DE;&#x62A5;&#x5E94;&#x8BE5;&#x662F;&#x4EC0;&#x4E48;&#x7684;&#x9884;&#x6D4B;&#x3002;</li>
+<li><code>J</code>&#x4E3A;&#x8BAD;&#x7EC3;&#x8BC4;&#x8BBA;&#x5BB6; DQN &#x7684;&#x635F;&#x5931;&#x51FD;&#x6570;&#x3002;&#x6B63;&#x5982;&#x4F60;&#x6240;&#x770B;&#x5230;&#x7684;&#xFF0C;&#x8FD9;&#x53EA;&#x662F;&#x7531;&#x884C;&#x52A8;&#x8005; DQN &#x4F30;&#x8BA1;&#x7684;&#x76EE;&#x6807; Q &#x503C;<code>y</code>&#x548C;&#x8BC4;&#x8BBA;&#x5BB6; DQN &#x5BF9;&#x8FD9;&#x4E9B; Q &#x503C;&#x7684;&#x9884;&#x6D4B;&#x4E4B;&#x95F4;&#x7684;&#x5747;&#x65B9;&#x8BEF;&#x5DEE;&#x3002;</li>
+</ul>
+<p>&#x56DE;&#x653E;&#x8BB0;&#x5FC6;&#x662F;&#x53EF;&#x9009;&#x7684;&#xFF0C;&#x4F46;&#x5F3A;&#x70C8;&#x63A8;&#x8350;&#x4F7F;&#x5B83;&#x5B58;&#x5728;&#x3002;&#x6CA1;&#x6709;&#x5B83;&#xFF0C;&#x4F60;&#x4F1A;&#x8BAD;&#x7EC3;&#x8BC4;&#x8BBA;&#x5BB6; DQN &#x4F7F;&#x7528;&#x8FDE;&#x7EED;&#x7684;&#x7ECF;&#x9A8C;&#xFF0C;&#x8FD9;&#x53EF;&#x80FD;&#x662F;&#x76F8;&#x5173;&#x7684;&#x3002;&#x8FD9;&#x5C06;&#x5F15;&#x5165;&#x5927;&#x91CF;&#x7684;&#x504F;&#x5DEE;&#x5E76;&#x4E14;&#x51CF;&#x6162;&#x8BAD;&#x7EC3;&#x7B97;&#x6CD5;&#x7684;&#x6536;&#x655B;&#x6027;&#x3002;&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x56DE;&#x653E;&#x8BB0;&#x5FC6;&#xFF0C;&#x6211;&#x4EEC;&#x786E;&#x4FDD;&#x9988;&#x9001;&#x5230;&#x8BAD;&#x7EC3;&#x7B97;&#x6CD5;&#x7684;&#x5B58;&#x50A8;&#x5668;&#x53EF;&#x4EE5;&#x662F;&#x4E0D;&#x76F8;&#x5173;&#x7684;&#x3002;</p>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x6DFB;&#x52A0;&#x8BC4;&#x8BBA;&#x5BB6; DQN &#x7684;&#x8BAD;&#x7EC3;&#x64CD;&#x4F5C;&#x3002;&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x80FD;&#x591F;&#x8BA1;&#x7B97;&#x5176;&#x5728;&#x5B58;&#x50A8;&#x5668;&#x6279;&#x5904;&#x7406;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x72B6;&#x6001;&#x52A8;&#x4F5C;&#x7684;&#x9884;&#x6D4B; Q &#x503C;&#x3002;&#x7531;&#x4E8E; DQN &#x4E3A;&#x6BCF;&#x4E00;&#x4E2A;&#x53EF;&#x80FD;&#x7684;&#x52A8;&#x4F5C;&#x8F93;&#x51FA;&#x4E00;&#x4E2A; Q &#x503C;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x4FDD;&#x6301;&#x4E0E;&#x5728;&#x8BE5;&#x5B58;&#x50A8;&#x5668;&#x4E2D;&#x5B9E;&#x9645;&#x9009;&#x62E9;&#x7684;&#x52A8;&#x4F5C;&#x76F8;&#x5BF9;&#x5E94;&#x7684; Q &#x503C;&#x3002;&#x4E3A;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x628A;&#x52A8;&#x4F5C;&#x8F6C;&#x6362;&#x6210;&#x4E00;&#x4E2A;&#x70ED;&#x5411;&#x91CF;&#xFF08;&#x8BB0;&#x4F4F;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x6EE1;&#x662F; 0 &#x7684;&#x5411;&#x91CF;&#xFF0C;&#x9664;&#x4E86;&#x7B2C;<code>i</code>&#x4E2A;&#x7D22;&#x5F15;&#x4E2D;&#x7684;1&#xFF09;&#xFF0C;&#x5E76;&#x4E58;&#x4EE5; Q &#x503C;&#xFF1A;&#x8FD9;&#x5C06;&#x5220;&#x9664;&#x6240;&#x6709;&#x4E0E;&#x8BB0;&#x5FC6;&#x52A8;&#x4F5C;&#x5BF9;&#x5E94;&#x7684; Q &#x503C;&#x5916;&#x7684; Q &#x503C;&#x3002;&#x7136;&#x540E;&#x53EA;&#x5BF9;&#x7B2C;&#x4E00;&#x8F74;&#x6C42;&#x548C;&#xFF0C;&#x4EE5;&#x83B7;&#x5F97;&#x6BCF;&#x4E2A;&#x5B58;&#x50A8;&#x5668;&#x6240;&#x9700;&#x7684; Q &#x503C;&#x9884;&#x6D4B;&#x3002;</p>
+<pre><code class="lang-python">X_action = tf.placeholder(tf.int32, shape=[<span class="hljs-keyword">None</span>]) 
+q_value = tf.reduce_sum(critic_q_values * tf.one_hot(X_action, n_outputs), axis=<span class="hljs-number">1</span>, keep_dims=<span class="hljs-keyword">True</span>)
+</code></pre>
+<p>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x6DFB;&#x52A0;&#x8BAD;&#x7EC3;&#x64CD;&#x4F5C;&#xFF0C;&#x5047;&#x8BBE;&#x76EE;&#x6807;Q&#x503C;&#x5C06;&#x901A;&#x8FC7;&#x5360;&#x4F4D;&#x7B26;&#x9988;&#x5165;&#x3002;&#x6211;&#x4EEC;&#x8FD8;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x4E0D;&#x53EF;&#x8BAD;&#x7EC3;&#x7684;&#x53D8;&#x91CF;<code>global_step</code>&#x3002;&#x4F18;&#x5316;&#x5668;&#x7684;<code>minimize()</code>&#x64CD;&#x4F5C;&#x5C06;&#x8D1F;&#x8D23;&#x589E;&#x52A0;&#x5B83;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E86;<code>init</code>&#x64CD;&#x4F5C;&#x548C;<code>Saver</code>&#x3002;</p>
+<pre><code class="lang-python">y = tf.placeholder(tf.float32, shape=[<span class="hljs-keyword">None</span>, <span class="hljs-number">1</span>]) 
+cost = tf.reduce_mean(tf.square(y - q_value)) 
+global_step = tf.Variable(<span class="hljs-number">0</span>, trainable=<span class="hljs-keyword">False</span>, name=<span class="hljs-string">&apos;global_step&apos;</span>) 
+optimizer = tf.train.AdamOptimizer(learning_rate) 
+training_op = optimizer.minimize(cost, global_step=global_step)
+init = tf.global_variables_initializer() 
+saver = tf.train.Saver()
+</code></pre>
+<p>&#x8FD9;&#x5C31;&#x662F;&#x8BAD;&#x7EC3;&#x9636;&#x6BB5;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x5728;&#x6211;&#x4EEC;&#x67E5;&#x770B;&#x6267;&#x884C;&#x9636;&#x6BB5;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4E00;&#x4E9B;&#x5DE5;&#x5177;&#x3002;&#x9996;&#x5148;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x4ECE;&#x56DE;&#x653E;&#x8BB0;&#x5FC6;&#x5F00;&#x59CB;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;<code>deque</code>&#x5217;&#x8868;&#xFF0C;&#x56E0;&#x4E3A;&#x5728;&#x5C06;&#x6570;&#x636E;&#x63A8;&#x9001;&#x5230;&#x961F;&#x5217;&#x4E2D;&#x5E76;&#x5728;&#x8FBE;&#x5230;&#x6700;&#x5927;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#x65F6;&#x4ECE;&#x5217;&#x8868;&#x7684;&#x672B;&#x5C3E;&#x5F39;&#x51FA;&#x5B83;&#x4EEC;&#x4F7F;&#x662F;&#x975E;&#x5E38;&#x6709;&#x6548;&#x7684;&#x3002;&#x6211;&#x4EEC;&#x8FD8;&#x5C06;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x5C0F;&#x51FD;&#x6570;&#x6765;&#x968F;&#x673A;&#x5730;&#x4ECE;&#x56DE;&#x653E;&#x8BB0;&#x5FC6;&#x4E2D;&#x91C7;&#x6837;&#x4E00;&#x6279;&#x5904;&#x7406;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> deque
+
+replay_memory_size = <span class="hljs-number">10000</span> 
+replay_memory = deque([], maxlen=replay_memory_size)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sample_memories</span><span class="hljs-params">(batch_size)</span>:</span>    
+    indices = rnd.permutation(len(replay_memory))[:batch_size]    
+    cols = [[], [], [], [], []] <span class="hljs-comment"># state, action, reward, next_state, continue    </span>
+    <span class="hljs-keyword">for</span> idx <span class="hljs-keyword">in</span> indices:        
+        memory = replay_memory[idx]        
+        <span class="hljs-keyword">for</span> col, value <span class="hljs-keyword">in</span> zip(cols, memory):            
+            col.append(value)    
+    cols = [np.array(col) <span class="hljs-keyword">for</span> col <span class="hljs-keyword">in</span> cols]    
+    <span class="hljs-keyword">return</span> (cols[<span class="hljs-number">0</span>], cols[<span class="hljs-number">1</span>], cols[<span class="hljs-number">2</span>].reshape(<span class="hljs-number">-1</span>, <span class="hljs-number">1</span>), cols[<span class="hljs-number">3</span>],cols[<span class="hljs-number">4</span>].reshape(<span class="hljs-number">-1</span>, <span class="hljs-number">1</span>))
+</code></pre>
+<p>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x884C;&#x52A8;&#x8005;&#x6765;&#x63A2;&#x7D22;&#x6E38;&#x620F;&#x3002;&#x6211;&#x4EEC;&#x4F7F;&#x7528; &#x3B5; &#x8D2A;&#x5A6A;&#x7B56;&#x7565;&#xFF0C;&#x5E76;&#x5728; 50000 &#x4E2A;&#x8BAD;&#x7EC3;&#x6B65;&#x9AA4;&#x4E2D;&#x9010;&#x6B65;&#x5C06;<code>&#x3B5;</code>&#x4ECE; 1 &#x964D;&#x4F4E;&#x5230; 0.05&#x3002;</p>
+<pre><code class="lang-python">eps_min = <span class="hljs-number">0.05</span> 
+eps_max = <span class="hljs-number">1.0</span> 
+eps_decay_steps = <span class="hljs-number">50000</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">epsilon_greedy</span><span class="hljs-params">(q_values, step)</span>:</span>    
+    epsilon = max(eps_min, eps_max - (eps_max-eps_min) * step/eps_decay_steps)   
+     <span class="hljs-keyword">if</span> rnd.rand() &lt; epsilon:        
+        <span class="hljs-keyword">return</span> rnd.randint(n_outputs) <span class="hljs-comment"># &#x968F;&#x673A;&#x52A8;&#x4F5C;   </span>
+    <span class="hljs-keyword">else</span>:        
+        <span class="hljs-keyword">return</span> np.argmax(q_values) <span class="hljs-comment"># &#x6700;&#x4F18;&#x52A8;&#x4F5C;</span>
+</code></pre>
+<p>&#x5C31;&#x662F;&#x8FD9;&#x6837;&#xFF01;&#x6211;&#x4EEC;&#x51C6;&#x5907;&#x597D;&#x5F00;&#x59CB;&#x8BAD;&#x7EC3;&#x4E86;&#x3002;&#x6267;&#x884C;&#x9636;&#x6BB5;&#x4E0D;&#x5305;&#x542B;&#x592A;&#x590D;&#x6742;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x4F46;&#x5B83;&#x6709;&#x70B9;&#x957F;&#xFF0C;&#x6240;&#x4EE5;&#x6DF1;&#x547C;&#x5438;&#x3002;&#x51C6;&#x5907;&#x597D;&#x4E86;&#x5417;&#xFF1F;&#x6765;&#x6B21;&#x591F;&#xFF01;&#x9996;&#x5148;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x521D;&#x59CB;&#x5316;&#x51E0;&#x4E2A;&#x53D8;&#x91CF;&#xFF1A;</p>
+<pre><code class="lang-python">n_steps = <span class="hljs-number">100000</span>  <span class="hljs-comment"># &#x603B;&#x7684;&#x8BAD;&#x7EC3;&#x6B65;&#x957F; </span>
+training_start = <span class="hljs-number">1000</span>  <span class="hljs-comment"># &#x5728;&#x6E38;&#x620F;1000&#x6B21;&#x8FED;&#x4EE3;&#x540E;&#x5F00;&#x59CB;&#x8BAD;&#x7EC3;</span>
+training_interval = <span class="hljs-number">3</span>  <span class="hljs-comment"># &#x6BCF;3&#x6B21;&#x8FED;&#x4EE3;&#x8BAD;&#x7EC3;&#x4E00;&#x6B21;</span>
+save_steps = <span class="hljs-number">50</span>  <span class="hljs-comment"># &#x6BCF;50&#x8BAD;&#x7EC3;&#x6B65;&#x957F;&#x4FDD;&#x5B58;&#x6A21;&#x578B;</span>
+copy_steps = <span class="hljs-number">25</span>  <span class="hljs-comment"># &#x6BCF;25&#x8BAD;&#x7EC3;&#x6B65;&#x957F;&#x540E;&#x590D;&#x5236;&#x8BC4;&#x8BBA;&#x5BB6;Q&#x503C;&#x5230;&#x884C;&#x52A8;&#x8005;</span>
+discount_rate = <span class="hljs-number">0.95</span> 
+skip_start = <span class="hljs-number">90</span>  <span class="hljs-comment"># &#x8DF3;&#x8FC7;&#x6E38;&#x620F;&#x5F00;&#x59CB;(&#x53EA;&#x662F;&#x7B49;&#x5F85;&#x65F6;&#x95F4;) </span>
+batch_size = <span class="hljs-number">50</span> 
+iteration = <span class="hljs-number">0</span>  <span class="hljs-comment"># &#x6E38;&#x620F;&#x8FED;&#x4EE3;</span>
+checkpoint_path = <span class="hljs-string">&quot;./my_dqn.ckpt&quot;</span> 
+done = <span class="hljs-keyword">True</span> <span class="hljs-comment"># env &#x9700;&#x8981;&#x88AB;&#x91CD;&#x7F6E;</span>
+</code></pre>
+<p>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x6253;&#x5F00;&#x4F1A;&#x8BDD;&#x5E76;&#x5F00;&#x59CB;&#x8BAD;&#x7EC3;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">with</span> tf.Session() <span class="hljs-keyword">as</span> sess:    
+    <span class="hljs-keyword">if</span> os.path.isfile(checkpoint_path):        
+        saver.restore(sess, checkpoint_path)    
+    <span class="hljs-keyword">else</span>:        
+        init.run()    
+    <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:        
+        step = global_step.eval()        
+        <span class="hljs-keyword">if</span> step &gt;= n_steps:            
+            <span class="hljs-keyword">break</span>        
+        iteration += <span class="hljs-number">1</span>        
+        <span class="hljs-keyword">if</span> done: <span class="hljs-comment"># &#x6E38;&#x620F;&#x7ED3;&#x675F;&#xFF0C;&#x91CD;&#x6765;            </span>
+            obs = env.reset()            
+            <span class="hljs-keyword">for</span> skip <span class="hljs-keyword">in</span> range(skip_start): <span class="hljs-comment"># &#x8DF3;&#x8FC7;&#x6E38;&#x620F;&#x5F00;&#x5934;              </span>
+                obs, reward, done, info = env.step(<span class="hljs-number">0</span>)            
+                state = preprocess_observation(obs)
+
+        <span class="hljs-comment"># &#x884C;&#x52A8;&#x8005;&#x8BC4;&#x4F30;&#x8981;&#x5E72;&#x4EC0;&#x4E48;        </span>
+        q_values = actor_q_values.eval(feed_dict={X_state: [state]})        
+        action = epsilon_greedy(q_values, step)
+
+        <span class="hljs-comment"># &#x884C;&#x52A8;&#x8005;&#x5F00;&#x59CB;&#x73A9;&#x6E38;&#x620F;       </span>
+        obs, reward, done, info = env.step(action)        
+        next_state = preprocess_observation(obs)
+
+        <span class="hljs-comment"># &#x8BA9;&#x6211;&#x4EEC;&#x8BB0;&#x4E0B;&#x6765;&#x521A;&#x624D;&#x53D1;&#x751F;&#x4E86;&#x5565;        </span>
+        replay_memory.append((state, action, reward, next_state, <span class="hljs-number">1.0</span> - done))        state = next_state
+
+        <span class="hljs-keyword">if</span> iteration &lt; training_start <span class="hljs-keyword">or</span> iteration % training_interval != <span class="hljs-number">0</span>:                <span class="hljs-keyword">continue</span>
+
+        <span class="hljs-comment"># &#x8BC4;&#x8BBA;&#x5BB6;&#x5B66;&#x4E60;        </span>
+        X_state_val, X_action_val, rewards, X_next_state_val, continues = (            sample_memories(batch_size))        
+        next_q_values = actor_q_values.eval( feed_dict={X_state: X_next_state_val})    
+        max_next_q_values = np.max(next_q_values, axis=<span class="hljs-number">1</span>, keepdims=<span class="hljs-keyword">True</span>)        
+        y_val = rewards + continues * discount_rate * max_next_q_values        
+        training_op.run(feed_dict={X_state: X_state_val,X_action: X_action_val, y: y_val})
+
+        <span class="hljs-comment"># &#x590D;&#x5236;&#x8BC4;&#x8BBA;&#x5BB6;Q&#x503C;&#x5230;&#x884C;&#x52A8;&#x8005;        </span>
+        <span class="hljs-keyword">if</span> step % copy_steps == <span class="hljs-number">0</span>:            
+            copy_critic_to_actor.run()
+
+        <span class="hljs-comment"># &#x4FDD;&#x5B58;&#x6A21;&#x578B;        </span>
+        <span class="hljs-keyword">if</span> step % save_steps == <span class="hljs-number">0</span>:            
+            saver.save(sess, checkpoint_path)
+</code></pre>
+<p>&#x5982;&#x679C;&#x68C0;&#x67E5;&#x70B9;&#x6587;&#x4EF6;&#x5B58;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x5F00;&#x59CB;&#x6062;&#x590D;&#x6A21;&#x578B;&#xFF0C;&#x5426;&#x5219;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x521D;&#x59CB;&#x5316;&#x53D8;&#x91CF;&#x3002;&#x7136;&#x540E;&#xFF0C;&#x4E3B;&#x5FAA;&#x73AF;&#x5F00;&#x59CB;&#xFF0C;&#x5176;&#x4E2D;<code>iteration</code>&#x8BA1;&#x7B97;&#x4ECE;&#x7A0B;&#x5E8F;&#x5F00;&#x59CB;&#x4EE5;&#x6765;&#x6E38;&#x620F;&#x6B65;&#x9AA4;&#x7684;&#x603B;&#x6570;&#xFF0C;&#x540C;&#x65F6;<code>step</code>&#x8BA1;&#x7B97;&#x4ECE;&#x8BAD;&#x7EC3;&#x5F00;&#x59CB;&#x7684;&#x8BAD;&#x7EC3;&#x6B65;&#x9AA4;&#x7684;&#x603B;&#x6570;&#xFF08;&#x5982;&#x679C;&#x6062;&#x590D;&#x4E86;&#x68C0;&#x67E5;&#x70B9;&#xFF0C;&#x4E5F;&#x6062;&#x590D;&#x5168;&#x5C40;&#x6B65;&#x9AA4;&#xFF09;&#x3002;&#x7136;&#x540E;&#x4EE3;&#x7801;&#x91CD;&#x7F6E;&#x6E38;&#x620F;&#xFF08;&#x8DF3;&#x8FC7;&#x7B2C;&#x4E00;&#x4E2A;&#x65E0;&#x804A;&#x7684;&#x7B49;&#x5F85;&#x6E38;&#x620F;&#x7684;&#x6B65;&#x9AA4;&#xFF0C;&#x8FD9;&#x6B65;&#x9AA4;&#x5565;&#x90FD;&#x6CA1;&#x6709;&#xFF09;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x884C;&#x52A8;&#x8005;&#x8BC4;&#x4F30;&#x8BE5;&#x505A;&#x4EC0;&#x4E48;&#xFF0C;&#x5E76;&#x4E14;&#x73A9;&#x6E38;&#x620F;&#xFF0C;&#x5E76;&#x4E14;&#x5B83;&#x7684;&#x7ECF;&#x9A8C;&#x88AB;&#x5B58;&#x50A8;&#x5728;&#x56DE;&#x653E;&#x8BB0;&#x5FC6;&#x4E2D;&#x3002;&#x7136;&#x540E;&#xFF0C;&#x6BCF;&#x9694;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#xFF08;&#x70ED;&#x8EAB;&#x671F;&#x540E;&#xFF09;&#xFF0C;&#x8BC4;&#x8BBA;&#x5BB6;&#x5F00;&#x59CB;&#x4E00;&#x4E2A;&#x8BAD;&#x7EC3;&#x6B65;&#x9AA4;&#x3002;&#x5B83;&#x91C7;&#x6837;&#x4E00;&#x6279;&#x56DE;&#x653E;&#x8BB0;&#x5FC6;&#xFF0C;&#x5E76;&#x8981;&#x6C42;&#x884C;&#x52A8;&#x8005;&#x4F30;&#x8BA1;&#x4E0B;&#x4E00;&#x72B6;&#x6001;&#x7684;&#x6240;&#x6709;&#x52A8;&#x4F5C;&#x7684;Q&#x503C;&#xFF0C;&#x5E76;&#x5E94;&#x7528;&#x516C;&#x5F0F; 16-7 &#x6765;&#x8BA1;&#x7B97;&#x76EE;&#x6807; Q &#x503C;<code>y_val</code>.&#x8FD9;&#x91CC;&#x552F;&#x4E00;&#x68D8;&#x624B;&#x7684;&#x90E8;&#x5206;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x5C06;&#x4E0B;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x7684; Q &#x503C;&#x4E58;&#x4EE5;<code>continues</code>&#x5411;&#x91CF;&#xFF0C;&#x4EE5;&#x5C06;&#x5BF9;&#x5E94;&#x4E8E;&#x6E38;&#x620F;&#x7ED3;&#x675F;&#x7684;&#x8BB0;&#x5FC6; Q &#x503C;&#x6E05;&#x96F6;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x8FDB;&#x884C;&#x8BAD;&#x7EC3;&#x64CD;&#x4F5C;&#xFF0C;&#x4EE5;&#x63D0;&#x9AD8;&#x8BC4;&#x8BBA;&#x5BB6;&#x9884;&#x6D4B; Q &#x503C;&#x7684;&#x80FD;&#x529B;&#x3002;&#x6700;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5B9A;&#x671F;&#x5C06;&#x8BC4;&#x8BBA;&#x5BB6;&#x7684; Q &#x503C;&#x590D;&#x5236;&#x7ED9;&#x884C;&#x52A8;&#x8005;&#xFF0C;&#x7136;&#x540E;&#x4FDD;&#x5B58;&#x6A21;&#x578B;&#x3002;</p>
+<p>&#x4E0D;&#x5E78;&#x7684;&#x662F;&#xFF0C;&#x8BAD;&#x7EC3;&#x8FC7;&#x7A0B;&#x662F;&#x975E;&#x5E38;&#x7F13;&#x6162;&#x7684;&#xFF1A;&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528;&#x4F60;&#x7684;&#x7834;&#x7B14;&#x8BB0;&#x672C;&#x7535;&#x8111;&#x8FDB;&#x884C;&#x8BAD;&#x7EC3;&#x7684;&#x8BDD;&#xFF0C;&#x60F3;&#x8BA9; Ms. Pac-Man &#x53D8;&#x597D;&#x4E00;&#x70B9;&#x70B9;&#x4F60;&#x5F97;&#x82B1;&#x597D;&#x51E0;&#x5929;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x770B;&#x770B;&#x5B66;&#x4E60;&#x66F2;&#x7EBF;&#xFF0C;&#x8BA1;&#x7B97;&#x4E00;&#x4E0B;&#x6BCF;&#x6B21;&#x7684;&#x5E73;&#x5747;&#x5956;&#x52B1;&#xFF0C;&#x4F60;&#x4F1A;&#x53D1;&#x73B0;&#x5230;&#x5B83;&#x662F;&#x975E;&#x5E38;&#x5608;&#x6742;&#x7684;&#x3002;&#x5728;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5F88;&#x957F;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x5185;&#x53EF;&#x80FD;&#x6CA1;&#x6709;&#x660E;&#x663E;&#x7684;&#x8FDB;&#x5C55;&#xFF0C;&#x76F4;&#x5230;&#x667A;&#x80FD;&#x4F53;&#x5B66;&#x4F1A;&#x5728;&#x5408;&#x7406;&#x7684;&#x65F6;&#x95F4;&#x5185;&#x751F;&#x5B58;&#x3002;&#x5982;&#x524D;&#x6240;&#x8FF0;&#xFF0C;&#x4E00;&#x79CD;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x662F;&#x5C06;&#x5C3D;&#x53EF;&#x80FD;&#x591A;&#x7684;&#x5148;&#x9A8C;&#x77E5;&#x8BC6;&#x6CE8;&#x5165;&#x5230;&#x6A21;&#x578B;&#x4E2D;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x901A;&#x8FC7;&#x9884;&#x5904;&#x7406;&#x3001;&#x5956;&#x52B1;&#x7B49;&#xFF09;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5C1D;&#x8BD5;&#x901A;&#x8FC7;&#x9996;&#x5148;&#x8BAD;&#x7EC3;&#x5B83;&#x6765;&#x6A21;&#x4EFF;&#x57FA;&#x672C;&#x7B56;&#x7565;&#x6765;&#x5F15;&#x5BFC;&#x6A21;&#x578B;&#x3002;&#x5728;&#x4EFB;&#x4F55;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;RL&#x4ECD;&#x7136;&#x9700;&#x8981;&#x76F8;&#x5F53;&#x591A;&#x7684;&#x8010;&#x5FC3;&#x548C;&#x8C03;&#x6574;&#xFF0C;&#x4F46;&#x6700;&#x7EC8;&#x7ED3;&#x679C;&#x662F;&#x975E;&#x5E38;&#x4EE4;&#x4EBA;&#x5174;&#x594B;&#x7684;&#x3002;</p>
+<h2 id="&#x7EC3;&#x4E60;">&#x7EC3;&#x4E60;</h2>
+<ol>
+<li>&#x4F60;&#x600E;&#x6837;&#x53BB;&#x5B9A;&#x4E49;&#x5F3A;&#x5316;&#x5B66;&#x4E60;&#xFF1F;&#x5B83;&#x4E0E;&#x4F20;&#x7EDF;&#x7684;&#x76D1;&#x7763;&#x4EE5;&#x53CA;&#x975E;&#x76D1;&#x7763;&#x5B66;&#x4E60;&#x6709;&#x4EC0;&#x4E48;&#x4E0D;&#x540C;&#xFF1F;</li>
+<li>&#x4F60;&#x80FD;&#x60F3;&#x5230;&#x4EC0;&#x4E48;&#x672C;&#x7AE0;&#x6CA1;&#x6709;&#x63D0;&#x5230;&#x8FC7;&#x7684;&#x5F3A;&#x5316;&#x5B66;&#x4E60;&#x5E94;&#x7528;&#xFF1F;&#x667A;&#x80FD;&#x4F53;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x4EC0;&#x4E48;&#x662F;&#x53EF;&#x80FD;&#x7684;&#x52A8;&#x4F5C;&#xFF0C;&#x4EC0;&#x4E48;&#x662F;&#x5956;&#x52B1;&#xFF1F;</li>
+<li>&#x4EC0;&#x4E48;&#x662F;&#x8870;&#x51CF;&#x7387;&#xFF1F;&#x5982;&#x679C;&#x4F60;&#x4FEE;&#x6539;&#x4E86;&#x8870;&#x51CF;&#x7387;&#x90A3;&#x6700;&#x4F18;&#x7B56;&#x7565;&#x4F1A;&#x53D8;&#x5316;&#x5417;&#xFF1F;</li>
+<li>&#x4F60;&#x600E;&#x4E48;&#x53BB;&#x5B9A;&#x4E49;&#x5F3A;&#x5316;&#x5B66;&#x4E60;&#x667A;&#x80FD;&#x4F53;&#x7684;&#x8868;&#x73B0;&#xFF1F;</li>
+<li>&#x4EC0;&#x4E48;&#x662F;&#x4FE1;&#x7528;&#x8BC4;&#x4F30;&#x95EE;&#x9898;&#xFF1F;&#x5B83;&#x600E;&#x4E48;&#x51FA;&#x73B0;&#x7684;&#xFF1F;&#x4F60;&#x600E;&#x4E48;&#x89E3;&#x51B3;&#xFF1F;</li>
+<li>&#x4F7F;&#x7528;&#x56DE;&#x653E;&#x8BB0;&#x5FC6;&#x7684;&#x76EE;&#x7684;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</li>
+<li>&#x4EC0;&#x4E48;&#x662F;&#x95ED;&#x7B56;&#x7565; RL &#x7B97;&#x6CD5;&#xFF1F;</li>
+<li>&#x4F7F;&#x7528;&#x6DF1;&#x5EA6; Q &#x5B66;&#x4E60;&#x6765;&#x5904;&#x7406; OpenAI gym &#x7684;&#x201C;BypedalWalker-v2&#x201D; &#x3002;QNET &#x4E0D;&#x9700;&#x8981;&#x5BF9;&#x8FD9;&#x4E2A;&#x4EFB;&#x52A1;&#x4F7F;&#x7528;&#x975E;&#x5E38;&#x6DF1;&#x7684;&#x7F51;&#x7EDC;&#x3002;</li>
+<li>&#x4F7F;&#x7528;&#x7B56;&#x7565;&#x68AF;&#x5EA6;&#x8BAD;&#x7EC3;&#x667A;&#x80FD;&#x4F53;&#x626E;&#x6F14; Pong&#xFF0C;&#x4E00;&#x4E2A;&#x8457;&#x540D;&#x7684; Atari &#x6E38;&#x620F;&#xFF08;PANV0 &#x5728; OpenAI gym &#x7684; Pong-v0&#xFF09;&#x3002;&#x6CE8;&#x610F;&#xFF1A;&#x4E2A;&#x4EBA;&#x7684;&#x89C2;&#x5BDF;&#x4E0D;&#x8DB3;&#x4EE5;&#x8BF4;&#x660E;&#x7403;&#x7684;&#x65B9;&#x5411;&#x548C;&#x901F;&#x5EA6;&#x3002;&#x4E00;&#x79CD;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x662F;&#x4E00;&#x6B21;&#x5C06;&#x4E24;&#x6B21;&#x89C2;&#x6D4B;&#x4F20;&#x9012;&#x7ED9;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7B56;&#x7565;&#x3002;&#x4E3A;&#x4E86;&#x51CF;&#x5C11;&#x7EF4;&#x5EA6;&#x548C;&#x52A0;&#x901F;&#x8BAD;&#x7EC3;&#xFF0C;&#x4F60;&#x5FC5;&#x987B;&#x9884;&#x5148;&#x5904;&#x7406;&#x8FD9;&#x4E9B;&#x56FE;&#x50CF;&#xFF08;&#x88C1;&#x526A;&#xFF0C;&#x8C03;&#x6574;&#x5927;&#x5C0F;&#xFF0C;&#x5E76;&#x5C06;&#x5B83;&#x4EEC;&#x8F6C;&#x6362;&#x6210;&#x9ED1;&#x767D;&#xFF09;&#xFF0C;&#x5E76;&#x53EF;&#x80FD;&#x5C06;&#x5B83;&#x4EEC;&#x5408;&#x5E76;&#x6210;&#x5355;&#x4E2A;&#x56FE;&#x50CF;&#xFF08;&#x4F8B;&#x5982;&#x53BB;&#x53E0;&#x52A0;&#x5B83;&#x4EEC;&#xFF09;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x4F60;&#x6709;&#x5927;&#x7EA6; 100 &#x7F8E;&#x5143;&#x5907;&#x7528;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8D2D;&#x4E70; Raspberry Pi 3 &#x518D;&#x52A0;&#x4E0A;&#x4E00;&#x4E9B;&#x4FBF;&#x5B9C;&#x7684;&#x673A;&#x5668;&#x4EBA;&#x7EC4;&#x4EF6;&#xFF0C;&#x5728; PI &#x4E0A;&#x5B89;&#x88C5; TensorFlow&#xFF0C;&#x7136;&#x540E;&#x8BA9;&#x6211;&#x4EEC;&#x55E8;&#x8D77;&#x6765;~&#xFF01;&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x770B;&#x770B; Lukas Biewald &#x7684;&#x8FD9;&#x4E2A;&#x6709;&#x8DA3;&#x7684;&#x5E16;&#x5B50;&#xFF0C;&#x6216;&#x8005;&#x770B;&#x770B; GoPiGo &#x6216; BrickPi&#x3002;&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x5C1D;&#x8BD5;&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x7B56;&#x7565;&#x68AF;&#x5EA6;&#x8BAD;&#x7EC3;&#x673A;&#x5668;&#x4EBA;&#x6765;&#x6784;&#x5EFA;&#x771F;&#x5B9E;&#x7684; cartpole &#xFF1F;&#x6216;&#x8005;&#x9020;&#x4E00;&#x4E2A;&#x673A;&#x5668;&#x4EBA;&#x8718;&#x86DB;&#xFF0C;&#x8BA9;&#x5B83;&#x5B66;&#x4F1A;&#x8D70;&#x8DEF;&#xFF1B;&#x5F53;&#x5B83;&#x63A5;&#x8FD1;&#x67D0;&#x4E2A;&#x76EE;&#x6807;&#x65F6;&#xFF0C;&#x7ED9;&#x4E88;&#x5956;&#x52B1;&#xFF08;&#x4F60;&#x9700;&#x8981;&#x4F20;&#x611F;&#x5668;&#x6765;&#x6D4B;&#x91CF;&#x76EE;&#x6807;&#x7684;&#x8DDD;&#x79BB;&#xFF09;&#x3002;&#x552F;&#x4E00;&#x7684;&#x9650;&#x5236;&#x5C31;&#x662F;&#x4F60;&#x7684;&#x60F3;&#x8C61;&#x529B;&#x3002;</li>
+</ol>
+<p>&#x7EC3;&#x4E60;&#x7B54;&#x6848;&#x5747;&#x5728;&#x9644;&#x5F55; A&#x3002;</p>
+<h2 id="&#x611F;&#x8C22;">&#x611F;&#x8C22;</h2>
+<p>&#x5728;&#x6211;&#x4EEC;&#x7ED3;&#x675F;&#x8FD9;&#x672C;&#x4E66;&#x7684;&#x6700;&#x540E;&#x4E00;&#x7AE0;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x60F3;&#x611F;&#x8C22;&#x4F60;&#x4EEC;&#x8BFB;&#x5230;&#x6700;&#x540E;&#x4E00;&#x6BB5;&#x3002;&#x6211;&#x771F;&#x5FC3;&#x5E0C;&#x671B;&#x4F60;&#x80FD;&#x50CF;&#x6211;&#x5199;&#x8FD9;&#x672C;&#x4E66;&#x4E00;&#x6837;&#x6109;&#x5FEB;&#x5730;&#x9605;&#x8BFB;&#x8FD9;&#x672C;&#x4E66;&#xFF0C;&#x8FD9;&#x5BF9;&#x4F60;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x6216;&#x591A;&#x6216;&#x5C11;&#x90FD;&#x662F;&#x6709;&#x7528;&#x7684;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x53D1;&#x73B0;&#x9519;&#x8BEF;&#xFF0C;&#x8BF7;&#x53D1;&#x9001;&#x53CD;&#x9988;&#x3002;&#x66F4;&#x4E00;&#x822C;&#x5730;&#x8BF4;&#xFF0C;&#x6211;&#x5F88;&#x60F3;&#x77E5;&#x9053;&#x4F60;&#x7684;&#x60F3;&#x6CD5;&#xFF0C;&#x6240;&#x4EE5;&#x8BF7;&#x4E0D;&#x8981;&#x72B9;&#x8C6B;&#xFF0C;&#x901A;&#x8FC7; O&apos;Reilly &#x6765;&#x4E0E;&#x6211;&#x8054;&#x7CFB;&#xFF0C;&#x6216;&#x8005;&#x901A;&#x8FC7; ageron/handson-ml GITHUB &#x9879;&#x76EE;&#x6765;&#x7EC3;&#x4E60;&#x3002;</p>
+<p>&#x5BF9;&#x4F60;&#x6765;&#x8BF4;&#xFF0C;&#x6211;&#x6700;&#x597D;&#x7684;&#x5EFA;&#x8BAE;&#x662F;&#x7EC3;&#x4E60;&#x548C;&#x7EC3;&#x4E60;&#xFF1A;&#x5982;&#x679C;&#x4F60;&#x8FD8;&#x6CA1;&#x6709;&#x505A;&#x8FC7;&#x8FD9;&#x4E9B;&#x7EC3;&#x4E60;&#xFF0C;&#x8BD5;&#x7740;&#x4F7F;&#x7528; Juyter notebook &#x53C2;&#x52A0;&#x6240;&#x6709;&#x7684;&#x7EC3;&#x4E60;&#xFF0C;&#x52A0;&#x5165; kaggle &#x7F51;&#x7AD9;&#x6216;&#x5176;&#x4ED6; ML &#x793E;&#x533A;&#xFF0C;&#x770B; ML &#x8BFE;&#x7A0B;&#xFF0C;&#x9605;&#x8BFB;&#x8BBA;&#x6587;&#xFF0C;&#x53C2;&#x52A0;&#x4F1A;&#x8BAE;&#xFF0C;&#x4F1A;&#x89C1;&#x4E13;&#x5BB6;&#x3002;&#x60A8;&#x53EF;&#x80FD;&#x8FD8;&#x60F3;&#x7814;&#x7A76;&#x6211;&#x4EEC;&#x5728;&#x672C;&#x4E66;&#x4E2D;&#x6CA1;&#x6709;&#x6D89;&#x53CA;&#x7684;&#x4E00;&#x4E9B;&#x4E3B;&#x9898;&#xFF0C;&#x5305;&#x62EC;&#x63A8;&#x8350;&#x7CFB;&#x7EDF;&#x3001;&#x805A;&#x7C7B;&#x7B97;&#x6CD5;&#x3001;&#x5F02;&#x5E38;&#x68C0;&#x6D4B;&#x7B97;&#x6CD5;&#x548C;&#x9057;&#x4F20;&#x7B97;&#x6CD5;&#x3002;</p>
+<p>&#x6211;&#x6700;&#x5927;&#x7684;&#x5E0C;&#x671B;&#x662F;&#xFF0C;&#x8FD9;&#x672C;&#x4E66;&#x5C06;&#x6FC0;&#x52B1;&#x4F60;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x7F8E;&#x5999;&#x7684; ML &#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x8FD9;&#x5C06;&#x6709;&#x5229;&#x4E8E;&#x6211;&#x4EEC;&#x6240;&#x6709;&#x4EBA;&#xFF01;&#x90A3;&#x4F1A;&#x662F;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;</p>
+<blockquote>
+<p>2016 &#x5E74; 11 &#x6708; 26 &#x65E5;&#xFF0C;&#x5965;&#x5217;&#x4F26;&#xB7;&#x683C;&#x4F26;</p>
+<p>&#x4F60;&#x7684;&#x652F;&#x6301;&#xFF0C;&#x662F;&#x6211;&#x4EEC;&#x6BCF;&#x4E2A;&#x5F00;&#x6E90;&#x5DE5;&#x4F5C;&#x8005;&#x7684;&#x9A84;&#x50B2;&#xFF5E;</p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="15.自编码器.html" class="navigation navigation-prev " aria-label="Previous page: 十五、自编码器">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="B.机器学习项目清单.html" class="navigation navigation-next " aria-label="Next page: 附录 B、机器学习项目清单">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"十六、强化学习","level":"1.18","depth":1,"next":{"title":"附录 B、机器学习项目清单","level":"1.19","depth":1,"path":"docs/B.机器学习项目清单.md","ref":"docs/B.机器学习项目清单.md","articles":[]},"previous":{"title":"十五、自编码器","level":"1.17","depth":1,"path":"docs/15.自编码器.md","ref":"docs/15.自编码器.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/16.强化学习.md","mtime":"2019-04-18T03:01:37.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-07T09:41:36.357Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

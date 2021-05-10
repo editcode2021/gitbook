@@ -1,0 +1,1651 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>6.sklearn中的PCA · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="试手MNIST数据集.html" />
+    
+    
+    <link rel="prev" href="5.高维数据向低维数据进行映射.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../ji-qi-xue-xi-ji-ben-gai-nian.html">
+            
+                <a href="../ji-qi-xue-xi-ji-ben-gai-nian.html">
+            
+                    
+                    1.机器学习基本概念
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../chapter1/you-guan-shu-ju-de-yi-xie-zhu-yu.html">
+            
+                <a href="../chapter1/you-guan-shu-ju-de-yi-xie-zhu-yu.html">
+            
+                    
+                    有关数据的一些术语
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../chapter1/ji-qi-xue-xi-zhong-jian-du-xue-xi-de-ji-ben-ren-wu.html">
+            
+                <a href="../chapter1/ji-qi-xue-xi-zhong-jian-du-xue-xi-de-ji-ben-ren-wu.html">
+            
+                    
+                    机器学习中监督学习的基本任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../jupyter-notebookyu-numpy-de-shi-yong.html">
+            
+                <a href="../jupyter-notebookyu-numpy-de-shi-yong.html">
+            
+                    
+                    2.Jupyter Notebook与Numpy的使用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../jupyter-notebookyu-numpy-de-shi-yong/jupyter-notebookyu-numpy-de-shi-yong.html">
+            
+                <a href="../jupyter-notebookyu-numpy-de-shi-yong/jupyter-notebookyu-numpy-de-shi-yong.html">
+            
+                    
+                    Jupyter Notebook与Numpy的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../jupyter-notebookyu-numpy-de-shi-yong/numpy-shu-ju-ji-chu.html">
+            
+                <a href="../jupyter-notebookyu-numpy-de-shi-yong/numpy-shu-ju-ji-chu.html">
+            
+                    
+                    Numpy 数据基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../jupyter-notebookyu-numpy-de-shi-yong/qi-ta-chuang-jian-numpy-array-de-fang-fa.html">
+            
+                <a href="../jupyter-notebookyu-numpy-de-shi-yong/qi-ta-chuang-jian-numpy-array-de-fang-fa.html">
+            
+                    
+                    其他创建numpy.array 的方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../jupyter-notebookyu-numpy-de-shi-yong/numpyarray-de-ji-ben-cao-zuo.html">
+            
+                <a href="../jupyter-notebookyu-numpy-de-shi-yong/numpyarray-de-ji-ben-cao-zuo.html">
+            
+                    
+                    Numpy.array 的基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../knnsuan-fa-de-xue-xi-yu-shi-yong.html">
+            
+                <a href="../knnsuan-fa-de-xue-xi-yu-shi-yong.html">
+            
+                    
+                    3.kNN算法的学习与使用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../knnsuan-fa-de-xue-xi-yu-shi-yong/1knnsuan-fa-de-yuan-li-jie-shao.html">
+            
+                <a href="../knnsuan-fa-de-xue-xi-yu-shi-yong/1knnsuan-fa-de-yuan-li-jie-shao.html">
+            
+                    
+                    1.KNN算法的原理介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../knnsuan-fa-de-xue-xi-yu-shi-yong/2knnsuan-fa-de-yi-ge-jian-dan-shi-xian.html">
+            
+                <a href="../knnsuan-fa-de-xue-xi-yu-shi-yong/2knnsuan-fa-de-yi-ge-jian-dan-shi-xian.html">
+            
+                    
+                    2.KNN算法的一个简单实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../knnsuan-fa-de-xue-xi-yu-shi-yong/3pan-duan-ji-qi-xue-xi-suan-fa-de-xing-neng.html">
+            
+                <a href="../knnsuan-fa-de-xue-xi-yu-shi-yong/3pan-duan-ji-qi-xue-xi-suan-fa-de-xing-neng.html">
+            
+                    
+                    3.判断机器学习算法的性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../knnsuan-fa-de-xue-xi-yu-shi-yong/4. 超参数和模型参数.html">
+            
+                <a href="../knnsuan-fa-de-xue-xi-yu-shi-yong/4. 超参数和模型参数.html">
+            
+                    
+                    4. 超参数和模型参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../knnsuan-fa-de-xue-xi-yu-shi-yong/5.数据归一化.html">
+            
+                <a href="../knnsuan-fa-de-xue-xi-yu-shi-yong/5.数据归一化.html">
+            
+                    
+                    5.数据归一化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../knnsuan-fa-de-xue-xi-yu-shi-yong/6.sklearn 中使用knn算法的总结整理.html">
+            
+                <a href="../knnsuan-fa-de-xue-xi-yu-shi-yong/6.sklearn 中使用knn算法的总结整理.html">
+            
+                    
+                    6.sklearn 中使用knn算法的总结整理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../线性回归算法/">
+            
+                <a href="../线性回归算法/">
+            
+                    
+                    4.线性回归算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../线性回归算法/1.线性回归算法简介.html">
+            
+                <a href="../线性回归算法/1.线性回归算法简介.html">
+            
+                    
+                    1.线性回归算法简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../线性回归算法/2.简单线性回归的实现.html">
+            
+                <a href="../线性回归算法/2.简单线性回归的实现.html">
+            
+                    
+                    2.简单线性回归的实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../线性回归算法/3.衡量线性回归算法的指标.html">
+            
+                <a href="../线性回归算法/3.衡量线性回归算法的指标.html">
+            
+                    
+                    3.衡量线性回归算法的指标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../线性回归算法/4.最好的衡量线性回归法的指标-R-Squared.html">
+            
+                <a href="../线性回归算法/4.最好的衡量线性回归法的指标-R-Squared.html">
+            
+                    
+                    4.最好的衡量线性回归法的指标 R Squared
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../线性回归算法/5.多元线性回归.html">
+            
+                <a href="../线性回归算法/5.多元线性回归.html">
+            
+                    
+                    5.多元线性回归
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../线性回归法/6线性回归的可解性和更多思考.html">
+            
+                <a href="../线性回归法/6线性回归的可解性和更多思考.html">
+            
+                    
+                    6.线性回归的可解性和更多思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../梯度下降法/">
+            
+                <a href="../梯度下降法/">
+            
+                    
+                    5.梯度下降法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../梯度下降法/1.梯度下降法简介.html">
+            
+                <a href="../梯度下降法/1.梯度下降法简介.html">
+            
+                    
+                    1.梯度下降法简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../梯度下降法/2.梯度下降法模拟.html">
+            
+                <a href="../梯度下降法/2.梯度下降法模拟.html">
+            
+                    
+                    2.梯度下降法模拟
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../梯度下降法/3.多元线性回归中的梯度下降法.html">
+            
+                <a href="../梯度下降法/3.多元线性回归中的梯度下降法.html">
+            
+                    
+                    3.多元线性回归中的梯度下降法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../梯度下降法/4.线性回归中的梯度下降法的实现.html">
+            
+                <a href="../梯度下降法/4.线性回归中的梯度下降法的实现.html">
+            
+                    
+                    4.线性回归中的梯度下降法的实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../梯度下降法/5.随机梯度下降法.html">
+            
+                <a href="../梯度下降法/5.随机梯度下降法.html">
+            
+                    
+                    5.随机梯度下降法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../梯度下降法/6.梯度下降法的调试.html">
+            
+                <a href="../梯度下降法/6.梯度下降法的调试.html">
+            
+                    
+                    6.梯度下降法的调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../梯度下降法/7.梯度下降法的总结.html">
+            
+                <a href="../梯度下降法/7.梯度下降法的总结.html">
+            
+                    
+                    7.梯度下降法的总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    6.主成分分析法-PCA
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="1.PCA简介.html">
+            
+                <a href="1.PCA简介.html">
+            
+                    
+                    1.PCA简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="2.使用梯度上升法解决PCA问题.html">
+            
+                <a href="2.使用梯度上升法解决PCA问题.html">
+            
+                    
+                    2.使用梯度上升法解决PCA问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="3.主成分PCA的实现.html">
+            
+                <a href="3.主成分PCA的实现.html">
+            
+                    
+                    3.主成分PCA的实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="4.求数据的前N个主成分.html">
+            
+                <a href="4.求数据的前N个主成分.html">
+            
+                    
+                    4.求数据的前N个主成分
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="5.高维数据向低维数据进行映射.html">
+            
+                <a href="5.高维数据向低维数据进行映射.html">
+            
+                    
+                    5.高维数据向低维数据进行映射
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7.6" data-path="6.sklearn中的PCA.html">
+            
+                <a href="6.sklearn中的PCA.html">
+            
+                    
+                    6.sklearn中的PCA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="试手MNIST数据集.html">
+            
+                <a href="试手MNIST数据集.html">
+            
+                    
+                    7.试手MNIST数据集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="使用PCA对数据进行降噪.html">
+            
+                <a href="使用PCA对数据进行降噪.html">
+            
+                    
+                    8.使用PCA对数据进行降噪
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="特征脸.html">
+            
+                <a href="特征脸.html">
+            
+                    
+                    9.人脸识别与特征脸
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../多项式回归/">
+            
+                <a href="../多项式回归/">
+            
+                    
+                    7.多项式回归
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../多项式回归/1.什么是多项式回归.html">
+            
+                <a href="../多项式回归/1.什么是多项式回归.html">
+            
+                    
+                    1.多项式回归简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../多项式回归/scikit-learn中的多项式回归于pipeline.html">
+            
+                <a href="../多项式回归/scikit-learn中的多项式回归于pipeline.html">
+            
+                    
+                    2.scikit-learn中的多项式回归于pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../多项式回归/过拟合与前拟合.html">
+            
+                <a href="../多项式回归/过拟合与前拟合.html">
+            
+                    
+                    3.过拟合与前拟合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../多项式回归/学习曲线.html">
+            
+                <a href="../多项式回归/学习曲线.html">
+            
+                    
+                    4.学习曲线
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../多项式回归/验证数据集与交叉验证.html">
+            
+                <a href="../多项式回归/验证数据集与交叉验证.html">
+            
+                    
+                    5.验证数据集与交叉验证
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../多项式回归/偏差方差均衡.html">
+            
+                <a href="../多项式回归/偏差方差均衡.html">
+            
+                    
+                    6.偏差方差均衡
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../多项式回归/模型正则化.html">
+            
+                <a href="../多项式回归/模型正则化.html">
+            
+                    
+                    7.模型正则化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../多项式回归/LASSO.html">
+            
+                <a href="../多项式回归/LASSO.html">
+            
+                    
+                    8.LASSO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../多项式回归/L1,L2和弹性网络.html">
+            
+                <a href="../多项式回归/L1,L2和弹性网络.html">
+            
+                    
+                    9.L1,L2和弹性网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../逻辑回归/">
+            
+                <a href="../逻辑回归/">
+            
+                    
+                    8.逻辑回归
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../逻辑回归/1.什么是逻辑回归.html">
+            
+                <a href="../逻辑回归/1.什么是逻辑回归.html">
+            
+                    
+                    1.什么是逻辑回归
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../逻辑回归/2.逻辑回归的损失函数.html">
+            
+                <a href="../逻辑回归/2.逻辑回归的损失函数.html">
+            
+                    
+                    2.逻辑回归的损失函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../逻辑回归/3.逻辑回归函数损失的梯度.html">
+            
+                <a href="../逻辑回归/3.逻辑回归函数损失的梯度.html">
+            
+                    
+                    3.逻辑回归函数损失的梯度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../逻辑回归/4.实现逻辑回归算法.html">
+            
+                <a href="../逻辑回归/4.实现逻辑回归算法.html">
+            
+                    
+                    4.实现逻辑回归算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../逻辑回归/5.决策边界.html">
+            
+                <a href="../逻辑回归/5.决策边界.html">
+            
+                    
+                    5.决策边界
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../逻辑回归/6.在逻辑回归中使用多项式回归.html">
+            
+                <a href="../逻辑回归/6.在逻辑回归中使用多项式回归.html">
+            
+                    
+                    6.在逻辑回归中使用多项式回归
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../逻辑回归/7.scikit-learn中的逻辑会回归.html">
+            
+                <a href="../逻辑回归/7.scikit-learn中的逻辑会回归.html">
+            
+                    
+                    7.scikit-learn中的逻辑会回归
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../逻辑回归/8.OvR与OvO.html">
+            
+                <a href="../逻辑回归/8.OvR与OvO.html">
+            
+                    
+                    8.OvR与OvO
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../评价分类结果/">
+            
+                <a href="../评价分类结果/">
+            
+                    
+                    9.评价分类结果
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../评价分类结果/9.1 准确度的陷阱和混淆矩阵.html">
+            
+                <a href="../评价分类结果/9.1 准确度的陷阱和混淆矩阵.html">
+            
+                    
+                    9.1 准确度的陷阱和混淆矩阵
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../评价分类结果/9.2 精准率和召回率.html">
+            
+                <a href="../评价分类结果/9.2 精准率和召回率.html">
+            
+                    
+                    9.2 精准率和召回率
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../评价分类结果/9.3 实现混淆矩阵，精准率和召回率.html">
+            
+                <a href="../评价分类结果/9.3 实现混淆矩阵，精准率和召回率.html">
+            
+                    
+                    9.3 实现混淆矩阵，精准率和召回率
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../评价分类结果/F1 Score.html">
+            
+                <a href="../评价分类结果/F1 Score.html">
+            
+                    
+                    9.4 F1 Score
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../评价分类结果/9.5 Precision-Recall的平衡.html">
+            
+                <a href="../评价分类结果/9.5 Precision-Recall的平衡.html">
+            
+                    
+                    9.5 Precision-Recall的平衡
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="../评价分类结果/9.6 精准率-召回率曲线.html">
+            
+                <a href="../评价分类结果/9.6 精准率-召回率曲线.html">
+            
+                    
+                    9.6 精准率-召回率曲线
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="../评价分类结果/9.7 ROC曲线.html">
+            
+                <a href="../评价分类结果/9.7 ROC曲线.html">
+            
+                    
+                    9.7 ROC曲线
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.8" data-path="../评价分类结果/9.8 多分类问题中的混淆矩阵.html">
+            
+                <a href="../评价分类结果/9.8 多分类问题中的混淆矩阵.html">
+            
+                    
+                    9.8 多分类问题中的混淆矩阵
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../支撑向量机SVM/">
+            
+                <a href="../支撑向量机SVM/">
+            
+                    
+                    10.支撑向量机 SVM
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../支撑向量机SVM/11.1 什么是SVM.html">
+            
+                <a href="../支撑向量机SVM/11.1 什么是SVM.html">
+            
+                    
+                    11.1 什么是SVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../支撑向量机SVM/11.2 SVM背后的最优化问题.html">
+            
+                <a href="../支撑向量机SVM/11.2 SVM背后的最优化问题.html">
+            
+                    
+                    11.2 SVM背后的最优化问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../支撑向量机SVM/11.3 Soft Margin SVM.html">
+            
+                <a href="../支撑向量机SVM/11.3 Soft Margin SVM.html">
+            
+                    
+                    11.3 Soft Margin SVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../支撑向量机SVM/11.4 scikit-learn中的SVM.html">
+            
+                <a href="../支撑向量机SVM/11.4 scikit-learn中的SVM.html">
+            
+                    
+                    11.4 scikit-learn中的SVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../支撑向量机SVM/11.5 SVM中使用多项式特征和核函数.html">
+            
+                <a href="../支撑向量机SVM/11.5 SVM中使用多项式特征和核函数.html">
+            
+                    
+                    11.5 SVM中使用多项式特征和核函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="../支撑向量机SVM/11.6 到底什么是核函数.html">
+            
+                <a href="../支撑向量机SVM/11.6 到底什么是核函数.html">
+            
+                    
+                    11.6 到底什么是核函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="../支撑向量机SVM/11.7 RBF核函数.html">
+            
+                <a href="../支撑向量机SVM/11.7 RBF核函数.html">
+            
+                    
+                    11.7 RBF核函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="../支撑向量机SVM/11.8 RBF核函数中的gamma.html">
+            
+                <a href="../支撑向量机SVM/11.8 RBF核函数中的gamma.html">
+            
+                    
+                    11.8 RBF核函数中的gamma
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.9" data-path="../支撑向量机SVM/11.9 SVM思想解决回归问题.html">
+            
+                <a href="../支撑向量机SVM/11.9 SVM思想解决回归问题.html">
+            
+                    
+                    11.9 SVM思想解决回归问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../11jue-ce-shu.html">
+            
+                <a href="../11jue-ce-shu.html">
+            
+                    
+                    11.决策树
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../121-shi-yao-shi-jue-ce-shu.html">
+            
+                <a href="../121-shi-yao-shi-jue-ce-shu.html">
+            
+                    
+                    12.1 什么是决策树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../122-xin-xi-shang.html">
+            
+                <a href="../122-xin-xi-shang.html">
+            
+                    
+                    12.2 信息熵
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../123-shi-yong-xin-xi-shang-xun-zhao-zui-you-hua-fen.html">
+            
+                <a href="../123-shi-yong-xin-xi-shang-xun-zhao-zui-you-hua-fen.html">
+            
+                    
+                    12.3 使用信息熵寻找最优划分
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../124-ji-ni-xi-shu.html">
+            
+                <a href="../124-ji-ni-xi-shu.html">
+            
+                    
+                    12.4 基尼系数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="../crat-yu-jue-ce-shu-zhong-de-chao-can-shu.html">
+            
+                <a href="../crat-yu-jue-ce-shu-zhong-de-chao-can-shu.html">
+            
+                    
+                    CRAT 与决策树中的超参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6" data-path="../126-jue-ce-shu-jie-jue-hui-gui-wen-ti.html">
+            
+                <a href="../126-jue-ce-shu-jie-jue-hui-gui-wen-ti.html">
+            
+                    
+                    12.6 决策树解决回归问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.7" data-path="../127-jue-ce-shu-de-ju-xian-xing.html">
+            
+                <a href="../127-jue-ce-shu-de-ju-xian-xing.html">
+            
+                    
+                    12.7 决策树的局限性
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../13ji-cheng-xue-xi-he-sui-ji-sen-lin.html">
+            
+                <a href="../13ji-cheng-xue-xi-he-sui-ji-sen-lin.html">
+            
+                    
+                    13.集成学习和随机森林
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../131-shi-yao-shi-ji-cheng-xue-xi.html">
+            
+                <a href="../131-shi-yao-shi-ji-cheng-xue-xi.html">
+            
+                    
+                    13.1 什么是集成学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../132-softvoting-classifier.html">
+            
+                <a href="../132-softvoting-classifier.html">
+            
+                    
+                    13.2 Softvoting Classifier
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../133-bagging-and-pasting.html">
+            
+                <a href="../133-bagging-and-pasting.html">
+            
+                    
+                    13.3 Bagging and Pasting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" data-path="../134-oob-out-of-bag-he-guan-yu-bagging-de-geng-duo-tao-lun.html">
+            
+                <a href="../134-oob-out-of-bag-he-guan-yu-bagging-de-geng-duo-tao-lun.html">
+            
+                    
+                    13.4 oob (Out-of-Bag) 和关于Bagging的更多讨论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.5" data-path="../135-sui-ji-sen-lin.html">
+            
+                <a href="../135-sui-ji-sen-lin.html">
+            
+                    
+                    13.5 随机森林
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.6" data-path="../136-ada-boosting-he-gradient-boosting.html">
+            
+                <a href="../136-ada-boosting-he-gradient-boosting.html">
+            
+                    
+                    13.6 Ada Boosting 和 Gradient Boosting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.7" data-path="../137-stacking.html">
+            
+                <a href="../137-stacking.html">
+            
+                    
+                    13.7 Stacking
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >6.sklearn中的PCA</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="6sklearn&#x4E2D;&#x7684;pca">6.sklearn&#x4E2D;&#x7684;PCA</h1>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+plt.scatter(X[:,<span class="hljs-number">0</span>],X[:,<span class="hljs-number">1</span>],color=<span class="hljs-string">&apos;b&apos;</span>,alpha=<span class="hljs-number">0.5</span>)
+plt.scatter(X_restore[:,<span class="hljs-number">0</span>],X_restore[:,<span class="hljs-number">1</span>],color=<span class="hljs-string">&apos;r&apos;</span>,alpha=<span class="hljs-number">0.5</span>)
+</code></pre>
+<matplotlib.collections.pathcollection at="" 0x1a1e701198="">
+
+
+
+
+<p><img src="https://upload-images.jianshu.io/upload_images/7220971-0d47afdaf5041a3e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="7-1"></p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+<span class="hljs-keyword">from</span> sklearn <span class="hljs-keyword">import</span> datasets
+</code></pre>
+<h4 id="&#x52A0;&#x8F7D;&#x4E66;&#x5199;&#x8BC6;&#x522B;&#x6570;&#x636E;&#x96C6;">&#x52A0;&#x8F7D;&#x4E66;&#x5199;&#x8BC6;&#x522B;&#x6570;&#x636E;&#x96C6;</h4>
+<pre><code class="lang-python">digits = datasets.load_digits()
+X = digits.data
+y = digits.target
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x5206;&#x5272;&#x6570;&#x636E;&#x96C6;</span>
+<span class="hljs-keyword">from</span> sklearn.model_selection <span class="hljs-keyword">import</span> train_test_split
+X_train,X_test,y_train,y_test = train_test_split(X,y,random_state = <span class="hljs-number">666</span>)
+</code></pre>
+<h4 id="&#x4F7F;&#x7528;64&#x4E2A;&#x7EF4;&#x5EA6;&#x7684;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x8BAD;&#x7EC3;knn&#x7B97;&#x6CD5;">&#x4F7F;&#x7528;64&#x4E2A;&#x7EF4;&#x5EA6;&#x7684;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x8BAD;&#x7EC3;knn&#x7B97;&#x6CD5;</h4>
+<pre><code class="lang-python">%%time
+<span class="hljs-keyword">from</span> sklearn.neighbors <span class="hljs-keyword">import</span> KNeighborsClassifier
+
+knn_clf = KNeighborsClassifier()
+knn_clf.fit(X_train,y_train)
+</code></pre>
+<p>CPU times: user 2.65 ms, sys: 1.46 ms, total: 4.11 ms
+Wall time: 2.65 ms</p>
+<pre><code class="lang-python">knn_clf.score(X_test,y_test)
+</code></pre>
+<p>0.9866666666666667</p>
+<h4 id="&#x4F7F;&#x7528;pca&#x8FDB;&#x884C;&#x964D;&#x7EF4;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x8BAD;&#x7EC3;knn&#x7B97;&#x6CD5;">&#x4F7F;&#x7528;PCA&#x8FDB;&#x884C;&#x964D;&#x7EF4;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x8BAD;&#x7EC3;knn&#x7B97;&#x6CD5;</h4>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> sklearn.decomposition <span class="hljs-keyword">import</span> PCA
+
+pca = PCA(n_components=<span class="hljs-number">2</span>)
+pca.fit(X_train)
+X_train_reduction = pca.transform(X_train)
+X_test_reduction = pca.transform(X_test)
+</code></pre>
+<pre><code class="lang-python">%%time
+knn_clf = KNeighborsClassifier()
+knn_clf.fit(X_train_reduction,y_train)
+</code></pre>
+<p>CPU times: user 1.67 ms, sys: 935 &#xB5;s, total: 2.61 ms
+Wall time: 1.67 ms</p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x4ECE;64&#x4E2A;&#x7EF4;&#x5EA6;&#x964D;&#x5230;&#x4E24;&#x4E2A;&#x7EF4;&#x5EA6;&#x4EE5;&#x540E;&#xFF0C;&#x867D;&#x7136;&#x8FD0;&#x884C;&#x901F;&#x5EA6;&#x63D0;&#x9AD8;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x8BC6;&#x522B;&#x7CBE;&#x5EA6;&#x5927;&#x5927;&#x964D;&#x4F4E;&#x4E86;</span>
+knn_clf.score(X_test_reduction,y_test)
+</code></pre>
+<p>0.6066666666666667</p>
+<h4 id="explainedvarianceratio-&#x89E3;&#x91CA;&#x65B9;&#x5DEE;&#x7684;&#x6BD4;&#x4F8B;">explained<em>variance_ratio</em>-&#x89E3;&#x91CA;&#x65B9;&#x5DEE;&#x7684;&#x6BD4;&#x4F8B;</h4>
+<ul>
+<li>0.14566817 &#x4EE3;&#x8868;&#x7B2C;&#x4E00;&#x4E2A;&#x4E3B;&#x6210;&#x5206;&#x53EF;&#x4EE5;&#x89E3;&#x91CA;14%&#x7684;&#x539F;&#x6570;&#x636E;</li>
+<li>0.13735469 &#x4EE3;&#x8868;&#x7B2C;&#x4E8C;&#x4E2A;&#x4E3B;&#x6210;&#x5206;&#x53EF;&#x4EE5;&#x89E3;&#x91CA;13%&#x7684;&#x539F;&#x6570;&#x636E;
+&#x4E24;&#x4E2A;&#x4E3B;&#x6210;&#x5206;&#x52A0;&#x8D77;&#x6765;&#x53EF;&#x4EE5;&#x89E3;&#x91CA;&#x767E;&#x5206;&#x4E4B;27&#x7684;&#x539F;&#x6570;&#x636E;&#xFF0C;&#x800C;&#x5176;&#x4ED6;&#x7684;&#x4FE1;&#x606F;&#x4E22;&#x5931;&#x4E86;</li>
+</ul>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;explained<em>variance_ratio</em>&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x6765;&#x67E5;&#x770B;&#x6BCF;&#x4E2A;&#x4E3B;&#x6210;&#x5206;&#x6240;&#x89E3;&#x91CA;&#x7684;&#x539F;&#x6570;&#x636E;&#xFF0C;&#x6765;&#x5224;&#x65AD;&#x8981;&#x53D6;&#x591A;&#x5C11;&#x4E2A;&#x4E3B;&#x6210;&#x5206;</p>
+<pre><code class="lang-python">pca.explained_variance_ratio_
+</code></pre>
+<p>array([0.14566817, 0.13735469])</p>
+<pre><code class="lang-python">pca = PCA(n_components=<span class="hljs-number">64</span>)
+pca.fit(X_train)
+<span class="hljs-comment"># &#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x8FD1;&#x4E4E;&#x8868;&#x793A;&#x6BCF;&#x4E2A;&#x4E3B;&#x6210;&#x5206;&#x8F74;&#x7684;&#x91CD;&#x8981;&#x7A0B;&#x5EA6;</span>
+pca.explained_variance_ratio_
+</code></pre>
+<p>array([1.45668166e-01, 1.37354688e-01, 1.17777287e-01, 8.49968861e-02,
+5.86018996e-02, 5.11542945e-02, 4.26605279e-02, 3.60119663e-02,
+3.41105814e-02, 3.05407804e-02, 2.42337671e-02, 2.28700570e-02,
+1.80304649e-02, 1.79346003e-02, 1.45798298e-02, 1.42044841e-02,
+1.29961033e-02, 1.26617002e-02, 1.01728635e-02, 9.09314698e-03,
+8.85220461e-03, 7.73828332e-03, 7.60516219e-03, 7.11864860e-03,
+6.85977267e-03, 5.76411920e-03, 5.71688020e-03, 5.08255707e-03,
+4.89020776e-03, 4.34888085e-03, 3.72917505e-03, 3.57755036e-03,
+3.26989470e-03, 3.14917937e-03, 3.09269839e-03, 2.87619649e-03,
+2.50362666e-03, 2.25417403e-03, 2.20030857e-03, 1.98028746e-03,
+1.88195578e-03, 1.52769283e-03, 1.42823692e-03, 1.38003340e-03,
+1.17572392e-03, 1.07377463e-03, 9.55152460e-04, 9.00017642e-04,
+5.79162563e-04, 3.82793717e-04, 2.38328586e-04, 8.40132221e-05,
+5.60545588e-05, 5.48538930e-05, 1.08077650e-05, 4.01354717e-06,
+1.23186515e-06, 1.05783059e-06, 6.06659094e-07, 5.86686040e-07,
+1.71368535e-33, 7.44075955e-34, 7.44075955e-34, 7.15189459e-34])</p>
+<h4 id="&#x7ED8;&#x5236;&#x66F2;&#x7EBF;&#x89C2;&#x5BDF;&#x53D6;&#x524D;i&#x4E2A;&#x4E3B;&#x6210;&#x5206;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6240;&#x80FD;&#x89E3;&#x91CA;&#x7684;&#x539F;&#x6570;&#x636E;&#x6BD4;&#x4F8B;">&#x7ED8;&#x5236;&#x66F2;&#x7EBF;&#x89C2;&#x5BDF;&#x53D6;&#x524D;i&#x4E2A;&#x4E3B;&#x6210;&#x5206;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6240;&#x80FD;&#x89E3;&#x91CA;&#x7684;&#x539F;&#x6570;&#x636E;&#x6BD4;&#x4F8B;</h4>
+<pre><code class="lang-python">plt.plot([i <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(X_train.shape[<span class="hljs-number">1</span>])],
+[np.sum(pca.explained_variance_ratio_[:i+<span class="hljs-number">1</span>]) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(X_train.shape[<span class="hljs-number">1</span>])])
+</code></pre>
+<p>[<matplotlib.lines.line2d at="" 0x1a1fc6eef0="">]</matplotlib.lines.line2d></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/7220971-a4d163dccaf770a1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="7-2"></p>
+<h4 id="sklearn&#x4E2D;&#x7684;pca&#x7B97;&#x6CD5;&#x652F;&#x6301;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x5C0F;&#x4E8E;1&#x7684;&#x6570;&#x6765;&#x8868;&#x793A;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x80FD;&#x89E3;&#x91CA;&#x591A;&#x5C11;&#x6BD4;&#x4F8B;&#x7684;&#x4E3B;&#x6210;&#x5206;">sklearn&#x4E2D;&#x7684;PCA&#x7B97;&#x6CD5;&#x652F;&#x6301;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x5C0F;&#x4E8E;1&#x7684;&#x6570;&#x6765;&#x8868;&#x793A;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x80FD;&#x89E3;&#x91CA;&#x591A;&#x5C11;&#x6BD4;&#x4F8B;&#x7684;&#x4E3B;&#x6210;&#x5206;</h4>
+<pre><code class="lang-python">pca = PCA(<span class="hljs-number">0.95</span>)
+pca.fit(X_train)
+<span class="hljs-comment"># &#x8BF4;&#x660E;&#x524D;28&#x4E2A;&#x4E3B;&#x6210;&#x5206;&#x8868;&#x793A;&#x4E86;&#x767E;&#x5206;&#x4E4B;95&#x7684;&#x4FE1;&#x606F;</span>
+pca.n_components_
+</code></pre>
+<p>28</p>
+<pre><code class="lang-python">X_train_reduction = pca.transform(X_train)
+X_test_reduction = pca.transform(X_test)
+</code></pre>
+<pre><code class="lang-python">%%time
+knn_clf = KNeighborsClassifier()
+knn_clf.fit(X_train_reduction,y_train)
+</code></pre>
+<p>CPU times: user 2.43 ms, sys: 1.21 ms, total: 3.63 ms
+Wall time: 2.55 ms</p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x867D;&#x7136;&#x8BAD;&#x7EC3;&#x51FA;&#x6765;&#x7684;&#x7CBE;&#x5EA6;&#x4E22;&#x5931;&#x4E86;&#x4E00;&#x4E9B;&#xFF0C;&#x4F46;&#x662F;&#x6548;&#x7387;&#x5374;&#x5927;&#x5927;&#x63D0;&#x9AD8;&#x4E86;</span>
+knn_clf.score(X_test_reduction,y_test)
+</code></pre>
+<p>0.98</p>
+<h4 id="pca&#x964D;&#x7EF4;&#x5230;&#x4E24;&#x7EF4;&#x7684;&#x610F;&#x4E49;-&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x53EF;&#x89C6;&#x5316;&#x5C55;&#x793A;&#xFF0C;&#x5E2E;&#x52A9;&#x4EBA;&#x4EEC;&#x7406;&#x89E3;">PCA&#x964D;&#x7EF4;&#x5230;&#x4E24;&#x7EF4;&#x7684;&#x610F;&#x4E49;-&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x53EF;&#x89C6;&#x5316;&#x5C55;&#x793A;&#xFF0C;&#x5E2E;&#x52A9;&#x4EBA;&#x4EEC;&#x7406;&#x89E3;</h4>
+<p>&#x4E0B;&#x56FE;&#x6BCF;&#x4E2A;&#x989C;&#x8272;&#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#x5728;&#x964D;&#x7EF4;&#x5230;&#x4E8C;&#x7EF4;&#x7A7A;&#x95F4;&#x4E2D;&#x7684;&#x5206;&#x5E03;&#x60C5;&#x51B5;
+&#x4ED4;&#x7EC6;&#x89C2;&#x5BDF;&#x540E;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#xFF0C;&#x5F88;&#x591A;&#x6570;&#x5B57;&#x7684;&#x533A;&#x5206;&#x8FD8;&#x662F;&#x6BD4;&#x8F83;&#x660E;&#x7EC6;&#x7684;
+&#x6BD4;&#x5982;&#x5982;&#x679C;&#x53EA;&#x662F;&#x533A;&#x5206;&#x84DD;&#x8272;&#x7684;&#x6570;&#x5B57;&#x548C;&#x7D2B;&#x8272;&#x7684;&#x6570;&#x5B57;&#xFF0C;&#x90A3;&#x4E48;&#x4F7F;&#x7528;&#x4E8C;&#x4E2A;&#x7EF4;&#x5EA6;&#x5C31;&#x8DB3;&#x591F;&#x4E86;</p>
+<pre><code class="lang-python">pca = PCA(n_components=<span class="hljs-number">2</span>)
+pca.fit(X)
+X_reduction = pca.transform(X)
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">10</span>):
+plt.scatter(X_reduction[y==i,<span class="hljs-number">0</span>],X_reduction[y==i,<span class="hljs-number">1</span>],alpha=<span class="hljs-number">0.8</span>)
+</code></pre>
+<p><img src="https://upload-images.jianshu.io/upload_images/7220971-4eb39be87a98e901.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="7-3"></p>
+<pre><code class="lang-python">X_train_reduction.shape
+</code></pre>
+<p>(1347, 2)</p>
+<pre><code class="lang-python">y.shape
+</code></pre>
+<p>(1797,)</p>
+</matplotlib.collections.pathcollection>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="5.高维数据向低维数据进行映射.html" class="navigation navigation-prev " aria-label="Previous page: 5.高维数据向低维数据进行映射">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="试手MNIST数据集.html" class="navigation navigation-next " aria-label="Next page: 7.试手MNIST数据集">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"6.sklearn中的PCA","level":"1.7.6","depth":2,"next":{"title":"7.试手MNIST数据集","level":"1.7.7","depth":2,"path":"PCA/试手MNIST数据集.md","ref":"PCA/试手MNIST数据集.md","articles":[]},"previous":{"title":"5.高维数据向低维数据进行映射","level":"1.7.5","depth":2,"path":"PCA/5.高维数据向低维数据进行映射.md","ref":"PCA/5.高维数据向低维数据进行映射.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"PCA/6.sklearn中的PCA.md","mtime":"2018-10-08T01:53:16.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-07T09:43:35.172Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

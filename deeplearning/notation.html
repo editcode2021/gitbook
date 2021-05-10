@@ -1,0 +1,600 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>深度学习符号指南（原课程翻译） · 深度学习教程</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/editcode2021/gitbook@master/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/editcode2021/gitbook@master/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/editcode2021/gitbook@master/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/editcode2021/gitbook@master/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/editcode2021/gitbook@master/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://cdn.jsdelivr.net/gh/editcode2021/gitbook@master/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/editcode2021/gitbook@master/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="notation.html" />
+    
+    
+    <link rel="prev" href="interview.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://www.editcode.net" target="_blank" class="custom-link">编程网</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        <li class="header">第一门课 神经网络和深度学习</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="lesson1-week1.html">
+            
+                <a href="lesson1-week1.html">
+            
+                    
+                    第一周：深度学习引言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="lesson1-week2.html">
+            
+                <a href="lesson1-week2.html">
+            
+                    
+                    第二周：神经网络的编程基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="lesson1-week3.html">
+            
+                <a href="lesson1-week3.html">
+            
+                    
+                    第三周：浅层神经网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="lesson1-week4.html">
+            
+                <a href="lesson1-week4.html">
+            
+                    
+                    第四周：深层神经网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第二门课 改善深层神经网络</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="lesson2-week1.html">
+            
+                <a href="lesson2-week1.html">
+            
+                    
+                    第一周：深度学习的实践层面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="lesson2-week2.html">
+            
+                <a href="lesson2-week2.html">
+            
+                    
+                    第二周：优化算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="lesson2-week3.html">
+            
+                <a href="lesson2-week3.html">
+            
+                    
+                    第三周超参数调试，batch正则化和程序框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第三门课 结构化机器学习项目</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="lesson3-week1.html">
+            
+                <a href="lesson3-week1.html">
+            
+                    
+                    第一周：机器学习策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="lesson3-week2.html">
+            
+                <a href="lesson3-week2.html">
+            
+                    
+                    第二周：机器学习策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第四门课 卷积神经网络</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="lesson4-week1.html">
+            
+                <a href="lesson4-week1.html">
+            
+                    
+                    第一周 卷积神经网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="lesson4-week2.html">
+            
+                <a href="lesson4-week2.html">
+            
+                    
+                    第二周 深度卷积网络：实例探究
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="lesson4-week3.html">
+            
+                <a href="lesson4-week3.html">
+            
+                    
+                    第三周 目标检测
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="lesson4-week4.html">
+            
+                <a href="lesson4-week4.html">
+            
+                    
+                    第四周 特殊应用：人脸识别和神经风格转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第五门课 序列模型</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="lesson5-week1.html">
+            
+                <a href="lesson5-week1.html">
+            
+                    
+                    第一周 循环序列模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="lesson5-week2.html">
+            
+                <a href="lesson5-week2.html">
+            
+                    
+                    第二周 自然语言处理与词嵌入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="lesson5-week3.html">
+            
+                <a href="lesson5-week3.html">
+            
+                    
+                    第三周 序列模型和注意力机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">附件</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="interview.html">
+            
+                <a href="interview.html">
+            
+                    
+                    人工智能大师访谈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="6.2" data-path="notation.html">
+            
+                <a href="notation.html">
+            
+                    
+                    深度学习符号指南（原课程翻译）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="6.3" data-path="notation.html">
+            
+                <a href="notation.html">
+            
+                    
+                    机器学习的数学基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >深度学习符号指南（原课程翻译）</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x7B26;&#x53F7;">&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x7B26;&#x53F7;</h1>
+<p><em>&#x6B64;&#x7B14;&#x8BB0;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x6570;&#x5B66;&#x7B26;&#x53F7;&#x53C2;&#x8003;&#x81EA;&#x300A;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x300B;&#x548C; Deep learning specialization</em></p>
+<h2 id="&#x5E38;&#x7528;&#x7684;&#x5B9A;&#x4E49;">&#x5E38;&#x7528;&#x7684;&#x5B9A;&#x4E49;</h2>
+<ul>
+<li>&#x539F;&#x7248;&#x7B26;&#x53F7;&#x5B9A;&#x4E49;&#x4E2D;&#xFF0C;$x^{(i)}$ &#x4E0E; $x_i$ &#x5B58;&#x5728;&#x6DF7;&#x7528;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x8BF7;&#x6CE8;&#x610F;&#x8BC6;&#x522B;</li>
+</ul>
+<h3 id="&#x6570;&#x636E;&#x6807;&#x8BB0;&#x4E0E;&#x4E0A;&#x4E0B;&#x6807;">&#x6570;&#x636E;&#x6807;&#x8BB0;&#x4E0E;&#x4E0A;&#x4E0B;&#x6807;</h3>
+<ul>
+<li>&#x4E0A;&#x6807; $^{(i)}$ &#x4EE3;&#x8868;&#x7B2C; $i$ &#x4E2A;&#x8BAD;&#x7EC3;&#x6837;&#x672C;</li>
+<li>&#x4E0A;&#x6807; $^{[l]}$ &#x4EE3;&#x8868;&#x7B2C; $l$ &#x5C42;</li>
+<li>$m$ &#x6570;&#x636E;&#x96C6;&#x7684;&#x6837;&#x672C;&#x6570;</li>
+<li>&#x4E0B;&#x6807; $_x$ &#x8F93;&#x5165;&#x6570;&#x636E;</li>
+<li>&#x4E0B;&#x6807; $_y$ &#x8F93;&#x51FA;&#x6570;&#x636E;</li>
+<li>$n_x$ &#x8F93;&#x5165;&#x5927;&#x5C0F;</li>
+<li>$n_y$ &#x8F93;&#x51FA;&#x5927;&#x5C0F; (&#x6216;&#x8005;&#x7C7B;&#x522B;&#x6570;)</li>
+<li>$n_h^{[l]}$ &#x7B2C; $l$ &#x5C42;&#x7684;&#x9690;&#x85CF;&#x5355;&#x5143;&#x6570;</li>
+<li>$L$ &#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x5C42;&#x6570;</li>
+<li>&#x5728;&#x5FAA;&#x73AF;&#x4E2D;<ul>
+<li>$n_x = n_h^{[0]}$</li>
+<li>$n_y = n_h^{[L + 1]}$</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x6A21;&#x578B;">&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x6A21;&#x578B;</h3>
+<ul>
+<li>$X \in \mathbb{R}^{n_x \times m}$ &#x4EE3;&#x8868;&#x8F93;&#x5165;&#x7684;&#x77E9;&#x9635;</li>
+<li>$x^{(i)} \in \mathbb{R}^{n_x}$ &#x4EE3;&#x8868;&#x7B2C; $i$ &#x4E2A;&#x6837;&#x672C;&#x7684;&#x5217;&#x5411;&#x91CF;</li>
+<li>$Y \in \mathbb{R}^{n_y \times m}$ &#x662F;&#x6807;&#x8BB0;&#x77E9;&#x9635;</li>
+<li>$y^{(i)} \in \mathbb{R}^{n_y}$ &#x662F;&#x7B2C; $i$&#x6837;&#x672C;&#x7684;&#x8F93;&#x51FA;&#x6807;&#x7B7E;</li>
+<li>$W^{[l]} \in \mathbb{R}^{l \times (l-1)}$ &#x4EE3;&#x8868;&#x7B2C; $[l]$ &#x5C42;&#x7684;&#x6743;&#x91CD;&#x77E9;&#x9635;</li>
+<li>$b^{[l]} \in \mathbb{R}^{l}$ &#x4EE3;&#x8868;&#x7B2C; $[l]$ &#x5C42;&#x7684;&#x504F;&#x5DEE;&#x77E9;&#x9635;</li>
+<li>$\hat{y} \in \mathbb{R}^{n_y}$ &#x662F;&#x9884;&#x6D4B;&#x8F93;&#x51FA;&#x5411;&#x91CF;<ul>
+<li>&#x4E5F;&#x53EF;&#x4EE5;&#x7528; $a^{[L]}$ &#x8868;&#x793A;</li>
+</ul>
+</li>
+</ul>
+<h4 id="&#x6B63;&#x5411;&#x4F20;&#x64AD;&#x65B9;&#x7A0B;&#x793A;&#x4F8B;">&#x6B63;&#x5411;&#x4F20;&#x64AD;&#x65B9;&#x7A0B;&#x793A;&#x4F8B;</h4>
+<ul>
+<li>$a = g^{[l]}(W<em>x x^{(i)}</em> + b_1) = g^{[l]}(z_1)$<ul>
+<li>&#x5176;&#x4E2D;&#xFF0C; $g^{[l]}$ &#x4EE3;&#x8868;&#x7B2C; $l$ &#x5C42;&#x7684;&#x6FC0;&#x6D3B;&#x51FD;&#x6570;</li>
+</ul>
+</li>
+<li>$\hat{y} = softmax(W_h h + b_2)$</li>
+</ul>
+<h4 id="&#x901A;&#x7528;&#x6FC0;&#x6D3B;&#x516C;&#x5F0F;">&#x901A;&#x7528;&#x6FC0;&#x6D3B;&#x516C;&#x5F0F;</h4>
+<ul>
+<li>$a<em>j^{[l]} = g^{[l]}(z_j^{[l]}) = g^{[l]}(\sum_k w</em>{jk}^{[l]}a_k^{[l-1]} + b_j^{[l]})$<ul>
+<li>$j$ &#x5F53;&#x524D;&#x5C42;&#x7684;&#x7EF4;&#x5EA6;</li>
+<li>$k$ &#x4E0A;&#x4E00;&#x5C42;&#x7684;&#x7EF4;&#x5EA6;</li>
+</ul>
+</li>
+</ul>
+<h4 id="&#x635F;&#x5931;&#x51FD;&#x6570;">&#x635F;&#x5931;&#x51FD;&#x6570;</h4>
+<ul>
+<li>$J(x, W, b, y)$ &#x6216;&#x8005; $J(\hat{y}, y)$</li>
+<li>&#x5E38;&#x89C1;&#x635F;&#x5931;&#x51FD;&#x6570;&#x793A;&#x4F8B;<ul>
+<li>$J<em>{CE}(\hat{y}, y) = -\sum</em>{i=0}^m y^{(i)}log\hat{y}^{(i)}$</li>
+<li>$J<em>1(\hat{y}, y) = -\sum</em>{i=0}^m |y^{(i)} - \hat{y}^{(i)}|$</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x56FE;&#x793A;">&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x56FE;&#x793A;</h2>
+<ul>
+<li>&#x8282;&#x70B9;&#xFF1A;&#x4EE3;&#x8868;&#x8F93;&#x5165;&#x3001;&#x6FC0;&#x6D3B;&#x6216;&#x8005;&#x8F93;&#x51FA;</li>
+<li>&#x8FB9;&#xFF1A;&#x4EE3;&#x8868;&#x6743;&#x91CD;&#x6216;&#x8005;&#x8BEF;&#x5DEE;</li>
+</ul>
+<p>&#x63D0;&#x4F9B;&#x4E24;&#x79CD;&#x7B49;&#x6548;&#x7684;&#x793A;&#x610F;&#x56FE;</p>
+<h3 id="&#x8BE6;&#x7EC6;&#x7684;&#x7F51;&#x7EDC;">&#x8BE6;&#x7EC6;&#x7684;&#x7F51;&#x7EDC;</h3>
+<p><img src="../images/fe20e8766346d4e8d212e792888dd6fb.jpg" alt=""></p>
+<p>&#x5E38;&#x7528;&#x4E8E;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x8868;&#x793A;,&#x4E3A;&#x4E86;&#x66F4;&#x597D;&#x7684;&#x5BA1;&#x7F8E;&#xFF0C;&#x6211;&#x4EEC;&#x7701;&#x7565;&#x4E86;&#x4E00;&#x4E9B;&#x5728;&#x8FB9;&#x4E0A;&#x7684;&#x53C2;&#x6570;&#x7684;&#x7EC6;&#x8282;(&#x5982;$w<em>{ij}^{[l]}$ &#x548C;$b</em>{i}^{[l]}$&#x7B49;)&#x3002;</p>
+<h3 id="&#x7B80;&#x5316;&#x7F51;&#x7EDC;">&#x7B80;&#x5316;&#x7F51;&#x7EDC;</h3>
+<p><img src="../images/08a2f8fea114cbc35c70d45d03a34d52.jpg" alt=""></p>
+<p>&#x4E24;&#x5C42;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x66F4;&#x7B80;&#x5355;&#x7684;&#x8868;&#x793A;&#x3002;</p>
+<hr>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="interview.html" class="navigation navigation-prev " aria-label="Previous page: 人工智能大师访谈">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="notation.html" class="navigation navigation-next " aria-label="Next page: 机器学习的数学基础">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"深度学习符号指南（原课程翻译）","level":"6.2","depth":1,"next":{"title":"机器学习的数学基础","level":"6.3","depth":1,"path":"notation.md","ref":"notation.md","articles":[]},"previous":{"title":"人工智能大师访谈","level":"6.1","depth":1,"path":"interview.md","ref":"interview.md","articles":[]},"dir":"ltr"},"config":{"plugins":["fontsettings","sharing","-lunr","-search","search-pro","highlight","livereload","back-to-top-button","cdn"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"cdn":{"url":"//cdn.jsdelivr.net/gh/zhepama/C-Sharp-Playground@gh-pages/","img_url":"//cdn.jsdelivr.net/gh/zhepama/C-Sharp-Playground@gh-pages/"},"fontsettings":{"family":"sans","size":2,"theme":"white"},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"search-pro":{},"highlight":{},"livereload":{},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"深度学习教程","language":"zh-hans","links":{"sidebar":{"编程网":"https://www.editcode.net"}},"gitbook":"*"},"file":{"path":"notation.md","mtime":"2020-11-28T01:34:16.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-09T13:30:39.812Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/editcode2021/gitbook@master/gitbook.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/editcode2021/gitbook@master/theme.js"></script>
+    
+        
+        <script src="https://cdn.jsdelivr.net/gh/editcode2021/gitbook@master/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="https://cdn.jsdelivr.net/gh/editcode2021/gitbook@master/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="https://cdn.jsdelivr.net/gh/editcode2021/gitbook@master/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="https://cdn.jsdelivr.net/gh/editcode2021/gitbook@master/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="https://cdn.jsdelivr.net/gh/editcode2021/gitbook@master/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdn.jsdelivr.net/gh/editcode2021/gitbook@master/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+
+    </body>
+</html>
+

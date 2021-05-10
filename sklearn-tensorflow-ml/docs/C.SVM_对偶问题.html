@@ -1,0 +1,519 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>附录 C、SVM 对偶问题 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="D.自动微分.html" />
+    
+    
+    <link rel="prev" href="B.机器学习项目清单.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Sklearn 与 TensorFlow 机器学习实用指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="0.前言.html">
+            
+                <a href="0.前言.html">
+            
+                    
+                    零、前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="1.机器学习概览.html">
+            
+                <a href="1.机器学习概览.html">
+            
+                    
+                    一、机器学习概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="2.一个完整的机器学习项目.html">
+            
+                <a href="2.一个完整的机器学习项目.html">
+            
+                    
+                    二、一个完整的机器学习项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="3.分类.html">
+            
+                <a href="3.分类.html">
+            
+                    
+                    三、分类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="4.训练模型.html">
+            
+                <a href="4.训练模型.html">
+            
+                    
+                    四、训练模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="5.支持向量机.html">
+            
+                <a href="5.支持向量机.html">
+            
+                    
+                    五、支持向量机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="6.决策树.html">
+            
+                <a href="6.决策树.html">
+            
+                    
+                    六、决策树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="7.集成学习和随机森林.html">
+            
+                <a href="7.集成学习和随机森林.html">
+            
+                    
+                    七、集成学习和随机森林
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="8.降维.html">
+            
+                <a href="8.降维.html">
+            
+                    
+                    八、降维
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="9.启动并运行_TensorFlow.html">
+            
+                <a href="9.启动并运行_TensorFlow.html">
+            
+                    
+                    九、启动并运行 TensorFlow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="10.人工神经网络介绍.html">
+            
+                <a href="10.人工神经网络介绍.html">
+            
+                    
+                    十、人工神经网络介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="11.训练深层神经网络.html">
+            
+                <a href="11.训练深层神经网络.html">
+            
+                    
+                    十一、训练深层神经网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="12.设备和服务器上的分布式_TensorFlow.html">
+            
+                <a href="12.设备和服务器上的分布式_TensorFlow.html">
+            
+                    
+                    十二、设备和服务器上的分布式 TensorFlow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="13.卷积神经网络.html">
+            
+                <a href="13.卷积神经网络.html">
+            
+                    
+                    十三、卷积神经网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="14.循环神经网络.html">
+            
+                <a href="14.循环神经网络.html">
+            
+                    
+                    十四、循环神经网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="15.自编码器.html">
+            
+                <a href="15.自编码器.html">
+            
+                    
+                    十五、自编码器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="16.强化学习.html">
+            
+                <a href="16.强化学习.html">
+            
+                    
+                    十六、强化学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="B.机器学习项目清单.html">
+            
+                <a href="B.机器学习项目清单.html">
+            
+                    
+                    附录 B、机器学习项目清单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.20" data-path="C.SVM_对偶问题.html">
+            
+                <a href="C.SVM_对偶问题.html">
+            
+                    
+                    附录 C、SVM 对偶问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="D.自动微分.html">
+            
+                <a href="D.自动微分.html">
+            
+                    
+                    附录 D、自动微分
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >附录 C、SVM 对偶问题</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x9644;&#x5F55;-c&#x3001;svm-&#x5BF9;&#x5076;&#x95EE;&#x9898;">&#x9644;&#x5F55; C&#x3001;SVM &#x5BF9;&#x5076;&#x95EE;&#x9898;</h1>
+<blockquote>
+<p>&#x8BD1;&#x8005;&#xFF1A;<a href="https://github.com/rickllyxu" target="_blank">@rickllyxu</a></p>
+</blockquote>
+<p>&#x4E3A;&#x4E86;&#x7406;&#x89E3;&#x5BF9;&#x5076;&#x6027;&#xFF0C;&#x4F60;&#x9996;&#x5148;&#x5F97;&#x7406;&#x89E3;&#x62C9;&#x683C;&#x6717;&#x65E5;&#x4E58;&#x5B50;&#x6CD5;&#x3002;&#x5B83;&#x57FA;&#x672C;&#x601D;&#x60F3;&#x662F;&#x5C06;&#x4E00;&#x4E2A;&#x6709;&#x7EA6;&#x675F;&#x4F18;&#x5316;&#x95EE;&#x9898;&#x8F6C;&#x5316;&#x4E3A;&#x4E00;&#x4E2A;&#x65E0;&#x7EA6;&#x675F;&#x4F18;&#x5316;&#x95EE;&#x9898;&#xFF0C;&#x5176;&#x65B9;&#x6CD5;&#x662F;&#x5C06;&#x7EA6;&#x675F;&#x6761;&#x4EF6;&#x79FB;&#x52A8;&#x5230;&#x76EE;&#x6807;&#x51FD;&#x6570;&#x4E2D;&#x53BB;&#x3002;&#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x4F8B;&#x5982;&#x8981;&#x627E;&#x5230;&#x5408;&#x9002;&#x7684; <img src="../images/tex-9dd4e461268c8034f5c8564e155c67a6.gif" alt="x"> &#x548C; <img src="../images/tex-415290769594460e2e485922904f345d.gif" alt="y"> &#x4F7F;&#x5F97;&#x51FD;&#x6570; <img src="../images/tex-ec2b11c28f337d90d1a55c83bd738475.gif" alt="f(x, y) = x^2 + 2y"> &#x6700;&#x5C0F;&#x5316;&#xFF0C;&#x4E14;&#x5176;&#x7EA6;&#x675F;&#x6761;&#x4EF6;&#x662F;&#x4E00;&#x4E2A;&#x7B49;&#x5F0F;&#x7EA6;&#x675F;&#xFF1A;<img src="../images/tex-08bc7e7224cfe0e39e04b69d4ed96298.gif" alt="3x + 2y + 1 = 0">&#x3002;&#x4F7F;&#x7528;&#x62C9;&#x683C;&#x6717;&#x65E5;&#x4E58;&#x5B50;&#x6CD5;&#xFF0C;&#x6211;&#x4EEC;&#x9996;&#x5148;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x79F0;&#x4E3A;<strong>&#x62C9;&#x683C;&#x6717;&#x65E5;&#x51FD;&#x6570;</strong>&#xFF1A;<img src="../images/tex-e78acaa101dc94594e813eab3f01f428.gif" alt="g(x, y, \alpha) = f(x, y) - \alpha(3x + 2y + 1)">&#x3002;&#x6BCF;&#x4E2A;&#x7EA6;&#x675F;&#x6761;&#x4EF6;&#xFF08;&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#xFF09;&#x4E0E;&#x65B0;&#x7684;&#x53D8;&#x91CF;&#xFF08;&#x79F0;&#x4E3A;&#x62C9;&#x683C;&#x6717;&#x65E5;&#x4E58;&#x6570;&#xFF09;&#x76F8;&#x4E58;&#xFF0C;&#x4F5C;&#x4E3A;&#x539F;&#x76EE;&#x6807;&#x51FD;&#x6570;&#x7684;&#x51CF;&#x6570;&#x3002;</p>
+<p>Joseph-Louis Lagrange &#x5927;&#x725B;&#x8BC1;&#x660E;&#x4E86;&#x5982;&#x679C; <img src="../images/tex-fe85b05b6cd2641c29612bc75a270208.gif" alt="(\bar{x}, \bar{y})"> &#x662F;&#x539F;&#x7EA6;&#x675F;&#x4F18;&#x5316;&#x95EE;&#x9898;&#x7684;&#x89E3;&#xFF0C;&#x90A3;&#x4E48;&#x4E00;&#x5B9A;&#x5B58;&#x5728;&#x4E00;&#x4E2A; <img src="../images/tex-d9c29791dd3b792c7702ed2b7cf5ac40.gif" alt="\bar{\alpha}">&#xFF0C;&#x4F7F;&#x5F97; <img src="../images/tex-ac2d6cc9cbad11acc20ba9f6dd0ef830.gif" alt="(\bar{x}, \bar{y}, \bar{\alpha})"> &#x662F;&#x62C9;&#x683C;&#x6717;&#x65E5;&#x51FD;&#x6570;&#x7684;&#x9A7B;&#x70B9;&#xFF08;&#x9A7B;&#x70B9;&#x6307;&#x7684;&#x662F;&#xFF0C;&#x5728;&#x8BE5;&#x70B9;&#x5904;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x6240;&#x6709;&#x7684;&#x504F;&#x5BFC;&#x6570;&#x5747;&#x4E3A; 0&#xFF09;&#x3002;&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8BA1;&#x7B97;&#x62C9;&#x683C;&#x6717;&#x65E5;&#x51FD;&#x6570; <img src="../images/tex-c663f5d534674fc3f1b13074c6ae467b.gif" alt="g(x, y, \alpha) "> &#x5173;&#x4E8E; <img src="../images/tex-2317793a8de61ab32c0f17adff9ea8d4.gif" alt="x, y"> &#x4EE5;&#x53CA; <img src="../images/tex-7b7f9dbfea05c83784f8b85149852f08.gif" alt="\alpha"> &#x7684;&#x504F;&#x5BFC;&#x6570;&#xFF1B;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x627E;&#x5230;&#x90A3;&#x4E9B;&#x504F;&#x5BFC;&#x6570;&#x5747;&#x4E3A; 0 &#x7684;&#x9A7B;&#x70B9;&#xFF1B;&#x6700;&#x540E;&#x539F;&#x7EA6;&#x675F;&#x4F18;&#x5316;&#x95EE;&#x9898;&#x7684;&#x89E3;&#xFF08;&#x5982;&#x679C;&#x5B58;&#x5728;&#xFF09;&#x4E00;&#x5B9A;&#x5728;&#x8FD9;&#x4E9B;&#x9A7B;&#x70B9;&#x91CC;&#x9762;&#x3002;</p>
+<p>&#x5728;&#x4E0A;&#x8FF0;&#x4F8B;&#x5B50;&#x91CC;&#xFF0C;&#x504F;&#x5BFC;&#x6570;&#x4E3A;</p>
+<p><img src="../images/tex-96d88ee52e2a53c2350376ac3b1f3c30.gif" alt="\begin{align}\frac{\partial}{\partial x}g(x, y, \alpha) = 2x - 3\alpha \\ \frac{\partial}{\partial y}g(x, y, \alpha) = 2 - 2\alpha \\ \frac{\partial}{\partial \alpha}g(x, y, \alpha) = -3x - 2y - 1 \end{align}">  </p>
+<p>&#x5F53;&#x8FD9;&#x4E9B;&#x504F;&#x5BFC;&#x6570;&#x5747;&#x4E3A; 0 &#x65F6;&#xFF0C;&#x5373; <img src="../images/tex-f74dbceea979dd6f7f807de601aaa240.gif" alt="2x &#x2212; 3\alpha = 2 &#x2212; 2\alpha = &#x2212; 3x &#x2212; 2y &#x2212; 1 = 0">&#xFF0C;&#x5373;&#x53EF;&#x5F97; <img src="../images/tex-9439cb7cb2e1c01f22745401287a0638.gif" alt="x = \frac{3}{2}, y=-\frac{11}{4}, \alpha=1">&#x3002;&#x8FD9;&#x662F;&#x552F;&#x4E00;&#x4E00;&#x4E2A;&#x9A7B;&#x70B9;&#xFF0C;&#x90A3;&#x5B83;&#x4E00;&#x5B9A;&#x662F;&#x539F;&#x7EA6;&#x675F;&#x4F18;&#x5316;&#x95EE;&#x9898;&#x7684;&#x89E3;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x4E0A;&#x8FF0;&#x65B9;&#x6CD5;&#x4EC5;&#x5E94;&#x7528;&#x4E8E;&#x7B49;&#x5F0F;&#x7EA6;&#x675F;&#xFF0C;&#x5E78;&#x8FD0;&#x7684;&#x662F;&#xFF0C;&#x5728;&#x67D0;&#x4E9B;&#x6B63;&#x5219;&#x6027;&#x6761;&#x4EF6;&#x4E0B;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x4E5F;&#x53EF;&#x88AB;&#x4E00;&#x822C;&#x5316;&#x5E94;&#x7528;&#x4E8E;&#x4E0D;&#x7B49;&#x5F0F;&#x7EA6;&#x675F;&#x6761;&#x4EF6;&#xFF08;&#x4F8B;&#x5982;&#x4E0D;&#x7B49;&#x5F0F;&#x7EA6;&#x675F;&#xFF0C;<img src="../images/tex-3b6ed467ca1ae09aeafe40f4b40251c7.gif" alt="3x + 2y + 1 \geq 0">&#xFF09;&#x3002;&#x5982;&#x4E0B;&#x516C;&#x5F0F; C-1 &#xFF0C;&#x7ED9;&#x4E86; SVM &#x786C;&#x95F4;&#x9694;&#x95EE;&#x9898;&#x65F6;&#x7684;&#x4E00;&#x822C;&#x5316;&#x62C9;&#x683C;&#x6717;&#x65E5;&#x51FD;&#x6570;&#x3002;&#x5728;&#x8BE5;&#x516C;&#x5F0F;&#x4E2D;&#xFF0C;<img src="../images/tex-99f0c7b568236eb0a52bf15cbbfa342e.gif" alt="\alpha^{(i)}"> &#x662F; KKT &#x4E58;&#x5B50;&#xFF0C;&#x5B83;&#x5FC5;&#x987B;&#x5927;&#x4E8E;&#x6216;&#x7B49;&#x4E8E; 0&#x3002;</p>
+<blockquote>
+<p>&#x8BD1;&#x8005;&#x6CE8;</p>
+<p><img src="../images/tex-99f0c7b568236eb0a52bf15cbbfa342e.gif" alt="\alpha^{(i)}"> &#x662F; <img src="../images/tex-e56717342e6431bdaa1f37c90f7ba7b3.gif" alt="\geq0"> &#x6291;&#x6216; <img src="../images/tex-825a000824ab58528de14389acafd231.gif" alt="\leq0">&#xFF0C;&#x53D6;&#x51B3;&#x4E8E;&#x62C9;&#x683C;&#x6717;&#x65E5;&#x51FD;&#x6570;&#x7684;&#x5199;&#x6CD5;&#xFF0C;&#x4EE5;&#x53CA;&#x539F;&#x76EE;&#x6807;&#x51FD;&#x6570;&#x51FD;&#x6570;&#x6700;&#x5927;&#x5316;&#x6291;&#x6216;&#x6700;&#x5C0F;&#x5316;&#x3002;</p>
+</blockquote>
+<p><img src="../images/Appendix/E_C-1.png" alt="&#x516C;&#x5F0F;C-1"></p>
+<p>&#x5C31;&#x50CF;&#x62C9;&#x683C;&#x6717;&#x65E5;&#x4E58;&#x5B50;&#x6CD5;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8BA1;&#x7B97;&#x4E0A;&#x8FF0;&#x5F0F;&#x5B50;&#x7684;&#x504F;&#x5BFC;&#x6570;&#x3001;&#x5B9A;&#x4F4D;&#x9A7B;&#x70B9;&#x3002;&#x5982;&#x679C;&#x8BE5;&#x539F;&#x95EE;&#x9898;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x89E3;&#xFF0C;&#x90A3;&#x5B83;&#x4E00;&#x5B9A;&#x5728;&#x9A7B;&#x70B9; <img src="../images/tex-e0569dbaecb2e5955e7ff0bad0749154.gif" alt="(\bar{w}, \bar{b}, \bar{\alpha})"> &#x4E4B;&#x4E2D;&#xFF0C;&#x4E14;&#x9075;&#x5FAA; KKT &#x6761;&#x4EF6;&#xFF1A;</p>
+<ul>
+<li>&#x9075;&#x5FAA;&#x539F;&#x95EE;&#x9898;&#x7684;&#x7EA6;&#x675F;&#xFF1A;<img src="../images/tex-5c71c1287e7a6b8fef19874c553b0cd4.gif" alt="t^{(i)}((\bar{w})^T x^{(i)} +\bar{b}) \geq 1">, &#x5BF9;&#x4E8E; <img src="../images/tex-31f8dedd0a66fb646ef261c638243923.gif" alt="i = 1, 2, ..., m"></li>
+<li>&#x9075;&#x5FAA;&#x73B0;&#x95EE;&#x9898;&#x91CC;&#x7684;&#x7EA6;&#x675F;&#xFF0C;&#x5373; <img src="../images/tex-61b00d67f0968d7be5bf4b7a3260b1f4.gif" alt="\bar{\alpha}^{(i)} \geq 0"></li>
+<li><img src="../images/tex-9eaf40b81df456c80b338612aa1e6fb7.gif" alt="\bar{\alpha}^{(i)} = 0"> &#x6216;&#x8005;&#x7B2C;<code>i</code>&#x4E2A;&#x7EA6;&#x675F;&#x6761;&#x4EF6;&#x662F;&#x79EF;&#x6781;&#x7EA6;&#x675F;&#xFF0C;&#x610F;&#x5473;&#x7740;&#x8BE5;&#x7B49;&#x5F0F;&#x6210;&#x7ACB;&#xFF1A;<img src="../images/tex-758714f96d598b4cbb8a7642bc3fb017.gif" alt="t^{(i)}((\bar{w})^T x^{(i)} +\bar{b}) = 1">&#x3002;&#x8FD9;&#x4E2A;&#x6761;&#x4EF6;&#x53EB;&#x505A; &#x4E92;&#x8865;&#x677E;&#x5F1B;&#x6761;&#x4EF6;&#x3002;&#x5B83;&#x6697;&#x793A;&#x4E86; <img src="../images/tex-9eaf40b81df456c80b338612aa1e6fb7.gif" alt="\bar{\alpha}^{(i)} = 0"> &#x548C;&#x7B2C;<code>i</code>&#x4E2A;&#x6837;&#x672C;&#x4F4D;&#x4E8E; SVM &#x95F4;&#x9694;&#x7684;&#x8FB9;&#x754C;&#x4E0A;&#xFF08;&#x8BE5;&#x6837;&#x672C;&#x662F;&#x652F;&#x6301;&#x5411;&#x91CF;&#xFF09;&#x3002;</li>
+</ul>
+<p>&#x6CE8;&#x610F; KKT &#x6761;&#x4EF6;&#x662F;&#x786E;&#x5B9A;&#x9A7B;&#x70B9;&#x662F;&#x5426;&#x4E3A;&#x539F;&#x95EE;&#x9898;&#x89E3;&#x7684;&#x5FC5;&#x8981;&#x6761;&#x4EF6;&#x3002;&#x5728;&#x67D0;&#x4E9B;&#x6761;&#x4EF6;&#x4E0B;&#xFF0C;KKT &#x6761;&#x4EF6;&#x4E5F;&#x662F;&#x5145;&#x5206;&#x6761;&#x4EF6;&#x3002;&#x5E78;&#x8FD0;&#x7684;&#x662F;&#xFF0C;SVM &#x4F18;&#x5316;&#x95EE;&#x9898;&#x78B0;&#x5DE7;&#x6EE1;&#x8DB3;&#x8FD9;&#x4E9B;&#x6761;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x4EFB;&#x4F55;&#x6EE1;&#x8DB3; KKT &#x6761;&#x4EF6;&#x7684;&#x9A7B;&#x70B9;&#x4FDD;&#x8BC1;&#x662F;&#x539F;&#x95EE;&#x9898;&#x7684;&#x89E3;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8BA1;&#x7B97;&#x4E0A;&#x8FF0;&#x4E00;&#x822C;&#x5316;&#x62C9;&#x683C;&#x6717;&#x65E5;&#x51FD;&#x6570;&#x5173;&#x4E8E;<code>w</code>&#x548C;<code>b</code>&#x7684;&#x504F;&#x5BFC;&#x6570;&#xFF0C;&#x5982;&#x516C;&#x5F0F; C-2&#x3002;</p>
+<p><img src="../images/Appendix/E_C-2.png" alt="&#x516C;&#x5F0F;C-2"></p>
+<p>&#x4EE4;&#x4E0A;&#x8FF0;&#x504F;&#x5BFC;&#x6570;&#x4E3A; 0&#xFF0C;&#x53EF;&#x5F97;&#x5230;&#x516C;&#x5F0F; C-3&#x3002;</p>
+<p><img src="../images/Appendix/E_C-3.png" alt="&#x516C;&#x5F0F;C-3"></p>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x628A;&#x4E0A;&#x8FF0;&#x5F0F;&#x5B50;&#x4EE3;&#x5165;&#x5230;&#x4E00;&#x822C;&#x5316;&#x62C9;&#x683C;&#x6717;&#x65E5;&#x51FD;&#x6570;&#xFF08;&#x516C;&#x5F0F; C-1&#xFF09;&#x4E2D;&#xFF0C;&#x67D0;&#x4E9B;&#x9879;&#x4F1A;&#x6D88;&#x5931;&#xFF0C;&#x4ECE;&#x800C;&#x5F97;&#x5230;&#x516C;&#x5F0F; C-4&#xFF0C;&#x5E76;&#x79F0;&#x4E4B;&#x4E3A;&#x539F;&#x95EE;&#x9898;&#x7684;&#x5BF9;&#x5076;&#x5F62;&#x5F0F;&#x3002;</p>
+<p><img src="../images/Appendix/E_C-4.png" alt="&#x516C;&#x5F0F;C-4"></p>
+<p>&#x73B0;&#x5728;&#x8BE5;&#x5BF9;&#x5076;&#x5F62;&#x5F0F;&#x7684;&#x76EE;&#x6807;&#x662F;&#x627E;&#x5230;&#x5408;&#x9002;&#x7684;&#x5411;&#x91CF; <img src="../images/tex-d9c29791dd3b792c7702ed2b7cf5ac40.gif" alt="\bar{\alpha}">&#xFF0C;&#x4F7F;&#x5F97;&#x8BE5;&#x51FD;&#x6570; <img src="../images/tex-8d9370145286bec564a001265dd85ff9.gif" alt="L(w, b, \alpha)"> &#x6700;&#x5C0F;&#x5316;&#xFF0C;&#x4E14; <img src="../images/tex-61b00d67f0968d7be5bf4b7a3260b1f4.gif" alt="\bar{\alpha}^{(i)} \geq 0">&#x3002;&#x73B0;&#x5728;&#x8FD9;&#x4E2A;&#x6709;&#x7EA6;&#x675F;&#x4F18;&#x5316;&#x95EE;&#x9898;&#x6B63;&#x662F;&#x6211;&#x4EEC;&#x82E6;&#x82E6;&#x8FFD;&#x5BFB;&#x7684;&#x5BF9;&#x5076;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x4E00;&#x65E6;&#x4F60;&#x627E;&#x5230;&#x4E86;&#x6700;&#x4F18;&#x7684; <img src="../images/tex-d9c29791dd3b792c7702ed2b7cf5ac40.gif" alt="\bar{\alpha}">&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x516C;&#x5F0F; C-3 &#x7B2C;&#x4E00;&#x884C;&#x8BA1;&#x7B97; <img src="../images/tex-28175dc40d9c53d6d2c186a7817cf866.gif" alt="\bar{w}">&#x3002;&#x4E3A;&#x4E86;&#x8BA1;&#x7B97; <img src="../images/tex-222e2caf9c7b49d3432466e360eceba6.gif" alt="\bar{b}">&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x652F;&#x6301;&#x5411;&#x91CF;&#x7684;&#x5DF2;&#x77E5;&#x6761;&#x4EF6; <img src="../images/tex-758714f96d598b4cbb8a7642bc3fb017.gif" alt="t^{(i)}((\bar{w})^T x^{(i)} +\bar{b}) = 1">&#xFF0C;&#x5F53;&#x7B2C; k &#x4E2A;&#x6837;&#x672C;&#x662F;&#x652F;&#x6301;&#x5411;&#x91CF;&#x65F6;&#xFF08;&#x5373;&#x5B83;&#x5BF9;&#x5E94;&#x7684; <img src="../images/tex-fe658058e9257029aa88bc89b34348de.gif" alt="\alpha_k &gt; 0">&#xFF09;&#xFF0C;&#x6B64;&#x65F6;&#x4F7F;&#x7528;&#x5B83;&#x8BA1;&#x7B97; <img src="../images/tex-75080a1229e54394d1c6d95b9e542eaa.gif" alt="\bar{b} =1-t^{(k)}((\bar{w})^T . x^{(k)}) ">&#x3002;&#x5BF9;&#x4E86;&#xFF0C;&#x6211;&#x4EEC;&#x66F4;&#x559C;&#x6B22;&#x5229;&#x7528;&#x6240;&#x6709;&#x652F;&#x6301;&#x5411;&#x91CF;&#x8BA1;&#x7B97;&#x4E00;&#x4E2A;&#x5E73;&#x5747;&#x503C;&#xFF0C;&#x4EE5;&#x83B7;&#x5F97;&#x66F4;&#x7A33;&#x5B9A;&#x548C;&#x66F4;&#x51C6;&#x786E;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x5982;&#x516C;&#x5F0F; C-5&#x3002;</p>
+<p><img src="../images/Appendix/E_C-5.png" alt="&#x516C;&#x5F0F;C-5"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="B.机器学习项目清单.html" class="navigation navigation-prev " aria-label="Previous page: 附录 B、机器学习项目清单">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="D.自动微分.html" class="navigation navigation-next " aria-label="Next page: 附录 D、自动微分">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"附录 C、SVM 对偶问题","level":"1.20","depth":1,"next":{"title":"附录 D、自动微分","level":"1.21","depth":1,"path":"docs/D.自动微分.md","ref":"docs/D.自动微分.md","articles":[]},"previous":{"title":"附录 B、机器学习项目清单","level":"1.19","depth":1,"path":"docs/B.机器学习项目清单.md","ref":"docs/B.机器学习项目清单.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/C.SVM_对偶问题.md","mtime":"2019-04-18T03:01:37.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-07T09:41:36.357Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

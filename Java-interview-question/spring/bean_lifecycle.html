@@ -1,0 +1,2812 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>说下 Bean 的生命周期 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="what_is_annotation-based_container_configuration.html" />
+    
+    
+    <link rel="prev" href="are_singleton_beans_thread.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../java/">
+            
+                <a href="../java/">
+            
+                    
+                    Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../java/what_do_you_know_about_java.html">
+            
+                <a href="../java/what_do_you_know_about_java.html">
+            
+                    
+                    请说一说 Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../java/how_java_enabled_high_performance.html">
+            
+                <a href="../java/how_java_enabled_high_performance.html">
+            
+                    
+                    Java 为什么是高效的?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../java/ide.html">
+            
+                <a href="../java/ide.html">
+            
+                    
+                    列举出2个 IDE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../java/what_ate_object-oriented_features.html">
+            
+                <a href="../java/what_ate_object-oriented_features.html">
+            
+                    
+                    面向对象的特征有哪些方面
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../java/what_is_the_difference_between_a_jdk_and_a_jvm.html">
+            
+                <a href="../java/what_is_the_difference_between_a_jdk_and_a_jvm.html">
+            
+                    
+                    JDK JRE JVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../java/what_do_you_mean_by_object.html">
+            
+                <a href="../java/what_do_you_mean_by_object.html">
+            
+                    
+                    什么是对象 (Object)?
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../java/what_kind_of_variables_a_class_can_consist_of.html">
+            
+                <a href="../java/what_kind_of_variables_a_class_can_consist_of.html">
+            
+                    
+                    一个类是由哪些变量构成的
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../java/the_difference_between_static_variables_and_instance_variables.html">
+            
+                <a href="../java/the_difference_between_static_variables_and_instance_variables.html">
+            
+                    
+                    静态变量和实例变量的区别？
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../java/encapsulation.html">
+            
+                <a href="../java/encapsulation.html">
+            
+                    
+                    封装 Encapsulation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../java/polymorphism.html">
+            
+                <a href="../java/polymorphism.html">
+            
+                    
+                    多态 Polymorphism
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../java/construcor_override.html">
+            
+                <a href="../java/construcor_override.html">
+            
+                    
+                    构造器是否可以被 override
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../java/interface.html">
+            
+                <a href="../java/interface.html">
+            
+                    
+                    接口 Interface
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" data-path="../java/interfqce_abstraction.html">
+            
+                <a href="../java/interfqce_abstraction.html">
+            
+                    
+                    接口和抽象的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.2" data-path="../java/question_interface_1.html">
+            
+                <a href="../java/question_interface_1.html">
+            
+                    
+                    基础概念题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.3" data-path="../java/question_interface_2.html">
+            
+                <a href="../java/question_interface_2.html">
+            
+                    
+                    基础程序题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.4" data-path="../java/super_gai_nian.html">
+            
+                <a href="../java/super_gai_nian.html">
+            
+                    
+                    super 关键词
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.5" data-path="../java/super_question_1.html">
+            
+                <a href="../java/super_question_1.html">
+            
+                    
+                    super 程序题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.6" data-path="../java/this_question.html">
+            
+                <a href="../java/this_question.html">
+            
+                    
+                    this 程序题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.7" data-path="../java/what_is_abstract.html">
+            
+                <a href="../java/what_is_abstract.html">
+            
+                    
+                    抽象 abstract
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.8" data-path="../java/abstract_question.html">
+            
+                <a href="../java/abstract_question.html">
+            
+                    
+                    abstract 相关问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.9" data-path="../java/how_are_this_and_super_used_with_constructors.html">
+            
+                <a href="../java/how_are_this_and_super_used_with_constructors.html">
+            
+                    
+                    this() 和 super() 在构造体里怎么用?
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../java/static.html">
+            
+                <a href="../java/static.html">
+            
+                    
+                    Static 关键字
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.7.1" data-path="../java/static_questions.html">
+            
+                <a href="../java/static_questions.html">
+            
+                    
+                    Static 相关问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../java/what_is_singleton_class.html">
+            
+                <a href="../java/what_is_singleton_class.html">
+            
+                    
+                    Singleton 单例模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../java/hashcode__equal.html">
+            
+                <a href="../java/hashcode__equal.html">
+            
+                    
+                    hashcode 和 equal
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.9.1" data-path="../java/==_equal.html">
+            
+                <a href="../java/==_equal.html">
+            
+                    
+                    == 和 equal 的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../java/what_is_the_base_class_of_all_classes.html">
+            
+                <a href="../java/what_is_the_base_class_of_all_classes.html">
+            
+                    
+                    所有类的基类是哪个类?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../java/does_java_support_multiple_inheritance.html">
+            
+                <a href="../java/does_java_support_multiple_inheritance.html">
+            
+                    
+                    Java 支持多继承吗?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../java/what_is_difference_between_path_and_classpath.html">
+            
+                <a href="../java/what_is_difference_between_path_and_classpath.html">
+            
+                    
+                    Path 与 Classpath?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../java/reflection.html">
+            
+                <a href="../java/reflection.html">
+            
+                    
+                    反射机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../java/final.html">
+            
+                <a href="../java/final.html">
+            
+                    
+                    final 关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="../java/java_multi.html">
+            
+                <a href="../java/java_multi.html">
+            
+                    
+                    一个. java 源文件是否可以包含多个类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="../java/difference_between_and_symbol.html">
+            
+                <a href="../java/difference_between_and_symbol.html">
+            
+                    
+                    & 与 &&
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="../java/int_integer.html">
+            
+                <a href="../java/int_integer.html">
+            
+                    
+                    int 与 integer
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.17.1" data-path="../java/integer_==.html">
+            
+                <a href="../java/integer_==.html">
+            
+                    
+                    integer 通过 == 比较
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" data-path="../java/working_zone.html">
+            
+                <a href="../java/working_zone.html">
+            
+                    
+                    作用域的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19" data-path="../java/aaa.html">
+            
+                <a href="../java/aaa.html">
+            
+                    
+                    异常
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.19.1" data-path="../java/error_and_an_exception.html">
+            
+                <a href="../java/error_and_an_exception.html">
+            
+                    
+                    error 和 exception?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19.2" data-path="../java/checked_exception.html">
+            
+                <a href="../java/checked_exception.html">
+            
+                    
+                    Checked 异常与 Runtime 异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19.3" data-path="../java/exception_question1.html">
+            
+                <a href="../java/exception_question1.html">
+            
+                    
+                    异常概念题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19.4" data-path="../java/if_i_want_an_object_of_my_class_to_be_thrown_as_an_exception_object,_what_should_i_do.html">
+            
+                <a href="../java/if_i_want_an_object_of_my_class_to_be_thrown_as_an_exception_object,_what_should_i_do.html">
+            
+                    
+                    把对象声明成异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19.5" data-path="../java/different_ways_to_handle_exceptions.html">
+            
+                <a href="../java/different_ways_to_handle_exceptions.html">
+            
+                    
+                    处理异常的方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19.6" data-path="../java/is_it_necessary_that_each_try_block_must_be_followed_by_a_catch_block.html">
+            
+                <a href="../java/is_it_necessary_that_each_try_block_must_be_followed_by_a_catch_block.html">
+            
+                    
+                    每一个 try 都必须有一个 catch 吗?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19.7" data-path="../java/if_i_write_return_at_the_end_of_the_try_block,_will_the_finally_block_still_execute.html">
+            
+                <a href="../java/if_i_write_return_at_the_end_of_the_try_block,_will_the_finally_block_still_execute.html">
+            
+                    
+                    try 模块里的 return
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.20" data-path="../java/final,_finally,_finalize.html">
+            
+                <a href="../java/final,_finally,_finalize.html">
+            
+                    
+                    final, finally, finalize的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.21" data-path="../java/programme.html">
+            
+                <a href="../java/programme.html">
+            
+                    
+                    Programme
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.21.1" data-path="../java/article11.html">
+            
+                <a href="../java/article11.html">
+            
+                    
+                    输出问题1
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.22" data-path="../java/gabage_collection.html">
+            
+                <a href="../java/gabage_collection.html">
+            
+                    
+                    Gabage Collection
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.22.1" data-path="../java/heap_stack.html">
+            
+                <a href="../java/heap_stack.html">
+            
+                    
+                    heap 和 stack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.22.2" data-path="../java/does_garbage_collection_guarantee_that_a_program_will_not_run_out_of_memory.html">
+            
+                <a href="../java/does_garbage_collection_guarantee_that_a_program_will_not_run_out_of_memory.html">
+            
+                    
+                    GC 就一定能保证内存不溢出吗?
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.23" data-path="../java/stream_writer.html">
+            
+                <a href="../java/stream_writer.html">
+            
+                    
+                    字节流与字符流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.24" data-path="../java/collection.html">
+            
+                <a href="../java/collection.html">
+            
+                    
+                    Collection
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.24.1" data-path="../java/arraylist_vector.html">
+            
+                <a href="../java/arraylist_vector.html">
+            
+                    
+                    ArrayList 和 Vector
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.24.2" data-path="../java/hashmap_hashtable.html">
+            
+                <a href="../java/hashmap_hashtable.html">
+            
+                    
+                    HashMap 和 Hashtable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.24.3" data-path="../java/hashmap_hashtable_linkedhashmap_treemap.html">
+            
+                <a href="../java/hashmap_hashtable_linkedhashmap_treemap.html">
+            
+                    
+                    HashMap HashTable LinkedHashMap TreeMap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.24.4" data-path="../java/collection_questions.html">
+            
+                <a href="../java/collection_questions.html">
+            
+                    
+                    Collection 相关问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.25" data-path="../java/multi-thread.html">
+            
+                <a href="../java/multi-thread.html">
+            
+                    
+                    Multi-Thread
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.25.1" data-path="../java/sleep_and_wait.html">
+            
+                <a href="../java/sleep_and_wait.html">
+            
+                    
+                    sleep() 和 wait() 的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.25.2" data-path="../java/synchronized.html">
+            
+                <a href="../java/synchronized.html">
+            
+                    
+                    同步 synchronized
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.25.3" data-path="../java/how_to_set_muliti-thread.html">
+            
+                <a href="../java/how_to_set_muliti-thread.html">
+            
+                    
+                    如何实现 muliti-thread?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.25.4" data-path="../java/transient.html">
+            
+                <a href="../java/transient.html">
+            
+                    
+                    Transient 关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.25.5" data-path="../java/what_is_the_difference_between_preemptive_scheduling_and_time_slicing.html">
+            
+                <a href="../java/what_is_the_difference_between_preemptive_scheduling_and_time_slicing.html">
+            
+                    
+                    preemptive scheduling 和 time slicing?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.25.6" data-path="../java/when_a_thread_is_created_and_started,_what_is_its_initial_state.html">
+            
+                <a href="../java/when_a_thread_is_created_and_started,_what_is_its_initial_state.html">
+            
+                    
+                    一个线程的初始状态是什么?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.25.7" data-path="../java/what_are_synchronized_methods_and_synchronized_statements.html">
+            
+                <a href="../java/what_are_synchronized_methods_and_synchronized_statements.html">
+            
+                    
+                    synchronized method 和 synchronized statement?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.25.8" data-path="../java/what_is_daemon_thread_and_which_method_is_used_to_create_the_daemon_thread.html">
+            
+                <a href="../java/what_is_daemon_thread_and_which_method_is_used_to_create_the_daemon_thread.html">
+            
+                    
+                    守护线程 daemon thread?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.25.9" data-path="../java/what_method_must_be_implemented_by_all_threads.html">
+            
+                <a href="../java/what_method_must_be_implemented_by_all_threads.html">
+            
+                    
+                    所有的线程都必须实现哪个方法?
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.26" data-path="../java/visitor_pattern.html">
+            
+                <a href="../java/visitor_pattern.html">
+            
+                    
+                    Visitor Pattern
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.27" data-path="../java/probleme_sur_chaine.html">
+            
+                <a href="../java/probleme_sur_chaine.html">
+            
+                    
+                    Problem on chain
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.27.1" data-path="../java/string_questions.html">
+            
+                <a href="../java/string_questions.html">
+            
+                    
+                    字符串基础问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.27.2" data-path="../java/stringbuffer_questions.html">
+            
+                <a href="../java/stringbuffer_questions.html">
+            
+                    
+                    StringBuffer 相关问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.27.3" data-path="../java/array.html">
+            
+                <a href="../java/array.html">
+            
+                    
+                    数组相关问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.28" data-path="../java/serialization.html">
+            
+                <a href="../java/serialization.html">
+            
+                    
+                    序列化 serialization
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.28.1" data-path="../java/how_do_i_serialize_an_object_to_a_file.html">
+            
+                <a href="../java/how_do_i_serialize_an_object_to_a_file.html">
+            
+                    
+                    如何序列化一个对象到一个文件?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.28.2" data-path="../java/which_methods_of_serializable_interface_should_i_implement.html">
+            
+                <a href="../java/which_methods_of_serializable_interface_should_i_implement.html">
+            
+                    
+                    必须实现 Serializable 接口的哪个方法?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.28.3" data-path="../java/how_can_i_customize_the_seralization_process_ie_how_can_one_have_a_control_over_the_serialization_process.html">
+            
+                <a href="../java/how_can_i_customize_the_seralization_process_ie_how_can_one_have_a_control_over_the_serialization_process.html">
+            
+                    
+                    如何控制 serialization 的过程?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.28.4" data-path="../java/what_is_the_common_usage_of_serialization.html">
+            
+                <a href="../java/what_is_the_common_usage_of_serialization.html">
+            
+                    
+                    什么情况下要使用序列化?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.28.5" data-path="../java/externalizable_interface.html">
+            
+                <a href="../java/externalizable_interface.html">
+            
+                    
+                    Externalizable 接口?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.28.6" data-path="../java/when_you_serialize_an_object,_what_happens_to_the_object_references_included_in_the_object.html">
+            
+                <a href="../java/when_you_serialize_an_object,_what_happens_to_the_object_references_included_in_the_object.html">
+            
+                    
+                    序列化时引用的处理?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.28.7" data-path="../java/what_one_should_take_care_of_while_serializing_the_object.html">
+            
+                <a href="../java/what_one_should_take_care_of_while_serializing_the_object.html">
+            
+                    
+                    序列化时要注意什么?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.28.8" data-path="../java/what_happens_to_the_static_fields_of_a_class_during_serialization.html">
+            
+                <a href="../java/what_happens_to_the_static_fields_of_a_class_during_serialization.html">
+            
+                    
+                    序列化时 static 域的处理?
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.29" data-path="../java/initialization_and_cleanup.html">
+            
+                <a href="../java/initialization_and_cleanup.html">
+            
+                    
+                    Initialization and Cleanup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.30" data-path="../java/java_data_types.html">
+            
+                <a href="../java/java_data_types.html">
+            
+                    
+                    Java Data Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.31" data-path="../java/run-time_data_areas.html">
+            
+                <a href="../java/run-time_data_areas.html">
+            
+                    
+                    Run-Time Data Areas
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../j2ee/">
+            
+                <a href="../j2ee/">
+            
+                    
+                    J2EE
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../j2ee/what_is_j2ee.html">
+            
+                <a href="../j2ee/what_is_j2ee.html">
+            
+                    
+                    什么是 J2EE?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../j2ee/what_are_the_four_components_of_j2ee_application.html">
+            
+                <a href="../j2ee/what_are_the_four_components_of_j2ee_application.html">
+            
+                    
+                    J2EE 应用的四个部分?
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../j2ee/what_does_application_client_module_contain.html">
+            
+                <a href="../j2ee/what_does_application_client_module_contain.html">
+            
+                    
+                    What does application client module contain?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../j2ee/what_does_web_module_contain.html">
+            
+                <a href="../j2ee/what_does_web_module_contain.html">
+            
+                    
+                    What does web module contain?
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../j2ee/what_are_types_of_j2ee_clients.html">
+            
+                <a href="../j2ee/what_are_types_of_j2ee_clients.html">
+            
+                    
+                    J2EE客户端有哪些类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../j2ee/what_is_hibernate.html">
+            
+                <a href="../j2ee/what_is_hibernate.html">
+            
+                    
+                    Hibernate是什么??
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../j2ee/-_transaction.html">
+            
+                <a href="../j2ee/-_transaction.html">
+            
+                    
+                    什么是事务 - transaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../j2ee/what_is_servlet.html">
+            
+                <a href="../j2ee/what_is_servlet.html">
+            
+                    
+                    什么是 servlet?
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.6.1" data-path="../j2ee/creat_servlet.html">
+            
+                <a href="../j2ee/creat_servlet.html">
+            
+                    
+                    创建 servlet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.2" data-path="../j2ee/what_must_be_implemented_by_all_servlets.html">
+            
+                <a href="../j2ee/what_must_be_implemented_by_all_servlets.html">
+            
+                    
+                    Servlet 必须实现什么接口?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.3" data-path="../j2ee/what_are_the_phases_of_the_servlet_life_cycle.html">
+            
+                <a href="../j2ee/what_are_the_phases_of_the_servlet_life_cycle.html">
+            
+                    
+                    Servlet 生命周期?
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../j2ee/jsp.html">
+            
+                <a href="../j2ee/jsp.html">
+            
+                    
+                    JSP
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.7.1" data-path="../j2ee/jsp_lifecycle.html">
+            
+                <a href="../j2ee/jsp_lifecycle.html">
+            
+                    
+                    JSP 的生命周期?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.2" data-path="../j2ee/jsp_language.html">
+            
+                <a href="../j2ee/jsp_language.html">
+            
+                    
+                    JSP 语法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.7.2.1" data-path="../j2ee/what_are_jsp_declarations.html">
+            
+                <a href="../j2ee/what_are_jsp_declarations.html">
+            
+                    
+                    JSP declarations?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.2.2" data-path="../j2ee/jsp_expressions.html">
+            
+                <a href="../j2ee/jsp_expressions.html">
+            
+                    
+                    JSP expressions?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.2.3" data-path="../j2ee/jsp_directives.html">
+            
+                <a href="../j2ee/jsp_directives.html">
+            
+                    
+                    JSP Directives?
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.7.2.3.1" data-path="../j2ee/types_of_directive_tags.html">
+            
+                <a href="../j2ee/types_of_directive_tags.html">
+            
+                    
+                    Types of directive tags?
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.7.2.3.1.1" data-path="../j2ee/jsp__include_page_=___and____include_file_=.html">
+            
+                <a href="../j2ee/jsp__include_page_=___and____include_file_=.html">
+            
+                    
+                     and <%@ include file = ...>?
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.2.4" data-path="../j2ee/types_of_comments.html">
+            
+                <a href="../j2ee/types_of_comments.html">
+            
+                    
+                    注释的类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.3" data-path="../j2ee/what_do_you_understand_by_jsp_actions.html">
+            
+                <a href="../j2ee/what_do_you_understand_by_jsp_actions.html">
+            
+                    
+                    JSP Actions?
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.7.3.1" data-path="../j2ee/jspforward_page=___responsesendredirecturl.html">
+            
+                <a href="../j2ee/jspforward_page=___responsesendredirecturl.html">
+            
+                    
+                     和 response.sendRedirect(url)?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.3.2" data-path="../j2ee/scope_for_the__jsp__usebean__tag_-.html">
+            
+                <a href="../j2ee/scope_for_the__jsp__usebean__tag_-.html">
+            
+                    
+                    Scope for the < jsp : useBean > tag? -
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.4" data-path="../j2ee/jsp_translation.html">
+            
+                <a href="../j2ee/jsp_translation.html">
+            
+                    
+                    JSP translation?
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../j2ee/ear,_jar_and_war_files.html">
+            
+                <a href="../j2ee/ear,_jar_and_war_files.html">
+            
+                    
+                    Ear, Jar 和 War 文件?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../j2ee/uri_url.html">
+            
+                <a href="../j2ee/uri_url.html">
+            
+                    
+                    URI 和 URL?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../j2ee/dao.html">
+            
+                <a href="../j2ee/dao.html">
+            
+                    
+                    DAO
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Spring
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="what_is_spring.html">
+            
+                <a href="what_is_spring.html">
+            
+                    
+                    什么是 Spring?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="what_are_benefits_of_using_spring.html">
+            
+                <a href="what_are_benefits_of_using_spring.html">
+            
+                    
+                    使用 spring 的好处?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="what_are_the_different_modules_in_spring_framework.html">
+            
+                <a href="what_are_the_different_modules_in_spring_framework.html">
+            
+                    
+                    Spring 都有哪些模块?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="what_is_spring_configuration_file.html">
+            
+                <a href="what_is_spring_configuration_file.html">
+            
+                    
+                    什么是 Spring 的配置文件?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="what_is_dependency_injection.html">
+            
+                <a href="what_is_dependency_injection.html">
+            
+                    
+                    什么是依赖注入 - Dependency Injection?
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1" data-path="ioc_tyoe.html">
+            
+                <a href="ioc_tyoe.html">
+            
+                    
+                    IoC 的类型?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.2" data-path="which_di.html">
+            
+                <a href="which_di.html">
+            
+                    
+                    你更倾向于哪种 DI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.3" data-path="ioc_good.html">
+            
+                <a href="ioc_good.html">
+            
+                    
+                    IoC 有什么好处?
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="what_is_spring_ioc_container.html">
+            
+                <a href="what_is_spring_ioc_container.html">
+            
+                    
+                    IoC container 是什么?
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="what_are_types_of_ioc_containers_explain_them.html">
+            
+                <a href="what_are_types_of_ioc_containers_explain_them.html">
+            
+                    
+                    IoC 容器的类型?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="qc.html">
+            
+                <a href="qc.html">
+            
+                    
+                    ApplicationContext 的实现都有哪些?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.3" data-path="bf_and_ac.html">
+            
+                <a href="bf_and_ac.html">
+            
+                    
+                    Bean Factory 与 ApplicationContext ?
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="what_are_spring_beans.html">
+            
+                <a href="what_are_spring_beans.html">
+            
+                    
+                    什么是 bean?
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.7.1" data-path="spring_bean_scope.html">
+            
+                <a href="spring_bean_scope.html">
+            
+                    
+                    都有哪些 bean scope?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2" data-path="are_singleton_beans_thread.html">
+            
+                <a href="are_singleton_beans_thread.html">
+            
+                    
+                    Singleton bean 是线程安全的吗?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.7.3" data-path="bean_lifecycle.html">
+            
+                <a href="bean_lifecycle.html">
+            
+                    
+                    说下 Bean 的生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.4" data-path="what_is_annotation-based_container_configuration.html">
+            
+                <a href="what_is_annotation-based_container_configuration.html">
+            
+                    
+                    什么是基于注释的容器配置?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.5" data-path="how_can_you_inject_java_collection_in_spring.html">
+            
+                <a href="how_can_you_inject_java_collection_in_spring.html">
+            
+                    
+                    如何注入 Java Collection?
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="autowire.html">
+            
+                <a href="autowire.html">
+            
+                    
+                    什么是自动装配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="what_is_aop.html">
+            
+                <a href="what_is_aop.html">
+            
+                    
+                    什么是 AOP?
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.9.1" data-path="types_of_advice.html">
+            
+                <a href="types_of_advice.html">
+            
+                    
+                    通知的类型?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.2" data-path="join_point.html">
+            
+                <a href="join_point.html">
+            
+                    
+                    Join point?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.3" data-path="pointcut.html">
+            
+                <a href="pointcut.html">
+            
+                    
+                    Pointcut?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.4" data-path="introduction.html">
+            
+                <a href="introduction.html">
+            
+                    
+                    Introduction?
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="what_does_a_bean_definition_contain.html">
+            
+                <a href="what_does_a_bean_definition_contain.html">
+            
+                    
+                    What does a bean definition contain?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="how_do_you_provide_configuration_metadata_to_the_spring_container.html">
+            
+                <a href="how_do_you_provide_configuration_metadata_to_the_spring_container.html">
+            
+                    
+                    How do you provide configuration metadata to the Spring Container?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="how_do_add_a_bean_in_spring_application.html">
+            
+                <a href="how_do_add_a_bean_in_spring_application.html">
+            
+                    
+                    How do add a bean in spring application?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="what_are_inner_beans_in_spring.html">
+            
+                <a href="what_are_inner_beans_in_spring.html">
+            
+                    
+                    What are inner beans in Spring?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="how_can_you_inject_java_collection_in_spring.html">
+            
+                <a href="how_can_you_inject_java_collection_in_spring.html">
+            
+                    
+                    How can you inject Java Collection in Spring?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="what_are_the_limitations_with_autowiring.html">
+            
+                <a href="what_are_the_limitations_with_autowiring.html">
+            
+                    
+                    What are the limitations with autowiring?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="can_you_inject_null_and_empty_string_values_in_spring.html">
+            
+                <a href="can_you_inject_null_and_empty_string_values_in_spring.html">
+            
+                    
+                    Can you inject null and empty string values in Spring?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="autowired_inject_resource.html">
+            
+                <a href="autowired_inject_resource.html">
+            
+                    
+                    @Autowired @Inject @Resource
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../hibernate/">
+            
+                <a href="../hibernate/">
+            
+                    
+                    Hibernate
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../hibernate/get_and_load.html">
+            
+                <a href="../hibernate/get_and_load.html">
+            
+                    
+                    get and load
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../hibernate/what_is_sessionfactory_in_hibernate.html">
+            
+                <a href="../hibernate/what_is_sessionfactory_in_hibernate.html">
+            
+                    
+                    什么是 SessionFactory?
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../hibernate/is_sessionfactory_thread-safe.html">
+            
+                <a href="../hibernate/is_sessionfactory_thread-safe.html">
+            
+                    
+                    SessionFactory 是线程安全的吗?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../hibernate/what_is_session_in_hibernate.html">
+            
+                <a href="../hibernate/what_is_session_in_hibernate.html">
+            
+                    
+                    什么是 Session?
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../hibernate/sorted_and_ordered_collection.html">
+            
+                <a href="../hibernate/sorted_and_ordered_collection.html">
+            
+                    
+                    sorted 与 ordered collection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../hibernate/what_is_the_file_extension_used_for_hibernate_mapping_file.html">
+            
+                <a href="../hibernate/what_is_the_file_extension_used_for_hibernate_mapping_file.html">
+            
+                    
+                    What is the file extension used for hibernate mapping file?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../hibernate/hibernate_three.html">
+            
+                <a href="../hibernate/hibernate_three.html">
+            
+                    
+                    hibernate 的三种状态
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../linux/">
+            
+                <a href="../linux/">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../linux/find_file.html">
+            
+                <a href="../linux/find_file.html">
+            
+                    
+                    查找文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../linux/list_file.html">
+            
+                <a href="../linux/list_file.html">
+            
+                    
+                    列出文件列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../sql/">
+            
+                <a href="../sql/">
+            
+                    
+                    SQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../sql/one_to_one.html">
+            
+                <a href="../sql/one_to_one.html">
+            
+                    
+                    设计一对一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../sql/one_to_multi.html">
+            
+                <a href="../sql/one_to_multi.html">
+            
+                    
+                    设计一对多
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../sql/multi_to_multi.html">
+            
+                <a href="../sql/multi_to_multi.html">
+            
+                    
+                    设计多对多
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../sql/what_type_of_joins_have_you_used.html">
+            
+                <a href="../sql/what_type_of_joins_have_you_used.html">
+            
+                    
+                    都使用过哪些join?
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.4.1" data-path="../sql/inner_join.html">
+            
+                <a href="../sql/inner_join.html">
+            
+                    
+                    inner join
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4.2" data-path="../sql/leftright_join.html">
+            
+                <a href="../sql/leftright_join.html">
+            
+                    
+                    Left/Right join
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4.3" data-path="../sql/full_join.html">
+            
+                <a href="../sql/full_join.html">
+            
+                    
+                    Full join
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../sql/union.html">
+            
+                <a href="../sql/union.html">
+            
+                    
+                    合并的问题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.5.1" data-path="../sql/union_all.html">
+            
+                <a href="../sql/union_all.html">
+            
+                    
+                    Union all?
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../sql/where_having.html">
+            
+                <a href="../sql/where_having.html">
+            
+                    
+                    Where 和 Having
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../sql/what_type_of_wildcards_have_you_used.html">
+            
+                <a href="../sql/what_type_of_wildcards_have_you_used.html">
+            
+                    
+                    通配符 wildcard?
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../scrum/">
+            
+                <a href="../scrum/">
+            
+                    
+                    Scrum
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../scrum/scrum_chara.html">
+            
+                <a href="../scrum/scrum_chara.html">
+            
+                    
+                    Scrum 中的三大角色
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../scrum/whats_sprint.html">
+            
+                <a href="../scrum/whats_sprint.html">
+            
+                    
+                    What's sprint?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../scrum/how_to_scrum.html">
+            
+                <a href="../scrum/how_to_scrum.html">
+            
+                    
+                    How to scrum
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../continuous_integration/">
+            
+                <a href="../continuous_integration/">
+            
+                    
+                    Continuous integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../jdbc/">
+            
+                <a href="../jdbc/">
+            
+                    
+                    JDBC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../jdbc/what_is_difference_between_statement_and_prepared_statement.html">
+            
+                <a href="../jdbc/what_is_difference_between_statement_and_prepared_statement.html">
+            
+                    
+                    Statement 和 prepared statement?
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1.1" data-path="../jdbc/callable_statement.html">
+            
+                <a href="../jdbc/callable_statement.html">
+            
+                    
+                    Callable statement
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../jdbc/stored_procedure_and_how_do_you_call_it_in_jdbc.html">
+            
+                <a href="../jdbc/stored_procedure_and_how_do_you_call_it_in_jdbc.html">
+            
+                    
+                    Stored Procedure and how do you call it in JDBC?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../jdbc/what_does_the_classfornamemyclass_do.html">
+            
+                <a href="../jdbc/what_does_the_classfornamemyclass_do.html">
+            
+                    
+                    What does the Class.forName("MyClass") do?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../jdbc/connection_pooling.html">
+            
+                <a href="../jdbc/connection_pooling.html">
+            
+                    
+                    Connection Pooling ?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../jdbc/what_are_the_steps_in_the_jdbc_connection.html">
+            
+                <a href="../jdbc/what_are_the_steps_in_the_jdbc_connection.html">
+            
+                    
+                    What are the steps in the JDBC connection?
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >说下 Bean 的生命周期</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="bean-lifecycle">Bean lifecycle</h1>
+<ol>
+<li><p>Instantiate - &#x5BB9;&#x5668;&#x5728; XML &#x6587;&#x4EF6;&#x91CC;&#x627E;&#x5230;&#x5B9A;&#x4E49;&#x5E76;&#x5B9E;&#x4F8B;&#x5316;&#x5B83;&#x4EEC;</p>
+</li>
+<li><p>Populate properties - &#x4F7F;&#x7528; DI &#x586B;&#x5145;&#x5C5E;&#x6027;</p>
+</li>
+<li><p>Set Bean Name - If the bean implements BeanNameAware interface, spring passes the bean&apos;s id to setBeanName() method.</p>
+</li>
+<li><p>Set Bean factory - If Bean implements BeanFactoryAware interface, spring passes the beanfactory to setBeanFactory() method.</p>
+</li>
+<li><p>Pre Initialization - &#x4E5F;&#x53EB; postprocess. Spring &#x8C03;&#x7528; postProcesserBeforeInitialization() &#x65B9;&#x6CD5;.</p>
+</li>
+<li><p>Initialize beans - If the bean implements IntializingBean,its afterPropertySet() method is called. If the bean has init method declaration, the specified initialization method is called.</p>
+</li>
+<li><p>Post Initialization - &#x8C03;&#x7528; postProcessAfterInitialization() &#x65B9;&#x6CD5;</p>
+</li>
+<li><p>Ready to use - &#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x7528;&#x5B83;&#x4EEC;&#x4E86;.</p>
+</li>
+<li><p>Destroy - If the bean implements DisposableBean , it will call the destroy() method .</p>
+</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="are_singleton_beans_thread.html" class="navigation navigation-prev " aria-label="Previous page: Singleton bean 是线程安全的吗?">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="what_is_annotation-based_container_configuration.html" class="navigation navigation-next " aria-label="Next page: 什么是基于注释的容器配置?">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"说下 Bean 的生命周期","level":"1.4.7.3","depth":3,"next":{"title":"什么是基于注释的容器配置?","level":"1.4.7.4","depth":3,"path":"spring/what_is_annotation-based_container_configuration.md","ref":"spring/what_is_annotation-based_container_configuration.md","articles":[]},"previous":{"title":"Singleton bean 是线程安全的吗?","level":"1.4.7.2","depth":3,"path":"spring/are_singleton_beans_thread.md","ref":"spring/are_singleton_beans_thread.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"spring/bean_lifecycle.md","mtime":"2018-05-11T02:11:42.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-07T09:04:24.313Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
